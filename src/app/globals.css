@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Animaciones del Product Showcase */
+  --animate-beat: beat 0.8s ease-in-out infinite alternate;
+}
+
+/* Aparición con zoom de los títulos grandes del slider */
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.07);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Barras del ecualizador del paquete "Vibes" */
+@keyframes beat {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0.55);
+  }
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("/textures/background-texture.webp");
+  background-repeat: repeat;
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: -1;
+}
+
+header::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("/textures/background-texture.webp");
+  background-repeat: repeat;
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: -1;
+}

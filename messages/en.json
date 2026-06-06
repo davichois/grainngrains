@@ -1,0 +1,436 @@
+{
+  "farmToFuture": "From Farm to Future.",
+  "motto": "Connecting exceptional coffee farms to the world — quality, traceability, and sustainability from origin to cup.",
+  "home": {
+    "sections": [
+      {
+        "key": "biodiversity",
+        "title": "Together for more: ",
+        "subtitle": "Biodiversity technified",
+        "description": "We don't believe in choosing between innovation or nature. We believe in both. We transform data into decisions, technology into impact, and biodiversity into an advantage for the future. Because the best ecosystems don't just survive: they evolve. And so do we."
+      },
+      {
+        "key": "family",
+        "title": "As a",
+        "subtitle": "Family Business",
+        "description": "Our Japanese heritage taught us that excellence takes time. Every harvest reflects generations of knowledge, care, and respect for nature. A legacy we cultivate today for the generations of tomorrow."
+      }
+    ],
+    "readMore": "Read more",
+    "knowMore": "Learn More"
+  },
+  "CTA": {
+    "title": "Ready to source?",
+    "subtitle": "Let's build something great",
+    "together": "together.",
+    "contact": "Get in touch"
+  },
+  "nav": {
+    "ourCoffee": "Our Coffee",
+    "sustainability": "Sustainability",
+    "aboutGG": "About",
+    "ggHistory": "History of",
+    "globalFootprint": "Global Footprint",
+    "supplyChainExcellence": "Supply Chain Excellence",
+    "ourCoffeeHeading": "Our Coffee",
+    "innovation": "Innovation",
+    "coffeeInnovation": "Coffee Innovation",
+    "focusAreas": "Focus Areas",
+    "prosperousFarmers": "Prosperous Farmers",
+    "thrivingCommunities": "Thriving Communities",
+    "byProduct": "By Product",
+    "coffee": "Coffee",
+    "farmToFuture": "From Farm to Future.",
+    "ourCollection": "Our Collections",
+    "greenCoffee": "Specialty green coffees",
+    "verifyTraceability": "Verify Traceability"
+  },
+  "history": {
+    "intro1": "We are an interfamily company with",
+    "tradition": "TRADITION.",
+    "intro2": "From <strong>1899</strong> to today, history, work and legacy live in <strong>Grain and Grains.</strong> We have grown alongside those who make each grain possible, evolving without losing sight of the origin: the hands and the land that have brought us here.",
+    "intro3": "Join us on a journey through",
+    "intro4": "the last century.",
+    "sections": [
+      {
+        "number": "1",
+        "ano": "1899",
+        "title": "The journey that sowed the future",
+        "text": "At the end of the 19th century, with the arrival of Japanese migrants to Peru aboard the Sakura Maru, a young Japanese man left behind not only his land, but also his name. Seeking a new beginning, he settled in Rodríguez de Mendoza, where a family gave him their surname and he became known as Dionisio Portocarrero Arista. There, this entire story began, with coffee as the protagonist of his life."
+      },
+      {
+        "number": "2",
+        "ano": "1936",
+        "title": "The migration that consolidated the family",
+        "text": "Dionisio Portocarrero Arista, married to his best friend Clotilde Ocampo Guzmán, leave Rodríguez de Mendoza and migrate to San Martín with their 4 children, carrying coffee seeds and cebollón as a symbol of hope. They pass through Rioja, but hearing of better opportunities they continue to Moyobamba, where they settle, build their home and sow the beginning of their new life; their daughter Enma Portocarrero Ocampo, who arrives at 14, would continue the family coffee legacy."
+      },
+      {
+        "number": "3",
+        "ano": "1948",
+        "title": "The legacy consolidates as family livelihood",
+        "text": "Dionisio P.(1942) and Clotilde O.(1948) pass away, leaving Enma P.O., who makes coffee the family livelihood by selling it at the central market for 0.5 cents. In 1952 she becomes pregnant, unfortunately becoming a widow. She forms a new family and in 1958 her daughter, Reynalda Domínguez Portocarrero, is born, who would continue the legacy. At 11, Reynalda already sees how coffee sells for 30 cents; and at 14, after losing her father (1969) and mother (1972), she continues in sales, opening a new generation."
+      },
+      {
+        "number": "4",
+        "ano": "1992",
+        "title": "From the field to purpose: the origin of Grain and Grains",
+        "text": "Alberto Prada Rodríguez, born in Lluyllucucha (1964), has been dedicated since 1975 to growing coffee, rice and more. He meets María Linarez Domínguez, whom he marries in 1990 and strengthens his work in the field. In 1992 they acquire their first truck to transport their products. Over time, Alberto steps away from coffee due to market volatility and lack of training, and recalls his grandfather Don Ricardo Linarez's phrase: 'To the farm I go, from the farm I come and nothing I have', this phrase inspires the birth of Grain and Grains: to teach, add value and recognize the farmer's effort."
+      }
+    ]
+  },
+  "globalFootprint": {
+    "hero": {
+      "title": "Our coffee, connected to your cup.",
+      "description": "<strong>At Grain and Grains,</strong> our Peruvian coffee reflects the producer’s dedication in every bean. Our extensive network and presence across Peru’s main coffee-growing regions allow us to offer exceptional, traceable, and sustainable coffees. We showcase the origin of every product so you can place your full trust in us."
+    },
+    "footprint": {
+      "heading": "Our global footprint",
+      "paragraph1": "Everything is possible thanks to our strategic partnerships with producers and cooperatives, where every bean matters. This close connection allows us to adapt to the unpredictability of coffee farming while connecting these origins to global markets.",
+      "paragraph2": "We directly manage every stage of the supply chain, from origin to final destination, ensuring quality, safety, traceability, and security in every batch. Our presence in the field, combined with our experience, allows us to deliver Peruvian coffee with global standards and build trust in every destination.",
+      "cta": "Read more"
+    },
+    "stats": {
+      "heading": "Our statistics",
+      "stat0value": "400",
+      "stat0suffix": "+",
+      "stat0label": "partner producers",
+      "stat1value": "2",
+      "stat1label": "connected continents",
+      "stat2value": "3",
+      "stat2label": "countries we operate in"
+    },
+    "tabs": {
+      "tab0label": "Sourcing",
+      "tab0heading": "Sourcing",
+      "tab0alt": "Sourcing fields",
+      "tab0body0": "Our partnerships with farmers ensure quality, traceability, and reliable supply while supporting producers in adopting more sustainable practices.",
+      "tab0body1": "Through direct and farm-level sourcing strategies, we offer consumers the ethical choices many seek. We work closely with thousands of farmers and even manage our own farms.",
+      "tab0body2": "Globally, we run sustainability programs to help farmers improve yield and quality. We estimate supporting more than 532,000 farmers and their communities.",
+      "tab0body3": "On our farms, we grow almonds in Australia and the U.S., black pepper in Brazil and Vietnam, and we are establishing a 2,000-hectare cocoa farm in Indonesia.",
+      "tab1label": "Manufacturing",
+      "tab1heading": "Manufacturing",
+      "tab1alt": "Manufacturing plant",
+      "tab1body0": "With over 120 processing plants worldwide, our manufacturing capabilities are unmatched. We process, refine, and transform raw ingredients according to exact client specifications.",
+      "tab1body1": "Our facilities are strategically located near key producing regions, reducing transport times and preserving freshness and quality.",
+      "tab1body2": "Each plant operates under strict quality and food safety standards, ensuring consistency and compliance in every product.",
+      "tab2label": "Innovation",
+      "tab2heading": "Innovation",
+      "tab2alt": "Innovation center",
+      "tab2body0": "Our 19 innovation centers are located near major consumer markets, enabling us to develop and test solutions tailored to regional tastes and trends.",
+      "tab2body1": "From flavor development to texture modification and nutritional enhancement, our R&D teams collaborate with clients to co-create next-generation ingredients.",
+      "tab2body2": "We combine deep agricultural knowledge with cutting-edge food science to develop new ingredient applications and sustainable processing methods.",
+      "tab3label": "Marketing & Sales",
+      "tab3heading": "Marketing & Sales",
+      "tab3alt": "Marketing and sales team",
+      "tab3body0": "Our global sales network ensures a local expert is always nearby. We combine global scale with local market knowledge to deliver unmatched service.",
+      "tab3body1": "We don’t just supply ingredients—we build long-term partnerships. Our teams work closely with clients to bring tailored solutions to market.",
+      "tab3body2": "From initial consultation to ongoing supply, we provide full support to help your product stand out."
+    }
+  },
+  "faqs": {
+    "heading": "FAQs",
+    "faqs1": {
+      "id": 1,
+      "question": "WHERE DOES YOUR COFFEE COME FROM?",
+      "answer": "Our coffee comes from various coffee-growing regions of Peru, where we work directly with farmers to obtain high-quality beans and promote sustainable practices."
+    },
+    "faqs2": {
+      "id": 2,
+      "question": "HOW DO YOU GUARANTEE THE QUALITY OF YOUR COFFEE?",
+      "answer": "We guarantee quality through rigorous controls at every stage of the supply chain, from bean selection to the roasting process, ensuring that every cup meets our high standards."
+    },
+    "faqs3": {
+      "id": 3,
+      "question": "WHAT MEASURES DO YOU TAKE TO BE SUSTAINABLE?",
+      "answer": "We implement sustainable agricultural practices, support farmers in adopting ecological methods, and commit to reducing our environmental footprint throughout our supply chain."
+    },
+    "faqs4": {
+      "id": 4,
+      "question": "WHERE EXACTLY DOES THIS COFFEE LOT COME FROM?",
+      "answer": "We know the exact origin of every coffee lot, from the farm to your cup, thanks to our digital tools and traceability systems."
+    },
+    "faqs5": {
+      "id": 5,
+      "question": "HOW DO YOU VERIFY THAT THE LOT INFORMATION IS RELIABLE?",
+      "answer": "We use independent third-party auditors to validate the data for each lot, ensuring reliable information about its origin, production, quality, and traceability."
+    },
+    "faqs6": {
+      "id": 6,
+      "question": "WHAT SOCIAL AND ENVIRONMENTAL DATA DOES ATPROVENANCE INCLUDE?",
+      "answer": "AtProvenance provides detailed, high-quality social and environmental information to support sustainable sourcing and more transparent trade."
+    }
+  },
+  "shop": {
+    "title": "History, quality, and real-time pricing",
+    "subtitle": "QUOTE NOW.",
+    "types": {
+      "greenCoffee": "Green Coffee",
+      "roastedCoffee": "Roasted Coffee",
+      "groundCoffee": "Ground Coffee"
+    },
+    "degrees": {
+      "degree1": "Degree 1",
+      "degree2": "Degree 2",
+      "degree3": "Degree 3",
+      "description1": "Only the finest cherries. Clean, elegant, and expressive, revealing the full potential of the coffee's origin.",
+      "description2": "Balanced and harmonious. A consistent cup with character, sweetness, and everyday refinement."
+    },
+    "cta": "Download report",
+    "whatsOurCoffee": "What makes a good coffee special? Careful selection of each bean, consistent quality, and respect for its origin. Our Degree 1, Degree 2, and Degree 3 coffees offer defined profiles for different needs, always maintaining the balance, purity, and character of each cup.",
+    "degreePresentationTitle": "Fall in Love with Each Degree",
+    "degreePresentationSubtitle": "THE ORIGIN OF A GREAT CUP",
+    "reports": {
+      "title": "Reports",
+      "choose": "Choose a report to preview or download",
+      "preview": "Preview",
+      "download": "Download",
+      "close": "Close"
+    }
+  },
+  "supply-chain-excellence": {
+    "hero": {
+      "subtitle": "Our Non-Negotiable",
+      "title": "PRIORITIZING THE SUPPLY CHAIN",
+      "description": "We prioritize traceability and reliable coffee sourcing so our clients have clear and accurate information about every lot, from the farm of origin to the final cup. By actively participating throughout the value chain, we provide greater transparency, control, and confidence, enabling safer purchasing decisions and stronger business relationships."
+    },
+    "ourPromise": {
+      "title": "Our Promise",
+      "subtitle": "Focused on:",
+      "items": {
+        "traceability": {
+          "title": "Traceability & Origin",
+          "description": "We invest in digital tools and technology to ensure complete traceability and transparency. We know the exact origin of every lot, from farm to cup. We manage this through Forest Land Sentinel, a platform developed by our team to provide greater control and visibility."
+        },
+        "commitmentToFarmersAndCooperatives": {
+          "title": "Commitment to Farmers & Cooperatives",
+          "description": "We work directly with coffee farmers and partner cooperatives across Peru's main coffee-growing regions, building long-term relationships based on trust, quality, and fair trade."
+        },
+        "verification": {
+          "title": "Verification",
+          "description": "We rely on independent third-party auditors to verify data for each coffee lot, ensuring reliable information on origin, production, quality, and traceability within Forest Land Sentinel and Clean Cup Alliance."
+        },
+        "riskAndCompliance": {
+          "title": "Risk & Compliance",
+          "description": "We help our clients access detailed information for every coffee lot, enabling faster and more transparent sourcing and trade."
+        },
+        "dataAndInsights": {
+          "title": "Data & Insights",
+          "description": "We provide our clients with high-quality social and environmental data through our sustainable sourcing solutions, Forest Land Sentinel and Clean Cup Alliance."
+        }
+      }
+    }
+  },
+  "footer": {
+    "copyright": "All rights reserved."
+  },
+  "language": [
+    {
+      "label": "English",
+      "code": "en",
+      "abreviation": "INT"
+    },
+    {
+      "label": "German",
+      "code": "de",
+      "abreviation": "DE"
+    },
+    {
+      "label": "French",
+      "code": "fr",
+      "abreviation": "FR"
+    },
+    {
+      "label": "Spanish",
+      "code": "es",
+      "abreviation": "ES"
+    },
+    {
+      "label": "Portuguese",
+      "code": "pt",
+      "abreviation": "PT"
+    },
+    {
+      "label": "Chinese",
+      "code": "zh",
+      "abreviation": "ZH"
+    },
+    {
+      "label": "Japanese",
+      "code": "ja",
+      "abreviation": "JA"
+    }
+  ],
+  "editions": {
+    "bigTop": "EDITION",
+    "farmers": {
+      "name": "Farmers Edition",
+      "bigBot": "FARMERS",
+      "subtitle": "An edition that pays tribute to the rural hands behind every harvest. Single-origin coffee grown in the mountains, picked bean by bean and processed with knowledge handed down through generations of coffee farmers. Every cup holds the story, the effort and the tradition of the families who make our coffee possible.",
+      "products": {
+        "donEliseoFarm": "Don Eliseo Farm",
+        "donEdwinFarm": "Don Edwin Farm",
+        "donOsmarFarm": "Don Osmar Farm"
+      }
+    },
+    "women": {
+      "name": "Women Coffee Farmers Edition",
+      "bigBot": "WOMEN",
+      "subtitle": "A coffee with a woman's face, grown and led by women farmers who work the land with dedication and pride. This edition celebrates their essential role at every stage of the process, from planting to drying, and supports their economic independence. Quality, equity and the future come together in every cup you bring to your table.",
+      "products": {
+        "daughtersOfTheForest": "Daughters of the Forest",
+        "guardiansOfTheEarth": "Guardians of the Earth"
+      }
+    },
+    "classic": {
+      "name": "Classic Edition",
+      "bigBot": "CLASSIC",
+      "subtitle": "The profiles of always, the ones that never fail and have earned their place in the daily routine. A selection with balanced body, just the right acidity and an enveloping aroma, roasted to bring out the bean's noblest notes. The classic taste of our coffee, true to its essence cup after cup.",
+      "products": {
+        "morningClassic": "Morning Classic"
+      }
+    },
+    "infused": {
+      "name": "Infused Edition",
+      "bigBot": "INFUSED",
+      "subtitle": "Coffee reinvented for the most curious palates, infused with spices, fruits and flowers that awaken unexpected sensations. Each variety is an invitation to explore new aromas and nuances, blending the intense base of our coffee with creative touches. A different experience in every sip, for those who dare to try something new.",
+      "products": {
+        "vanilla-infused": "Vanilla Infused Coffee",
+        "guanabana-infused": "Guanabana Infused Coffee"
+      }
+    }
+  },
+  "sustainability": {
+    "hero": {
+      "tagTech": "Technology",
+      "tagSustainability": "Sustainability",
+      "tagBiodiversity": "Biodiversity",
+      "title": "Smart ecosystems",
+      "subtitle": "We bring together knowledge, nature and technology to cultivate positive impact from farm to cup."
+    },
+    "blocks": [
+      {
+        "eyebrow": "Every lot evaluated with the rigor that excellence demands.",
+        "title": "Clean Cup Alliance",
+        "imageAlt": "Clean Cup Alliance",
+        "description": "Our cupping system based on SCA standards lets us measure, compare and document the quality of every sample with precision and consistency, turning sensory evaluation into verifiable trust."
+      },
+      {
+        "eyebrow": "Honoring origin through its unique flavors.",
+        "title": "Peruvian Flavor Wheel by Grain & Grains",
+        "imageAlt": "Flavor Wheel",
+        "description": "Inspired by the SCA methodology and enriched with our own Amazonian flavor wheel, this tool reveals the distinctive characteristics of each coffee, connecting territory, culture and the in-cup experience."
+      },
+      {
+        "eyebrow": "Protecting origin through data and constant action.",
+        "title": "Forest Land Sentinel",
+        "imageAlt": "Forest Land Sentinel",
+        "description": "Through territorial monitoring and technical assistance, we identify improvement opportunities, manage risks and strengthen sustainable practices that secure the future of our farms and communities."
+      }
+    ],
+    "learnMore": "Learn more",
+    "requestAccess": "To get access, please contact the person in charge.",
+    "contact": "Contact"
+  },
+  "traceability": {
+    "title": "Traceability",
+    "subtitle": "Enter your coffee's traceability code to discover its origin.",
+    "placeholder": "691445",
+    "search": "Track",
+    "loading": "Fetching traceability data…",
+    "loadingSteps": [
+      "Connecting to the origin network…",
+      "Verifying the lot code…",
+      "Retrieving farm data…",
+      "Loading sensory profile…"
+    ],
+    "notFoundTitle": "Code not found",
+    "notFound": "We couldn't find any coffee with that code. Please check and try again.",
+    "back": "Search another code",
+    "traceabilityCode": "Traceability code",
+    "coffeeFarm": "Coffee farm",
+    "origin": "Origin",
+    "altitude": "Altitude",
+    "variety": "Variety",
+    "harvestSeason": "Harvest season",
+    "dryingMethod": "Drying method",
+    "lotData": "Lot data",
+    "profile": "Sensory profile",
+    "texture": "Texture",
+    "fragrance": "Fragrance",
+    "acidity": "Acidity",
+    "sweetness": "Sweetness",
+    "sensation": "Sensation",
+    "records": {
+      "GG691445": {
+        "edition": "CLASSIC MORNING EDITION",
+        "notesTop": "Chocolate · Dark honey · Nuts",
+        "notesBottom": "Cocoa · Orange · Panela · Molasses",
+        "harvestSeason": "May, 2026",
+        "processMethod": "",
+        "dryingMethod": "Raised-Bed Dried",
+        "historyTitle": "The strength of a coffee-growing community",
+        "historyBody": "This coffee is the result of the collective efforts of more than 400 coffee-growing families in the Peruvian Amazon, united under the CAFCER Cooperative. Each harvest reflects generations of knowledge, a commitment to quality, and respect for nature. Through coffee, this community promotes sustainability, supports the development of women and youth, and creates opportunities that enhance the well-being of farming families. Every cup expresses the origin, dedication, and positive impact that arise when a community works together for a better future.",
+        "texture": "Rough",
+        "fragrance": "Sugarcane bud · chocolate · dark honey",
+        "acidity": "Springing orange",
+        "sweetness": "Panela · subtle",
+        "sensation": "Panela · molasses"
+      },
+      "GG559011": {
+        "edition": "COFFEE GROWERS EDITION",
+        "notesTop": "Ripe pineapple · Mandarin · Floral · Cocoa · Maple honey",
+        "notesBottom": "",
+        "harvestSeason": "May, 2026",
+        "processMethod": "Anaerobic washing",
+        "dryingMethod": "Raised-Bed Dried",
+        "historyTitle": "A life among coffee plantations",
+        "historyBody": "Osmar grew up among coffee plantations, learning from a young age the value of hard work, patience, and respect for the land. Together with his wife, Rosmeri, he decided to carry on that family legacy, and since 2010, they have been farming their own estate with the conviction that quality can create new opportunities for their family. Each batch tells the story of a family that has found its life's purpose in coffee.",
+        "texture": "Creamy and shiny",
+        "fragrance": "Ripe pineapple",
+        "acidity": "Citrus, mandarin",
+        "sweetness": "Maple honey",
+        "sensation": "Milk chocolate · soursop"
+      },
+      "GG253031": {
+        "edition": "COFFEE GROWERS EDITION",
+        "notesTop": "Dried strawberry · Cape gooseberry · Honey · White chocolate · Sweet green grape · Ripe mango",
+        "notesBottom": "",
+        "harvestSeason": "May, 2026",
+        "processMethod": "Honey",
+        "dryingMethod": "Raised-Bed Dried",
+        "historyTitle": "A story of perseverance",
+        "historyBody": "In the mountains of the Peruvian Amazon, Eliseo and his wife Maryori grow coffee, driven by a dream: to create better opportunities for their four children. Despite the challenges and the long journeys required to transport each harvest, they remain committed to quality and innovation. Their coffee is the result of perseverance, family hard work, and a deep connection to the land where they grew up.",
+        "texture": "Soft · enveloping",
+        "fragrance": "Sweet panela · orange blossom",
+        "acidity": "Citrus orange",
+        "sweetness": "Panela · vanilla",
+        "sensation": "Panela · chocolate · green apple"
+      },
+      "GG288501": {
+        "edition": "COFFEE GROWERS EDITION",
+        "notesTop": "Panela · Orange blossom · Green apple · Caramel · Milk chocolate · Vanilla",
+        "notesBottom": "",
+        "harvestSeason": "May, 2026",
+        "processMethod": "Anaerobic washing",
+        "dryingMethod": "Raised-Bed Dried",
+        "historyTitle": "",
+        "historyBody": "",
+        "texture": "Soft",
+        "fragrance": "Sweet panela · orange blossom",
+        "acidity": "Citrus orange",
+        "sweetness": "Panela · vanilla",
+        "sensation": "Panela · chocolate · green apple"
+      }
+    },
+    "download": "Download report",
+    "reportTitle": "Traceability report",
+    "processMethod": "Process method",
+    "history": "History"
+  },
+  "certifications": {
+    "heading": "Our labels, certifications and partner cooperatives.",
+    "description": "We take responsibility and lead by example. As members of various organizations, we collaborate with other companies to promote sustainability. We rely on recognized certifications and quality labels so that third parties endorse our efforts and our commitment. This allows consumers and partners to know what we do and verify our actions.",
+    "claim": "Better together: certified and transparent",
+    "cooperatives": "Partner cooperatives"
+  }
+}
