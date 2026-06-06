@@ -34,7 +34,7 @@ const blockStyles: {
     bg: "bg-[#c4d74a]",
     border: "bg-[#FEFDDF]",
     text: "text-[#25343F]",
-    link: "https://coffee-profiling-grainngrains.vercel.app/es", // TODO: URL real de la Rueda de Sabores
+    link: "https://flavorwheel.grainngrains.org/es", // TODO: URL real de la Rueda de Sabores
   },
   {
     image: "/images/sustainability/FLS.svg",

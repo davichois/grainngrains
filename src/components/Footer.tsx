@@ -2,7 +2,7 @@
 
 import { Caveat } from "next/font/google";
 import { ArrowUpRight, Mail, Phone } from "lucide-react";
-import { FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn, FaFacebook } from "react-icons/fa";
 import { Link } from "../i18n/navigation";
 import { useTranslations } from "next-intl";
 import { GrainngrainsLogo } from "./GrainngrainsLogo";
@@ -99,9 +99,17 @@ export default function Footer() {
   ];
 
   const socials = [
-    { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
+    {
+      icon: FaInstagram,
+      href: "https://www.instagram.com/grainngrains",
+      label: "Instagram",
+    },
     { icon: FaLinkedinIn, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: FaYoutube, href: "https://youtube.com", label: "YouTube" },
+    {
+      icon: FaFacebook,
+      href: "https://www.facebook.com/profile.php?id=61584672518944",
+      label: "Facebook",
+    },
   ];
 
   const contact = [
