@@ -17,7 +17,8 @@
       }
     ],
     "knowMore": "Conocer más",
-    "readMore": "Leer más"
+    "readMore": "Leer más",
+    "meetPartner": "Conoce a nuestro partner"
   },
   "CTA": {
     "title": "¿Listo para abastecerte?",
@@ -45,7 +46,8 @@
     "farmToFuture": "Del campo al futuro.",
     "ourCollection": "Nuestra colección",
     "greenCoffee": "Café Verde Especiales",
-    "verifyTraceability": "Verificar Trazabilidad"
+    "verifyTraceability": "Verificar Trazabilidad",
+    "meetPartner": "Nuestro partner"
   },
   "history": {
     "intro1": "Somos una empresa interfamiliar con",
@@ -79,6 +81,69 @@
         "text": "Alberto Prada Rodríguez, nacido en Lluyllucucha (1964), se dedica desde 1975 al cultivo de café, arroz y más. Conoce a María Linarez Domínguez, con quien se casa en 1990 y fortalece su trabajo en el campo. En 1992 adquieren su primer camión para transportar sus productos. Con el tiempo, Alberto se aleja del café por la volatilidad del mercado y la falta de capacitación, y recuerda la frase de su abuelo, Don Ricardo Linarez: 'A chacra voy, de chacra vengo y nada tengo', esta frase inspira al nacimiento de Grain and Grains: enseñar, dar valor y reconocer el esfuerzo del agricultor."
       }
     ]
+  },
+  "partner": {
+    "eyebrow": "Aliados",
+    "heroDescription": "La cooperativa promueve educación financiera, equidad de género, producción de abonos orgánicos y alianzas con asociaciones locales. Estos programas fortalecen la resiliencia, mejoran la productividad y aseguran la sostenibilidad a largo plazo de nuestro café.",
+    "headingTop": "Buenos Aliados para un",
+    "headingBottom": "GRAN CAFÉ",
+    "sections": [
+      {
+        "number": "1",
+        "title": "Liderazgo Femenino",
+        "text": "Las mujeres impulsan el desarrollo de nuestra comunidad. Con un 57% de participación femenina, fortalecen la economía local, lideran iniciativas productivas y contribuyen a una caficultura más inclusiva y resiliente. Su trabajo garantiza oportunidades para las familias y para las futuras generaciones."
+      },
+      {
+        "number": "2",
+        "title": "Educación Financiera",
+        "text": "El crecimiento sostenible comienza con el conocimiento. A través de 8 cajas rurales comunitarias, las familias productoras fortalecen sus capacidades de ahorro, inversión y planificación, construyendo una mayor estabilidad económica desde sus propias comunidades."
+      },
+      {
+        "number": "3",
+        "title": "Juventud Cafetalera",
+        "text": "La nueva generación mantiene vivo el futuro del café. El 11% de nuestros productores son jóvenes que combinan tradición, innovación y tecnología para asegurar la continuidad de una caficultura competitiva y sostenible en los años por venir."
+      },
+      {
+        "number": "4",
+        "title": "Agricultura Regenerativa",
+        "text": "Cada parcela es un ecosistema en constante renovación. Mediante prácticas de economía circular, transformamos recursos locales en fertilidad, mejoramos la salud del suelo y fortalecemos la resiliencia de los cultivos frente a los desafíos ambientales."
+      },
+      {
+        "number": "5",
+        "title": "Protección de Ecosistemas",
+        "text": "La naturaleza prospera cuando la producción y la conservación avanzan juntas. La implementación de filtros de vetiveria ayuda a proteger las fuentes de agua, reducir la erosión y preservar la biodiversidad que sustenta nuestros paisajes cafetaleros."
+      }
+    ],
+    "infographic": {
+      "intro": "CAFCER y Grain & Grains comparten la visión de que un gran café nace de comunidades fuertes y ecosistemas saludables. Juntos impulsamos el liderazgo femenino, la educación financiera, la participación juvenil, la agricultura regenerativa y la protección de los recursos naturales. Desde el origen, construimos relaciones de largo plazo que fortalecen la calidad del café y generan un impacto positivo para las personas, la tierra y las futuras generaciones.",
+      "stats": [
+        {
+          "pre": "Más de",
+          "label": "Toneladas de café",
+          "sub": "para exportar"
+        },
+        {
+          "pre": "",
+          "label": "Hectáreas",
+          "sub": "en total"
+        },
+        {
+          "pre": "",
+          "label": "Hectáreas de cultivo",
+          "sub": "bajo sistema de agricultura familiar"
+        },
+        {
+          "pre": "",
+          "label": "Familias productoras",
+          "sub": "desde febrero del 2022"
+        },
+        {
+          "pre": "",
+          "label": "Relevo generacional",
+          "sub": ""
+        }
+      ]
+    }
   },
   "globalFootprint": {
     "hero": {
@@ -260,6 +325,11 @@
       "label": "Japonés",
       "code": "ja",
       "abreviation": "JA"
+    },
+    {
+      "label": "Korean",
+      "code": "ko",
+      "abreviation": "KR"
     }
   ],
   "editions": {

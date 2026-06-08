@@ -4,11 +4,11 @@ import { getTranslations } from "next-intl/server";
 
 import Image from "next/image";
 import { CategoryItem, CoffeeGrade } from "@/src/types";
-import headershop from "@/public/images/shop/header-shop.png";
+import headershop from "@/public/images/shop/header-shop.webp";
 import CategoryCarousel from "@/src/components/Categorycarousel";
 import DegreeReports, { ReportFile } from "@/src/components/DegreeReports";
 
-import coffee01 from "@/public/images/shop/coffee-1.png";
+import coffee01 from "@/public/images/shop/coffee-1.webp";
 
 /* Lee los PDFs de public/reports/<carpeta> y arma nombre + URL pública */
 function readReports(folder: string): ReportFile[] {

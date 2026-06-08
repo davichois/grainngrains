@@ -17,7 +17,8 @@
       }
     ],
     "readMore": "Read more",
-    "knowMore": "Learn More"
+    "knowMore": "Learn More",
+    "meetPartner": "Meet our partner"
   },
   "CTA": {
     "title": "Ready to source?",
@@ -43,7 +44,8 @@
     "farmToFuture": "From Farm to Future.",
     "ourCollection": "Our Collections",
     "greenCoffee": "Specialty green coffees",
-    "verifyTraceability": "Verify Traceability"
+    "verifyTraceability": "Verify Traceability",
+    "meetPartner": "Our partner"
   },
   "history": {
     "intro1": "We are an interfamily company with",
@@ -258,6 +260,11 @@
       "label": "Japanese",
       "code": "ja",
       "abreviation": "JA"
+    },
+    {
+      "label": "Korean",
+      "code": "ko",
+      "abreviation": "KR"
     }
   ],
   "editions": {
@@ -432,5 +439,68 @@
     "description": "We take responsibility and lead by example. As members of various organizations, we collaborate with other companies to promote sustainability. We rely on recognized certifications and quality labels so that third parties endorse our efforts and our commitment. This allows consumers and partners to know what we do and verify our actions.",
     "claim": "Better together: certified and transparent",
     "cooperatives": "Partner cooperatives"
+  },
+  "partner": {
+    "eyebrow": "Partners",
+    "heroDescription": "The cooperative promotes financial education, gender equity, organic fertilizer production and partnerships with local associations. These programs strengthen resilience, improve productivity and ensure the long-term sustainability of our coffee.",
+    "headingTop": "Good Partners for a",
+    "headingBottom": "GREAT COFFEE",
+    "sections": [
+      {
+        "number": "1",
+        "title": "Women's Leadership",
+        "text": "Women drive the development of our community. With 57% female participation, they strengthen the local economy, lead productive initiatives and contribute to a more inclusive and resilient coffee sector. Their work secures opportunities for families and for future generations."
+      },
+      {
+        "number": "2",
+        "title": "Financial Education",
+        "text": "Sustainable growth begins with knowledge. Through 8 community rural savings funds, producer families strengthen their saving, investment and planning capacities, building greater economic stability from within their own communities."
+      },
+      {
+        "number": "3",
+        "title": "Coffee-Growing Youth",
+        "text": "The new generation keeps the future of coffee alive. 11% of our producers are young people who combine tradition, innovation and technology to ensure the continuity of a competitive and sustainable coffee sector in the years to come."
+      },
+      {
+        "number": "4",
+        "title": "Regenerative Agriculture",
+        "text": "Each plot is an ecosystem in constant renewal. Through circular economy practices, we turn local resources into fertility, improve soil health and strengthen crops' resilience against environmental challenges."
+      },
+      {
+        "number": "5",
+        "title": "Ecosystem Protection",
+        "text": "Nature thrives when production and conservation move forward together. Installing vetiver filters helps protect water sources, reduce erosion and preserve the biodiversity that sustains our coffee landscapes."
+      }
+    ],
+    "infographic": {
+      "intro": "CAFCER and Grain & Grains share the vision that great coffee is born from strong communities and healthy ecosystems. Together we drive women's leadership, financial education, youth participation, regenerative agriculture and the protection of natural resources. From origin, we build long-term relationships that strengthen coffee quality and create a positive impact for people, the land and future generations.",
+      "stats": [
+        {
+          "pre": "More than",
+          "label": "Tons of coffee",
+          "sub": "for export"
+        },
+        {
+          "pre": "",
+          "label": "Hectares",
+          "sub": "in total"
+        },
+        {
+          "pre": "",
+          "label": "Hectares of cultivation",
+          "sub": "under a family farming system"
+        },
+        {
+          "pre": "",
+          "label": "Producer families",
+          "sub": "since February 2022"
+        },
+        {
+          "pre": "",
+          "label": "Generational renewal",
+          "sub": ""
+        }
+      ]
+    }
   }
 }

@@ -27,6 +27,18 @@ import CoffeeTicket from "@/src/components/CoffeeTicket";
 /* Píxeles de scroll a partir de los cuales reaparece el header oculto */
 const REVEAL_AT = 4;
 
+/* Bandera (emoji) según el código de idioma */
+const FLAGS: Record<string, string> = {
+  en: "🇬🇧",
+  de: "🇩🇪",
+  fr: "🇫🇷",
+  es: "🇵🇪",
+  pt: "🇵🇹",
+  zh: "🇨🇳",
+  ja: "🇯🇵",
+  ko: "🇰🇷",
+};
+
 function LanguageDropdown({ languages }: LanguageSelectorProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -70,6 +82,7 @@ function LanguageDropdown({ languages }: LanguageSelectorProps) {
         }`}
       >
         <Globe size={20} className="text-[#ffbe30] shrink-0" />
+
         <span>{selected.abreviation}</span>
         <ChevronDown
           size={13}
@@ -95,7 +108,12 @@ function LanguageDropdown({ languages }: LanguageSelectorProps) {
                     : "text-gray-700 hover:bg-gray-50 hover:text-[#ffbe30]"
                 }`}
               >
-                <span>{lang.label}</span>
+                <span className="flex items-center gap-2.5">
+                  <span className="text-[18px] leading-none">
+                    {FLAGS[lang.code] ?? "🏳️"}
+                  </span>
+                  {lang.label}
+                </span>
                 {selected.code === lang.code && (
                   <span className="w-1.5 h-1.5 rounded-full bg-[#ffbe30]" />
                 )}
@@ -475,6 +493,10 @@ export default function Header() {
       href: "/about",
       historyLabel: t("ggHistory"), // ← agrega esto
       dropdown: [
+        {
+          label: t("meetPartner"),
+          href: "/about/partner-cooperatives",
+        },
         { label: t("globalFootprint"), href: "/about/global-footprint" },
         {
           label: t("supplyChainExcellence"),

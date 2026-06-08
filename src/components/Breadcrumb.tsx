@@ -34,9 +34,6 @@ export function Breadcrumb({
       })),
   ];
 
-  console.log("Breadcrumb segments:", segments);
-  console.log("Breadcrumb crumbs:", crumbs);
-
   return (
     <nav
       aria-label="breadcrumb"

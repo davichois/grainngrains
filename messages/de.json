@@ -17,7 +17,8 @@
       }
     ],
     "readMore": "Mehr erfahren",
-    "knowMore": "Mehr erfahren"
+    "knowMore": "Mehr erfahren",
+    "meetPartner": "Lernen Sie unseren Partner kennen"
   },
   "CTA": {
     "title": "Bereit für die Beschaffung?",
@@ -45,7 +46,8 @@
     "farmToFuture": "Vom Feld in die Zukunft.",
     "ourCollection": "Unsere Kollektion",
     "greenCoffee": "Grüne Kaffee-Spezialitäten",
-    "verifyTraceability": "Rückverfolgbarkeit prüfen"
+    "verifyTraceability": "Rückverfolgbarkeit prüfen",
+    "meetPartner": "Unser Partner"
   },
   "history": {
     "intro1": "Wir sind ein interfamiliäres Unternehmen mit",
@@ -260,6 +262,11 @@
       "label": "Japanisch",
       "code": "ja",
       "abreviation": "JA"
+    },
+    {
+      "label": "Korean",
+      "code": "ko",
+      "abreviation": "KR"
     }
   ],
   "editions": {
@@ -434,5 +441,68 @@
     "description": "Wir übernehmen Verantwortung und gehen mit gutem Beispiel voran. Als Mitglieder verschiedener Organisationen arbeiten wir mit anderen Unternehmen zusammen, um Nachhaltigkeit zu fördern. Wir setzen auf anerkannte Zertifizierungen und Gütesiegel, damit Dritte unsere Bemühungen und unser Engagement bestätigen. So können Verbraucher und Partner sehen, was wir tun, und unsere Maßnahmen überprüfen.",
     "claim": "Gemeinsam besser: zertifiziert und transparent",
     "cooperatives": "Partnerkooperativen"
+  },
+  "partner": {
+    "eyebrow": "Partner",
+    "heroDescription": "Die Kooperative fördert finanzielle Bildung, Geschlechtergerechtigkeit, die Produktion von Bio-Dünger und Partnerschaften mit lokalen Verbänden. Diese Programme stärken die Resilienz, steigern die Produktivität und sichern die langfristige Nachhaltigkeit unseres Kaffees.",
+    "headingTop": "Gute Partner für einen",
+    "headingBottom": "GROSSARTIGEN KAFFEE",
+    "sections": [
+      {
+        "number": "1",
+        "title": "Weibliche Führung",
+        "text": "Frauen treiben die Entwicklung unserer Gemeinschaft voran. Mit 57 % weiblicher Beteiligung stärken sie die lokale Wirtschaft, leiten produktive Initiativen und tragen zu einem inklusiveren und widerstandsfähigeren Kaffeesektor bei. Ihre Arbeit sichert Chancen für Familien und künftige Generationen."
+      },
+      {
+        "number": "2",
+        "title": "Finanzbildung",
+        "text": "Nachhaltiges Wachstum beginnt mit Wissen. Über 8 kommunale ländliche Sparkassen stärken die Produzentenfamilien ihre Spar-, Investitions- und Planungsfähigkeiten und schaffen so mehr wirtschaftliche Stabilität aus ihren eigenen Gemeinschaften heraus."
+      },
+      {
+        "number": "3",
+        "title": "Junge Kaffeebauern",
+        "text": "Die neue Generation hält die Zukunft des Kaffees lebendig. 11 % unserer Produzenten sind junge Menschen, die Tradition, Innovation und Technologie verbinden, um die Kontinuität eines wettbewerbsfähigen und nachhaltigen Kaffeesektors in den kommenden Jahren zu sichern."
+      },
+      {
+        "number": "4",
+        "title": "Regenerative Landwirtschaft",
+        "text": "Jede Parzelle ist ein Ökosystem in ständiger Erneuerung. Durch Praktiken der Kreislaufwirtschaft verwandeln wir lokale Ressourcen in Fruchtbarkeit, verbessern die Bodengesundheit und stärken die Widerstandsfähigkeit der Kulturen gegenüber Umweltherausforderungen."
+      },
+      {
+        "number": "5",
+        "title": "Schutz der Ökosysteme",
+        "text": "Die Natur gedeiht, wenn Produktion und Naturschutz gemeinsam voranschreiten. Der Einsatz von Vetiver-Filtern hilft, Wasserquellen zu schützen, Erosion zu verringern und die Biodiversität zu bewahren, die unsere Kaffeelandschaften trägt."
+      }
+    ],
+    "infographic": {
+      "intro": "CAFCER und Grain & Grains teilen die Überzeugung, dass großartiger Kaffee aus starken Gemeinschaften und gesunden Ökosystemen entsteht. Gemeinsam fördern wir weibliche Führung, finanzielle Bildung, die Beteiligung junger Menschen, regenerative Landwirtschaft und den Schutz natürlicher Ressourcen. Vom Ursprung an bauen wir langfristige Beziehungen auf, die die Kaffeequalität stärken und einen positiven Einfluss auf Menschen, Land und künftige Generationen schaffen.",
+      "stats": [
+        {
+          "pre": "Mehr als",
+          "label": "Tonnen Kaffee",
+          "sub": "für den Export"
+        },
+        {
+          "pre": "",
+          "label": "Hektar",
+          "sub": "insgesamt"
+        },
+        {
+          "pre": "",
+          "label": "Hektar Anbaufläche",
+          "sub": "im Modell der familiären Landwirtschaft"
+        },
+        {
+          "pre": "",
+          "label": "Produzentenfamilien",
+          "sub": "seit Februar 2022"
+        },
+        {
+          "pre": "",
+          "label": "Generationenwechsel",
+          "sub": ""
+        }
+      ]
+    }
   }
 }

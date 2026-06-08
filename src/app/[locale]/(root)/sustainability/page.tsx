@@ -56,7 +56,7 @@ export default async function Sustainability() {
       <section className="relative w-full h-[55vh] min-h-90 lg:h-[80vh] overflow-hidden">
         <Parallax amount={70} className="absolute inset-0 scale-125">
           <Image
-            src="/images/sustainability/monito.png"
+            src="/images/sustainability/monito.webp"
             alt={t("hero.title")}
             fill
             priority

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { MapPin, Handshake, ShieldCheck, Scale, BarChart2 } from "lucide-react";
-import ourpromise from "@/public/images/about/ourpromise.png";
+import ourpromise from "@/public/images/about/ourpromise.webp";
 import { useTranslations } from "next-intl";
 
 export default function OurPromise() {

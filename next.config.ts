@@ -4,6 +4,10 @@ import createNextIntlPlugin from "next-intl/plugin";
 const nextConfig: NextConfig = {
   allowedDevOrigins: ["192.168.68.51"],
   images: {
+    // Sirve AVIF/WebP automáticamente (mucho más ligero que PNG/JPG)
+    formats: ["image/avif", "image/webp"],
+    // Cachea las imágenes optimizadas más tiempo
+    minimumCacheTTL: 31536000,
     remotePatterns: [
       {
         protocol: "https",

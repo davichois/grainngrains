@@ -40,10 +40,14 @@ export function StaggerContainer({
   children,
   className = "",
   stagger = 0.14,
+  once = true,
+  style,
 }: {
   children: React.ReactNode;
   className?: string;
   stagger?: number;
+  once?: boolean;
+  style?: React.CSSProperties;
 }) {
   const variants: Variants = {
     hidden: {},
@@ -52,10 +56,11 @@ export function StaggerContainer({
   return (
     <motion.div
       className={className}
+      style={style}
       variants={variants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.25 }}
+      viewport={{ once, amount: 0.25 }}
     >
       {children}
     </motion.div>

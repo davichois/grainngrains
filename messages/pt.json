@@ -17,7 +17,8 @@
       }
     ],
     "readMore": "Leia mais",
-    "knowMore": "Saiba Mais"
+    "knowMore": "Saiba Mais",
+    "meetPartner": "Conheça nosso parceiro"
   },
   "CTA": {
     "title": "Pronto para abastecer?",
@@ -45,7 +46,8 @@
     "farmToFuture": "Do campo ao futuro.",
     "ourCollection": "Nossa coleção",
     "greenCoffee": "Especiais de Café Verde",
-    "verifyTraceability": "Verificar Rastreabilidade"
+    "verifyTraceability": "Verificar Rastreabilidade",
+    "meetPartner": "Nosso parceiro"
   },
   "history": {
     "intro1": "Somos uma empresa interfamiliar com",
@@ -260,6 +262,11 @@
       "label": "Japonês",
       "code": "ja",
       "abreviation": "JA"
+    },
+    {
+      "label": "Korean",
+      "code": "ko",
+      "abreviation": "KR"
     }
   ],
   "editions": {
@@ -434,5 +441,68 @@
     "description": "Assumimos nossa responsabilidade e damos o exemplo. Como membros de diversas organizações, colaboramos com outras empresas para promover a sustentabilidade. Recorremos a certificações e selos de qualidade reconhecidos para que terceiros avalizem nossos esforços e nosso compromisso. Isso permite que consumidores e parceiros conheçam o que fazemos e verifiquem nossas ações.",
     "claim": "Juntos é melhor: certificados e transparentes",
     "cooperatives": "Cooperativas parceiras"
+  },
+  "partner": {
+    "eyebrow": "Aliados",
+    "heroDescription": "A cooperativa promove educação financeira, equidade de gênero, produção de adubos orgânicos e parcerias com associações locais. Esses programas fortalecem a resiliência, melhoram a produtividade e asseguram a sustentabilidade a longo prazo do nosso café.",
+    "headingTop": "Bons aliados para um",
+    "headingBottom": "GRANDE CAFÉ",
+    "sections": [
+      {
+        "number": "1",
+        "title": "Liderança Feminina",
+        "text": "As mulheres impulsionam o desenvolvimento da nossa comunidade. Com 57% de participação feminina, fortalecem a economia local, lideram iniciativas produtivas e contribuem para uma cafeicultura mais inclusiva e resiliente. Seu trabalho garante oportunidades para as famílias e para as futuras gerações."
+      },
+      {
+        "number": "2",
+        "title": "Educação Financeira",
+        "text": "O crescimento sustentável começa com o conhecimento. Por meio de 8 caixas rurais comunitárias, as famílias produtoras fortalecem suas capacidades de poupança, investimento e planejamento, construindo maior estabilidade econômica a partir de suas próprias comunidades."
+      },
+      {
+        "number": "3",
+        "title": "Juventude Cafeicultora",
+        "text": "A nova geração mantém vivo o futuro do café. 11% dos nossos produtores são jovens que combinam tradição, inovação e tecnologia para assegurar a continuidade de uma cafeicultura competitiva e sustentável nos próximos anos."
+      },
+      {
+        "number": "4",
+        "title": "Agricultura Regenerativa",
+        "text": "Cada parcela é um ecossistema em constante renovação. Por meio de práticas de economia circular, transformamos recursos locais em fertilidade, melhoramos a saúde do solo e fortalecemos a resiliência das lavouras frente aos desafios ambientais."
+      },
+      {
+        "number": "5",
+        "title": "Proteção dos Ecossistemas",
+        "text": "A natureza prospera quando produção e conservação avançam juntas. A implementação de filtros de vetiver ajuda a proteger as fontes de água, reduzir a erosão e preservar a biodiversidade que sustenta nossas paisagens cafeeiras."
+      }
+    ],
+    "infographic": {
+      "intro": "A CAFCER e a Grain & Grains compartilham a visão de que um grande café nasce de comunidades fortes e ecossistemas saudáveis. Juntas, impulsionamos a liderança feminina, a educação financeira, a participação juvenil, a agricultura regenerativa e a proteção dos recursos naturais. Desde a origem, construímos relações de longo prazo que fortalecem a qualidade do café e geram um impacto positivo para as pessoas, a terra e as futuras gerações.",
+      "stats": [
+        {
+          "pre": "Mais de",
+          "label": "Toneladas de café",
+          "sub": "para exportação"
+        },
+        {
+          "pre": "",
+          "label": "Hectares",
+          "sub": "no total"
+        },
+        {
+          "pre": "",
+          "label": "Hectares de cultivo",
+          "sub": "sob sistema de agricultura familiar"
+        },
+        {
+          "pre": "",
+          "label": "Famílias produtoras",
+          "sub": "desde fevereiro de 2022"
+        },
+        {
+          "pre": "",
+          "label": "Renovação geracional",
+          "sub": ""
+        }
+      ]
+    }
   }
 }

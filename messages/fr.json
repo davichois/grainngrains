@@ -17,7 +17,8 @@
       }
     ],
     "readMore": "Lire la suite",
-    "knowMore": "En savoir plus"
+    "knowMore": "En savoir plus",
+    "meetPartner": "Découvrez notre partenaire"
   },
   "CTA": {
     "title": "Prêt à vous approvisionner ?",
@@ -45,7 +46,8 @@
     "farmToFuture": "De la ferme au futur.",
     "ourCollection": "Notre collection",
     "greenCoffee": "Spécialités de Café Vert",
-    "verifyTraceability": "Vérifier la Traçabilité"
+    "verifyTraceability": "Vérifier la Traçabilité",
+    "meetPartner": "Notre partenaire"
   },
   "history": {
     "intro1": "Nous sommes une entreprise interfamiliale avec",
@@ -260,6 +262,11 @@
       "label": "Japonais",
       "code": "ja",
       "abreviation": "JA"
+    },
+    {
+      "label": "Korean",
+      "code": "ko",
+      "abreviation": "KR"
     }
   ],
   "editions": {
@@ -434,5 +441,68 @@
     "description": "Nous assumons nos responsabilités et montrons l'exemple. En tant que membres de diverses organisations, nous collaborons avec d'autres entreprises pour promouvoir la durabilité. Nous nous appuyons sur des certifications et des labels de qualité reconnus afin que des tiers attestent de nos efforts et de notre engagement. Cela permet aux consommateurs et aux partenaires de savoir ce que nous faisons et de vérifier nos actions.",
     "claim": "Ensemble, c'est mieux : certifiés et transparents",
     "cooperatives": "Coopératives partenaires"
+  },
+  "partner": {
+    "eyebrow": "Alliés",
+    "heroDescription": "La coopérative promeut l'éducation financière, l'équité de genre, la production d'engrais organiques et des partenariats avec des associations locales. Ces programmes renforcent la résilience, améliorent la productivité et assurent la durabilité à long terme de notre café.",
+    "headingTop": "De bons alliés pour un",
+    "headingBottom": "GRAND CAFÉ",
+    "sections": [
+      {
+        "number": "1",
+        "title": "Leadership féminin",
+        "text": "Les femmes sont le moteur du développement de notre communauté. Avec 57 % de participation féminine, elles renforcent l'économie locale, mènent des initiatives productives et contribuent à une caféiculture plus inclusive et résiliente. Leur travail garantit des opportunités pour les familles et les générations futures."
+      },
+      {
+        "number": "2",
+        "title": "Éducation financière",
+        "text": "La croissance durable commence par la connaissance. Grâce à 8 caisses rurales communautaires, les familles productrices renforcent leurs capacités d'épargne, d'investissement et de planification, bâtissant une plus grande stabilité économique au sein de leurs propres communautés."
+      },
+      {
+        "number": "3",
+        "title": "Jeunesse caféicole",
+        "text": "La nouvelle génération maintient l'avenir du café en vie. 11 % de nos producteurs sont des jeunes qui allient tradition, innovation et technologie pour assurer la continuité d'une caféiculture compétitive et durable dans les années à venir."
+      },
+      {
+        "number": "4",
+        "title": "Agriculture régénératrice",
+        "text": "Chaque parcelle est un écosystème en renouvellement constant. Grâce aux pratiques d'économie circulaire, nous transformons les ressources locales en fertilité, améliorons la santé du sol et renforçons la résilience des cultures face aux défis environnementaux."
+      },
+      {
+        "number": "5",
+        "title": "Protection des écosystèmes",
+        "text": "La nature prospère lorsque production et conservation avancent ensemble. L'installation de filtres de vétiver aide à protéger les sources d'eau, à réduire l'érosion et à préserver la biodiversité qui soutient nos paysages caféiers."
+      }
+    ],
+    "infographic": {
+      "intro": "CAFCER et Grain & Grains partagent la conviction qu'un grand café naît de communautés fortes et d'écosystèmes sains. Ensemble, nous favorisons le leadership féminin, l'éducation financière, la participation des jeunes, l'agriculture régénératrice et la protection des ressources naturelles. Dès l'origine, nous construisons des relations durables qui renforcent la qualité du café et génèrent un impact positif pour les personnes, la terre et les générations futures.",
+      "stats": [
+        {
+          "pre": "Plus de",
+          "label": "Tonnes de café",
+          "sub": "à exporter"
+        },
+        {
+          "pre": "",
+          "label": "Hectares",
+          "sub": "au total"
+        },
+        {
+          "pre": "",
+          "label": "Hectares de culture",
+          "sub": "sous système d'agriculture familiale"
+        },
+        {
+          "pre": "",
+          "label": "Familles productrices",
+          "sub": "depuis février 2022"
+        },
+        {
+          "pre": "",
+          "label": "Renouvellement générationnel",
+          "sub": ""
+        }
+      ]
+    }
   }
 }

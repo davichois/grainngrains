@@ -20,11 +20,13 @@ export default function Reveal({
   direction = "up",
   delay = 0,
   className = "",
+  once = true,
 }: {
   children: React.ReactNode;
   direction?: Direction;
   delay?: number;
   className?: string;
+  once?: boolean;
 }) {
   const variants: Variants = {
     hidden: { opacity: 0, ...OFFSET[direction] },
@@ -48,7 +50,7 @@ export default function Reveal({
       variants={variants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once, amount: 0.2 }}
     >
       {children}
     </motion.div>

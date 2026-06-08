@@ -3,6 +3,7 @@ import { Caveat } from "next/font/google";
 import { Breadcrumb } from "@/src/components/Breadcrumb";
 import Faqs from "@/src/components/Faqs";
 import OurPromise from "@/src/components/supply-chain-excellence/OurPromise";
+import { StaggerContainer, Item, Tilt } from "@/src/components/motion/Motion";
 import { useTranslations } from "next-intl";
 import {
   Truck,
@@ -69,23 +70,25 @@ type HeroSectionProps = {
 function HeroSection({ title, subtitle, description }: HeroSectionProps) {
   return (
     <section className="px-5 sm:px-8 md:px-12 xl:px-20 pt-2 pb-8 xl:pt-10 xl:pb-10">
-      <div className="max-w-6xl mx-auto flex flex-col gap-8 xl:gap-5 items-center text-center">
-        <div className="flex-1 min-w-0">
+      <StaggerContainer className="max-w-6xl mx-auto flex flex-col gap-8 xl:gap-5 items-center text-center">
+        <Item className="flex-1 min-w-0">
           <h1 className="text-4xl sm:text-4xl md:text-6xl xl:text-[4.6rem] font-black tracking-tight leading-tight whitespace-pre-line text-neutral-900">
             {title}
           </h1>
-        </div>
-        <span
-          className={`-rotate-5 px-15 py-1 text-xl text-neutral-900 font-medium ${caveat.className}`}
-        >
-          {subtitle}
-        </span>
-        <div className="flex-1 min-w-0 xl:pt-5">
+        </Item>
+        <Item>
+          <span
+            className={`-rotate-5 px-15 py-1 text-xl text-neutral-900 font-medium ${caveat.className}`}
+          >
+            {subtitle}
+          </span>
+        </Item>
+        <Item className="flex-1 min-w-0 xl:pt-5">
           <p className="text-base md:text-lg xl:text-xl leading-relaxed text-cyan-950">
             {description}
           </p>
-        </div>
-      </div>
+        </Item>
+      </StaggerContainer>
     </section>
   );
 }
@@ -129,12 +132,15 @@ export default function SupplyChainExcellence() {
       />
       <section className="w-full px-6 py-10 sm:py-4 lg:py-6 ">
         {/* Icons row */}
-        <div className="flex flex-wrap items-center justify-center gap-y-6">
+        <StaggerContainer
+          className="flex flex-wrap items-center justify-center gap-y-6"
+          stagger={0.1}
+        >
           {steps.map((step, i) => (
-            <div key={step.id} className="flex items-center">
-              <div className="text-cyan-900" aria-label={step.label}>
-                {step.icon}
-              </div>
+            <Item key={step.id} className="flex items-center">
+              <Tilt className="text-cyan-900 cursor-pointer" >
+                <div aria-label={step.label}>{step.icon}</div>
+              </Tilt>
 
               {i < steps.length - 1 && (
                 <ArrowRight
@@ -146,9 +152,9 @@ export default function SupplyChainExcellence() {
                   aria-hidden="true"
                 />
               )}
-            </div>
+            </Item>
           ))}
-        </div>
+        </StaggerContainer>
       </section>
       <OurPromise />
       <Faqs faqs={faqs} />

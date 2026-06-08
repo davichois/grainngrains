@@ -89,6 +89,10 @@ export default function Footer() {
       heading: t("aboutGG"),
       links: [
         { label: `${t("ggHistory")} Grain & Grains`, href: "/about" },
+        {
+          label: t("meetPartner"),
+          href: "/about/partner-cooperatives",
+        },
         { label: t("globalFootprint"), href: "/about/global-footprint" },
         {
           label: t("supplyChainExcellence"),
@@ -218,7 +222,7 @@ export default function Footer() {
 
         {/* ── BOTTOM BAR ── */}
         <div className="py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-[13px] text-gray-400">
-          <p>{`© ${year} Lazo 360 S.A.C. ${tbase("footer.copyright")}`}</p>
+          <p>{`© ${year} Lazo 360 S.A.C. ${tbase("footer.copyright")} - RUC: 20615209016`}</p>
 
           <nav className="items-center gap-4 flex-wrap justify-center hidden">
             {[

@@ -3,10 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 
-import img1899 from "@/public/images/history/1899.png";
-import img1936 from "@/public/images/history/1936.png";
-import img1948 from "@/public/images/history/1948.png";
-import img1992 from "@/public/images/history/1992.png";
+import Reveal from "@/src/components/Reveal";
+import { StaggerContainer, Item } from "@/src/components/motion/Motion";
+
+import img1899 from "@/public/images/history/1899.webp";
+import img1936 from "@/public/images/history/1936.webp";
+import img1948 from "@/public/images/history/1948.webp";
+import img1992 from "@/public/images/history/1992.webp";
 
 const bgImages = [img1899, img1936, img1948, img1992];
 
@@ -74,37 +77,48 @@ export default function HistoryGrainAndGrains() {
       <section
         ref={setSectionRef(0)}
         className="text-cyan-950 min-h-screen flex items-center justify-center px-6 py-20 bg-cover bg-center lg:bg-fixed"
-        style={{ backgroundImage: `url("/fondojapones.png")` }}
+        style={{ backgroundImage: `url("/fondojapones.webp")` }}
       >
-        <div className="max-w-4xl w-full flex flex-col items-center justify-center text-center">
-          <h1 className="font-normal tracking-wide text-[clamp(1rem,3.5vw,1.6rem)] mb-3">
-            {t("intro1")}
-          </h1>
-          <strong className="font-black tracking-tight leading-[0.85] text-[clamp(3.3rem,14vw,10rem)] wrap-break-word">
-            {t("tradition")}
-          </strong>
-        </div>
+        <StaggerContainer
+          once={false}
+          className="max-w-4xl w-full flex flex-col items-center justify-center text-center"
+        >
+          <Item>
+            <h1 className="font-normal tracking-wide text-[clamp(1rem,3.5vw,1.6rem)] mb-3">
+              {t("intro1")}
+            </h1>
+          </Item>
+          <Item>
+            <strong className="font-black tracking-tight leading-[0.85] text-[clamp(3.3rem,14vw,10rem)] wrap-break-word">
+              {t("tradition")}
+            </strong>
+          </Item>
+        </StaggerContainer>
       </section>
 
       <section className="text-[#0a656f] bg-gray-100 py-15 px-6">
-        <div className="max-w-3xl mx-auto text-center">
+        <Reveal once={false} className="max-w-3xl mx-auto text-center">
           <h3 className="text-[clamp(25px,2.2vw,22px)] font-normal leading-relaxed tracking-wide">
             {t.rich("intro2", {
               strong: (chunks) => <strong>{chunks}</strong>,
             })}
           </h3>
-        </div>
+        </Reveal>
       </section>
 
       <section className="text-cyan-900 bg-white py-20 md:py-45 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="font-normal tracking-wide text-[clamp(1.4rem,5vw,1.6rem)] mb-3">
-            {t("intro3")}
-          </h1>
-          <strong className="font-black tracking-tight leading-[0.85] text-[clamp(1.8rem,5vw,10rem)] wrap-break-word">
-            {t("intro4")}
-          </strong>
-        </div>
+        <StaggerContainer once={false} className="max-w-4xl mx-auto text-center">
+          <Item>
+            <h1 className="font-normal tracking-wide text-[clamp(1.4rem,5vw,1.6rem)] mb-3">
+              {t("intro3")}
+            </h1>
+          </Item>
+          <Item>
+            <strong className="font-black tracking-tight leading-[0.85] text-[clamp(1.8rem,5vw,10rem)] wrap-break-word">
+              {t("intro4")}
+            </strong>
+          </Item>
+        </StaggerContainer>
       </section>
 
       {sections.map((section, i) => (
@@ -116,7 +130,10 @@ export default function HistoryGrainAndGrains() {
             backgroundImage: bgImages[i] ? `url(${bgImages[i].src})` : "none",
           }}
         >
-          <div className="w-full lg:h-[50vh] grid grid-cols-1 lg:grid-cols-3 gap-50 lg:gap-30 items-center text-center lg:text-left">
+          <Reveal
+            once={false}
+            className="w-full lg:h-[50vh] grid grid-cols-1 lg:grid-cols-3 gap-50 lg:gap-30 items-center text-center lg:text-left"
+          >
             <div className="lg:text-white text-cyan-950 order-1 lg:order-2 self-center text-[clamp(120px,18vw,150px)] font-bold leading-none select-none">
               {section.ano}
               <strong className="flex lg:hidden w-full justify-center text-[18px] font-bold tracking-wide uppercase">
@@ -131,7 +148,7 @@ export default function HistoryGrainAndGrains() {
                 {section.text}
               </p>
             </div>
-          </div>
+          </Reveal>
         </section>
       ))}
 
