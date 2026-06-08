@@ -108,7 +108,7 @@ export default function Footer() {
       href: "https://www.instagram.com/grainngrains",
       label: "Instagram",
     },
-    { icon: FaLinkedinIn, href: "https://linkedin.com", label: "LinkedIn" },
+    { icon: FaLinkedinIn, href: "https://www.linkedin.com/company/grain-grains-coffee", label: "LinkedIn" },
     {
       icon: FaFacebook,
       href: "https://www.facebook.com/profile.php?id=61584672518944",
