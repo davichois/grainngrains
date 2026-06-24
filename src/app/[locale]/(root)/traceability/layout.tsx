@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { ProductShowcase } from "@/src/components/product-showcase";
-import { HideHeaderAtTop } from "@/src/components/HeaderVisibility";
 import { pageMetadata, metaText } from "@/src/lib/site";
 
 export async function generateMetadata({
@@ -13,17 +11,16 @@ export async function generateMetadata({
   const t = await getTranslations({ locale });
   return pageMetadata({
     locale,
-    path: "/our-coffee/products",
-    title: t("nav.ourCollection"),
-    description: metaText(t("motto")),
+    path: "/traceability",
+    title: t("traceability.title"),
+    description: metaText(t("traceability.subtitle")),
   });
 }
 
-export default function ProductPage() {
-  return (
-    <>
-      <HideHeaderAtTop />
-      <ProductShowcase />
-    </>
-  );
+export default function TraceabilityLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return children;
 }

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import Reveal from "@/src/components/Reveal";
@@ -9,6 +10,22 @@ import {
   Parallax,
   Tilt,
 } from "@/src/components/motion/Motion";
+import { pageMetadata, metaText } from "@/src/lib/site";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+  return pageMetadata({
+    locale,
+    path: "/sustainability",
+    title: t("sustainability.hero.title"),
+    description: metaText(t("sustainability.hero.subtitle")),
+  });
+}
 
 // Correo del encargado para solicitar acceso (tercer bloque)
 const MANAGER_EMAIL = "tradingna@grainngrains.org";

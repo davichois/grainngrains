@@ -1,6 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { pageMetadata, metaText } from "@/src/lib/site";
 
 import Image from "next/image";
 import { CategoryItem, CoffeeGrade } from "@/src/types";
@@ -9,6 +11,22 @@ import CategoryCarousel from "@/src/components/Categorycarousel";
 import DegreeReports, { ReportFile } from "@/src/components/DegreeReports";
 
 import coffee01 from "@/public/images/shop/coffee-1.webp";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+  const title = `${t("shop.types.greenCoffee")} · ${t("shop.types.roastedCoffee")} · ${t("shop.types.groundCoffee")}`;
+  return pageMetadata({
+    locale,
+    path: "/shop",
+    title,
+    description: metaText(t("motto")),
+  });
+}
 
 /* Lee los PDFs de public/reports/<carpeta> y arma nombre + URL pública */
 function readReports(folder: string): ReportFile[] {

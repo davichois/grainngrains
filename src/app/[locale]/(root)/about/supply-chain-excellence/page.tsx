@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Caveat } from "next/font/google";
 
 import { Breadcrumb } from "@/src/components/Breadcrumb";
@@ -5,6 +6,23 @@ import Faqs from "@/src/components/Faqs";
 import OurPromise from "@/src/components/supply-chain-excellence/OurPromise";
 import { StaggerContainer, Item, Tilt } from "@/src/components/motion/Motion";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { pageMetadata, metaText } from "@/src/lib/site";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+  return pageMetadata({
+    locale,
+    path: "/about/supply-chain-excellence",
+    title: t("supply-chain-excellence.hero.title"),
+    description: metaText(t("supply-chain-excellence.hero.description")),
+  });
+}
 import {
   Truck,
   ArrowRight,

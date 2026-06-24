@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { ProductShowcase } from "@/src/components/product-showcase";
-import { HideHeaderAtTop } from "@/src/components/HeaderVisibility";
 import { pageMetadata, metaText } from "@/src/lib/site";
 
 export async function generateMetadata({
@@ -13,17 +11,16 @@ export async function generateMetadata({
   const t = await getTranslations({ locale });
   return pageMetadata({
     locale,
-    path: "/our-coffee/products",
-    title: t("nav.ourCollection"),
-    description: metaText(t("motto")),
+    path: "/about",
+    title: "Our History",
+    description: metaText(t("history.intro2")),
   });
 }
 
-export default function ProductPage() {
-  return (
-    <>
-      <HideHeaderAtTop />
-      <ProductShowcase />
-    </>
-  );
+export default function AboutLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return children;
 }

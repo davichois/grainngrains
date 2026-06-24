@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Link } from "@/src/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import CertificationsSection from "../../../components/CertificationsSection";
@@ -7,6 +8,22 @@ import {
   StaggerContainer,
   Item,
 } from "@/src/components/motion/Motion";
+import { metaText, buildAlternates, absUrl, localizedPath } from "@/src/lib/site";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+  const description = metaText(t("motto"));
+  return {
+    description,
+    alternates: buildAlternates(locale, ""),
+    openGraph: { url: absUrl(localizedPath(locale, "")), description },
+  };
+}
 
 export default async function Home() {
   const t = await getTranslations();
