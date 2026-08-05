@@ -13,7 +13,9 @@ export async function generateMetadata({
     locale,
     path: "/about",
     title: "Our History",
-    description: metaText(t("history.intro2")),
+    description: metaText(
+      t.markup("history.intro2", { strong: (chunks) => chunks })
+    ),
   });
 }
 

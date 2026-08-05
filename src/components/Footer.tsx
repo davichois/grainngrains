@@ -222,7 +222,7 @@ export default function Footer() {
 
         {/* ── BOTTOM BAR ── */}
         <div className="py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-[13px] text-gray-400">
-          <p>{`© ${year} Lazo 360 S.A.C. ${tbase("footer.copyright")} - RUC: 20615209016`}</p>
+          <p>{`© ${year} Grain & Grains S.A.C. ${tbase("footer.copyright")} - RUC: 20616226488`}</p>
 
           <nav className="items-center gap-4 flex-wrap justify-center hidden">
             {[

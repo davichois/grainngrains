@@ -13,7 +13,11 @@ export async function generateMetadata({
     locale,
     path: "/about/global-footprint",
     title: t("globalFootprint.hero.title"),
-    description: metaText(t("globalFootprint.hero.description")),
+    description: metaText(
+      t.markup("globalFootprint.hero.description", {
+        strong: (chunks) => chunks,
+      })
+    ),
   });
 }
 
