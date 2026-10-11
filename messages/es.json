@@ -228,31 +228,37 @@
     }
   },
   "shop": {
-    "title": "Historia, calidad y precio en tiempo real",
-    "subtitle": "COTIZA AHORA.",
-    "types": {
-      "greenCoffee": "Café Verde",
-      "roastedCoffee": "Café Tostado",
-      "groundCoffee": "Café Molido"
+    "sizes": {
+      "250g": "250 g",
+      "1kg": "1 kg"
     },
-    "degrees": {
-      "degree1": "Grado 1",
-      "degree2": "Grado 2",
-      "degree3": "Grado 3",
-      "description1": "Solo las cerezas más finas. Limpio, elegante y expresivo, revelando todo el potencial del origen del café.",
-      "description2": "Equilibrado y armónico. Una taza consistente con carácter, dulzura y refinamiento diario."
+    "grinds": {
+      "wholeBean": "Grano entero",
+      "coarseDrip": "Goteo grueso",
+      "drip": "Goteo",
+      "xfDrip": "Goteo extrafino",
+      "frenchPress": "Prensa francesa",
+      "toddy": "Cold brew (Toddy)",
+      "perkPress": "Percoladora",
+      "coarseEspresso": "Espresso grueso",
+      "espresso": "Espresso",
+      "xfEspresso": "Espresso extrafino"
     },
-    "cta": "Descargar informe",
-    "whatsOurCoffee": "¿Qué hace especial a un buen café? La selección cuidadosa de cada grano, una calidad consistente y el respeto por su origen. Nuestros cafés Grado 1, Grado 2 y Grado 3 ofrecen perfiles definidos para diferentes necesidades, manteniendo siempre el equilibrio, la pureza y el carácter de cada taza.",
-    "degreePresentationTitle": "Enamorate de cada Grado",
-    "degreePresentationSubtitle": "EL ORIGEN DE UNA GRAN TAZA",
-    "reports": {
-      "title": "Informes",
-      "choose": "Elige un informe para previsualizar o descargar",
-      "preview": "Previsualizar",
-      "download": "Descargar",
-      "close": "Cerrar"
-    }
+    "size": "Presentación",
+    "grind": "Molienda",
+    "quantity": "Cantidad",
+    "close": "Cerrar",
+    "comboSizeNote": "Cada café del combo viene en presentación de 250 g.",
+    "from": "Desde {price}",
+    "fromLabel": "desde",
+    "each": "c/u",
+    "addedNamed": "{name} se agregó al carrito",
+    "subtotal": "Subtotal",
+    "shippingAtCheckout": "El envío y los descuentos se calculan al finalizar la compra.",
+    "freeShippingRemaining": "Te faltan <b>{amount}</b> para el envío gratis",
+    "freeShippingReached": "¡Tu pedido tiene <b>envío gratis</b>!",
+    "freeShippingProgress": "Progreso hacia el envío gratis",
+    "addShort": "Agregar"
   },
   "supply-chain-excellence": {
     "hero": {
@@ -504,5 +510,116 @@
     "description": "Asumimos nuestra responsabilidad y predicamos con el ejemplo. Como miembros de diversas organizaciones, colaboramos con otras empresas para promover la sostenibilidad. Recurrimos a certificaciones y sellos de calidad reconocidos para que terceros avalen nuestros esfuerzos y nuestro compromiso. Esto permite a los consumidores y socios conocer lo que hacemos y verificar nuestras acciones.",
     "claim": "Juntos es mejor: certificados y transparentes",
     "cooperatives": "Cooperativas aliadas"
+  },
+  "cart": {
+    "title": "Tu carrito",
+    "open": "Abrir carrito",
+    "close": "Cerrar carrito",
+    "add": "Agregar al carrito",
+    "added": "¡Agregado!",
+    "empty": "Tu carrito está vacío",
+    "emptyHint": "Agrega algunos de nuestros cafés para comenzar.",
+    "unitPrice": "c/u",
+    "increase": "Aumentar cantidad",
+    "decrease": "Disminuir cantidad",
+    "remove": "Eliminar",
+    "items": "{count, plural, =1 {# café} other {# cafés}}",
+    "total": "Total",
+    "pay": "Pagar",
+    "recommended": "Te recomendamos",
+    "alsoLike": "También te puede gustar",
+    "combosTitle": "Combos para ahorrar",
+    "save": "Ahorra {percent}%",
+    "comboLabel": "Combo",
+    "combos": {
+      "farmersTrio": {
+        "name": "Trío Caficultores"
+      },
+      "discovery": {
+        "name": "Pack Descubrimiento"
+      },
+      "womenDuo": {
+        "name": "Dúo Mujeres Caficultoras"
+      },
+      "infusedDuo": {
+        "name": "Dúo Infusionados"
+      }
+    },
+    "certifications": "Certificaciones",
+    "productImageAlt": "Lata de café {name} de Grain & Grains",
+    "addNamed": "Agregar {name} al carrito, {price}",
+    "addedNamed": "{name} se agregó al carrito",
+    "quantityOf": "Cantidad de {name}",
+    "removeNamed": "Eliminar {name} del carrito",
+    "regularPrice": "Precio normal",
+    "openWithCount": "Abrir carrito, {count, plural, =1 {# café} other {# cafés}}"
+  },
+  "checkout": {
+    "title": "Finalizar compra",
+    "secure": "Pago seguro",
+    "contact": "Contacto",
+    "email": "Correo electrónico",
+    "phone": "Celular",
+    "phoneHint": "Lo usaremos para coordinar la entrega.",
+    "newsletter": "Quiero recibir novedades y ofertas por correo",
+    "delivery": "Entrega",
+    "deliveryNote": "Solo hacemos envíos a domicilio.",
+    "firstName": "Nombres",
+    "lastName": "Apellidos",
+    "department": "Departamento",
+    "selectDepartment": "Selecciona",
+    "province": "Provincia",
+    "district": "Distrito",
+    "address": "Dirección",
+    "addressPlaceholder": "Av., calle, número, dpto.",
+    "reference": "Referencia (opcional)",
+    "referencePlaceholder": "Cerca de…, color de la fachada…",
+    "shippingMethod": "Método de envío",
+    "shippingPending": "Elige tu departamento para ver el costo de envío.",
+    "shippingLima": "Delivery Lima y Callao",
+    "shippingProvinces": "Delivery a provincias",
+    "shippingDays": "{min} a {max} días hábiles",
+    "free": "Gratis",
+    "freeShippingFrom": "Envío gratis en pedidos desde {amount}.",
+    "receipt": "Comprobante",
+    "boleta": "Boleta",
+    "factura": "Factura",
+    "document": "DNI o carné de extranjería",
+    "ruc": "RUC",
+    "businessName": "Razón social",
+    "payment": "Pago",
+    "paymentSecure": "Todas las transacciones son seguras y encriptadas.",
+    "wallet": "Yape / Plin",
+    "card": "Tarjeta de crédito o débito",
+    "paymentRedirect": "Al pagar te llevaremos a la pasarela segura para completar el pago.",
+    "pay": "Pagar {amount}",
+    "terms": "Al pagar aceptas nuestros términos y condiciones y la política de privacidad.",
+    "summary": "Resumen del pedido",
+    "showSummary": "Mostrar resumen del pedido",
+    "hideSummary": "Ocultar resumen del pedido",
+    "discountCode": "Código de descuento",
+    "apply": "Aplicar",
+    "discountApplied": "{code} · −{percent}%",
+    "discountInvalid": "Este código no es válido.",
+    "removeDiscount": "Quitar código de descuento",
+    "subtotal": "Subtotal",
+    "discount": "Descuento",
+    "shipping": "Envío",
+    "total": "Total",
+    "enterDepartment": "Elige tu departamento",
+    "quantity": "Cantidad: {count}",
+    "empty": "Tu carrito está vacío",
+    "emptyHint": "Agrega algunos cafés antes de finalizar tu compra.",
+    "goShop": "Ver nuestra colección",
+    "readyTitle": "¡Tu pedido está listo!",
+    "readyText": "Estamos terminando de conectar la pasarela de pago. Muy pronto podrás completar tu compra aquí.",
+    "homeDelivery": "Envío a domicilio",
+    "walletInfo": "Al pagar te llevaremos a la pasarela segura para completar el pago desde tu app de Yape o Plin.",
+    "cardInfo": "Al pagar ingresarás los datos de tu tarjeta en la pasarela segura. No guardamos tu información.",
+    "trustSecure": "Pago 100% seguro",
+    "trustShipping": "Envíos a todo el Perú",
+    "trustCertified": "Café certificado",
+    "keepShopping": "Seguir comprando",
+    "backToShop": "Volver a la tienda"
   }
 }

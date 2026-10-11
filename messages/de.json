@@ -165,31 +165,37 @@
     }
   },
   "shop": {
-    "title": "Geschichte, Qualität und Echtzeitpreise",
-    "subtitle": "JETZT ANFRAGEN.",
-    "types": {
-      "greenCoffee": "Grüner Kaffee",
-      "roastedCoffee": "Gerösteter Kaffee",
-      "groundCoffee": "Gemahlener Kaffee"
+    "sizes": {
+      "250g": "250 g",
+      "1kg": "1 kg"
     },
-    "cta": "Bericht herunterladen",
-    "degrees": {
-      "degree1": "Grad 1",
-      "degree2": "Grad 2",
-      "degree3": "Grad 3",
-      "description1": "Nur die feinsten Kirschen. Sauber, elegant und ausdrucksstark, enthüllt das volle Potenzial der Herkunft des Kaffees.",
-      "description2": "Ausgewogen und harmonisch. Eine konsistente Tasse mit Charakter, Süße und alltäglicher Raffinesse."
+    "grinds": {
+      "wholeBean": "Ganze Bohne",
+      "coarseDrip": "Grob (Filter)",
+      "drip": "Filter",
+      "xfDrip": "Extrafein (Filter)",
+      "frenchPress": "French Press",
+      "toddy": "Cold Brew (Toddy)",
+      "perkPress": "Perkolator",
+      "coarseEspresso": "Grob (Espresso)",
+      "espresso": "Espresso",
+      "xfEspresso": "Extrafein (Espresso)"
     },
-    "whatsOurCoffee": "Was macht einen guten Kaffee besonders? Die sorgfältige Auswahl jeder Bohne, eine gleichbleibende Qualität und der Respekt vor ihrer Herkunft. Unsere Grad 1, Grad 2 und Grad 3 Kaffees bieten definierte Profile für unterschiedliche Bedürfnisse, wobei sie stets das Gleichgewicht, die Reinheit und den Charakter jeder Tasse bewahren.",
-    "degreePresentationTitle": "Verlieben Sie sich in jeden Grad",
-    "degreePresentationSubtitle": "DIE HERKUNFT EINER GROSSARTIGEN TASSE",
-    "reports": {
-      "title": "Berichte",
-      "choose": "Wählen Sie einen Bericht zur Vorschau oder zum Download",
-      "preview": "Vorschau",
-      "download": "Herunterladen",
-      "close": "Schließen"
-    }
+    "size": "Größe",
+    "grind": "Mahlgrad",
+    "quantity": "Menge",
+    "close": "Schließen",
+    "comboSizeNote": "Jeder Kaffee im Paket kommt in einer 250-g-Packung.",
+    "from": "Ab {price}",
+    "fromLabel": "ab",
+    "each": "je",
+    "addedNamed": "{name} wurde in den Warenkorb gelegt",
+    "subtotal": "Zwischensumme",
+    "shippingAtCheckout": "Versand und Rabatte werden an der Kasse berechnet.",
+    "freeShippingRemaining": "Noch <b>{amount}</b> bis zum kostenlosen Versand",
+    "freeShippingReached": "Deine Bestellung wird <b>kostenlos</b> versendet!",
+    "freeShippingProgress": "Fortschritt bis zum kostenlosen Versand",
+    "addShort": "Hinzufügen"
   },
   "supply-chain-excellence": {
     "hero": {
@@ -504,5 +510,116 @@
         }
       ]
     }
+  },
+  "cart": {
+    "title": "Dein Warenkorb",
+    "open": "Warenkorb öffnen",
+    "close": "Warenkorb schließen",
+    "add": "In den Warenkorb",
+    "added": "Hinzugefügt!",
+    "empty": "Dein Warenkorb ist leer",
+    "emptyHint": "Füge einige unserer Kaffees hinzu, um zu beginnen.",
+    "unitPrice": "pro Stück",
+    "increase": "Menge erhöhen",
+    "decrease": "Menge verringern",
+    "remove": "Entfernen",
+    "items": "{count, plural, =1 {# Kaffee} other {# Kaffees}}",
+    "total": "Gesamt",
+    "pay": "Bezahlen",
+    "recommended": "Unsere Empfehlungen",
+    "alsoLike": "Das könnte dir auch gefallen",
+    "combosTitle": "Sparpakete",
+    "save": "Spare {percent} %",
+    "comboLabel": "Paket",
+    "combos": {
+      "farmersTrio": {
+        "name": "Kaffeebauern-Trio"
+      },
+      "discovery": {
+        "name": "Entdeckerpaket"
+      },
+      "womenDuo": {
+        "name": "Kaffeebäuerinnen-Duo"
+      },
+      "infusedDuo": {
+        "name": "Aroma-Duo"
+      }
+    },
+    "certifications": "Zertifizierungen",
+    "productImageAlt": "Kaffeedose {name} von Grain & Grains",
+    "addNamed": "{name} in den Warenkorb, {price}",
+    "addedNamed": "{name} wurde in den Warenkorb gelegt",
+    "quantityOf": "Menge von {name}",
+    "removeNamed": "{name} aus dem Warenkorb entfernen",
+    "regularPrice": "Normalpreis",
+    "openWithCount": "Warenkorb öffnen, {count, plural, =1 {# Kaffee} other {# Kaffees}}"
+  },
+  "checkout": {
+    "title": "Kasse",
+    "secure": "Sichere Zahlung",
+    "contact": "Kontakt",
+    "email": "E-Mail",
+    "phone": "Mobilnummer",
+    "phoneHint": "Wir nutzen sie zur Abstimmung der Lieferung.",
+    "newsletter": "Neuigkeiten und Angebote per E-Mail erhalten",
+    "delivery": "Lieferung",
+    "deliveryNote": "Wir liefern ausschließlich nach Hause.",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "department": "Region",
+    "selectDepartment": "Auswählen",
+    "province": "Provinz",
+    "district": "Bezirk",
+    "address": "Adresse",
+    "addressPlaceholder": "Straße, Nummer, Wohnung",
+    "reference": "Hinweis (optional)",
+    "referencePlaceholder": "In der Nähe von…, Hausfarbe…",
+    "shippingMethod": "Versandart",
+    "shippingPending": "Wähle deine Region, um die Versandkosten zu sehen.",
+    "shippingLima": "Lieferung Lima und Callao",
+    "shippingProvinces": "Lieferung in andere Regionen",
+    "shippingDays": "{min} bis {max} Werktage",
+    "free": "Kostenlos",
+    "freeShippingFrom": "Kostenloser Versand ab {amount}.",
+    "receipt": "Beleg",
+    "boleta": "Quittung (Boleta)",
+    "factura": "Rechnung (Factura)",
+    "document": "Ausweis (DNI oder Ausländerausweis)",
+    "ruc": "RUC (Steuernummer)",
+    "businessName": "Firmenname",
+    "payment": "Zahlung",
+    "paymentSecure": "Alle Transaktionen sind sicher und verschlüsselt.",
+    "wallet": "Yape / Plin",
+    "card": "Kredit- oder Debitkarte",
+    "paymentRedirect": "Beim Bezahlen leiten wir dich zu unserem sicheren Zahlungsanbieter weiter.",
+    "pay": "{amount} bezahlen",
+    "terms": "Mit der Zahlung akzeptierst du unsere AGB und Datenschutzerklärung.",
+    "summary": "Bestellübersicht",
+    "showSummary": "Bestellübersicht anzeigen",
+    "hideSummary": "Bestellübersicht ausblenden",
+    "discountCode": "Rabattcode",
+    "apply": "Anwenden",
+    "discountApplied": "{code} · −{percent} %",
+    "discountInvalid": "Dieser Code ist ungültig.",
+    "removeDiscount": "Rabattcode entfernen",
+    "subtotal": "Zwischensumme",
+    "discount": "Rabatt",
+    "shipping": "Versand",
+    "total": "Gesamt",
+    "enterDepartment": "Wähle deine Region",
+    "quantity": "Menge: {count}",
+    "empty": "Dein Warenkorb ist leer",
+    "emptyHint": "Füge Kaffee hinzu, bevor du zur Kasse gehst.",
+    "goShop": "Unsere Kollektion ansehen",
+    "readyTitle": "Deine Bestellung ist bereit!",
+    "readyText": "Wir verbinden gerade den Zahlungsanbieter. Bald kannst du deinen Kauf hier abschließen.",
+    "homeDelivery": "Lieferung nach Hause",
+    "walletInfo": "Beim Bezahlen schließt du die Zahlung über deine Yape- oder Plin-App bei unserem sicheren Zahlungsanbieter ab.",
+    "cardInfo": "Beim Bezahlen gibst du deine Kartendaten bei unserem sicheren Zahlungsanbieter ein. Wir speichern keine Daten.",
+    "trustSecure": "100 % sichere Zahlung",
+    "trustShipping": "Versand in ganz Peru",
+    "trustCertified": "Zertifizierter Kaffee",
+    "keepShopping": "Weiter einkaufen",
+    "backToShop": "Zurück zum Shop"
   }
 }

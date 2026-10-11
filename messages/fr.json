@@ -165,31 +165,37 @@
     }
   },
   "shop": {
-    "title": "Histoire, qualité et prix en temps réel",
-    "subtitle": "COTISEZ MAINTENANT.",
-    "types": {
-      "greenCoffee": "Café Vert",
-      "roastedCoffee": "Café Torréfié",
-      "groundCoffee": "Café Moulu"
+    "sizes": {
+      "250g": "250 g",
+      "1kg": "1 kg"
     },
-    "cta": "Télécharger le rapport",
-    "degrees": {
-      "degree1": "Degré 1",
-      "degree2": "Degré 2",
-      "degree3": "Degré 3",
-      "description1": "Seules les cerises les plus fines. Propre, élégant et expressif, révélant tout le potentiel de l'origine du café.",
-      "description2": "Équilibré et harmonieux. Une tasse constante avec du caractère, de la douceur et un raffinement quotidien."
+    "grinds": {
+      "wholeBean": "Grains entiers",
+      "coarseDrip": "Filtre grossier",
+      "drip": "Filtre",
+      "xfDrip": "Filtre extra-fin",
+      "frenchPress": "Presse française",
+      "toddy": "Cold brew (Toddy)",
+      "perkPress": "Percolateur",
+      "coarseEspresso": "Espresso grossier",
+      "espresso": "Espresso",
+      "xfEspresso": "Espresso extra-fin"
     },
-    "whatsOurCoffee": "Qu'est-ce qui rend un bon café spécial ? La sélection minutieuse de chaque grain, une qualité constante et le respect de son origine. Nos cafés Degré 1, Degré 2 et Degré 3 offrent des profils définis pour différents besoins, tout en maintenant l'équilibre, la pureté et le caractère de chaque tasse.",
-    "degreePresentationTitle": "Tombez amoureux de chaque Degré",
-    "degreePresentationSubtitle": "L'ORIGINE D'UNE GRANDE TASSE",
-    "reports": {
-      "title": "Rapports",
-      "choose": "Choisissez un rapport à prévisualiser ou télécharger",
-      "preview": "Aperçu",
-      "download": "Télécharger",
-      "close": "Fermer"
-    }
+    "size": "Format",
+    "grind": "Mouture",
+    "quantity": "Quantité",
+    "close": "Fermer",
+    "comboSizeNote": "Chaque café du coffret est en sachet de 250 g.",
+    "from": "À partir de {price}",
+    "fromLabel": "dès",
+    "each": "l'unité",
+    "addedNamed": "{name} a été ajouté au panier",
+    "subtotal": "Sous-total",
+    "shippingAtCheckout": "La livraison et les remises sont calculées au paiement.",
+    "freeShippingRemaining": "Plus que <b>{amount}</b> pour la livraison gratuite",
+    "freeShippingReached": "Votre commande bénéficie de la <b>livraison gratuite</b> !",
+    "freeShippingProgress": "Progression vers la livraison gratuite",
+    "addShort": "Ajouter"
   },
   "supply-chain-excellence": {
     "hero": {
@@ -504,5 +510,116 @@
         }
       ]
     }
+  },
+  "cart": {
+    "title": "Votre panier",
+    "open": "Ouvrir le panier",
+    "close": "Fermer le panier",
+    "add": "Ajouter au panier",
+    "added": "Ajouté !",
+    "empty": "Votre panier est vide",
+    "emptyHint": "Ajoutez quelques-uns de nos cafés pour commencer.",
+    "unitPrice": "l'unité",
+    "increase": "Augmenter la quantité",
+    "decrease": "Diminuer la quantité",
+    "remove": "Supprimer",
+    "items": "{count, plural, =1 {# café} other {# cafés}}",
+    "total": "Total",
+    "pay": "Payer",
+    "recommended": "Nos recommandations",
+    "alsoLike": "Vous aimerez aussi",
+    "combosTitle": "Coffrets pour économiser",
+    "save": "Économisez {percent} %",
+    "comboLabel": "Coffret",
+    "combos": {
+      "farmersTrio": {
+        "name": "Trio Caféiculteurs"
+      },
+      "discovery": {
+        "name": "Coffret Découverte"
+      },
+      "womenDuo": {
+        "name": "Duo Caféicultrices"
+      },
+      "infusedDuo": {
+        "name": "Duo Infusés"
+      }
+    },
+    "certifications": "Certifications",
+    "productImageAlt": "Boîte de café {name} de Grain & Grains",
+    "addNamed": "Ajouter {name} au panier, {price}",
+    "addedNamed": "{name} a été ajouté au panier",
+    "quantityOf": "Quantité de {name}",
+    "removeNamed": "Retirer {name} du panier",
+    "regularPrice": "Prix normal",
+    "openWithCount": "Ouvrir le panier, {count, plural, =1 {# café} other {# cafés}}"
+  },
+  "checkout": {
+    "title": "Paiement",
+    "secure": "Paiement sécurisé",
+    "contact": "Contact",
+    "email": "E-mail",
+    "phone": "Mobile",
+    "phoneHint": "Nous l'utiliserons pour organiser la livraison.",
+    "newsletter": "Recevoir les nouveautés et offres par e-mail",
+    "delivery": "Livraison",
+    "deliveryNote": "Nous livrons uniquement à domicile.",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "department": "Région",
+    "selectDepartment": "Sélectionner",
+    "province": "Province",
+    "district": "District",
+    "address": "Adresse",
+    "addressPlaceholder": "Rue, numéro, appartement",
+    "reference": "Indication (facultatif)",
+    "referencePlaceholder": "Près de…, couleur de la façade…",
+    "shippingMethod": "Mode de livraison",
+    "shippingPending": "Choisissez votre région pour voir les frais de livraison.",
+    "shippingLima": "Livraison Lima et Callao",
+    "shippingProvinces": "Livraison en province",
+    "shippingDays": "{min} à {max} jours ouvrés",
+    "free": "Gratuit",
+    "freeShippingFrom": "Livraison gratuite dès {amount}.",
+    "receipt": "Justificatif",
+    "boleta": "Ticket (boleta)",
+    "factura": "Facture (factura)",
+    "document": "Pièce d'identité (DNI ou carte d'étranger)",
+    "ruc": "RUC (n° fiscal)",
+    "businessName": "Raison sociale",
+    "payment": "Paiement",
+    "paymentSecure": "Toutes les transactions sont sécurisées et chiffrées.",
+    "wallet": "Yape / Plin",
+    "card": "Carte de crédit ou de débit",
+    "paymentRedirect": "Lors du paiement, nous vous redirigerons vers notre passerelle sécurisée.",
+    "pay": "Payer {amount}",
+    "terms": "En payant, vous acceptez nos conditions générales et notre politique de confidentialité.",
+    "summary": "Récapitulatif de commande",
+    "showSummary": "Afficher le récapitulatif",
+    "hideSummary": "Masquer le récapitulatif",
+    "discountCode": "Code de réduction",
+    "apply": "Appliquer",
+    "discountApplied": "{code} · −{percent} %",
+    "discountInvalid": "Ce code n'est pas valide.",
+    "removeDiscount": "Retirer le code de réduction",
+    "subtotal": "Sous-total",
+    "discount": "Remise",
+    "shipping": "Livraison",
+    "total": "Total",
+    "enterDepartment": "Choisissez votre région",
+    "quantity": "Quantité : {count}",
+    "empty": "Votre panier est vide",
+    "emptyHint": "Ajoutez du café avant de passer au paiement.",
+    "goShop": "Voir notre collection",
+    "readyTitle": "Votre commande est prête !",
+    "readyText": "Nous finalisons la connexion de la passerelle de paiement. Vous pourrez bientôt finaliser votre achat ici.",
+    "homeDelivery": "Livraison à domicile",
+    "walletInfo": "Lors du paiement, vous le finaliserez depuis votre app Yape ou Plin sur notre passerelle sécurisée.",
+    "cardInfo": "Lors du paiement, vous saisirez vos données de carte sur notre passerelle sécurisée. Nous ne conservons pas vos informations.",
+    "trustSecure": "Paiement 100 % sécurisé",
+    "trustShipping": "Livraison dans tout le Pérou",
+    "trustCertified": "Café certifié",
+    "keepShopping": "Continuer mes achats",
+    "backToShop": "Retour à la boutique"
   }
 }

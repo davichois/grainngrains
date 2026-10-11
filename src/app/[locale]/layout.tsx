@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Montserrat } from "next/font/google";
 import "../globals.css";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
@@ -54,6 +55,13 @@ const futura = localFont({
   ],
   variable: "--font-futura",
   display: "swap",
+});
+
+/* Tipografía de interfaz (opciones, formularios, precios) en la tienda */
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-montserrat",
 });
 
 export async function generateMetadata({
@@ -177,7 +185,7 @@ export default async function RootLayout({ children, params }: Props) {
   };
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={montserrat.variable}>
       <body className={futura.className}>
         <script
           type="application/ld+json"

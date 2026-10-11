@@ -11,6 +11,9 @@ import { useRef } from "react";
 
 type Direction = "left" | "right" | "up" | "down" | "none";
 
+/** Etiqueta HTML a renderizar (para mantener la semántica: listas, etc.) */
+type MotionTag = "div" | "ul" | "li" | "section";
+
 const OFFSET: Record<Direction, { x?: number; y?: number }> = {
   left: { x: -70 },
   right: { x: 70 },
@@ -42,19 +45,22 @@ export function StaggerContainer({
   stagger = 0.14,
   once = true,
   style,
+  as = "div",
 }: {
   children: React.ReactNode;
   className?: string;
   stagger?: number;
   once?: boolean;
   style?: React.CSSProperties;
+  as?: MotionTag;
 }) {
+  const Tag = motion[as];
   const variants: Variants = {
     hidden: {},
     visible: { transition: { staggerChildren: stagger, delayChildren: 0.1 } },
   };
   return (
-    <motion.div
+    <Tag
       className={className}
       style={style}
       variants={variants}
@@ -63,7 +69,7 @@ export function StaggerContainer({
       viewport={{ once, amount: 0.25 }}
     >
       {children}
-    </motion.div>
+    </Tag>
   );
 }
 
@@ -72,11 +78,14 @@ export function Item({
   children,
   className = "",
   direction = "up",
+  as = "div",
 }: {
   children: React.ReactNode;
   className?: string;
   direction?: Direction;
+  as?: MotionTag;
 }) {
+  const Tag = motion[as];
   const variants: Variants = {
     hidden: { opacity: 0, ...OFFSET[direction] },
     visible: {
@@ -87,9 +96,9 @@ export function Item({
     },
   };
   return (
-    <motion.div className={className} variants={variants}>
+    <Tag className={className} variants={variants}>
       {children}
-    </motion.div>
+    </Tag>
   );
 }
 

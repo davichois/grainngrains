@@ -1,6 +1,7 @@
 import Footer from "@/src/components/Footer";
 import Header from "@/src/components/Header";
 import { HeaderVisibilityProvider } from "@/src/components/HeaderVisibility";
+import { CartProvider } from "@/src/components/cart/CartContext";
 
 export default async function RootLayout({
   children,
@@ -9,9 +10,11 @@ export default async function RootLayout({
 }) {
   return (
     <HeaderVisibilityProvider>
-      <Header />
-      {children}
-      <Footer />
+      <CartProvider>
+        <Header />
+        {children}
+        <Footer />
+      </CartProvider>
     </HeaderVisibilityProvider>
   );
 }

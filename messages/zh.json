@@ -165,31 +165,37 @@
     }
   },
   "shop": {
-    "title": "历史、质量和实时价格",
-    "subtitle": "立即报价。",
-    "types": {
-      "greenCoffee": "生咖啡豆",
-      "roastedCoffee": "烘焙咖啡",
-      "groundCoffee": "研磨咖啡"
+    "sizes": {
+      "250g": "250 克",
+      "1kg": "1 公斤"
     },
-    "cta": "下载报告",
-    "degrees": {
-      "degree1": "浅度",
-      "degree2": "中度",
-      "degree3": "深度",
-      "description1": "只有最优质的咖啡樱桃。干净、优雅且富有表现力，展现了咖啡原产地的全部潜力。",
-      "description2": "平衡和谐。具有个性、甜味和日常精致的一致杯。"
+    "grinds": {
+      "wholeBean": "咖啡豆（不研磨）",
+      "coarseDrip": "粗研磨（滴滤）",
+      "drip": "中研磨（滴滤）",
+      "xfDrip": "细研磨（滴滤）",
+      "frenchPress": "法压壶",
+      "toddy": "冷萃（Toddy）",
+      "perkPress": "渗滤壶",
+      "coarseEspresso": "粗研磨（意式）",
+      "espresso": "意式浓缩",
+      "xfEspresso": "极细研磨（意式）"
     },
-    "whatsOurCoffee": "是什么让一杯好咖啡特别？每颗咖啡豆的精心挑选、一贯的质量以及对其来源的尊重。我们的浅度、中度和深度咖啡为不同需求提供了明确的风味轮廓，同时始终保持每杯咖啡的平衡、纯净和特色。",
-    "degreePresentationTitle": "爱上每个度数",
-    "degreePresentationSubtitle": "一杯好咖啡的起源",
-    "reports": {
-      "title": "报告",
-      "choose": "选择一份报告进行预览或下载",
-      "preview": "预览",
-      "download": "下载",
-      "close": "关闭"
-    }
+    "size": "规格",
+    "grind": "研磨度",
+    "quantity": "数量",
+    "close": "关闭",
+    "comboSizeNote": "套装中每款咖啡均为 250 克装。",
+    "from": "{price} 起",
+    "fromLabel": "起",
+    "each": "每件",
+    "addedNamed": "{name} 已加入购物车",
+    "subtotal": "小计",
+    "shippingAtCheckout": "运费和折扣将在结账时计算。",
+    "freeShippingRemaining": "再购 <b>{amount}</b> 即可免运费",
+    "freeShippingReached": "你的订单<b>免运费</b>！",
+    "freeShippingProgress": "免运费进度",
+    "addShort": "加入"
   },
   "supply-chain-excellence": {
     "hero": {
@@ -504,5 +510,116 @@
         }
       ]
     }
+  },
+  "cart": {
+    "title": "购物车",
+    "open": "打开购物车",
+    "close": "关闭购物车",
+    "add": "加入购物车",
+    "added": "已加入！",
+    "empty": "购物车是空的",
+    "emptyHint": "添加我们的咖啡开始选购吧。",
+    "unitPrice": "每件",
+    "increase": "增加数量",
+    "decrease": "减少数量",
+    "remove": "删除",
+    "items": "{count} 件咖啡",
+    "total": "总计",
+    "pay": "付款",
+    "recommended": "为你推荐",
+    "alsoLike": "你可能还喜欢",
+    "combosTitle": "超值套装",
+    "save": "省 {percent}%",
+    "comboLabel": "套装",
+    "combos": {
+      "farmersTrio": {
+        "name": "咖啡农三重奏"
+      },
+      "discovery": {
+        "name": "探索套装"
+      },
+      "womenDuo": {
+        "name": "女性咖啡农双享"
+      },
+      "infusedDuo": {
+        "name": "风味咖啡双享"
+      }
+    },
+    "certifications": "认证",
+    "productImageAlt": "Grain & Grains {name} 咖啡罐",
+    "addNamed": "将 {name} 加入购物车，{price}",
+    "addedNamed": "{name} 已加入购物车",
+    "quantityOf": "{name} 的数量",
+    "removeNamed": "从购物车删除 {name}",
+    "regularPrice": "原价",
+    "openWithCount": "打开购物车，{count} 件咖啡"
+  },
+  "checkout": {
+    "title": "结账",
+    "secure": "安全支付",
+    "contact": "联系方式",
+    "email": "电子邮箱",
+    "phone": "手机号码",
+    "phoneHint": "用于协调配送。",
+    "newsletter": "通过邮件接收新品和优惠信息",
+    "delivery": "配送",
+    "deliveryNote": "我们仅提供送货上门服务。",
+    "firstName": "名",
+    "lastName": "姓",
+    "department": "大区",
+    "selectDepartment": "请选择",
+    "province": "省",
+    "district": "区",
+    "address": "地址",
+    "addressPlaceholder": "街道、门牌号、房间号",
+    "reference": "参考信息（可选）",
+    "referencePlaceholder": "附近地标、外墙颜色……",
+    "shippingMethod": "配送方式",
+    "shippingPending": "选择你所在的大区以查看运费。",
+    "shippingLima": "利马和卡亚俄配送",
+    "shippingProvinces": "外省配送",
+    "shippingDays": "{min} 至 {max} 个工作日",
+    "free": "免费",
+    "freeShippingFrom": "订单满 {amount} 免运费。",
+    "receipt": "票据",
+    "boleta": "收据（Boleta）",
+    "factura": "发票（Factura）",
+    "document": "证件号（DNI 或外国人居留卡）",
+    "ruc": "RUC（税号）",
+    "businessName": "公司名称",
+    "payment": "支付",
+    "paymentSecure": "所有交易均安全加密。",
+    "wallet": "Yape / Plin",
+    "card": "信用卡或借记卡",
+    "paymentRedirect": "付款时我们会将你转到安全的支付网关。",
+    "pay": "支付 {amount}",
+    "terms": "付款即表示你同意我们的条款和隐私政策。",
+    "summary": "订单摘要",
+    "showSummary": "显示订单摘要",
+    "hideSummary": "隐藏订单摘要",
+    "discountCode": "折扣码",
+    "apply": "使用",
+    "discountApplied": "{code} · −{percent}%",
+    "discountInvalid": "此折扣码无效。",
+    "removeDiscount": "移除折扣码",
+    "subtotal": "小计",
+    "discount": "折扣",
+    "shipping": "运费",
+    "total": "总计",
+    "enterDepartment": "请选择大区",
+    "quantity": "数量：{count}",
+    "empty": "购物车是空的",
+    "emptyHint": "结账前请先添加咖啡。",
+    "goShop": "查看我们的系列",
+    "readyTitle": "你的订单已准备就绪！",
+    "readyText": "我们正在完成支付网关的接入，很快你就可以在这里完成购买。",
+    "homeDelivery": "送货上门",
+    "walletInfo": "付款时，你将在安全支付网关中通过 Yape 或 Plin 应用完成支付。",
+    "cardInfo": "付款时，你将在安全支付网关中输入银行卡信息。我们不会保存你的信息。",
+    "trustSecure": "100% 安全支付",
+    "trustShipping": "配送至秘鲁全境",
+    "trustCertified": "认证咖啡",
+    "keepShopping": "继续购物",
+    "backToShop": "返回商店"
   }
 }

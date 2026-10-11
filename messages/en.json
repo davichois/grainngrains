@@ -163,31 +163,37 @@
     }
   },
   "shop": {
-    "title": "History, quality, and real-time pricing",
-    "subtitle": "QUOTE NOW.",
-    "types": {
-      "greenCoffee": "Green Coffee",
-      "roastedCoffee": "Roasted Coffee",
-      "groundCoffee": "Ground Coffee"
+    "sizes": {
+      "250g": "250 g",
+      "1kg": "1 kg"
     },
-    "degrees": {
-      "degree1": "Degree 1",
-      "degree2": "Degree 2",
-      "degree3": "Degree 3",
-      "description1": "Only the finest cherries. Clean, elegant, and expressive, revealing the full potential of the coffee's origin.",
-      "description2": "Balanced and harmonious. A consistent cup with character, sweetness, and everyday refinement."
+    "grinds": {
+      "wholeBean": "Whole bean",
+      "coarseDrip": "Coarse drip",
+      "drip": "Drip",
+      "xfDrip": "Extra-fine drip",
+      "frenchPress": "French press",
+      "toddy": "Cold brew (Toddy)",
+      "perkPress": "Percolator",
+      "coarseEspresso": "Coarse espresso",
+      "espresso": "Espresso",
+      "xfEspresso": "Extra-fine espresso"
     },
-    "cta": "Download report",
-    "whatsOurCoffee": "What makes a good coffee special? Careful selection of each bean, consistent quality, and respect for its origin. Our Degree 1, Degree 2, and Degree 3 coffees offer defined profiles for different needs, always maintaining the balance, purity, and character of each cup.",
-    "degreePresentationTitle": "Fall in Love with Each Degree",
-    "degreePresentationSubtitle": "THE ORIGIN OF A GREAT CUP",
-    "reports": {
-      "title": "Reports",
-      "choose": "Choose a report to preview or download",
-      "preview": "Preview",
-      "download": "Download",
-      "close": "Close"
-    }
+    "size": "Size",
+    "grind": "Grind",
+    "quantity": "Quantity",
+    "close": "Close",
+    "comboSizeNote": "Each coffee in the bundle comes in a 250 g bag.",
+    "from": "From {price}",
+    "fromLabel": "from",
+    "each": "each",
+    "addedNamed": "{name} added to cart",
+    "subtotal": "Subtotal",
+    "shippingAtCheckout": "Shipping and discounts are calculated at checkout.",
+    "freeShippingRemaining": "You're <b>{amount}</b> away from free shipping",
+    "freeShippingReached": "Your order ships <b>free</b>!",
+    "freeShippingProgress": "Progress to free shipping",
+    "addShort": "Add"
   },
   "supply-chain-excellence": {
     "hero": {
@@ -502,5 +508,116 @@
         }
       ]
     }
+  },
+  "cart": {
+    "title": "Your cart",
+    "open": "Open cart",
+    "close": "Close cart",
+    "add": "Add to cart",
+    "added": "Added!",
+    "empty": "Your cart is empty",
+    "emptyHint": "Add some of our coffees to get started.",
+    "unitPrice": "each",
+    "increase": "Increase quantity",
+    "decrease": "Decrease quantity",
+    "remove": "Remove",
+    "items": "{count, plural, =1 {# coffee} other {# coffees}}",
+    "total": "Total",
+    "pay": "Pay",
+    "recommended": "Recommended for you",
+    "alsoLike": "You may also like",
+    "combosTitle": "Combos to save",
+    "save": "Save {percent}%",
+    "comboLabel": "Bundle",
+    "combos": {
+      "farmersTrio": {
+        "name": "Farmers Trio"
+      },
+      "discovery": {
+        "name": "Discovery Pack"
+      },
+      "womenDuo": {
+        "name": "Women Farmers Duo"
+      },
+      "infusedDuo": {
+        "name": "Infused Duo"
+      }
+    },
+    "certifications": "Certifications",
+    "productImageAlt": "Grain & Grains {name} coffee tin",
+    "addNamed": "Add {name} to cart, {price}",
+    "addedNamed": "{name} added to cart",
+    "quantityOf": "Quantity of {name}",
+    "removeNamed": "Remove {name} from cart",
+    "regularPrice": "Regular price",
+    "openWithCount": "Open cart, {count, plural, =1 {# coffee} other {# coffees}}"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "secure": "Secure checkout",
+    "contact": "Contact",
+    "email": "Email",
+    "phone": "Mobile phone",
+    "phoneHint": "We'll use it to coordinate delivery.",
+    "newsletter": "Email me with news and offers",
+    "delivery": "Delivery",
+    "deliveryNote": "We only offer home delivery.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "department": "Region",
+    "selectDepartment": "Select",
+    "province": "Province",
+    "district": "District",
+    "address": "Address",
+    "addressPlaceholder": "Street, number, apt.",
+    "reference": "Reference (optional)",
+    "referencePlaceholder": "Near…, building color…",
+    "shippingMethod": "Shipping method",
+    "shippingPending": "Choose your region to see the shipping cost.",
+    "shippingLima": "Delivery in Lima and Callao",
+    "shippingProvinces": "Delivery to other regions",
+    "shippingDays": "{min} to {max} business days",
+    "free": "Free",
+    "freeShippingFrom": "Free shipping on orders from {amount}.",
+    "receipt": "Receipt",
+    "boleta": "Receipt (boleta)",
+    "factura": "Invoice (factura)",
+    "document": "ID (DNI or foreigner card)",
+    "ruc": "RUC (tax ID)",
+    "businessName": "Company name",
+    "payment": "Payment",
+    "paymentSecure": "All transactions are secure and encrypted.",
+    "wallet": "Yape / Plin",
+    "card": "Credit or debit card",
+    "paymentRedirect": "When you pay, we'll take you to our secure payment gateway.",
+    "pay": "Pay {amount}",
+    "terms": "By paying you agree to our terms and conditions and privacy policy.",
+    "summary": "Order summary",
+    "showSummary": "Show order summary",
+    "hideSummary": "Hide order summary",
+    "discountCode": "Discount code",
+    "apply": "Apply",
+    "discountApplied": "{code} · −{percent}%",
+    "discountInvalid": "This code isn't valid.",
+    "removeDiscount": "Remove discount code",
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "shipping": "Shipping",
+    "total": "Total",
+    "enterDepartment": "Choose your region",
+    "quantity": "Quantity: {count}",
+    "empty": "Your cart is empty",
+    "emptyHint": "Add some coffee before checking out.",
+    "goShop": "See our collection",
+    "readyTitle": "Your order is ready!",
+    "readyText": "We're finishing connecting the payment gateway. Soon you'll be able to complete your purchase here.",
+    "homeDelivery": "Home delivery",
+    "walletInfo": "When you pay, you'll complete the payment from your Yape or Plin app on our secure gateway.",
+    "cardInfo": "When you pay, you'll enter your card details on our secure gateway. We don't store your information.",
+    "trustSecure": "100% secure payment",
+    "trustShipping": "Shipping across Peru",
+    "trustCertified": "Certified coffee",
+    "keepShopping": "Keep shopping",
+    "backToShop": "Back to the store"
   }
 }

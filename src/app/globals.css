@@ -10,6 +10,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  /* Montserrat: clase `font-ui` (selector de opciones y checkout) */
+  --font-ui: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 
   /* Animaciones del Product Showcase */
   --animate-beat: beat 0.8s ease-in-out infinite alternate;
@@ -31,6 +33,45 @@
   }
 }
 
+/* Brillo que recorre el botón "Agregar al carrito" */
+@keyframes shine {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  45%,
+  100% {
+    transform: translateX(350%) skewX(-20deg);
+  }
+}
+
+/* Entrada del selector de opciones (hoja inferior / ventana) */
+@keyframes sheetIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Rebote del ícono del carrito al recibir un producto */
+@keyframes cartBump {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.3) rotate(-8deg);
+  }
+  65% {
+    transform: scale(0.92) rotate(4deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /* Barras del ecualizador del paquete "Vibes" */
 @keyframes beat {
   from {
@@ -48,10 +89,23 @@
   }
 } */
 
-html,
-body {
+/* Sin scroll horizontal. El body NO debe llevar `overflow-x: hidden`: lo
+   convertiría en contenedor de scroll y rompería `position: sticky` (p. ej. el
+   resumen fijo del checkout). En el html se propaga a la ventana; en el body se
+   usa `clip`, que recorta sin crear contenedor de scroll. */
+html {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+body {
+  max-width: 100%;
+}
+
+@supports (overflow-x: clip) {
+  body {
+    overflow-x: clip;
+  }
 }
 
 body {

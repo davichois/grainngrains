@@ -23,6 +23,7 @@ import {
 import { GrainngrainsLogo } from "./GrainngrainsLogo";
 import { useHeaderVisibility } from "./HeaderVisibility";
 import CoffeeTicket from "@/src/components/CoffeeTicket";
+import CartButton from "@/src/components/cart/CartButton";
 
 /* Píxeles de scroll a partir de los cuales reaparece el header oculto */
 const REVEAL_AT = 4;
@@ -605,12 +606,16 @@ export default function Header() {
 
               <span className="w-px h-4 bg-gray-500 shrink-0" />
               <LanguageDropdown languages={languages} />
+
+              <span className="w-px h-4 bg-gray-500 shrink-0" />
+              <CartButton className="shrink-0" />
             </nav>
 
-            {/* Mobile hamburger */}
+            {/* Mobile: carrito + hamburger */}
+            <CartButton className="lg:hidden ml-auto mr-5 shrink-0" />
             <button
               onClick={() => setMobileOpen(true)}
-              className="lg:hidden ml-auto shrink-0 text-gray-700 hover:text-[#116e78] transition-colors"
+              className="lg:hidden shrink-0 text-gray-700 hover:text-[#116e78] transition-colors"
               aria-label="Open menu"
             >
               <Menu size={24} />

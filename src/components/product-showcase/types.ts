@@ -1,3 +1,5 @@
+import type { SizeId } from "@/src/lib/shop";
+
 /* Tipos del módulo Product Showcase (slider + grilla de productos)
    Los textos (nombre, subtítulo, bigTop/bigBot, nombre de producto) viven en
    los archivos de /messages bajo el namespace `editions`. Aquí solo guardamos
@@ -10,9 +12,23 @@
 
 export type CategoryColor = string;
 
+/** Certificaciones disponibles (ver CERTIFICATIONS en data.ts) */
+export type CertificationId = "fairtrade" | "usdaOrganic" | "cleanCup";
+
+export interface Certification {
+  /** Nombre oficial del sello (no se traduce) */
+  name: string;
+  /** Logo del sello, relativo a /public */
+  logo: string;
+}
+
 export interface ShowcaseProduct {
   /** Identificador i18n del producto: editions.<cat>.products.<id> */
   id: string;
+  /** Precio en soles (S/) por presentación (ver SIZES en src/lib/shop.ts) */
+  prices: Record<SizeId, number>;
+  /** Sellos que tiene este café; se muestran arriba de la tarjeta, en este orden */
+  certifications: CertificationId[];
   /** Gradiente CSS de respaldo cuando no hay imagen */
   bg: string;
   /** Color sólido de fondo de la tarjeta (si se omite usa el color de la categoría) */
@@ -42,4 +58,14 @@ export interface ShowcaseCategory {
   /** Color del texto del encabezado dinámico (nombre + subtítulo); por defecto #FFF0B4 */
   headingColor?: string;
   products: ShowcaseProduct[];
+}
+
+/** Combo de cafés: se vende como un solo producto con descuento */
+export interface ShowcaseCombo {
+  /** Identificador i18n: cart.combos.<id>.name */
+  id: string;
+  /** Descuento en % sobre la suma de los precios de sus cafés */
+  discount: number;
+  /** Cafés incluidos (una unidad de cada uno) */
+  items: { categoryId: string; productId: string }[];
 }

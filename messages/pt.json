@@ -165,31 +165,37 @@
     }
   },
   "shop": {
-    "title": "História, qualidade e preço em tempo real",
-    "subtitle": "COTIZE AGORA.",
-    "types": {
-      "greenCoffee": "Café Verde",
-      "roastedCoffee": "Café Torrado",
-      "groundCoffee": "Café Moído"
+    "sizes": {
+      "250g": "250 g",
+      "1kg": "1 kg"
     },
-    "cta": "Download report",
-    "degrees": {
-      "degree1": "Grau 1",
-      "degree2": "Grau 2",
-      "degree3": "Grau 3",
-      "description1": "Apenas as cerejas mais finas. Limpo, elegante e expressivo, revelando todo o potencial da origem do café.",
-      "description2": "Equilibrado e harmonioso. Uma xícara consistente com caráter, doçura e refinamento diário."
+    "grinds": {
+      "wholeBean": "Grão inteiro",
+      "coarseDrip": "Coado grosso",
+      "drip": "Coado",
+      "xfDrip": "Coado extrafino",
+      "frenchPress": "Prensa francesa",
+      "toddy": "Cold brew (Toddy)",
+      "perkPress": "Percolador",
+      "coarseEspresso": "Espresso grosso",
+      "espresso": "Espresso",
+      "xfEspresso": "Espresso extrafino"
     },
-    "whatsOurCoffee": "O que torna um bom café especial? A seleção cuidadosa de cada grão, a qualidade consistente e o respeito por sua origem. Nossos cafés Grau 1, Grau 2 e Grau 3 oferecem perfis definidos para diferentes necessidades, mantendo sempre o equilíbrio, a pureza e o caráter de cada xícara.",
-    "degreePresentationTitle": "Apaixone-se por cada Grau",
-    "degreePresentationSubtitle": "A ORIGEM DE UMA GRANDE XÍCARA",
-    "reports": {
-      "title": "Relatórios",
-      "choose": "Escolha um relatório para visualizar ou baixar",
-      "preview": "Visualizar",
-      "download": "Baixar",
-      "close": "Fechar"
-    }
+    "size": "Tamanho",
+    "grind": "Moagem",
+    "quantity": "Quantidade",
+    "close": "Fechar",
+    "comboSizeNote": "Cada café do combo vem em embalagem de 250 g.",
+    "from": "A partir de {price}",
+    "fromLabel": "desde",
+    "each": "cada",
+    "addedNamed": "{name} foi adicionado ao carrinho",
+    "subtotal": "Subtotal",
+    "shippingAtCheckout": "Frete e descontos são calculados na finalização da compra.",
+    "freeShippingRemaining": "Faltam <b>{amount}</b> para o frete grátis",
+    "freeShippingReached": "Seu pedido tem <b>frete grátis</b>!",
+    "freeShippingProgress": "Progresso até o frete grátis",
+    "addShort": "Adicionar"
   },
   "supply-chain-excellence": {
     "hero": {
@@ -504,5 +510,116 @@
         }
       ]
     }
+  },
+  "cart": {
+    "title": "Seu carrinho",
+    "open": "Abrir carrinho",
+    "close": "Fechar carrinho",
+    "add": "Adicionar ao carrinho",
+    "added": "Adicionado!",
+    "empty": "Seu carrinho está vazio",
+    "emptyHint": "Adicione alguns dos nossos cafés para começar.",
+    "unitPrice": "cada",
+    "increase": "Aumentar quantidade",
+    "decrease": "Diminuir quantidade",
+    "remove": "Remover",
+    "items": "{count, plural, =1 {# café} other {# cafés}}",
+    "total": "Total",
+    "pay": "Pagar",
+    "recommended": "Recomendamos para você",
+    "alsoLike": "Você também pode gostar",
+    "combosTitle": "Combos para economizar",
+    "save": "Economize {percent}%",
+    "comboLabel": "Combo",
+    "combos": {
+      "farmersTrio": {
+        "name": "Trio Cafeicultores"
+      },
+      "discovery": {
+        "name": "Pack Descoberta"
+      },
+      "womenDuo": {
+        "name": "Duo Mulheres Cafeicultoras"
+      },
+      "infusedDuo": {
+        "name": "Duo Infusionados"
+      }
+    },
+    "certifications": "Certificações",
+    "productImageAlt": "Lata de café {name} da Grain & Grains",
+    "addNamed": "Adicionar {name} ao carrinho, {price}",
+    "addedNamed": "{name} foi adicionado ao carrinho",
+    "quantityOf": "Quantidade de {name}",
+    "removeNamed": "Remover {name} do carrinho",
+    "regularPrice": "Preço normal",
+    "openWithCount": "Abrir carrinho, {count, plural, =1 {# café} other {# cafés}}"
+  },
+  "checkout": {
+    "title": "Finalizar compra",
+    "secure": "Pagamento seguro",
+    "contact": "Contato",
+    "email": "E-mail",
+    "phone": "Celular",
+    "phoneHint": "Usaremos para combinar a entrega.",
+    "newsletter": "Quero receber novidades e ofertas por e-mail",
+    "delivery": "Entrega",
+    "deliveryNote": "Fazemos apenas entregas a domicílio.",
+    "firstName": "Nome",
+    "lastName": "Sobrenome",
+    "department": "Departamento",
+    "selectDepartment": "Selecione",
+    "province": "Província",
+    "district": "Distrito",
+    "address": "Endereço",
+    "addressPlaceholder": "Av., rua, número, apto.",
+    "reference": "Referência (opcional)",
+    "referencePlaceholder": "Perto de…, cor da fachada…",
+    "shippingMethod": "Forma de envio",
+    "shippingPending": "Escolha seu departamento para ver o custo do frete.",
+    "shippingLima": "Entrega em Lima e Callao",
+    "shippingProvinces": "Entrega para províncias",
+    "shippingDays": "{min} a {max} dias úteis",
+    "free": "Grátis",
+    "freeShippingFrom": "Frete grátis em pedidos a partir de {amount}.",
+    "receipt": "Comprovante",
+    "boleta": "Recibo (boleta)",
+    "factura": "Nota fiscal (factura)",
+    "document": "Documento (DNI ou carteira de estrangeiro)",
+    "ruc": "RUC",
+    "businessName": "Razão social",
+    "payment": "Pagamento",
+    "paymentSecure": "Todas as transações são seguras e criptografadas.",
+    "wallet": "Yape / Plin",
+    "card": "Cartão de crédito ou débito",
+    "paymentRedirect": "Ao pagar, levaremos você ao gateway de pagamento seguro.",
+    "pay": "Pagar {amount}",
+    "terms": "Ao pagar, você aceita nossos termos e condições e a política de privacidade.",
+    "summary": "Resumo do pedido",
+    "showSummary": "Mostrar resumo do pedido",
+    "hideSummary": "Ocultar resumo do pedido",
+    "discountCode": "Código de desconto",
+    "apply": "Aplicar",
+    "discountApplied": "{code} · −{percent}%",
+    "discountInvalid": "Este código não é válido.",
+    "removeDiscount": "Remover código de desconto",
+    "subtotal": "Subtotal",
+    "discount": "Desconto",
+    "shipping": "Frete",
+    "total": "Total",
+    "enterDepartment": "Escolha seu departamento",
+    "quantity": "Quantidade: {count}",
+    "empty": "Seu carrinho está vazio",
+    "emptyHint": "Adicione alguns cafés antes de finalizar a compra.",
+    "goShop": "Ver nossa coleção",
+    "readyTitle": "Seu pedido está pronto!",
+    "readyText": "Estamos finalizando a conexão com o gateway de pagamento. Em breve você poderá concluir sua compra aqui.",
+    "homeDelivery": "Entrega a domicílio",
+    "walletInfo": "Ao pagar, você concluirá o pagamento pelo app Yape ou Plin no nosso gateway seguro.",
+    "cardInfo": "Ao pagar, você informará os dados do cartão no nosso gateway seguro. Não guardamos suas informações.",
+    "trustSecure": "Pagamento 100% seguro",
+    "trustShipping": "Entregas em todo o Peru",
+    "trustCertified": "Café certificado",
+    "keepShopping": "Continuar comprando",
+    "backToShop": "Voltar à loja"
   }
 }

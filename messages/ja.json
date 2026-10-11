@@ -165,31 +165,37 @@
     }
   },
   "shop": {
-    "title": "歴史、品質、そしてリアルタイムの価格",
-    "subtitle": "今すぐ見積もりを。",
-    "types": {
-      "greenCoffee": "生豆",
-      "roastedCoffee": "焙煎コーヒー",
-      "groundCoffee": "挽いたコーヒー"
+    "sizes": {
+      "250g": "250 g",
+      "1kg": "1 kg"
     },
-    "cta": "レポートをダウンロード",
-    "degrees": {
-      "degree1": "ライト",
-      "degree2": "ミディアム",
-      "degree3": "ダーク",
-      "description1": "最高のチェリーのみ。クリーンでエレガント、表現力豊かで、コーヒーの原産地の可能性を完全に引き出します。",
-      "description2": "バランスが取れて調和のとれた味わい。キャラクター、甘み、日常の洗練を兼ね備えた一貫したカップです。"
+    "grinds": {
+      "wholeBean": "豆のまま",
+      "coarseDrip": "粗挽き（ドリップ）",
+      "drip": "中挽き（ドリップ）",
+      "xfDrip": "細挽き（ドリップ）",
+      "frenchPress": "フレンチプレス",
+      "toddy": "コールドブリュー（Toddy）",
+      "perkPress": "パーコレーター",
+      "coarseEspresso": "粗挽き（エスプレッソ）",
+      "espresso": "エスプレッソ",
+      "xfEspresso": "極細挽き（エスプレッソ）"
     },
-    "whatsOurCoffee": "良いコーヒーを特別なものにするのは何でしょうか？それは、各豆の慎重な選択、一貫した品質、そしてその起源への敬意です。私たちのライト、ミディアム、ダークのコーヒーは、異なるニーズに合わせた定義されたプロファイルを提供しながら、常にバランス、純度、そして各カップのキャラクターを維持しています。",
-    "degreePresentationTitle": "各度数に恋をして",
-    "degreePresentationSubtitle": "素晴らしい一杯の起源",
-    "reports": {
-      "title": "レポート",
-      "choose": "プレビューまたはダウンロードするレポートを選択",
-      "preview": "プレビュー",
-      "download": "ダウンロード",
-      "close": "閉じる"
-    }
+    "size": "サイズ",
+    "grind": "挽き方",
+    "quantity": "数量",
+    "close": "閉じる",
+    "comboSizeNote": "セットの各コーヒーは 250 g 袋でお届けします。",
+    "from": "{price} から",
+    "fromLabel": "から",
+    "each": "各",
+    "addedNamed": "{name} をカートに追加しました",
+    "subtotal": "小計",
+    "shippingAtCheckout": "送料と割引はお会計時に計算されます。",
+    "freeShippingRemaining": "あと <b>{amount}</b> で送料無料",
+    "freeShippingReached": "ご注文は<b>送料無料</b>です！",
+    "freeShippingProgress": "送料無料までの進捗",
+    "addShort": "追加"
   },
   "supply-chain-excellence": {
     "hero": {
@@ -504,5 +510,116 @@
         }
       ]
     }
+  },
+  "cart": {
+    "title": "カート",
+    "open": "カートを開く",
+    "close": "カートを閉じる",
+    "add": "カートに追加",
+    "added": "追加しました！",
+    "empty": "カートは空です",
+    "emptyHint": "コーヒーを追加してお買い物を始めましょう。",
+    "unitPrice": "各",
+    "increase": "数量を増やす",
+    "decrease": "数量を減らす",
+    "remove": "削除",
+    "items": "コーヒー {count} 点",
+    "total": "合計",
+    "pay": "支払う",
+    "recommended": "おすすめ",
+    "alsoLike": "こちらもおすすめ",
+    "combosTitle": "お得なセット",
+    "save": "{percent}% お得",
+    "comboLabel": "セット",
+    "combos": {
+      "farmersTrio": {
+        "name": "生産者トリオ"
+      },
+      "discovery": {
+        "name": "ディスカバリーパック"
+      },
+      "womenDuo": {
+        "name": "女性生産者デュオ"
+      },
+      "infusedDuo": {
+        "name": "インフューズドデュオ"
+      }
+    },
+    "certifications": "認証",
+    "productImageAlt": "Grain & Grains {name} のコーヒー缶",
+    "addNamed": "{name} をカートに追加、{price}",
+    "addedNamed": "{name} をカートに追加しました",
+    "quantityOf": "{name} の数量",
+    "removeNamed": "{name} をカートから削除",
+    "regularPrice": "通常価格",
+    "openWithCount": "カートを開く、コーヒー {count} 点"
+  },
+  "checkout": {
+    "title": "お会計",
+    "secure": "安全なお支払い",
+    "contact": "連絡先",
+    "email": "メールアドレス",
+    "phone": "携帯電話",
+    "phoneHint": "配送の調整に使用します。",
+    "newsletter": "最新情報やお得な情報をメールで受け取る",
+    "delivery": "配送",
+    "deliveryNote": "ご自宅への配送のみ承っています。",
+    "firstName": "名",
+    "lastName": "姓",
+    "department": "県（地域）",
+    "selectDepartment": "選択してください",
+    "province": "州",
+    "district": "地区",
+    "address": "住所",
+    "addressPlaceholder": "通り、番地、部屋番号",
+    "reference": "目印（任意）",
+    "referencePlaceholder": "近くの建物、外壁の色など",
+    "shippingMethod": "配送方法",
+    "shippingPending": "地域を選択すると送料が表示されます。",
+    "shippingLima": "リマ・カヤオ配送",
+    "shippingProvinces": "地方配送",
+    "shippingDays": "{min}〜{max} 営業日",
+    "free": "無料",
+    "freeShippingFrom": "{amount} 以上のご注文で送料無料。",
+    "receipt": "領収書",
+    "boleta": "レシート（Boleta）",
+    "factura": "請求書（Factura）",
+    "document": "身分証番号（DNI または外国人登録証）",
+    "ruc": "RUC（納税者番号）",
+    "businessName": "会社名",
+    "payment": "お支払い",
+    "paymentSecure": "すべての取引は安全に暗号化されています。",
+    "wallet": "Yape / Plin",
+    "card": "クレジットカード・デビットカード",
+    "paymentRedirect": "お支払い時に安全な決済画面へご案内します。",
+    "pay": "{amount} を支払う",
+    "terms": "お支払いにより、利用規約とプライバシーポリシーに同意したものとみなされます。",
+    "summary": "注文内容",
+    "showSummary": "注文内容を表示",
+    "hideSummary": "注文内容を隠す",
+    "discountCode": "割引コード",
+    "apply": "適用",
+    "discountApplied": "{code} · −{percent}%",
+    "discountInvalid": "このコードは無効です。",
+    "removeDiscount": "割引コードを削除",
+    "subtotal": "小計",
+    "discount": "割引",
+    "shipping": "送料",
+    "total": "合計",
+    "enterDepartment": "地域を選択してください",
+    "quantity": "数量：{count}",
+    "empty": "カートは空です",
+    "emptyHint": "お会計の前にコーヒーを追加してください。",
+    "goShop": "コレクションを見る",
+    "readyTitle": "ご注文の準備ができました！",
+    "readyText": "現在、決済サービスとの接続を準備中です。まもなくこちらでご購入いただけます。",
+    "homeDelivery": "ご自宅へ配送",
+    "walletInfo": "お支払い時に、安全な決済画面で Yape または Plin アプリから決済します。",
+    "cardInfo": "お支払い時に、安全な決済画面でカード情報を入力します。お客様の情報は保存されません。",
+    "trustSecure": "100% 安全なお支払い",
+    "trustShipping": "ペルー全国へ配送",
+    "trustCertified": "認証済みコーヒー",
+    "keepShopping": "買い物を続ける",
+    "backToShop": "ストアに戻る"
   }
 }

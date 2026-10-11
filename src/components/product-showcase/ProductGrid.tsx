@@ -33,8 +33,10 @@ export default function ProductGrid({ category }: ProductGridProps) {
     return () => clearTimeout(id);
   }, [pending]);
 
+  const headingId = `edition-${shown.id}`;
+
   return (
-    <div>
+    <section aria-labelledby={headingId}>
       {/* Encabezado dinámico */}
       <div
         className="py-24 px-10 text-center shadow-lg"
@@ -43,6 +45,7 @@ export default function ProductGrid({ category }: ProductGridProps) {
         <StaggerContainer key={`head-${shown.id}`}>
           <Item>
             <h2
+              id={headingId}
               className="text-4xl md:text-5xl font-extrabold uppercase mb-6"
               style={{ color: shown.headingColor ?? "#FFF0B4" }}
             >
@@ -70,15 +73,16 @@ export default function ProductGrid({ category }: ProductGridProps) {
         }}
       >
         <StaggerContainer
+          as="ul"
           key={`grid-${shown.id}`}
           stagger={0.08}
-          className="grid grid-cols-3 gap-0 max-[480px]:grid-cols-1"
-          style={{ backgroundColor: shown.panelBg ?? "#FFF0B4" }}
+          className="grid grid-cols-1 gap-[clamp(16px,2vw,32px)] bg-white p-[clamp(16px,2vw,32px)] lg:grid-cols-3"
         >
           {shown.products.map((p) => (
-            <Item key={p.id}>
+            <Item as="li" key={p.id}>
               <ProductCard
                 product={p}
+                categoryId={shown.id}
                 accent={shown.color}
                 name={t(`${shown.id}.products.${p.id}`)}
               />
@@ -86,6 +90,6 @@ export default function ProductGrid({ category }: ProductGridProps) {
           ))}
         </StaggerContainer>
       </div>
-    </div>
+    </section>
   );
 }
