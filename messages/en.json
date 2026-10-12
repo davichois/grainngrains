@@ -163,6 +163,31 @@
     }
   },
   "shop": {
+    "title": "History, quality, and real-time pricing",
+    "subtitle": "QUOTE NOW.",
+    "types": {
+      "greenCoffee": "Green Coffee",
+      "roastedCoffee": "Roasted Coffee",
+      "groundCoffee": "Ground Coffee"
+    },
+    "degrees": {
+      "degree1": "Degree 1",
+      "degree2": "Degree 2",
+      "degree3": "Degree 3",
+      "description1": "Only the finest cherries. Clean, elegant, and expressive, revealing the full potential of the coffee's origin.",
+      "description2": "Balanced and harmonious. A consistent cup with character, sweetness, and everyday refinement."
+    },
+    "cta": "Download report",
+    "whatsOurCoffee": "What makes a good coffee special? Careful selection of each bean, consistent quality, and respect for its origin. Our Degree 1, Degree 2, and Degree 3 coffees offer defined profiles for different needs, always maintaining the balance, purity, and character of each cup.",
+    "degreePresentationTitle": "Fall in Love with Each Degree",
+    "degreePresentationSubtitle": "THE ORIGIN OF A GREAT CUP",
+    "reports": {
+      "title": "Reports",
+      "choose": "Choose a report to preview or download",
+      "preview": "Preview",
+      "download": "Download",
+      "close": "Close"
+    },
     "sizes": {
       "250g": "250 g",
       "1kg": "1 kg"
@@ -587,7 +612,7 @@
     "businessName": "Company name",
     "payment": "Payment",
     "paymentSecure": "All transactions are secure and encrypted.",
-    "wallet": "Yape / Plin",
+    "wallet": "Yape",
     "card": "Credit or debit card",
     "paymentRedirect": "When you pay, we'll take you to our secure payment gateway.",
     "pay": "Pay {amount}",
@@ -612,12 +637,79 @@
     "readyTitle": "Your order is ready!",
     "readyText": "We're finishing connecting the payment gateway. Soon you'll be able to complete your purchase here.",
     "homeDelivery": "Home delivery",
-    "walletInfo": "When you pay, you'll complete the payment from your Yape or Plin app on our secure gateway.",
-    "cardInfo": "When you pay, you'll enter your card details on our secure gateway. We don't store your information.",
     "trustSecure": "100% secure payment",
     "trustShipping": "Shipping across Peru",
     "trustCertified": "Certified coffee",
     "keepShopping": "Keep shopping",
-    "backToShop": "Back to the store"
+    "backToShop": "Back to the store",
+    "preparing": "Preparing payment…",
+    "charging": "Processing payment…",
+    "yapeLimit": "Yape allows payments up to {amount}. Please pay this order by card.",
+    "errors": {
+      "invalid_body": "We couldn't read your order. Reload the page and try again.",
+      "empty_cart": "Your cart is empty.",
+      "invalid_qty": "Check the quantities in your cart.",
+      "invalid_option": "Check the size and grind of your coffees.",
+      "invalid_email": "Check your email.",
+      "invalid_phone": "Check your phone number (9 digits, starting with 9).",
+      "invalid_department": "Choose a valid region.",
+      "invalid_ruc": "Check the RUC (11 digits).",
+      "invalid_document": "Check your ID number.",
+      "missing_fields": "Fill in all required fields.",
+      "unknown_product": "One of the products is no longer available. Update your cart.",
+      "invalid_total": "The order total isn't valid.",
+      "yape_limit": "Yape allows payments up to S/ 500. Please pay by card.",
+      "gateway": "The payment gateway didn't respond. Try again in a few minutes.",
+      "server": "Something went wrong. Please try again.",
+      "failed": "The payment couldn't be completed. Try again or use another method.",
+      "config": "Payments aren't configured for this store yet.",
+      "culqi_unavailable": "The payment gateway couldn't load. Check your connection.",
+      "3ds_failed": "Your bank didn't authorize the card verification.",
+      "payment_error": "The payment couldn't be completed."
+    },
+    "poweredBy": "Payments securely processed by Culqi",
+    "chargingHint": "Please don't close or reload this page.",
+    "cardNextStep": "When you pay, Culqi's secure window will open to enter your card.",
+    "walletNextStep": "When you pay, Culqi's secure window will open: enter your phone number and the approval code from your Yape app."
+  },
+  "thanks": {
+    "title": "Thank you for your order!",
+    "text": "We received your payment and are already preparing your coffee.",
+    "orderLabel": "Order no.:",
+    "emailNote": "We sent you an email with your order details.",
+    "shippingNote": "We'll contact you by phone to arrange delivery.",
+    "back": "Keep shopping"
+  },
+  "orderEmail": {
+    "subject": "Your Grain & Grains order {order}",
+    "title": "Thank you, {name}!",
+    "intro": "We received your payment. Here are the details of your order {order}:",
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "shipping": "Shipping",
+    "total": "Total",
+    "free": "Free",
+    "deliveryTo": "We'll ship it to",
+    "outro": "We'll contact you by phone to arrange delivery. If you have any questions, just reply to this email.",
+    "preheader": "We received your payment. Your order {order} is being prepared.",
+    "orderLabel": "Order",
+    "paymentLabel": "Payment",
+    "paidCard": "Credit or debit card",
+    "cta": "Keep shopping",
+    "heroKicker": "Order confirmed",
+    "heroText": "We received your payment and are already preparing your coffee, from farm to cup."
+  },
+  "a11y": {
+    "home": "Home",
+    "breadcrumb": "Breadcrumb",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "previous": "Previous",
+    "next": "Next",
+    "scrollToProducts": "Scroll to products",
+    "promiseAlt": "Supply chain excellence: our promise",
+    "shopHeaderAlt": "Grain & Grains specialty green coffee",
+    "partnerAlt": "Partnership between Grain & Grains and CAFCER",
+    "aboutTitle": "Our history"
   }
 }

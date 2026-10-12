@@ -34,6 +34,7 @@ const colors = [
 
 export default function PartnerCooperatives() {
   const t = useTranslations("partner");
+  const ta = useTranslations("a11y");
   const sections = t.raw("sections") as Array<{
     number: string;
     title: string;
@@ -87,7 +88,7 @@ export default function PartnerCooperatives() {
         <Parallax amount={70} className="absolute inset-0 scale-110">
           <Image
             src="/images/partner/partner.jpg"
-            alt="Alianza Grain & Grains y CAFCER"
+            alt={ta("partnerAlt")}
             fill
             priority
             className="object-cover"

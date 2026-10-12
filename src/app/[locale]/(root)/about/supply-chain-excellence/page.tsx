@@ -138,9 +138,10 @@ export default function SupplyChainExcellence() {
       <Breadcrumb
         hideSegments={["es", "en", "de", "fr", "it", "pt", "zh", "ja", "ko"]}
         labels={{
-          "": "Home",
-          sustainability: "Sustainability",
-          "supply-chain-excellence": "Supply Chain Excellence",
+          "": t("a11y.home"),
+          about: `${t("nav.aboutGG")} G&G`,
+          "global-footprint": t("nav.globalFootprint"),
+          "supply-chain-excellence": t("nav.supplyChainExcellence"),
         }}
       />
       <HeroSection

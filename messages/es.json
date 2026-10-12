@@ -228,6 +228,31 @@
     }
   },
   "shop": {
+    "title": "Historia, calidad y precio en tiempo real",
+    "subtitle": "COTIZA AHORA.",
+    "types": {
+      "greenCoffee": "Café Verde",
+      "roastedCoffee": "Café Tostado",
+      "groundCoffee": "Café Molido"
+    },
+    "degrees": {
+      "degree1": "Grado 1",
+      "degree2": "Grado 2",
+      "degree3": "Grado 3",
+      "description1": "Solo las cerezas más finas. Limpio, elegante y expresivo, revelando todo el potencial del origen del café.",
+      "description2": "Equilibrado y armónico. Una taza consistente con carácter, dulzura y refinamiento diario."
+    },
+    "cta": "Descargar informe",
+    "whatsOurCoffee": "¿Qué hace especial a un buen café? La selección cuidadosa de cada grano, una calidad consistente y el respeto por su origen. Nuestros cafés Grado 1, Grado 2 y Grado 3 ofrecen perfiles definidos para diferentes necesidades, manteniendo siempre el equilibrio, la pureza y el carácter de cada taza.",
+    "degreePresentationTitle": "Enamorate de cada Grado",
+    "degreePresentationSubtitle": "EL ORIGEN DE UNA GRAN TAZA",
+    "reports": {
+      "title": "Informes",
+      "choose": "Elige un informe para previsualizar o descargar",
+      "preview": "Previsualizar",
+      "download": "Descargar",
+      "close": "Cerrar"
+    },
     "sizes": {
       "250g": "250 g",
       "1kg": "1 kg"
@@ -589,7 +614,7 @@
     "businessName": "Razón social",
     "payment": "Pago",
     "paymentSecure": "Todas las transacciones son seguras y encriptadas.",
-    "wallet": "Yape / Plin",
+    "wallet": "Yape",
     "card": "Tarjeta de crédito o débito",
     "paymentRedirect": "Al pagar te llevaremos a la pasarela segura para completar el pago.",
     "pay": "Pagar {amount}",
@@ -614,12 +639,79 @@
     "readyTitle": "¡Tu pedido está listo!",
     "readyText": "Estamos terminando de conectar la pasarela de pago. Muy pronto podrás completar tu compra aquí.",
     "homeDelivery": "Envío a domicilio",
-    "walletInfo": "Al pagar te llevaremos a la pasarela segura para completar el pago desde tu app de Yape o Plin.",
-    "cardInfo": "Al pagar ingresarás los datos de tu tarjeta en la pasarela segura. No guardamos tu información.",
     "trustSecure": "Pago 100% seguro",
     "trustShipping": "Envíos a todo el Perú",
     "trustCertified": "Café certificado",
     "keepShopping": "Seguir comprando",
-    "backToShop": "Volver a la tienda"
+    "backToShop": "Volver a la tienda",
+    "preparing": "Preparando el pago…",
+    "charging": "Procesando el pago…",
+    "yapeLimit": "Yape permite pagos de hasta {amount}. Para este pedido elige pagar con tarjeta.",
+    "errors": {
+      "invalid_body": "No pudimos leer tu pedido. Recarga la página e inténtalo de nuevo.",
+      "empty_cart": "Tu carrito está vacío.",
+      "invalid_qty": "Revisa las cantidades de tu carrito.",
+      "invalid_option": "Revisa la presentación y molienda de tus cafés.",
+      "invalid_email": "Revisa tu correo electrónico.",
+      "invalid_phone": "Revisa tu número de celular (9 dígitos, empieza con 9).",
+      "invalid_department": "Elige un departamento válido.",
+      "invalid_ruc": "Revisa el RUC (11 dígitos).",
+      "invalid_document": "Revisa tu DNI o carné de extranjería.",
+      "missing_fields": "Completa todos los campos obligatorios.",
+      "unknown_product": "Uno de los productos ya no está disponible. Actualiza tu carrito.",
+      "invalid_total": "El total del pedido no es válido.",
+      "yape_limit": "Yape permite pagos de hasta S/ 500. Elige pagar con tarjeta.",
+      "gateway": "La pasarela de pago no respondió. Inténtalo de nuevo en unos minutos.",
+      "server": "Ocurrió un error inesperado. Inténtalo de nuevo.",
+      "failed": "No se pudo completar el pago. Inténtalo de nuevo o usa otro medio.",
+      "config": "Los pagos aún no están configurados en esta tienda.",
+      "culqi_unavailable": "No se pudo cargar la pasarela de pago. Revisa tu conexión.",
+      "3ds_failed": "Tu banco no autorizó la verificación de la tarjeta.",
+      "payment_error": "No se pudo completar el pago."
+    },
+    "poweredBy": "Pagos procesados de forma segura por Culqi",
+    "chargingHint": "No cierres ni recargues esta página.",
+    "cardNextStep": "Al pagar se abrirá la ventana segura de Culqi para ingresar tu tarjeta.",
+    "walletNextStep": "Al pagar se abrirá la ventana segura de Culqi: ingresa tu celular y el código de aprobación de tu app Yape."
+  },
+  "thanks": {
+    "title": "¡Gracias por tu compra!",
+    "text": "Recibimos tu pago y ya estamos preparando tu café.",
+    "orderLabel": "N.º de pedido:",
+    "emailNote": "Te enviamos un correo con el detalle de tu pedido.",
+    "shippingNote": "Te contactaremos por celular para coordinar la entrega.",
+    "back": "Seguir comprando"
+  },
+  "orderEmail": {
+    "subject": "Tu pedido {order} en Grain & Grains",
+    "title": "¡Gracias, {name}!",
+    "intro": "Recibimos tu pago. Este es el detalle de tu pedido {order}:",
+    "subtotal": "Subtotal",
+    "discount": "Descuento",
+    "shipping": "Envío",
+    "total": "Total",
+    "free": "Gratis",
+    "deliveryTo": "Lo enviaremos a",
+    "outro": "Te contactaremos por celular para coordinar la entrega. Si tienes alguna pregunta, responde a este correo.",
+    "preheader": "Recibimos tu pago. Tu pedido {order} ya está en preparación.",
+    "orderLabel": "Pedido",
+    "paymentLabel": "Pago",
+    "paidCard": "Tarjeta de crédito o débito",
+    "cta": "Seguir comprando",
+    "heroKicker": "Pedido confirmado",
+    "heroText": "Recibimos tu pago y ya estamos preparando tu café, del campo a tu taza."
+  },
+  "a11y": {
+    "home": "Inicio",
+    "breadcrumb": "Ruta de navegación",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "scrollToProducts": "Ir a los productos",
+    "promiseAlt": "Excelencia en la cadena de suministro: nuestra promesa",
+    "shopHeaderAlt": "Café verde de especialidad de Grain & Grains",
+    "partnerAlt": "Alianza entre Grain & Grains y CAFCER",
+    "aboutTitle": "Nuestra historia"
   }
 }

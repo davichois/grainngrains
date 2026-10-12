@@ -33,14 +33,9 @@ export default async function CertificationsSection() {
 
   return (
     <section className="relative w-full overflow-hidden bg-[#377aa7] px-6 py-20 md:px-12 lg:px-20">
-      {/* Banner de fondo */}
+      {/* Banner de fondo: si se agrega una imagen en
+          public/images/certifications/banner.svg, poner aquí un <img> detrás del velo */}
       <div className="absolute inset-0">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/certifications/banner.svg"
-          alt=""
-          className="h-full w-full object-cover"
-        />
         <div className="absolute inset-0 bg-[#377aa7]/80" />
       </div>
 

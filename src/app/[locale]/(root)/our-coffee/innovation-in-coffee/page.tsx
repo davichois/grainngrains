@@ -19,10 +19,11 @@ export async function generateMetadata({
   });
 }
 
-export default function InnovationInCoffee() {
+export default async function InnovationInCoffee() {
+  const t = await getTranslations("nav");
   return (
     <div className="bg-white text-cyan-950 overflow-x-hidden h-screen flex items-center justify-center">
-      <h1>Innovación en el Café</h1>
+      <h1>{t("coffeeInnovation")}</h1>
     </div>
   );
 }

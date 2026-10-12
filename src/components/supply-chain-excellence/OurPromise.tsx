@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 
 export default function OurPromise() {
   const t = useTranslations("supply-chain-excellence");
+  const ta = useTranslations("a11y");
   const promises = [
     {
       icon: MapPin,
@@ -44,7 +45,7 @@ export default function OurPromise() {
         <div className="w-full lg:w-1/2 border border-gray-200 p-5 md:p-10">
           <Image
             src={ourpromise}
-            alt="Supply Chain Excellence - Our Promise"
+            alt={ta("promiseAlt")}
             width={700}
             height={740}
             className="w-full h-auto object-cover object-center"

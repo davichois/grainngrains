@@ -12,7 +12,7 @@ export async function generateMetadata({
   return pageMetadata({
     locale,
     path: "/about",
-    title: "Our History",
+    title: t("a11y.aboutTitle"),
     description: metaText(
       t.markup("history.intro2", { strong: (chunks) => chunks })
     ),

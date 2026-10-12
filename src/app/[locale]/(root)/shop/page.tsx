@@ -111,7 +111,7 @@ export default async function Home() {
       <div className="relative w-full h-36 sm:h-48 md:h-60 lg:h-72 xl:h-80">
         <Image
           src={headershop}
-          alt="Shop Header"
+          alt={t("a11y.shopHeaderAlt")}
           fill
           priority
           sizes="100vw"

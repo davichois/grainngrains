@@ -20,6 +20,8 @@ interface FieldProps extends InputHTMLAttributes<HTMLInputElement> {
   /** Texto fijo antes del valor (p. ej. "+51") */
   prefix?: string;
   hint?: ReactNode;
+  /** Elemento a la derecha dentro del campo (p. ej. ícono de marca o candado) */
+  suffix?: ReactNode;
   wrapperClassName?: string;
 }
 
@@ -28,6 +30,7 @@ export function Field({
   label,
   prefix,
   hint,
+  suffix,
   wrapperClassName = "",
   className = "",
   ...props
@@ -39,7 +42,7 @@ export function Field({
           id={id}
           placeholder=" "
           aria-describedby={hint ? `${id}-hint` : undefined}
-          className={`${box} ${prefix ? "pl-11" : ""} ${className}`}
+          className={`${box} ${prefix ? "pl-11" : ""} ${suffix ? "pr-14" : ""} ${className}`}
           {...props}
         />
         {prefix && (
@@ -48,9 +51,18 @@ export function Field({
             {prefix}
           </span>
         )}
-        <label htmlFor={id} className={`${floating} left-3`}>
+        {/* Una sola línea: las etiquetas largas se recortan con "…" */}
+        <label
+          htmlFor={id}
+          className={`${floating} left-3 truncate ${suffix ? "max-w-[calc(100%-3.5rem)]" : "max-w-[calc(100%-1.5rem)]"}`}
+        >
           {label}
         </label>
+        {suffix && (
+          <span className="pointer-events-none absolute right-3 top-1/2 flex -translate-y-1/2 items-center">
+            {suffix}
+          </span>
+        )}
       </div>
       {hint && (
         <p id={`${id}-hint`} className="mt-1.5 text-xs text-gray-500">
@@ -100,7 +112,7 @@ export function SelectField({
 export function PaymentBadge({
   brand,
 }: {
-  brand: "yape" | "plin" | "visa" | "mastercard" | "amex";
+  brand: "yape" | "visa" | "mastercard" | "amex" | "diners";
 }) {
   const common =
     "inline-flex h-5 min-w-9 items-center justify-center rounded px-1.5 text-[10px] leading-none text-white";
@@ -111,17 +123,13 @@ export function PaymentBadge({
           yape
         </span>
       );
-    case "plin":
-      return (
-        <span
-          className={`${common} bg-linear-to-r from-[#00c2d1] to-[#0d8ee9] font-extrabold lowercase`}
-        >
-          plin
-        </span>
-      );
     case "visa":
       return (
         <span className={`${common} bg-[#1a1f71] font-black italic`}>VISA</span>
+      );
+    case "diners":
+      return (
+        <span className={`${common} bg-[#0079be] font-black`}>DINERS</span>
       );
     case "amex":
       return <span className={`${common} bg-[#2e77bc] font-black`}>AMEX</span>;

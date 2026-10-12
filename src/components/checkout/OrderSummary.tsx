@@ -184,7 +184,7 @@ export default function OrderSummary({
             <button
               type="submit"
               disabled={!code.trim()}
-              className="rounded-xl bg-gray-900 px-4 text-[13px] font-semibold text-white transition-colors hover:bg-[#116e78] disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-500"
+              className="rounded-xl bg-gray-900 px-4 text-[13px] font-semibold text-white transition-colors hover:bg-[#2f2f2f] hover:cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-500"
             >
               {t("apply")}
             </button>

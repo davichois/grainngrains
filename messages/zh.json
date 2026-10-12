@@ -165,6 +165,31 @@
     }
   },
   "shop": {
+    "title": "历史、质量和实时价格",
+    "subtitle": "立即报价。",
+    "types": {
+      "greenCoffee": "生咖啡豆",
+      "roastedCoffee": "烘焙咖啡",
+      "groundCoffee": "研磨咖啡"
+    },
+    "cta": "下载报告",
+    "degrees": {
+      "degree1": "浅度",
+      "degree2": "中度",
+      "degree3": "深度",
+      "description1": "只有最优质的咖啡樱桃。干净、优雅且富有表现力，展现了咖啡原产地的全部潜力。",
+      "description2": "平衡和谐。具有个性、甜味和日常精致的一致杯。"
+    },
+    "whatsOurCoffee": "是什么让一杯好咖啡特别？每颗咖啡豆的精心挑选、一贯的质量以及对其来源的尊重。我们的浅度、中度和深度咖啡为不同需求提供了明确的风味轮廓，同时始终保持每杯咖啡的平衡、纯净和特色。",
+    "degreePresentationTitle": "爱上每个度数",
+    "degreePresentationSubtitle": "一杯好咖啡的起源",
+    "reports": {
+      "title": "报告",
+      "choose": "选择一份报告进行预览或下载",
+      "preview": "预览",
+      "download": "下载",
+      "close": "关闭"
+    },
     "sizes": {
       "250g": "250 克",
       "1kg": "1 公斤"
@@ -589,7 +614,7 @@
     "businessName": "公司名称",
     "payment": "支付",
     "paymentSecure": "所有交易均安全加密。",
-    "wallet": "Yape / Plin",
+    "wallet": "Yape",
     "card": "信用卡或借记卡",
     "paymentRedirect": "付款时我们会将你转到安全的支付网关。",
     "pay": "支付 {amount}",
@@ -614,12 +639,79 @@
     "readyTitle": "你的订单已准备就绪！",
     "readyText": "我们正在完成支付网关的接入，很快你就可以在这里完成购买。",
     "homeDelivery": "送货上门",
-    "walletInfo": "付款时，你将在安全支付网关中通过 Yape 或 Plin 应用完成支付。",
-    "cardInfo": "付款时，你将在安全支付网关中输入银行卡信息。我们不会保存你的信息。",
     "trustSecure": "100% 安全支付",
     "trustShipping": "配送至秘鲁全境",
     "trustCertified": "认证咖啡",
     "keepShopping": "继续购物",
-    "backToShop": "返回商店"
+    "backToShop": "返回商店",
+    "preparing": "正在准备支付…",
+    "charging": "正在处理支付…",
+    "yapeLimit": "Yape 单笔支付上限为 {amount}。此订单请使用银行卡支付。",
+    "errors": {
+      "invalid_body": "无法读取你的订单，请刷新页面后重试。",
+      "empty_cart": "购物车是空的。",
+      "invalid_qty": "请检查购物车中的数量。",
+      "invalid_option": "请检查咖啡的规格和研磨度。",
+      "invalid_email": "请检查电子邮箱。",
+      "invalid_phone": "请检查手机号（9 位，以 9 开头）。",
+      "invalid_department": "请选择有效的大区。",
+      "invalid_ruc": "请检查 RUC（11 位）。",
+      "invalid_document": "请检查证件号码。",
+      "missing_fields": "请填写所有必填项。",
+      "unknown_product": "有商品已下架，请更新购物车。",
+      "invalid_total": "订单总额无效。",
+      "yape_limit": "Yape 单笔支付上限为 S/ 500，请使用银行卡支付。",
+      "gateway": "支付网关无响应，请几分钟后重试。",
+      "server": "发生意外错误，请重试。",
+      "failed": "支付未完成，请重试或更换支付方式。",
+      "config": "本店尚未配置支付。",
+      "culqi_unavailable": "无法加载支付网关，请检查网络连接。",
+      "3ds_failed": "你的银行未通过银行卡验证。",
+      "payment_error": "支付未完成。"
+    },
+    "poweredBy": "支付由 Culqi 安全处理",
+    "chargingHint": "请勿关闭或刷新此页面。",
+    "cardNextStep": "付款时将打开 Culqi 安全窗口以输入银行卡信息。",
+    "walletNextStep": "付款时将打开 Culqi 安全窗口：输入手机号和 Yape 应用中的批准码。"
+  },
+  "thanks": {
+    "title": "感谢你的购买！",
+    "text": "我们已收到付款，正在为你准备咖啡。",
+    "orderLabel": "订单号：",
+    "emailNote": "我们已向你发送包含订单详情的邮件。",
+    "shippingNote": "我们会通过手机联系你安排配送。",
+    "back": "继续购物"
+  },
+  "orderEmail": {
+    "subject": "你在 Grain & Grains 的订单 {order}",
+    "title": "谢谢你，{name}！",
+    "intro": "我们已收到付款。以下是订单 {order} 的详情：",
+    "subtotal": "小计",
+    "discount": "折扣",
+    "shipping": "运费",
+    "total": "总计",
+    "free": "免费",
+    "deliveryTo": "配送地址",
+    "outro": "我们会通过手机联系你安排配送。如有问题，请直接回复此邮件。",
+    "preheader": "我们已收到付款，订单 {order} 正在准备中。",
+    "orderLabel": "订单",
+    "paymentLabel": "支付方式",
+    "paidCard": "信用卡或借记卡",
+    "cta": "继续购物",
+    "heroKicker": "订单已确认",
+    "heroText": "我们已收到付款，正在为你准备咖啡——从农场到你的杯中。"
+  },
+  "a11y": {
+    "home": "首页",
+    "breadcrumb": "导航路径",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单",
+    "previous": "上一个",
+    "next": "下一个",
+    "scrollToProducts": "查看产品",
+    "promiseAlt": "卓越供应链：我们的承诺",
+    "shopHeaderAlt": "Grain & Grains 精品生豆",
+    "partnerAlt": "Grain & Grains 与 CAFCER 的合作",
+    "aboutTitle": "我们的故事"
   }
 }

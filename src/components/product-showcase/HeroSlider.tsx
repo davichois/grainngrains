@@ -43,6 +43,7 @@ export default function HeroSlider({
   onScrollDown,
 }: HeroSliderProps) {
   const t = useTranslations("editions");
+  const ta = useTranslations("a11y");
   /* Pistas clonadas para el loop infinito: [últim, ...reales, primer] */
   const rendered = [
     categories[categories.length - 1],
@@ -248,7 +249,7 @@ export default function HeroSlider({
 
       {/* Flechas */}
       <button
-        aria-label="Previous"
+        aria-label={ta("previous")}
         onClick={() => navigate(-1)}
         className={`${arrowBase} max-[720px]:left-2.5`}
         style={{ left: arrInset }}
@@ -256,7 +257,7 @@ export default function HeroSlider({
         <ArrowLeft />
       </button>
       <button
-        aria-label="Next"
+        aria-label={ta("next")}
         onClick={() => navigate(1)}
         className={`${arrowBase} max-[720px]:right-2.5`}
         style={{ right: arrInset }}
@@ -266,7 +267,7 @@ export default function HeroSlider({
 
       {/* Botón abajo */}
       <button
-        aria-label="Scroll to products"
+        aria-label={ta("scrollToProducts")}
         onClick={onScrollDown}
         className="absolute bottom-[clamp(18px,3vw,30px)] left-1/2 z-30 flex h-[clamp(38px,4vw,48px)] w-[clamp(38px,4vw,48px)] -translate-x-1/2 cursor-pointer items-center justify-center border-4 border-white bg-transparent text-[clamp(16px,1.8vw,20px)] text-white transition-colors hover:bg-white/20"
       >

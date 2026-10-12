@@ -399,6 +399,7 @@ function MegaMenuItem({
 
 export default function Header() {
   const t = useTranslations("nav");
+  const ta = useTranslations("a11y");
 
   const [scrolled, setScrolled] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -555,7 +556,7 @@ export default function Header() {
     <>
       <header
         ref={headerRef}
-        className={`w-full pt-2 z-50 fixed transition-all duration-300
+        className={`w-full pt-2 z-50 fixed top-0 left-0 transition-all duration-300
   ${scrolled ? "bg-white shadow-[0px_12px_30px_-10px_rgba(0,0,0,0.15)]" : "bg-white"}
   ${hidden ? "-translate-y-full" : "translate-y-0"}
   `}
@@ -616,7 +617,7 @@ export default function Header() {
             <button
               onClick={() => setMobileOpen(true)}
               className="lg:hidden shrink-0 text-gray-700 hover:text-[#116e78] transition-colors"
-              aria-label="Open menu"
+              aria-label={ta("openMenu")}
             >
               <Menu size={24} />
             </button>
@@ -645,7 +646,7 @@ export default function Header() {
           <button
             onClick={() => setMobileOpen(false)}
             className="text-gray-500 hover:text-[#116e78] transition-colors"
-            aria-label="Close menu"
+            aria-label={ta("closeMenu")}
           >
             <X size={22} />
           </button>

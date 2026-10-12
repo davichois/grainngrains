@@ -146,6 +146,8 @@ interface CartValue {
   /** Cambia la cantidad; con 0 o menos elimina el producto */
   setQty: (key: string, qty: number) => void;
   removeItem: (key: string) => void;
+  /** Vacía el carrito (tras un pago exitoso) */
+  clearCart: () => void;
   isOpen: boolean;
   openCart: () => void;
   closeCart: () => void;
@@ -181,6 +183,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
     );
   }, []);
 
+  const clearCart = useCallback(() => setItems(() => []), []);
+
   const value = useMemo<CartValue>(() => {
     /* El precio vigente es el del catálogo; el guardado solo es respaldo
        por si el producto ya no existe en data.ts */
@@ -192,12 +196,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
       addItem,
       setQty,
       removeItem,
+      clearCart,
       isOpen,
       openCart: () => setIsOpen(true),
       closeCart: () => setIsOpen(false),
       openQuickAdd: setQuickAdd,
     };
-  }, [items, isOpen, addItem, setQty, removeItem]);
+  }, [items, isOpen, addItem, setQty, removeItem, clearCart]);
 
   return (
     <CartContext.Provider value={value}>

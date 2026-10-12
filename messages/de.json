@@ -165,6 +165,31 @@
     }
   },
   "shop": {
+    "title": "Geschichte, Qualität und Echtzeitpreise",
+    "subtitle": "JETZT ANFRAGEN.",
+    "types": {
+      "greenCoffee": "Grüner Kaffee",
+      "roastedCoffee": "Gerösteter Kaffee",
+      "groundCoffee": "Gemahlener Kaffee"
+    },
+    "cta": "Bericht herunterladen",
+    "degrees": {
+      "degree1": "Grad 1",
+      "degree2": "Grad 2",
+      "degree3": "Grad 3",
+      "description1": "Nur die feinsten Kirschen. Sauber, elegant und ausdrucksstark, enthüllt das volle Potenzial der Herkunft des Kaffees.",
+      "description2": "Ausgewogen und harmonisch. Eine konsistente Tasse mit Charakter, Süße und alltäglicher Raffinesse."
+    },
+    "whatsOurCoffee": "Was macht einen guten Kaffee besonders? Die sorgfältige Auswahl jeder Bohne, eine gleichbleibende Qualität und der Respekt vor ihrer Herkunft. Unsere Grad 1, Grad 2 und Grad 3 Kaffees bieten definierte Profile für unterschiedliche Bedürfnisse, wobei sie stets das Gleichgewicht, die Reinheit und den Charakter jeder Tasse bewahren.",
+    "degreePresentationTitle": "Verlieben Sie sich in jeden Grad",
+    "degreePresentationSubtitle": "DIE HERKUNFT EINER GROSSARTIGEN TASSE",
+    "reports": {
+      "title": "Berichte",
+      "choose": "Wählen Sie einen Bericht zur Vorschau oder zum Download",
+      "preview": "Vorschau",
+      "download": "Herunterladen",
+      "close": "Schließen"
+    },
     "sizes": {
       "250g": "250 g",
       "1kg": "1 kg"
@@ -589,7 +614,7 @@
     "businessName": "Firmenname",
     "payment": "Zahlung",
     "paymentSecure": "Alle Transaktionen sind sicher und verschlüsselt.",
-    "wallet": "Yape / Plin",
+    "wallet": "Yape",
     "card": "Kredit- oder Debitkarte",
     "paymentRedirect": "Beim Bezahlen leiten wir dich zu unserem sicheren Zahlungsanbieter weiter.",
     "pay": "{amount} bezahlen",
@@ -614,12 +639,79 @@
     "readyTitle": "Deine Bestellung ist bereit!",
     "readyText": "Wir verbinden gerade den Zahlungsanbieter. Bald kannst du deinen Kauf hier abschließen.",
     "homeDelivery": "Lieferung nach Hause",
-    "walletInfo": "Beim Bezahlen schließt du die Zahlung über deine Yape- oder Plin-App bei unserem sicheren Zahlungsanbieter ab.",
-    "cardInfo": "Beim Bezahlen gibst du deine Kartendaten bei unserem sicheren Zahlungsanbieter ein. Wir speichern keine Daten.",
     "trustSecure": "100 % sichere Zahlung",
     "trustShipping": "Versand in ganz Peru",
     "trustCertified": "Zertifizierter Kaffee",
     "keepShopping": "Weiter einkaufen",
-    "backToShop": "Zurück zum Shop"
+    "backToShop": "Zurück zum Shop",
+    "preparing": "Zahlung wird vorbereitet…",
+    "charging": "Zahlung wird verarbeitet…",
+    "yapeLimit": "Mit Yape sind Zahlungen bis {amount} möglich. Bitte zahle diese Bestellung mit Karte.",
+    "errors": {
+      "invalid_body": "Wir konnten deine Bestellung nicht lesen. Lade die Seite neu und versuche es erneut.",
+      "empty_cart": "Dein Warenkorb ist leer.",
+      "invalid_qty": "Prüfe die Mengen in deinem Warenkorb.",
+      "invalid_option": "Prüfe Größe und Mahlgrad deiner Kaffees.",
+      "invalid_email": "Prüfe deine E-Mail.",
+      "invalid_phone": "Prüfe deine Handynummer (9 Ziffern, beginnt mit 9).",
+      "invalid_department": "Wähle eine gültige Region.",
+      "invalid_ruc": "Prüfe die RUC (11 Ziffern).",
+      "invalid_document": "Prüfe deine Ausweisnummer.",
+      "missing_fields": "Fülle alle Pflichtfelder aus.",
+      "unknown_product": "Ein Produkt ist nicht mehr verfügbar. Aktualisiere deinen Warenkorb.",
+      "invalid_total": "Der Bestellbetrag ist ungültig.",
+      "yape_limit": "Mit Yape sind Zahlungen bis S/ 500 möglich. Bitte zahle mit Karte.",
+      "gateway": "Der Zahlungsanbieter antwortet nicht. Versuche es in ein paar Minuten erneut.",
+      "server": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuche es erneut.",
+      "failed": "Die Zahlung konnte nicht abgeschlossen werden. Versuche es erneut oder nutze eine andere Zahlungsart.",
+      "config": "Zahlungen sind in diesem Shop noch nicht eingerichtet.",
+      "culqi_unavailable": "Der Zahlungsanbieter konnte nicht geladen werden. Prüfe deine Verbindung.",
+      "3ds_failed": "Deine Bank hat die Kartenprüfung nicht autorisiert.",
+      "payment_error": "Die Zahlung konnte nicht abgeschlossen werden."
+    },
+    "poweredBy": "Zahlungen sicher verarbeitet von Culqi",
+    "chargingHint": "Bitte schließe oder lade diese Seite nicht neu.",
+    "cardNextStep": "Beim Bezahlen öffnet sich das sichere Culqi-Fenster für deine Karte.",
+    "walletNextStep": "Beim Bezahlen öffnet sich das sichere Culqi-Fenster: Gib deine Nummer und den Bestätigungscode aus der Yape-App ein."
+  },
+  "thanks": {
+    "title": "Danke für deine Bestellung!",
+    "text": "Wir haben deine Zahlung erhalten und bereiten deinen Kaffee bereits vor.",
+    "orderLabel": "Bestellnr.:",
+    "emailNote": "Wir haben dir eine E-Mail mit den Bestelldetails geschickt.",
+    "shippingNote": "Wir melden uns telefonisch, um die Lieferung abzustimmen.",
+    "back": "Weiter einkaufen"
+  },
+  "orderEmail": {
+    "subject": "Deine Bestellung {order} bei Grain & Grains",
+    "title": "Danke, {name}!",
+    "intro": "Wir haben deine Zahlung erhalten. Hier die Details deiner Bestellung {order}:",
+    "subtotal": "Zwischensumme",
+    "discount": "Rabatt",
+    "shipping": "Versand",
+    "total": "Gesamt",
+    "free": "Kostenlos",
+    "deliveryTo": "Lieferung an",
+    "outro": "Wir melden uns telefonisch, um die Lieferung abzustimmen. Bei Fragen antworte einfach auf diese E-Mail.",
+    "preheader": "Wir haben deine Zahlung erhalten. Deine Bestellung {order} wird vorbereitet.",
+    "orderLabel": "Bestellung",
+    "paymentLabel": "Zahlung",
+    "paidCard": "Kredit- oder Debitkarte",
+    "cta": "Weiter einkaufen",
+    "heroKicker": "Bestellung bestätigt",
+    "heroText": "Wir haben deine Zahlung erhalten und bereiten deinen Kaffee bereits vor – vom Feld in die Tasse."
+  },
+  "a11y": {
+    "home": "Startseite",
+    "breadcrumb": "Navigationspfad",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "scrollToProducts": "Zu den Produkten",
+    "promiseAlt": "Exzellenz in der Lieferkette: unser Versprechen",
+    "shopHeaderAlt": "Grüner Spezialitätenkaffee von Grain & Grains",
+    "partnerAlt": "Partnerschaft zwischen Grain & Grains und CAFCER",
+    "aboutTitle": "Unsere Geschichte"
   }
 }

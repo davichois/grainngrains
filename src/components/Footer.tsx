@@ -117,7 +117,7 @@ export default function Footer() {
   ];
 
   const contact = [
-    { icon: Phone, text: "+51 930 625 619" },
+    { icon: Phone, text: "+51 927 645 665" },
     { icon: Mail, text: "tradingna@grainngrains.org" },
   ];
 

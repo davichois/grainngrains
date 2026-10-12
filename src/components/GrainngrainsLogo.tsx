@@ -12,7 +12,7 @@ const caveat = Caveat({
 export function GrainngrainsLogo({ tagline }: { tagline: string }) {
   return (
     <Link href="/" className="shrink-0 flex flex-col items-start leading-none">
-      <Image src={grainngrains} alt="logo" width={125} height={125} priority />
+      <Image src={grainngrains} alt="Grain & Grains" width={125} height={125} priority />
       <span
         className={`rotate-[-5deg] px-15 py-1 text-[14px] text-cyan-800 font-medium ${caveat.className}`}
       >

@@ -2,6 +2,7 @@
 
 import { ChevronRight } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { Link } from "../i18n/navigation";
 
 interface BreadcrumbProps {
@@ -20,11 +21,12 @@ export function Breadcrumb({
   className = "",
 }: BreadcrumbProps) {
   const pathname = usePathname();
+  const t = useTranslations("a11y");
 
   const segments = pathname.split("/").filter(Boolean);
 
   const crumbs = [
-    { label: labels[""] ?? "Home", href: "/" },
+    { label: labels[""] ?? t("home"), href: "/" },
     ...segments
       .filter((seg) => !hideSegments.includes(seg))
       .map((seg, i, arr) => ({
@@ -36,7 +38,7 @@ export function Breadcrumb({
 
   return (
     <nav
-      aria-label="breadcrumb"
+      aria-label={t("breadcrumb")}
       data-theme="light"
       className={`breadcrumb-wrapper inset-x-0 w-full z-20 border-y border-gray-300 ${className} lg:px-20 px-4 py-4`}
     >

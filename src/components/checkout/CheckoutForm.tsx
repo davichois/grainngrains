@@ -1,20 +1,21 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useId, useState, useSyncExternalStore } from "react";
 import {
-  BadgeCheck,
-  CheckCircle2,
-  ChevronDown,
+  AlertTriangle,
   CreditCard,
+  Smartphone,
+  BadgeCheck,
+  Loader2,
+  ChevronDown,
   Lock,
   ShieldCheck,
   ShoppingBag,
-  Smartphone,
   Truck,
 } from "lucide-react";
 import { formatPrice, useCart } from "@/src/components/cart/CartContext";
-import { Link } from "@/src/i18n/navigation";
+import { Link, useRouter } from "@/src/i18n/navigation";
 import {
   DEPARTMENTS,
   FREE_SHIPPING_FROM,
@@ -23,7 +24,14 @@ import {
   shippingCost,
   shippingZone,
 } from "@/src/lib/shop";
+import { YAPE_MAX } from "@/src/lib/checkout/order";
 import OrderSummary from "./OrderSummary";
+import {
+  authenticate3DS,
+  openCulqiCheckout,
+  prepareCulqi,
+  reset3DS,
+} from "./culqi-client";
 import { Field, PaymentBadge, SelectField } from "./fields";
 
 type Receipt = "boleta" | "factura";
@@ -50,7 +58,9 @@ const tab = (active: boolean) =>
 export default function CheckoutForm() {
   const t = useTranslations("checkout");
   const hydrated = useHydrated();
-  const { items, total: subtotal } = useCart();
+  const { items, total: subtotal, clearCart } = useCart();
+  const locale = useLocale();
+  const router = useRouter();
   const ids = {
     contact: useId(),
     delivery: useId(),
@@ -65,7 +75,11 @@ export default function CheckoutForm() {
     code: string;
     percent: number;
   } | null>(null);
-  const [submitted, setSubmitted] = useState(false);
+  /* idle → preparing (creando orden / abriendo Culqi) → charging (cobrando) */
+  const [status, setStatus] = useState<"idle" | "preparing" | "charging">(
+    "idle",
+  );
+  const [error, setError] = useState<string | null>(null);
 
   /* Totales: descuento sobre el subtotal; el envío gratis se evalúa ya con descuento */
   const discountAmount = discount
@@ -90,12 +104,126 @@ export default function CheckoutForm() {
     onRemoveCode: () => setDiscount(null),
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  /* Mensaje legible para un código de error del servidor o de Culqi */
+  const errorMessage = (code: string) =>
+    t.has(`errors.${code}`) ? t(`errors.${code}`) : code;
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    /* TODO: enviar el pedido al servidor, que debe recalcular los precios con
-       data.ts y src/lib/shop.ts (nunca confiar en los del navegador) y crear el
-       pago en la pasarela elegida (Mercado Pago / Culqi / Izipay). */
-    setSubmitted(true);
+    if (status !== "idle") return;
+    setError(null);
+
+    const publicKey = process.env.NEXT_PUBLIC_CULQI_PUBLIC_KEY;
+    if (!publicKey) {
+      setError(errorMessage("config"));
+      return;
+    }
+
+    /* Datos del pedido: el servidor recalcula los montos con el catálogo */
+    const f = new FormData(e.currentTarget);
+    const get = (k: string) => String(f.get(k) ?? "");
+    const checkout = {
+      locale,
+      items: items.map(({ categoryId, productId, size, grind, qty }) => ({
+        categoryId,
+        productId,
+        size,
+        grind,
+        qty,
+      })),
+      discountCode: discount?.code,
+      payment,
+      customer: {
+        email: get("email"),
+        phone: get("phone"),
+        firstName: get("firstName"),
+        lastName: get("lastName"),
+        newsletter: f.get("newsletter") === "on",
+      },
+      address: {
+        department,
+        province: get("province"),
+        district: get("district"),
+        address: get("address"),
+        reference: get("reference"),
+      },
+      receipt:
+        receipt === "boleta"
+          ? { type: "boleta", document: get("document") }
+          : {
+              type: "factura",
+              ruc: get("ruc"),
+              businessName: get("businessName"),
+            },
+    };
+
+    setStatus("preparing");
+    try {
+      /* 1. Monto real en el servidor (+ orden de Culqi si es Yape) */
+      const orderRes = await fetch("/api/checkout/order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(checkout),
+      });
+      const order = await orderRes.json();
+      if (!orderRes.ok) throw new Error(order.error ?? "server");
+
+      /* 2. Ventana de Culqi → token */
+      const deviceId = await prepareCulqi(publicKey);
+      const tokenPromise = openCulqiCheckout({
+        publicKey,
+        amountCents: order.amountCents,
+        orderId: order.orderId,
+        method: payment,
+        customer: {
+          email: checkout.customer.email,
+          firstName: checkout.customer.firstName,
+          lastName: checkout.customer.lastName,
+        },
+      });
+      /* Si el cliente cierra la ventana sin pagar, el botón vuelve a estar listo */
+      setStatus("idle");
+      const tokenId = await tokenPromise;
+
+      /* 3. Cobro en el servidor (con 3DS si el banco lo pide) */
+      setStatus("charging");
+      const charge = (authentication3DS?: Record<string, unknown>) =>
+        fetch("/api/checkout/charge", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            checkout,
+            tokenId,
+            deviceId,
+            orderNumber: order.orderNumber,
+            authentication3DS,
+          }),
+        }).then((r) => r.json());
+
+      let result = await charge();
+      if (result.status === "review") {
+        const params = await authenticate3DS({
+          tokenId,
+          amountCents: order.amountCents,
+          email: checkout.customer.email,
+        });
+        result = await charge(params);
+        reset3DS();
+      }
+
+      if (result.status === "paid") {
+        clearCart();
+        router.push({
+          pathname: "/checkout/gracias",
+          query: { pedido: result.orderNumber },
+        });
+        return;
+      }
+      throw new Error(result.message || result.error || "failed");
+    } catch (err) {
+      setError(errorMessage(err instanceof Error ? err.message : "server"));
+      setStatus("idle");
+    }
   };
 
   /* Mientras se lee el carrito del navegador */
@@ -120,11 +248,38 @@ export default function CheckoutForm() {
   }
 
   const zone = department ? shippingZone(department) : null;
+  /* Yape tiene un tope por pago; por encima se debe pagar con tarjeta */
+  const yapeOverLimit = payment === "wallet" && total > YAPE_MAX;
 
   return (
     /* Columnas como Shopify: formulario (31rem) + resumen (25rem), con
        la división desplazada para que todo quede centrado con márgenes iguales */
     <div className="font-ui lg:grid lg:min-h-[calc(100svh-90px)] lg:grid-cols-[calc(50%+3rem)_minmax(0,1fr)]">
+      {/* Mientras se cobra: bloquea la página para que no se cierre ni se pague dos veces */}
+      {status === "charging" && (
+        <div
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="charging-title"
+          className="fixed inset-0 z-80 flex items-center justify-center bg-white/85 backdrop-blur-sm"
+        >
+          <div className="flex max-w-xs flex-col items-center gap-4 px-6 text-center">
+            <Loader2
+              size={40}
+              strokeWidth={1.5}
+              aria-hidden
+              className="animate-spin text-[#116e78]"
+            />
+            <p
+              id="charging-title"
+              className="text-lg font-semibold text-gray-900"
+            >
+              {t("charging")}
+            </p>
+            <p className="text-sm text-gray-500">{t("chargingHint")}</p>
+          </div>
+        </div>
+      )}
       {/* Resumen plegable en móvil y tablet */}
       <details className="group border-b border-gray-200 bg-[#f7f6f3] lg:hidden">
         <summary className="mx-auto flex max-w-xl cursor-pointer list-none items-center justify-between px-5 py-4 [&::-webkit-details-marker]:hidden">
@@ -365,28 +520,24 @@ export default function CheckoutForm() {
             <h2 id={ids.payment} className={`${sectionTitle} mb-1`}>
               {t("payment")}
             </h2>
-            <p className="mb-3 text-[13px] text-gray-500">
-              {t("paymentSecure")}
-            </p>
+            <div className="mb-3 flex items-center justify-between gap-3">
+              <p className="text-[13px] text-gray-500">{t("paymentSecure")}</p>
+            </div>
             <div role="radiogroup" aria-labelledby={ids.payment}>
               {(
                 [
                   {
                     id: "wallet",
                     label: t("wallet"),
-                    info: t("walletInfo"),
-                    Icon: Smartphone,
-                    badges: ["yape", "plin"],
+                    badges: ["yape"],
                   },
                   {
                     id: "card",
                     label: t("card"),
-                    info: t("cardInfo"),
-                    Icon: CreditCard,
-                    badges: ["visa", "mastercard", "amex"],
+                    badges: ["visa", "mastercard", "amex", "diners"],
                   },
                 ] as const
-              ).map(({ id, label, info, Icon, badges }, i, all) => {
+              ).map(({ id, label, badges }, i, all) => {
                 const active = payment === id;
                 return (
                   /* Cada opción tiene su propio borde; se solapan 1px (-mt-px) y la
@@ -430,9 +581,22 @@ export default function CheckoutForm() {
                         {label}
                       </span>
                       <span className="flex gap-1.5" aria-hidden>
-                        {badges.map((b) => (
-                          <PaymentBadge key={b} brand={b} />
+                        {/* En celular: 2 insignias + "+N" (como Shopify) */}
+                        {badges.map((b, i) => (
+                          <span
+                            key={b}
+                            className={
+                              i >= 2 ? "hidden sm:inline-flex" : "inline-flex"
+                            }
+                          >
+                            <PaymentBadge brand={b} />
+                          </span>
                         ))}
+                        {badges.length > 2 && (
+                          <span className="inline-flex h-5 items-center rounded border border-gray-200 bg-white px-1.5 text-[10px] font-semibold text-gray-500 sm:hidden">
+                            +{badges.length - 2}
+                          </span>
+                        )}
                       </span>
                     </label>
 
@@ -446,15 +610,26 @@ export default function CheckoutForm() {
                       aria-hidden={!active}
                     >
                       <div className="overflow-hidden">
-                        <div className="mx-4 flex flex-col items-center gap-2 border-t border-gray-200 py-5 text-center">
-                          <Icon
-                            size={30}
-                            strokeWidth={1.2}
-                            aria-hidden
-                            className="text-gray-400"
-                          />
-                          <p className="max-w-sm text-[13px] text-gray-600">
-                            {info}
+                        <div className="px-4 pb-4 pt-1">
+                          <p className="flex items-center gap-2.5 rounded-xl bg-white px-3.5 py-3 text-[13px] text-gray-600 ring-1 ring-gray-200">
+                            {id === "card" ? (
+                              <CreditCard
+                                size={18}
+                                strokeWidth={1.5}
+                                aria-hidden
+                                className="shrink-0 text-gray-400"
+                              />
+                            ) : (
+                              <Smartphone
+                                size={18}
+                                strokeWidth={1.5}
+                                aria-hidden
+                                className="shrink-0 text-gray-400"
+                              />
+                            )}
+                            {id === "card"
+                              ? t("cardNextStep")
+                              : t("walletNextStep")}
                           </p>
                         </div>
                       </div>
@@ -467,32 +642,51 @@ export default function CheckoutForm() {
 
           {/* Pagar */}
           <div className="space-y-4">
+            {yapeOverLimit && (
+              <p className="flex items-start gap-2 rounded-xl border border-amber-300 bg-amber-50 p-3 text-[13px] text-amber-900">
+                <AlertTriangle
+                  size={16}
+                  aria-hidden
+                  className="mt-0.5 shrink-0"
+                />
+                {t("yapeLimit", { amount: formatPrice(YAPE_MAX) })}
+              </p>
+            )}
             <button
               type="submit"
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gray-900 py-3.5 text-base font-semibold text-white transition-colors hover:bg-[#116e78]"
+              disabled={status !== "idle" || yapeOverLimit}
+              aria-busy={status !== "idle"}
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gray-900 py-3.5 text-base font-semibold text-white transition-colors hover:bg-[#116e78] disabled:cursor-not-allowed disabled:bg-gray-400"
             >
-              <Lock size={16} aria-hidden />
-              {t("pay", { amount: formatPrice(total) })}
+              {status === "idle" ? (
+                <Lock size={16} aria-hidden />
+              ) : (
+                <Loader2 size={16} aria-hidden className="animate-spin" />
+              )}
+              {status === "preparing"
+                ? t("preparing")
+                : status === "charging"
+                  ? t("charging")
+                  : t("pay", { amount: formatPrice(total) })}
             </button>
             <p className="text-center text-xs text-gray-500">{t("terms")}</p>
+            <p className="flex items-center justify-center gap-1.5 text-[11px] text-gray-400">
+              <ShieldCheck size={13} aria-hidden />
+              {t("poweredBy")}
+            </p>
 
-            {submitted && (
-              <div
-                role="status"
-                className="flex gap-3 rounded-xl border border-[#116e78]/30 bg-[#116e78]/5 p-3.5 text-[13px] text-gray-700"
+            {error && (
+              <p
+                role="alert"
+                className="flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 p-3 text-[13px] text-red-700"
               >
-                <CheckCircle2
-                  size={20}
+                <AlertTriangle
+                  size={16}
                   aria-hidden
-                  className="shrink-0 text-[#116e78]"
+                  className="mt-0.5 shrink-0"
                 />
-                <p>
-                  <strong className="block text-gray-900">
-                    {t("readyTitle")}
-                  </strong>
-                  {t("readyText")}
-                </p>
-              </div>
+                {error}
+              </p>
             )}
 
             {/* Confianza */}

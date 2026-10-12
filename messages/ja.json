@@ -165,6 +165,31 @@
     }
   },
   "shop": {
+    "title": "歴史、品質、そしてリアルタイムの価格",
+    "subtitle": "今すぐ見積もりを。",
+    "types": {
+      "greenCoffee": "生豆",
+      "roastedCoffee": "焙煎コーヒー",
+      "groundCoffee": "挽いたコーヒー"
+    },
+    "cta": "レポートをダウンロード",
+    "degrees": {
+      "degree1": "ライト",
+      "degree2": "ミディアム",
+      "degree3": "ダーク",
+      "description1": "最高のチェリーのみ。クリーンでエレガント、表現力豊かで、コーヒーの原産地の可能性を完全に引き出します。",
+      "description2": "バランスが取れて調和のとれた味わい。キャラクター、甘み、日常の洗練を兼ね備えた一貫したカップです。"
+    },
+    "whatsOurCoffee": "良いコーヒーを特別なものにするのは何でしょうか？それは、各豆の慎重な選択、一貫した品質、そしてその起源への敬意です。私たちのライト、ミディアム、ダークのコーヒーは、異なるニーズに合わせた定義されたプロファイルを提供しながら、常にバランス、純度、そして各カップのキャラクターを維持しています。",
+    "degreePresentationTitle": "各度数に恋をして",
+    "degreePresentationSubtitle": "素晴らしい一杯の起源",
+    "reports": {
+      "title": "レポート",
+      "choose": "プレビューまたはダウンロードするレポートを選択",
+      "preview": "プレビュー",
+      "download": "ダウンロード",
+      "close": "閉じる"
+    },
     "sizes": {
       "250g": "250 g",
       "1kg": "1 kg"
@@ -589,7 +614,7 @@
     "businessName": "会社名",
     "payment": "お支払い",
     "paymentSecure": "すべての取引は安全に暗号化されています。",
-    "wallet": "Yape / Plin",
+    "wallet": "Yape",
     "card": "クレジットカード・デビットカード",
     "paymentRedirect": "お支払い時に安全な決済画面へご案内します。",
     "pay": "{amount} を支払う",
@@ -614,12 +639,79 @@
     "readyTitle": "ご注文の準備ができました！",
     "readyText": "現在、決済サービスとの接続を準備中です。まもなくこちらでご購入いただけます。",
     "homeDelivery": "ご自宅へ配送",
-    "walletInfo": "お支払い時に、安全な決済画面で Yape または Plin アプリから決済します。",
-    "cardInfo": "お支払い時に、安全な決済画面でカード情報を入力します。お客様の情報は保存されません。",
     "trustSecure": "100% 安全なお支払い",
     "trustShipping": "ペルー全国へ配送",
     "trustCertified": "認証済みコーヒー",
     "keepShopping": "買い物を続ける",
-    "backToShop": "ストアに戻る"
+    "backToShop": "ストアに戻る",
+    "preparing": "お支払いを準備中…",
+    "charging": "お支払いを処理中…",
+    "yapeLimit": "Yape でのお支払いは {amount} までです。このご注文はカードでお支払いください。",
+    "errors": {
+      "invalid_body": "ご注文を読み込めませんでした。ページを再読み込みしてもう一度お試しください。",
+      "empty_cart": "カートは空です。",
+      "invalid_qty": "カートの数量をご確認ください。",
+      "invalid_option": "サイズと挽き方をご確認ください。",
+      "invalid_email": "メールアドレスをご確認ください。",
+      "invalid_phone": "携帯番号をご確認ください（9 桁、9 から始まる）。",
+      "invalid_department": "有効な地域を選択してください。",
+      "invalid_ruc": "RUC（11 桁）をご確認ください。",
+      "invalid_document": "身分証番号をご確認ください。",
+      "missing_fields": "必須項目をすべて入力してください。",
+      "unknown_product": "販売終了の商品があります。カートを更新してください。",
+      "invalid_total": "注文金額が無効です。",
+      "yape_limit": "Yape でのお支払いは S/ 500 までです。カードでお支払いください。",
+      "gateway": "決済サービスが応答しません。数分後に再度お試しください。",
+      "server": "予期しないエラーが発生しました。もう一度お試しください。",
+      "failed": "お支払いを完了できませんでした。再度お試しいただくか、別の方法をご利用ください。",
+      "config": "このストアではまだ決済が設定されていません。",
+      "culqi_unavailable": "決済サービスを読み込めませんでした。接続をご確認ください。",
+      "3ds_failed": "カード認証が銀行に承認されませんでした。",
+      "payment_error": "お支払いを完了できませんでした。"
+    },
+    "poweredBy": "お支払いは Culqi により安全に処理されます",
+    "chargingHint": "このページを閉じたり再読み込みしたりしないでください。",
+    "cardNextStep": "お支払い時に Culqi の安全な画面が開き、カード情報を入力します。",
+    "walletNextStep": "お支払い時に Culqi の安全な画面が開きます。携帯番号と Yape アプリの承認コードを入力してください。"
+  },
+  "thanks": {
+    "title": "ご購入ありがとうございます！",
+    "text": "お支払いを確認しました。コーヒーの準備を進めています。",
+    "orderLabel": "注文番号：",
+    "emailNote": "ご注文の詳細をメールでお送りしました。",
+    "shippingNote": "配送の調整のため、携帯電話にご連絡します。",
+    "back": "買い物を続ける"
+  },
+  "orderEmail": {
+    "subject": "Grain & Grains ご注文 {order}",
+    "title": "{name} 様、ありがとうございます！",
+    "intro": "お支払いを確認しました。ご注文 {order} の内容は以下のとおりです：",
+    "subtotal": "小計",
+    "discount": "割引",
+    "shipping": "送料",
+    "total": "合計",
+    "free": "無料",
+    "deliveryTo": "お届け先",
+    "outro": "配送の調整のため、携帯電話にご連絡します。ご不明な点はこのメールにご返信ください。",
+    "preheader": "お支払いを確認しました。ご注文 {order} を準備中です。",
+    "orderLabel": "注文",
+    "paymentLabel": "お支払い",
+    "paidCard": "クレジットカード・デビットカード",
+    "cta": "買い物を続ける",
+    "heroKicker": "ご注文確定",
+    "heroText": "お支払いを確認しました。農園からカップまで、コーヒーの準備を進めています。"
+  },
+  "a11y": {
+    "home": "ホーム",
+    "breadcrumb": "パンくずリスト",
+    "openMenu": "メニューを開く",
+    "closeMenu": "メニューを閉じる",
+    "previous": "前へ",
+    "next": "次へ",
+    "scrollToProducts": "商品へ移動",
+    "promiseAlt": "サプライチェーンの卓越性：私たちの約束",
+    "shopHeaderAlt": "Grain & Grains のスペシャルティ生豆",
+    "partnerAlt": "Grain & Grains と CAFCER のパートナーシップ",
+    "aboutTitle": "私たちの歩み"
   }
 }
