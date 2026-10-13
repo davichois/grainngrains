@@ -259,15 +259,9 @@
     },
     "grinds": {
       "wholeBean": "Grano entero",
-      "coarseDrip": "Goteo grueso",
-      "drip": "Goteo",
-      "xfDrip": "Goteo extrafino",
-      "frenchPress": "Prensa francesa",
-      "toddy": "Cold brew (Toddy)",
-      "perkPress": "Percoladora",
-      "coarseEspresso": "Espresso grueso",
-      "espresso": "Espresso",
-      "xfEspresso": "Espresso extrafino"
+      "coarse": "Grueso",
+      "medium": "Medio",
+      "fine": "Fino"
     },
     "size": "Presentación",
     "grind": "Molienda",

@@ -194,15 +194,9 @@
     },
     "grinds": {
       "wholeBean": "Whole bean",
-      "coarseDrip": "Coarse drip",
-      "drip": "Drip",
-      "xfDrip": "Extra-fine drip",
-      "frenchPress": "French press",
-      "toddy": "Cold brew (Toddy)",
-      "perkPress": "Percolator",
-      "coarseEspresso": "Coarse espresso",
-      "espresso": "Espresso",
-      "xfEspresso": "Extra-fine espresso"
+      "coarse": "Coarse",
+      "medium": "Medium",
+      "fine": "Fine"
     },
     "size": "Size",
     "grind": "Grind",

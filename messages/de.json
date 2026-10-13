@@ -196,15 +196,9 @@
     },
     "grinds": {
       "wholeBean": "Ganze Bohne",
-      "coarseDrip": "Grob (Filter)",
-      "drip": "Filter",
-      "xfDrip": "Extrafein (Filter)",
-      "frenchPress": "French Press",
-      "toddy": "Cold Brew (Toddy)",
-      "perkPress": "Perkolator",
-      "coarseEspresso": "Grob (Espresso)",
-      "espresso": "Espresso",
-      "xfEspresso": "Extrafein (Espresso)"
+      "coarse": "Grob",
+      "medium": "Mittel",
+      "fine": "Fein"
     },
     "size": "Größe",
     "grind": "Mahlgrad",

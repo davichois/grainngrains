@@ -196,15 +196,9 @@
     },
     "grinds": {
       "wholeBean": "Grão inteiro",
-      "coarseDrip": "Coado grosso",
-      "drip": "Coado",
-      "xfDrip": "Coado extrafino",
-      "frenchPress": "Prensa francesa",
-      "toddy": "Cold brew (Toddy)",
-      "perkPress": "Percolador",
-      "coarseEspresso": "Espresso grosso",
-      "espresso": "Espresso",
-      "xfEspresso": "Espresso extrafino"
+      "coarse": "Grossa",
+      "medium": "Média",
+      "fine": "Fina"
     },
     "size": "Tamanho",
     "grind": "Moagem",

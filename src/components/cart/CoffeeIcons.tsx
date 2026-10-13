@@ -48,76 +48,68 @@ function BeanIcon(props: IconProps) {
   );
 }
 
-function DripperIcon(props: IconProps) {
-  return (
-    <svg {...base} {...props}>
-      <path d="M4.5 6h13l-4 7.5h-5z" />
-      <path d="M17.2 7.5h1.6a1.5 1.5 0 0 1 0 3h-2.4" />
-      <path d="M11 13.5v1.5" />
-      <path d="M6.5 17h9v2.5a1.5 1.5 0 0 1-1.5 1.5H8a1.5 1.5 0 0 1-1.5-1.5z" />
-    </svg>
-  );
-}
+/* Molienda: partículas cada vez más pequeñas y numerosas */
+const PARTICLES: Record<
+  "coarse" | "medium" | "fine",
+  [number, number, number][]
+> = {
+  coarse: [
+    [8, 9, 3.2],
+    [16, 10, 2.8],
+    [11, 16.5, 3],
+  ],
+  medium: [
+    [7, 8, 2],
+    [13, 7, 1.8],
+    [18, 10, 2],
+    [9, 14, 1.9],
+    [15, 15, 2],
+    [12, 19.5, 1.8],
+  ],
+  fine: [
+    [6, 7, 1],
+    [10, 6, 1],
+    [14, 7, 1],
+    [18, 8, 1],
+    [7, 11, 1],
+    [11, 10.5, 1],
+    [15, 11, 1],
+    [19, 12, 1],
+    [6, 15, 1],
+    [10, 14.5, 1],
+    [14, 15, 1],
+    [18, 16, 1],
+    [8, 19, 1],
+    [12, 18.5, 1],
+    [16, 19.5, 1],
+  ],
+};
 
-function EspressoIcon(props: IconProps) {
+function GroundIcon({
+  level,
+  ...props
+}: IconProps & { level: keyof typeof PARTICLES }) {
   return (
     <svg {...base} {...props}>
-      <rect x="4" y="3" width="16" height="6" rx="1" />
-      <path d="M9 9v2h6V9" />
-      <path d="M12 11v1.5" />
-      <path d="M8.5 14h6v3a2.5 2.5 0 0 1-2.5 2.5h-1A2.5 2.5 0 0 1 8.5 17z" />
-      <path d="M14.5 15h1a1.2 1.2 0 0 1 0 2.4h-1" />
-      <path d="M4 21h16" />
-    </svg>
-  );
-}
-
-function FrenchPressIcon(props: IconProps) {
-  return (
-    <svg {...base} {...props}>
-      <path d="M11.5 2.5v8.5" />
-      <path d="M9.5 2.5h4" />
-      <path d="M6.5 6.5h10V20a1 1 0 0 1-1 1h-8a1 1 0 0 1-1-1z" />
-      <path d="M6.5 11h10" />
-      <path d="M16.5 8.5h1.5a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5h-1.5" />
-    </svg>
-  );
-}
-
-function ColdBrewIcon(props: IconProps) {
-  return (
-    <svg {...base} {...props}>
-      <path d="M6 3.5h12v2.5H6z" />
-      <path d="M7 6h10v13a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z" />
-      <rect x="9" y="10.5" width="3" height="3" rx="0.5" />
-      <rect x="12.3" y="14.5" width="3" height="3" rx="0.5" />
-    </svg>
-  );
-}
-
-function PercolatorIcon(props: IconProps) {
-  return (
-    <svg {...base} {...props}>
-      <path d="M11 2.5h2V4" />
-      <path d="M7.5 4h9l-1.2 6H8.7z" />
-      <path d="M8.7 10h6.6" />
-      <path d="M8.7 10 7.5 20a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1l-1.2-10" />
-      <path d="M16.5 5.5h2l-1.4 4" />
+      {PARTICLES[level].map(([cx, cy, r], i) => (
+        <circle
+          key={i}
+          cx={cx}
+          cy={cy}
+          r={r}
+          fill="currentColor"
+          stroke="none"
+        />
+      ))}
     </svg>
   );
 }
 
 const GRIND_ICON: Record<GrindId, (p: IconProps) => React.ReactElement> = {
   wholeBean: BeanIcon,
-  coarseDrip: DripperIcon,
-  drip: DripperIcon,
-  xfDrip: DripperIcon,
-  frenchPress: FrenchPressIcon,
-  toddy: ColdBrewIcon,
-  perkPress: PercolatorIcon,
-  coarseEspresso: EspressoIcon,
-  espresso: EspressoIcon,
-  xfEspresso: EspressoIcon,
+  coarse: (p) => <GroundIcon level="coarse" {...p} />,
+  medium: (p) => <GroundIcon level="medium" {...p} />,
+  fine: (p) => <GroundIcon level="fine" {...p} />,
 };
 
 export function GrindIcon({ grind, ...props }: IconProps & { grind: GrindId }) {

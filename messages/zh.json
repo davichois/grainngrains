@@ -196,15 +196,9 @@
     },
     "grinds": {
       "wholeBean": "咖啡豆（不研磨）",
-      "coarseDrip": "粗研磨（滴滤）",
-      "drip": "中研磨（滴滤）",
-      "xfDrip": "细研磨（滴滤）",
-      "frenchPress": "法压壶",
-      "toddy": "冷萃（Toddy）",
-      "perkPress": "渗滤壶",
-      "coarseEspresso": "粗研磨（意式）",
-      "espresso": "意式浓缩",
-      "xfEspresso": "极细研磨（意式）"
+      "coarse": "粗研磨",
+      "medium": "中研磨",
+      "fine": "细研磨"
     },
     "size": "规格",
     "grind": "研磨度",

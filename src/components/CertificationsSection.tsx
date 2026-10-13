@@ -26,7 +26,7 @@ export default async function CertificationsSection() {
   const cooperativas = [
     {
       name: "CAFCER",
-      url: "https://cafcer.com/",
+      url: "",
       logo: "/cafcer1.webp",
     },
   ];
@@ -58,8 +58,20 @@ export default async function CertificationsSection() {
 
       {/* Tarjeta principal: logos + claim */}
       <div className="relative z-10 mx-auto mt-12 grid max-w-5xl grid-cols-1 items-center gap-8 p-8 md:grid-cols-2 md:p-12 lg:p-16">
+        {/* Claim */}
+        <Reveal direction="right">
+          <h3
+            className="font-black uppercase leading-[0.95] tracking-tight md:text-right text-[#8dbe22]"
+            style={{ fontSize: "clamp(1.75rem, 4.5vw, 3.25rem)" }}
+          >
+            {t("claim")}
+          </h3>
+        </Reveal>
         {/* Logos */}
-        <StaggerContainer className="grid grid-cols-3 gap-6 sm:gap-8" stagger={0.12}>
+        <StaggerContainer
+          className="grid grid-cols-3 gap-6 sm:gap-8"
+          stagger={0.12}
+        >
           {certifications.map((cert) => (
             <Item key={cert.name} className="flex items-center justify-center">
               <Image
@@ -73,16 +85,6 @@ export default async function CertificationsSection() {
             </Item>
           ))}
         </StaggerContainer>
-
-        {/* Claim */}
-        <Reveal direction="right">
-          <h3
-            className="font-black uppercase leading-[0.95] tracking-tight md:text-right text-[#8dbe22]"
-            style={{ fontSize: "clamp(1.75rem, 4.5vw, 3.25rem)" }}
-          >
-            {t("claim")}
-          </h3>
-        </Reveal>
       </div>
 
       <div className="relative z-10 mx-auto mt-12 grid max-w-5xl grid-cols-1 items-center gap-8 p-8 md:grid-cols-2 md:p-12 lg:p-16">
@@ -96,25 +98,21 @@ export default async function CertificationsSection() {
           </h3>
         </Reveal>
         {/* Logos */}
-        <StaggerContainer className="grid grid-cols-3 gap-6 sm:gap-8" stagger={0.12}>
+        <StaggerContainer
+          className="grid grid-cols-3 gap-6 sm:gap-8"
+          stagger={0.12}
+        >
           {cooperativas.map((coop) => (
             <Item key={coop.name} className="flex items-center justify-center">
-              <a
-                href={coop.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={coop.name}
-                className="flex items-center justify-center transition hover:scale-105"
-              >
-                <Image
-                  src={coop.logo}
-                  alt={coop.name}
-                  width={180}
-                  height={80}
-                  className="object-contain w-auto h-26 sm:h-26"
-                  quality={95}
-                />
-              </a>
+              {/* Solo el logo, sin enlace a la web de la cooperativa */}
+              <Image
+                src={coop.logo}
+                alt={coop.name}
+                width={180}
+                height={80}
+                className="object-contain w-auto h-26 sm:h-26"
+                quality={95}
+              />
             </Item>
           ))}
         </StaggerContainer>

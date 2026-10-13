@@ -64,7 +64,7 @@ export const CATEGORIES: ShowcaseCategory[] = [
     products: [
       {
         id: "donEliseoFarm",
-        prices: { "250g": 25, "1kg": 85 },
+        prices: { "250g": 60, "1kg": 240 },
         certifications: ["fairtrade", "usdaOrganic", "cleanCup"],
         bg: "linear-gradient(135deg,#2e1a0a,#100804)",
         image: `${IMG}/031.webp`,
@@ -72,7 +72,7 @@ export const CATEGORIES: ShowcaseCategory[] = [
       },
       {
         id: "donEdwinFarm",
-        prices: { "250g": 45, "1kg": 150 },
+        prices: { "250g": 60, "1kg": 240 },
         certifications: ["fairtrade", "usdaOrganic", "cleanCup"],
         bg: "linear-gradient(135deg,#2e1a0a,#100804)",
         image: `${IMG}/010.webp`,
@@ -80,7 +80,7 @@ export const CATEGORIES: ShowcaseCategory[] = [
       },
       {
         id: "donOsmarFarm",
-        prices: { "250g": 45, "1kg": 150 },
+        prices: { "250g": 60, "1kg": 240 },
         certifications: ["fairtrade", "usdaOrganic", "cleanCup"],
         bg: "linear-gradient(135deg,#2e1a0a,#100804)",
         image: `${IMG}/021.webp`,
@@ -98,7 +98,7 @@ export const CATEGORIES: ShowcaseCategory[] = [
     products: [
       {
         id: "daughtersOfTheForest",
-        prices: { "250g": 45, "1kg": 150 },
+        prices: { "250g": 60, "1kg": 240 },
         certifications: ["fairtrade", "usdaOrganic", "cleanCup"],
         bg: "linear-gradient(135deg,#1a1a2e,#0a0a18)",
         image: `${IMG}/071.webp`,
@@ -106,7 +106,7 @@ export const CATEGORIES: ShowcaseCategory[] = [
       },
       {
         id: "guardiansOfTheEarth",
-        prices: { "250g": 45, "1kg": 150 },
+        prices: { "250g": 60, "1kg": 240 },
         certifications: ["fairtrade", "usdaOrganic", "cleanCup"],
         bg: "linear-gradient(135deg,#1a1a2e,#0a0a18)",
         image: `${IMG}/081.webp`,
@@ -124,7 +124,7 @@ export const CATEGORIES: ShowcaseCategory[] = [
     products: [
       {
         id: "morningClassic",
-        prices: { "250g": 45, "1kg": 150 },
+        prices: { "250g": 60, "1kg": 240 },
         certifications: ["fairtrade", "usdaOrganic", "cleanCup"],
         bg: "linear-gradient(135deg,#2e1a0a,#100804)",
         image: `${IMG}/041.webp`,
@@ -142,7 +142,7 @@ export const CATEGORIES: ShowcaseCategory[] = [
     products: [
       {
         id: "vanilla-infused",
-        prices: { "250g": 45, "1kg": 150 },
+        prices: { "250g": 60, "1kg": 240 },
         certifications: [],
         bg: "linear-gradient(135deg,#2e1a0a,#100804)",
         image: `${IMG}/051.webp`,
@@ -150,7 +150,7 @@ export const CATEGORIES: ShowcaseCategory[] = [
       },
       {
         id: "guanabana-infused",
-        prices: { "250g": 45, "1kg": 150 },
+        prices: { "250g": 60, "1kg": 240 },
         certifications: [],
         bg: "linear-gradient(135deg,#2e1a0a,#100804)",
         image: `${IMG}/061.webp`,

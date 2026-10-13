@@ -9,21 +9,30 @@ export const SIZES = ["250g", "1kg"] as const;
 export type SizeId = (typeof SIZES)[number];
 export const DEFAULT_SIZE: SizeId = "250g";
 
-/** Tipos de molienda, de más gruesa a más fina (i18n: shop.grinds.<id>) */
-export const GRINDS = [
-  "wholeBean",
-  "coarseDrip",
-  "drip",
-  "xfDrip",
-  "frenchPress",
-  "toddy",
-  "perkPress",
-  "coarseEspresso",
-  "espresso",
-  "xfEspresso",
-] as const;
+/** Tipos de molienda (i18n: shop.grinds.<id>) */
+export const GRINDS = ["wholeBean", "coarse", "medium", "fine"] as const;
 export type GrindId = (typeof GRINDS)[number];
 export const DEFAULT_GRIND: GrindId = "wholeBean";
+
+/** Moliendas antiguas (por método de preparación) → molienda actual,
+    para los carritos guardados antes del cambio */
+export const LEGACY_GRINDS: Record<string, GrindId> = {
+  coarseDrip: "coarse",
+  frenchPress: "coarse",
+  toddy: "coarse",
+  perkPress: "coarse",
+  drip: "medium",
+  coarseEspresso: "medium",
+  xfDrip: "fine",
+  espresso: "fine",
+  xfEspresso: "fine",
+};
+
+/** Molienda válida a partir de un valor guardado (o la por defecto) */
+export const normalizeGrind = (g: unknown): GrindId =>
+  (GRINDS as readonly string[]).includes(g as string)
+    ? (g as GrindId)
+    : (LEGACY_GRINDS[g as string] ?? DEFAULT_GRIND);
 
 /* ───────── Envío (solo delivery, en soles) ───────── */
 

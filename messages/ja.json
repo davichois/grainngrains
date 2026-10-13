@@ -196,15 +196,9 @@
     },
     "grinds": {
       "wholeBean": "豆のまま",
-      "coarseDrip": "粗挽き（ドリップ）",
-      "drip": "中挽き（ドリップ）",
-      "xfDrip": "細挽き（ドリップ）",
-      "frenchPress": "フレンチプレス",
-      "toddy": "コールドブリュー（Toddy）",
-      "perkPress": "パーコレーター",
-      "coarseEspresso": "粗挽き（エスプレッソ）",
-      "espresso": "エスプレッソ",
-      "xfEspresso": "極細挽き（エスプレッソ）"
+      "coarse": "粗挽き",
+      "medium": "中挽き",
+      "fine": "細挽き"
     },
     "size": "サイズ",
     "grind": "挽き方",

@@ -194,7 +194,7 @@ function QuickAddContent({
     /* Celular: hoja con imagen arriba. iPad vertical: imagen más angosta.
        iPad horizontal y escritorio: 5/6. Desde md la ventana tiene alto máximo
        y solo la columna de opciones se desplaza, con el botón fijo abajo. */
-    <div className="grid grid-cols-[minmax(0,1fr)] md:h-[min(46rem,calc(100svh-4rem))] md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
+    <div className="grid grid-cols-[minmax(0,1fr)] md:h-[min(36rem,calc(100svh-4rem))] md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
       {/* Imagen */}
       <div className="relative aspect-4/3 md:aspect-auto md:h-full">
         {v.media}

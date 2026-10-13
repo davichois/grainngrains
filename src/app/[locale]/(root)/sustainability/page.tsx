@@ -44,14 +44,14 @@ const blockStyles: {
     bg: "bg-[#FEFDDF]",
     border: "bg-[#FEFDDF]",
     text: "text-[#25343F]",
-    link: "https://clean-cup-alliance.vercel.app/", // TODO: URL real de Clean Cup Alliance
+    link: "https://cleancup.grainngrains.org", // TODO: URL real de Clean Cup Alliance
   },
   {
     image: "/images/sustainability/flowerwheels.svg",
     bg: "bg-[#c4d74a]",
     border: "bg-[#FEFDDF]",
     text: "text-[#25343F]",
-    link: "https://flavorwheel.grainngrains.org/es", // TODO: URL real de la Rueda de Sabores
+    link: "https://flavorwheel.grainngrains.org", // TODO: URL real de la Rueda de Sabores
   },
   {
     image: "/images/sustainability/FLS.svg",

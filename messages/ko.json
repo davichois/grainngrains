@@ -194,15 +194,9 @@
     },
     "grinds": {
       "wholeBean": "원두 그대로",
-      "coarseDrip": "굵게 (드립)",
-      "drip": "중간 (드립)",
-      "xfDrip": "가늘게 (드립)",
-      "frenchPress": "프렌치 프레스",
-      "toddy": "콜드브루 (Toddy)",
-      "perkPress": "퍼컬레이터",
-      "coarseEspresso": "굵게 (에스프레소)",
-      "espresso": "에스프레소",
-      "xfEspresso": "아주 가늘게 (에스프레소)"
+      "coarse": "굵게",
+      "medium": "중간",
+      "fine": "가늘게"
     },
     "size": "용량",
     "grind": "분쇄도",

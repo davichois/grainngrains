@@ -196,15 +196,9 @@
     },
     "grinds": {
       "wholeBean": "Grains entiers",
-      "coarseDrip": "Filtre grossier",
-      "drip": "Filtre",
-      "xfDrip": "Filtre extra-fin",
-      "frenchPress": "Presse française",
-      "toddy": "Cold brew (Toddy)",
-      "perkPress": "Percolateur",
-      "coarseEspresso": "Espresso grossier",
-      "espresso": "Espresso",
-      "xfEspresso": "Espresso extra-fin"
+      "coarse": "Grossière",
+      "medium": "Moyenne",
+      "fine": "Fine"
     },
     "size": "Format",
     "grind": "Mouture",

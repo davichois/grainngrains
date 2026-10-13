@@ -18,8 +18,8 @@ import {
   findProduct,
 } from "@/src/components/product-showcase/data";
 import {
-  DEFAULT_GRIND,
   DEFAULT_SIZE,
+  normalizeGrind,
   type GrindId,
   type SizeId,
 } from "@/src/lib/shop";
@@ -78,7 +78,7 @@ function readStorage(): CartItem[] {
       const item = {
         ...i,
         size: i.size ?? DEFAULT_SIZE,
-        grind: i.grind ?? DEFAULT_GRIND,
+        grind: normalizeGrind(i.grind),
       };
       return { ...item, key: itemKey(item) };
     });
