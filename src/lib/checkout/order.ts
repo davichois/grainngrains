@@ -19,8 +19,10 @@ import {
   type SizeId,
 } from "@/src/lib/shop";
 
-/** Límite por pago con Yape en e-commerce (según Culqi), en soles */
-export const YAPE_MAX = 500;
+/** Tope por pago con Yape en Mercado Pago, en soles */
+export const YAPE_MAX = 2000;
+/** Límite por defecto de la app Yape; el cliente puede subirlo hasta YAPE_MAX */
+export const YAPE_DEFAULT_LIMIT = 500;
 
 export interface OrderLineInput {
   categoryId: string;
@@ -66,8 +68,6 @@ export interface PricedOrder {
   discountAmount: number;
   shipping: number;
   total: number;
-  /** Total en céntimos, como lo pide Culqi */
-  amountCents: number;
 }
 
 export class OrderError extends Error {}
@@ -189,7 +189,6 @@ export function priceOrder(input: CheckoutInput): PricedOrder {
     discountAmount,
     shipping,
     total,
-    amountCents: Math.round(total * 100),
   };
 }
 
@@ -199,4 +198,11 @@ export function newOrderNumber() {
   const ymd = `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, "0")}${String(d.getDate()).padStart(2, "0")}`;
   const rand = Math.random().toString(36).slice(2, 6).toUpperCase();
   return `GG-${ymd}-${rand}`;
+}
+
+/** Documento del comprador para Mercado Pago según el comprobante */
+export function payerIdentification(receipt: CheckoutInput["receipt"]) {
+  if (receipt.type === "factura") return { type: "RUC", number: receipt.ruc };
+  const doc = receipt.document;
+  return { type: doc.length === 8 ? "DNI" : "C.E", number: doc };
 }

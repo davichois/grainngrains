@@ -1,10 +1,9 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { useId, useState, useSyncExternalStore } from "react";
+import { useId, useRef, useState, useSyncExternalStore } from "react";
 import {
   AlertTriangle,
-  CreditCard,
   Smartphone,
   BadgeCheck,
   Loader2,
@@ -24,14 +23,14 @@ import {
   shippingCost,
   shippingZone,
 } from "@/src/lib/shop";
-import { YAPE_MAX } from "@/src/lib/checkout/order";
-import OrderSummary from "./OrderSummary";
 import {
-  authenticate3DS,
-  openCulqiCheckout,
-  prepareCulqi,
-  reset3DS,
-} from "./culqi-client";
+  YAPE_DEFAULT_LIMIT,
+  YAPE_MAX,
+  payerIdentification,
+} from "@/src/lib/checkout/order";
+import OrderSummary from "./OrderSummary";
+import CardFields, { type CardFieldsHandle } from "./CardFields";
+import { createYapeToken } from "./mp-client";
 import { Field, PaymentBadge, SelectField } from "./fields";
 
 type Receipt = "boleta" | "factura";
@@ -71,11 +70,16 @@ export default function CheckoutForm() {
   const [department, setDepartment] = useState("");
   const [receipt, setReceipt] = useState<Receipt>("boleta");
   const [payment, setPayment] = useState<PaymentMethod>("wallet");
+  /* Los campos seguros de tarjeta se montan la primera vez que se elige tarjeta */
+  const [cardOpened, setCardOpened] = useState(false);
+  const cardRef = useRef<CardFieldsHandle>(null);
+  /* El código de Yape es de un solo uso: se limpia si el pago falla */
+  const [yapeOtp, setYapeOtp] = useState("");
   const [discount, setDiscount] = useState<{
     code: string;
     percent: number;
   } | null>(null);
-  /* idle → preparing (creando orden / abriendo Culqi) → charging (cobrando) */
+  /* idle → preparing (tokenizando en Mercado Pago) → charging (cobrando) */
   const [status, setStatus] = useState<"idle" | "preparing" | "charging">(
     "idle",
   );
@@ -104,7 +108,7 @@ export default function CheckoutForm() {
     onRemoveCode: () => setDiscount(null),
   };
 
-  /* Mensaje legible para un código de error del servidor o de Culqi */
+  /* Mensaje legible para un código de error del servidor o de Mercado Pago */
   const errorMessage = (code: string) =>
     t.has(`errors.${code}`) ? t(`errors.${code}`) : code;
 
@@ -112,12 +116,6 @@ export default function CheckoutForm() {
     e.preventDefault();
     if (status !== "idle") return;
     setError(null);
-
-    const publicKey = process.env.NEXT_PUBLIC_CULQI_PUBLIC_KEY;
-    if (!publicKey) {
-      setError(errorMessage("config"));
-      return;
-    }
 
     /* Datos del pedido: el servidor recalcula los montos con el catálogo */
     const f = new FormData(e.currentTarget);
@@ -149,9 +147,9 @@ export default function CheckoutForm() {
       },
       receipt:
         receipt === "boleta"
-          ? { type: "boleta", document: get("document") }
+          ? { type: "boleta" as const, document: get("document") }
           : {
-              type: "factura",
+              type: "factura" as const,
               ruc: get("ruc"),
               businessName: get("businessName"),
             },
@@ -159,69 +157,41 @@ export default function CheckoutForm() {
 
     setStatus("preparing");
     try {
-      /* 1. Monto real en el servidor (+ orden de Culqi si es Yape) */
-      const orderRes = await fetch("/api/checkout/order", {
+      /* 1. Token en Mercado Pago: los datos de la tarjeta o el código de
+            Yape van directo a Mercado Pago, nunca a este servidor */
+      const wallet = payment === "wallet";
+      const pay = wallet
+        ? {
+            token: await createYapeToken(get("yapePhone"), yapeOtp),
+          }
+        : await cardRef.current!.tokenize(
+            payerIdentification(checkout.receipt),
+          );
+
+      /* 2. Cobro en el servidor (recalcula el monto con el catálogo) */
+      setStatus("charging");
+      const res = await fetch("/api/checkout/charge", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(checkout),
+        body: JSON.stringify({ checkout, ...pay }),
       });
-      const order = await orderRes.json();
-      if (!orderRes.ok) throw new Error(order.error ?? "server");
+      const result = await res.json();
 
-      /* 2. Ventana de Culqi → token */
-      const deviceId = await prepareCulqi(publicKey);
-      const tokenPromise = openCulqiCheckout({
-        publicKey,
-        amountCents: order.amountCents,
-        orderId: order.orderId,
-        method: payment,
-        customer: {
-          email: checkout.customer.email,
-          firstName: checkout.customer.firstName,
-          lastName: checkout.customer.lastName,
-        },
-      });
-      /* Si el cliente cierra la ventana sin pagar, el botón vuelve a estar listo */
-      setStatus("idle");
-      const tokenId = await tokenPromise;
-
-      /* 3. Cobro en el servidor (con 3DS si el banco lo pide) */
-      setStatus("charging");
-      const charge = (authentication3DS?: Record<string, unknown>) =>
-        fetch("/api/checkout/charge", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            checkout,
-            tokenId,
-            deviceId,
-            orderNumber: order.orderNumber,
-            authentication3DS,
-          }),
-        }).then((r) => r.json());
-
-      let result = await charge();
-      if (result.status === "review") {
-        const params = await authenticate3DS({
-          tokenId,
-          amountCents: order.amountCents,
-          email: checkout.customer.email,
-        });
-        result = await charge(params);
-        reset3DS();
-      }
-
-      if (result.status === "paid") {
+      if (result.status === "paid" || result.status === "review") {
         clearCart();
         router.push({
           pathname: "/checkout/gracias",
-          query: { pedido: result.orderNumber },
+          query: {
+            pedido: result.orderNumber,
+            ...(result.status === "review" && { estado: "revision" }),
+          },
         });
         return;
       }
-      throw new Error(result.message || result.error || "failed");
+      throw new Error(result.error || "failed");
     } catch (err) {
       setError(errorMessage(err instanceof Error ? err.message : "server"));
+      setYapeOtp("");
       setStatus("idle");
     }
   };
@@ -250,6 +220,8 @@ export default function CheckoutForm() {
   const zone = department ? shippingZone(department) : null;
   /* Yape tiene un tope por pago; por encima se debe pagar con tarjeta */
   const yapeOverLimit = payment === "wallet" && total > YAPE_MAX;
+  /* Sobre el límite por defecto de la app, el cliente quizá deba subirlo */
+  const yapeHighAmount = total > YAPE_DEFAULT_LIMIT && total <= YAPE_MAX;
 
   return (
     /* Columnas como Shopify: formulario (31rem) + resumen (25rem), con
@@ -559,7 +531,11 @@ export default function CheckoutForm() {
                         name="payment"
                         value={id}
                         checked={active}
-                        onChange={() => setPayment(id)}
+                        onChange={() => {
+                          setPayment(id);
+                          setError(null);
+                          if (id === "card") setCardOpened(true);
+                        }}
                         className="peer sr-only"
                       />
                       {/* Radio propio: el punto central crece al seleccionar */}
@@ -607,30 +583,69 @@ export default function CheckoutForm() {
                           ? "grid-rows-[1fr] opacity-100"
                           : "grid-rows-[0fr] opacity-0"
                       }`}
-                      aria-hidden={!active}
+                      /* Inactivo: fuera del foco y de la validación */
+                      inert={!active}
                     >
                       <div className="overflow-hidden">
                         <div className="px-4 pb-4 pt-1">
-                          <p className="flex items-center gap-2.5 rounded-xl bg-white px-3.5 py-3 text-[13px] text-gray-600 ring-1 ring-gray-200">
-                            {id === "card" ? (
-                              <CreditCard
-                                size={18}
-                                strokeWidth={1.5}
-                                aria-hidden
-                                className="shrink-0 text-gray-400"
-                              />
-                            ) : (
-                              <Smartphone
-                                size={18}
-                                strokeWidth={1.5}
-                                aria-hidden
-                                className="shrink-0 text-gray-400"
-                              />
-                            )}
-                            {id === "card"
-                              ? t("cardNextStep")
-                              : t("walletNextStep")}
-                          </p>
+                          {id === "card" ? (
+                            (cardOpened || active) && (
+                              <CardFields ref={cardRef} />
+                            )
+                          ) : (
+                            <div className="space-y-2.5">
+                              <p className="flex items-start gap-2 text-[13px] text-gray-600">
+                                <Smartphone
+                                  size={16}
+                                  strokeWidth={1.5}
+                                  aria-hidden
+                                  className="mt-0.5 shrink-0 text-[#742284]"
+                                />
+                                {t("yapeIntro")}
+                              </p>
+                              <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+                                <Field
+                                  id="co-yape-phone"
+                                  name="yapePhone"
+                                  type="tel"
+                                  inputMode="numeric"
+                                  autoComplete="tel-national"
+                                  pattern="[0-9]{9}"
+                                  maxLength={9}
+                                  prefix="+51"
+                                  label={t("yapePhone")}
+                                  required={active}
+                                  disabled={!active}
+                                />
+                                <Field
+                                  id="co-yape-otp"
+                                  name="yapeOtp"
+                                  inputMode="numeric"
+                                  autoComplete="one-time-code"
+                                  pattern="[0-9]{6}"
+                                  maxLength={6}
+                                  label={t("yapeOtp")}
+                                  value={yapeOtp}
+                                  onChange={(e) =>
+                                    setYapeOtp(e.target.value.replace(/\D/g, ""))
+                                  }
+                                  required={active}
+                                  disabled={!active}
+                                  className="tracking-[0.3em]"
+                                />
+                              </div>
+                              <p className="text-xs text-gray-500">
+                                {t("yapeOtpHint")}
+                              </p>
+                              {yapeHighAmount && (
+                                <p className="text-xs text-amber-800">
+                                  {t("yapeHighAmount", {
+                                    amount: formatPrice(YAPE_DEFAULT_LIMIT),
+                                  })}
+                                </p>
+                              )}
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>

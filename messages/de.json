@@ -654,19 +654,44 @@
       "missing_fields": "Fülle alle Pflichtfelder aus.",
       "unknown_product": "Ein Produkt ist nicht mehr verfügbar. Aktualisiere deinen Warenkorb.",
       "invalid_total": "Der Bestellbetrag ist ungültig.",
-      "yape_limit": "Mit Yape sind Zahlungen bis S/ 500 möglich. Bitte zahle mit Karte.",
+      "yape_limit": "Yape erlaubt Zahlungen bis S/ 2000. Bitte zahle mit Karte.",
       "gateway": "Der Zahlungsanbieter antwortet nicht. Versuche es in ein paar Minuten erneut.",
       "server": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuche es erneut.",
       "failed": "Die Zahlung konnte nicht abgeschlossen werden. Versuche es erneut oder nutze eine andere Zahlungsart.",
       "config": "Zahlungen sind in diesem Shop noch nicht eingerichtet.",
-      "culqi_unavailable": "Der Zahlungsanbieter konnte nicht geladen werden. Prüfe deine Verbindung.",
-      "3ds_failed": "Deine Bank hat die Kartenprüfung nicht autorisiert.",
-      "payment_error": "Die Zahlung konnte nicht abgeschlossen werden."
+      "payment_error": "Die Zahlung konnte nicht abgeschlossen werden.",
+      "mp_unavailable": "Mercado Pago konnte nicht geladen werden. Prüfe deine Verbindung und lade die Seite neu.",
+      "card_invalid": "Prüfe deine Kartendaten.",
+      "yape_token": "Prüfe deine Handynummer und den Yape-Bestätigungscode (der Code ändert sich alle paar Minuten).",
+      "insufficient_funds": "Deine Karte ist nicht ausreichend gedeckt. Versuche eine andere.",
+      "check_card_data": "Einige Kartendaten sind falsch. Prüfe sie und versuche es erneut.",
+      "yape_check": "Handynummer oder Bestätigungscode sind falsch. Erzeuge in Yape einen neuen Code und versuche es erneut.",
+      "call_bank": "Deine Bank hat die Zahlung nicht autorisiert. Kontaktiere sie oder nutze eine andere Karte.",
+      "yape_limit_exceeded": "Die Bestellung übersteigt dein Yape-Limit. Erhöhe es in der App oder zahle mit Karte.",
+      "high_risk": "Die Zahlung wurde aus Sicherheitsgründen abgelehnt. Versuche eine andere Zahlungsart.",
+      "max_attempts": "Du hast die zulässige Anzahl an Versuchen überschritten. Nutze eine andere Zahlungsart.",
+      "duplicated": "Du hast gerade eine identische Zahlung getätigt. Prüfe deine E-Mails, bevor du erneut zahlst.",
+      "card_not_allowed": "Diese Zahlungsart ist nicht erlaubt. Bitte nutze eine andere."
     },
-    "poweredBy": "Zahlungen sicher verarbeitet von Culqi",
+    "poweredBy": "Zahlungen sicher verarbeitet von Mercado Pago",
     "chargingHint": "Bitte schließe oder lade diese Seite nicht neu.",
-    "cardNextStep": "Beim Bezahlen öffnet sich das sichere Culqi-Fenster für deine Karte.",
-    "walletNextStep": "Beim Bezahlen öffnet sich das sichere Culqi-Fenster: Gib deine Nummer und den Bestätigungscode aus der Yape-App ein."
+    "yapeIntro": "Gib die mit Yape verknüpfte Handynummer und den Bestätigungscode aus deiner App ein.",
+    "yapePhone": "Handynummer mit Yape",
+    "yapeOtp": "Bestätigungscode",
+    "yapeOtpHint": "Du findest ihn in der Yape-App: Menü → Bestätigungscode. Er ändert sich alle paar Minuten.",
+    "yapeHighAmount": "Deine Yape-App erlaubt standardmäßig {amount}. Liegt deine Bestellung darüber, erhöhe vor dem Bezahlen dein Limit in Yape.",
+    "expiryPlaceholder": "MM / JJ",
+    "cardFields": {
+      "cardNumber": "Kartennummer",
+      "expirationDate": "Ablaufdatum",
+      "securityCode": "Sicherheitscode (CVV)",
+      "holder": "Name auf der Karte"
+    },
+    "cardErrors": {
+      "cardNumber": "Prüfe die Kartennummer.",
+      "expirationDate": "Prüfe das Ablaufdatum.",
+      "securityCode": "Prüfe den Sicherheitscode."
+    }
   },
   "thanks": {
     "title": "Danke für deine Bestellung!",
@@ -674,7 +699,9 @@
     "orderLabel": "Bestellnr.:",
     "emailNote": "Wir haben dir eine E-Mail mit den Bestelldetails geschickt.",
     "shippingNote": "Wir melden uns telefonisch, um die Lieferung abzustimmen.",
-    "back": "Weiter einkaufen"
+    "back": "Weiter einkaufen",
+    "reviewTitle": "Wir haben deine Bestellung erhalten!",
+    "reviewText": "Deine Zahlung wird geprüft. Wir benachrichtigen dich per E-Mail, sobald sie bestätigt ist (meist innerhalb weniger Minuten)."
   },
   "orderEmail": {
     "subject": "Deine Bestellung {order} bei Grain & Grains",

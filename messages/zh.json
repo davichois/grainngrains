@@ -654,19 +654,44 @@
       "missing_fields": "请填写所有必填项。",
       "unknown_product": "有商品已下架，请更新购物车。",
       "invalid_total": "订单总额无效。",
-      "yape_limit": "Yape 单笔支付上限为 S/ 500，请使用银行卡支付。",
+      "yape_limit": "Yape 单笔付款上限为 S/ 2000，请使用银行卡支付。",
       "gateway": "支付网关无响应，请几分钟后重试。",
       "server": "发生意外错误，请重试。",
       "failed": "支付未完成，请重试或更换支付方式。",
       "config": "本店尚未配置支付。",
-      "culqi_unavailable": "无法加载支付网关，请检查网络连接。",
-      "3ds_failed": "你的银行未通过银行卡验证。",
-      "payment_error": "支付未完成。"
+      "payment_error": "支付未完成。",
+      "mp_unavailable": "无法加载 Mercado Pago，请检查网络并刷新页面。",
+      "card_invalid": "请检查您的银行卡信息。",
+      "yape_token": "请检查手机号和 Yape 批准码（批准码每隔几分钟更新）。",
+      "insufficient_funds": "您的银行卡余额不足，请换一张卡。",
+      "check_card_data": "部分银行卡信息有误，请检查后重试。",
+      "yape_check": "手机号或批准码不正确。请在 Yape 中生成新的批准码后重试。",
+      "call_bank": "您的银行未授权此次付款，请联系银行或使用其他银行卡。",
+      "yape_limit_exceeded": "订单金额超过您的 Yape 限额。请在应用中提高限额或使用银行卡支付。",
+      "high_risk": "出于安全原因，付款被拒绝。请尝试其他支付方式。",
+      "max_attempts": "尝试次数已超过上限，请使用其他支付方式。",
+      "duplicated": "您刚刚完成了一笔相同的付款，请先查看邮件再决定是否重新支付。",
+      "card_not_allowed": "不支持此支付方式，请使用其他方式。"
     },
-    "poweredBy": "支付由 Culqi 安全处理",
+    "poweredBy": "支付由 Mercado Pago 安全处理",
     "chargingHint": "请勿关闭或刷新此页面。",
-    "cardNextStep": "付款时将打开 Culqi 安全窗口以输入银行卡信息。",
-    "walletNextStep": "付款时将打开 Culqi 安全窗口：输入手机号和 Yape 应用中的批准码。"
+    "yapeIntro": "请输入绑定 Yape 的手机号以及应用中的批准码。",
+    "yapePhone": "Yape 手机号",
+    "yapeOtp": "批准码",
+    "yapeOtpHint": "在 Yape 应用中查看：菜单 → 批准码。批准码每隔几分钟更新一次。",
+    "yapeHighAmount": "Yape 应用默认限额为 {amount}。如订单超过该金额，请先在 Yape 中提高限额。",
+    "expiryPlaceholder": "MM / YY",
+    "cardFields": {
+      "cardNumber": "卡号",
+      "expirationDate": "有效期",
+      "securityCode": "安全码 (CVV)",
+      "holder": "持卡人姓名"
+    },
+    "cardErrors": {
+      "cardNumber": "请检查卡号。",
+      "expirationDate": "请检查有效期。",
+      "securityCode": "请检查安全码。"
+    }
   },
   "thanks": {
     "title": "感谢你的购买！",
@@ -674,7 +699,9 @@
     "orderLabel": "订单号：",
     "emailNote": "我们已向你发送包含订单详情的邮件。",
     "shippingNote": "我们会通过手机联系你安排配送。",
-    "back": "继续购物"
+    "back": "继续购物",
+    "reviewTitle": "我们已收到您的订单！",
+    "reviewText": "您的付款正在审核中。审核通过后我们会立即发邮件通知您（通常只需几分钟）。"
   },
   "orderEmail": {
     "subject": "你在 Grain & Grains 的订单 {order}",

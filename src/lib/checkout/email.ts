@@ -195,7 +195,7 @@ export async function buildOrderEmails({
         ...chrome.heroColors,
         kicker: "Nuevo pedido pagado",
         title: `${c.firstName} ${c.lastName}`,
-        text: `Pago con ${input.payment === "wallet" ? "Yape" : "tarjeta"} aprobado por Culqi (${chargeId}). Prepara el envío y coordina la entrega con el cliente.`,
+        text: `Pago con ${input.payment === "wallet" ? "Yape" : "tarjeta"} aprobado por Mercado Pago (operación ${chargeId}). Prepara el envío y coordina la entrega con el cliente.`,
       },
       orderLabel: "Pedido",
       orderNumber,

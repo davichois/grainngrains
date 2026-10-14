@@ -654,19 +654,44 @@
       "missing_fields": "Preencha todos os campos obrigatórios.",
       "unknown_product": "Um dos produtos não está mais disponível. Atualize seu carrinho.",
       "invalid_total": "O total do pedido não é válido.",
-      "yape_limit": "O Yape permite pagamentos de até S/ 500. Pague com cartão.",
+      "yape_limit": "O Yape permite pagamentos de até S/ 2000. Pague com cartão.",
       "gateway": "O gateway de pagamento não respondeu. Tente novamente em alguns minutos.",
       "server": "Ocorreu um erro inesperado. Tente novamente.",
       "failed": "Não foi possível concluir o pagamento. Tente novamente ou use outro meio.",
       "config": "Os pagamentos ainda não estão configurados nesta loja.",
-      "culqi_unavailable": "Não foi possível carregar o gateway de pagamento. Verifique sua conexão.",
-      "3ds_failed": "Seu banco não autorizou a verificação do cartão.",
-      "payment_error": "Não foi possível concluir o pagamento."
+      "payment_error": "Não foi possível concluir o pagamento.",
+      "mp_unavailable": "Não foi possível carregar o Mercado Pago. Verifique sua conexão e recarregue a página.",
+      "card_invalid": "Verifique os dados do seu cartão.",
+      "yape_token": "Verifique seu celular e o código de aprovação do Yape (o código muda a cada poucos minutos).",
+      "insufficient_funds": "Seu cartão não tem saldo suficiente. Tente outro.",
+      "check_card_data": "Algum dado do cartão está incorreto. Verifique e tente novamente.",
+      "yape_check": "O celular ou o código de aprovação estão incorretos. Gere um novo código no Yape e tente novamente.",
+      "call_bank": "Seu banco não autorizou o pagamento. Entre em contato com ele ou use outro cartão.",
+      "yape_limit_exceeded": "O pedido ultrapassa seu limite do Yape. Aumente-o no app ou pague com cartão.",
+      "high_risk": "O pagamento foi recusado por segurança. Tente outro meio de pagamento.",
+      "max_attempts": "Você excedeu o número de tentativas permitidas. Use outro meio de pagamento.",
+      "duplicated": "Você acabou de fazer um pagamento idêntico. Verifique seu e-mail antes de pagar de novo.",
+      "card_not_allowed": "Este meio de pagamento não é permitido. Use outro."
     },
-    "poweredBy": "Pagamentos processados com segurança pela Culqi",
+    "poweredBy": "Pagamentos processados com segurança pelo Mercado Pago",
     "chargingHint": "Não feche nem recarregue esta página.",
-    "cardNextStep": "Ao pagar, a janela segura da Culqi será aberta para informar seu cartão.",
-    "walletNextStep": "Ao pagar, a janela segura da Culqi será aberta: informe seu celular e o código de aprovação do app Yape."
+    "yapeIntro": "Informe o celular vinculado ao Yape e o código de aprovação do seu app.",
+    "yapePhone": "Celular com Yape",
+    "yapeOtp": "Código de aprovação",
+    "yapeOtpHint": "Você encontra no app Yape: Menu → Código de aprovação. Ele muda a cada poucos minutos.",
+    "yapeHighAmount": "Seu app Yape permite {amount} por padrão. Se o pedido for maior, aumente seu limite no Yape antes de pagar.",
+    "expiryPlaceholder": "MM / AA",
+    "cardFields": {
+      "cardNumber": "Número do cartão",
+      "expirationDate": "Validade",
+      "securityCode": "Código de segurança (CVV)",
+      "holder": "Nome no cartão"
+    },
+    "cardErrors": {
+      "cardNumber": "Verifique o número do cartão.",
+      "expirationDate": "Verifique a validade.",
+      "securityCode": "Verifique o código de segurança."
+    }
   },
   "thanks": {
     "title": "Obrigado pela sua compra!",
@@ -674,7 +699,9 @@
     "orderLabel": "Nº do pedido:",
     "emailNote": "Enviamos um e-mail com os detalhes do seu pedido.",
     "shippingNote": "Entraremos em contato por celular para combinar a entrega.",
-    "back": "Continuar comprando"
+    "back": "Continuar comprando",
+    "reviewTitle": "Recebemos seu pedido!",
+    "reviewText": "Seu pagamento está em análise. Avisaremos por e-mail assim que for aprovado (geralmente em poucos minutos)."
   },
   "orderEmail": {
     "subject": "Seu pedido {order} na Grain & Grains",

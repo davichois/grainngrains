@@ -654,19 +654,44 @@
       "missing_fields": "Completa todos los campos obligatorios.",
       "unknown_product": "Uno de los productos ya no está disponible. Actualiza tu carrito.",
       "invalid_total": "El total del pedido no es válido.",
-      "yape_limit": "Yape permite pagos de hasta S/ 500. Elige pagar con tarjeta.",
+      "yape_limit": "Yape permite pagos de hasta S/ 2000. Elige pagar con tarjeta.",
       "gateway": "La pasarela de pago no respondió. Inténtalo de nuevo en unos minutos.",
       "server": "Ocurrió un error inesperado. Inténtalo de nuevo.",
       "failed": "No se pudo completar el pago. Inténtalo de nuevo o usa otro medio.",
       "config": "Los pagos aún no están configurados en esta tienda.",
-      "culqi_unavailable": "No se pudo cargar la pasarela de pago. Revisa tu conexión.",
-      "3ds_failed": "Tu banco no autorizó la verificación de la tarjeta.",
-      "payment_error": "No se pudo completar el pago."
+      "payment_error": "No se pudo completar el pago.",
+      "mp_unavailable": "No se pudo cargar Mercado Pago. Revisa tu conexión y recarga la página.",
+      "card_invalid": "Revisa los datos de tu tarjeta.",
+      "yape_token": "Revisa tu celular y el código de aprobación de Yape (el código cambia cada pocos minutos).",
+      "insufficient_funds": "Tu tarjeta no tiene fondos suficientes. Prueba con otra.",
+      "check_card_data": "Algún dato de la tarjeta no es correcto. Revísalo e inténtalo de nuevo.",
+      "yape_check": "El celular o el código de aprobación no son correctos. Genera un código nuevo en Yape e inténtalo otra vez.",
+      "call_bank": "Tu banco no autorizó el pago. Comunícate con él o usa otra tarjeta.",
+      "yape_limit_exceeded": "El pedido supera tu límite de Yape. Auméntalo en tu app o paga con tarjeta.",
+      "high_risk": "El pago fue rechazado por seguridad. Prueba con otro medio de pago.",
+      "max_attempts": "Superaste el número de intentos permitidos. Usa otro medio de pago.",
+      "duplicated": "Ya hiciste un pago igual hace un momento. Revisa tu correo antes de volver a pagar.",
+      "card_not_allowed": "Este medio de pago no está permitido. Usa otro."
     },
-    "poweredBy": "Pagos procesados de forma segura por Culqi",
+    "poweredBy": "Pagos procesados de forma segura por Mercado Pago",
     "chargingHint": "No cierres ni recargues esta página.",
-    "cardNextStep": "Al pagar se abrirá la ventana segura de Culqi para ingresar tu tarjeta.",
-    "walletNextStep": "Al pagar se abrirá la ventana segura de Culqi: ingresa tu celular y el código de aprobación de tu app Yape."
+    "yapeIntro": "Ingresa el celular afiliado a Yape y el código de aprobación de tu app.",
+    "yapePhone": "Celular con Yape",
+    "yapeOtp": "Código de aprobación",
+    "yapeOtpHint": "Lo encuentras en tu app Yape: Menú → Código de aprobación. Cambia cada pocos minutos.",
+    "yapeHighAmount": "Tu app Yape permite {amount} por defecto. Si tu pedido lo supera, aumenta tu límite en Yape antes de pagar.",
+    "expiryPlaceholder": "MM / AA",
+    "cardFields": {
+      "cardNumber": "Número de tarjeta",
+      "expirationDate": "Vencimiento",
+      "securityCode": "Código de seguridad (CVV)",
+      "holder": "Nombre en la tarjeta"
+    },
+    "cardErrors": {
+      "cardNumber": "Revisa el número de tarjeta.",
+      "expirationDate": "Revisa la fecha de vencimiento.",
+      "securityCode": "Revisa el código de seguridad."
+    }
   },
   "thanks": {
     "title": "¡Gracias por tu compra!",
@@ -674,7 +699,9 @@
     "orderLabel": "N.º de pedido:",
     "emailNote": "Te enviamos un correo con el detalle de tu pedido.",
     "shippingNote": "Te contactaremos por celular para coordinar la entrega.",
-    "back": "Seguir comprando"
+    "back": "Seguir comprando",
+    "reviewTitle": "¡Recibimos tu pedido!",
+    "reviewText": "Tu pago está en revisión. Te avisaremos por correo apenas se apruebe (suele tardar unos minutos)."
   },
   "orderEmail": {
     "subject": "Tu pedido {order} en Grain & Grains",

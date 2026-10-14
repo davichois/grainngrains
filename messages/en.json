@@ -652,19 +652,44 @@
       "missing_fields": "Fill in all required fields.",
       "unknown_product": "One of the products is no longer available. Update your cart.",
       "invalid_total": "The order total isn't valid.",
-      "yape_limit": "Yape allows payments up to S/ 500. Please pay by card.",
+      "yape_limit": "Yape allows payments of up to S/ 2000. Please pay by card.",
       "gateway": "The payment gateway didn't respond. Try again in a few minutes.",
       "server": "Something went wrong. Please try again.",
       "failed": "The payment couldn't be completed. Try again or use another method.",
       "config": "Payments aren't configured for this store yet.",
-      "culqi_unavailable": "The payment gateway couldn't load. Check your connection.",
-      "3ds_failed": "Your bank didn't authorize the card verification.",
-      "payment_error": "The payment couldn't be completed."
+      "payment_error": "The payment couldn't be completed.",
+      "mp_unavailable": "Mercado Pago couldn't load. Check your connection and reload the page.",
+      "card_invalid": "Check your card details.",
+      "yape_token": "Check your phone number and Yape approval code (the code changes every few minutes).",
+      "insufficient_funds": "Your card has insufficient funds. Try another one.",
+      "check_card_data": "Some card details are incorrect. Check them and try again.",
+      "yape_check": "The phone number or approval code is incorrect. Generate a new code in Yape and try again.",
+      "call_bank": "Your bank didn't authorize the payment. Contact your bank or use another card.",
+      "yape_limit_exceeded": "The order exceeds your Yape limit. Raise it in your app or pay by card.",
+      "high_risk": "The payment was declined for security reasons. Try another payment method.",
+      "max_attempts": "You've exceeded the allowed number of attempts. Use another payment method.",
+      "duplicated": "You just made an identical payment. Check your email before paying again.",
+      "card_not_allowed": "This payment method isn't allowed. Please use another."
     },
-    "poweredBy": "Payments securely processed by Culqi",
+    "poweredBy": "Payments securely processed by Mercado Pago",
     "chargingHint": "Please don't close or reload this page.",
-    "cardNextStep": "When you pay, Culqi's secure window will open to enter your card.",
-    "walletNextStep": "When you pay, Culqi's secure window will open: enter your phone number and the approval code from your Yape app."
+    "yapeIntro": "Enter the phone number linked to Yape and the approval code from your app.",
+    "yapePhone": "Yape phone number",
+    "yapeOtp": "Approval code",
+    "yapeOtpHint": "Find it in your Yape app: Menu → Approval code. It changes every few minutes.",
+    "yapeHighAmount": "Your Yape app allows {amount} by default. If your order is higher, raise your limit in Yape before paying.",
+    "expiryPlaceholder": "MM / YY",
+    "cardFields": {
+      "cardNumber": "Card number",
+      "expirationDate": "Expiration date",
+      "securityCode": "Security code (CVV)",
+      "holder": "Name on card"
+    },
+    "cardErrors": {
+      "cardNumber": "Check the card number.",
+      "expirationDate": "Check the expiration date.",
+      "securityCode": "Check the security code."
+    }
   },
   "thanks": {
     "title": "Thank you for your order!",
@@ -672,7 +697,9 @@
     "orderLabel": "Order no.:",
     "emailNote": "We sent you an email with your order details.",
     "shippingNote": "We'll contact you by phone to arrange delivery.",
-    "back": "Keep shopping"
+    "back": "Keep shopping",
+    "reviewTitle": "We received your order!",
+    "reviewText": "Your payment is under review. We'll email you as soon as it's approved (usually within a few minutes)."
   },
   "orderEmail": {
     "subject": "Your Grain & Grains order {order}",

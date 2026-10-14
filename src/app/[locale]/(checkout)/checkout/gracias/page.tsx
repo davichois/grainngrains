@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { CheckCircle2, Mail, Truck } from "lucide-react";
+import { CheckCircle2, Clock, Mail, Truck } from "lucide-react";
 import { Link } from "@/src/i18n/navigation";
 import { pageMetadata } from "@/src/lib/site";
 
@@ -23,22 +23,29 @@ export async function generateMetadata({
 export default async function ThanksPage({
   searchParams,
 }: {
-  searchParams: Promise<{ pedido?: string }>;
+  searchParams: Promise<{ pedido?: string; estado?: string }>;
 }) {
-  const { pedido } = await searchParams;
+  const { pedido, estado } = await searchParams;
+  /* Pago en revisión en Mercado Pago: se confirma luego por correo */
+  const inReview = estado === "revision";
+  const Icon = inReview ? Clock : CheckCircle2;
   const t = await getTranslations("thanks");
   const orderNumber = pedido?.slice(0, 40);
 
   return (
     <main className="mx-auto flex min-h-[70vh] max-w-lg flex-col items-center justify-center px-6 py-16 text-center font-ui">
-      <CheckCircle2
+      <Icon
         size={64}
         strokeWidth={1.5}
         aria-hidden
         className="mb-6 text-[#116e78]"
       />
-      <h1 className="text-3xl font-bold text-gray-900">{t("title")}</h1>
-      <p className="mt-3 text-gray-600">{t("text")}</p>
+      <h1 className="text-3xl font-bold text-gray-900">
+        {inReview ? t("reviewTitle") : t("title")}
+      </h1>
+      <p className="mt-3 text-gray-600">
+        {inReview ? t("reviewText") : t("text")}
+      </p>
 
       {orderNumber && (
         <p className="mt-6 rounded-xl bg-[#f7f6f3] px-5 py-3 text-sm text-gray-700">
