@@ -1,7 +1,14 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { useId, useRef, useState, useSyncExternalStore } from "react";
+import {
+  useCallback,
+  useEffect,
+  useId,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 import {
   AlertTriangle,
   Smartphone,
@@ -30,7 +37,8 @@ import {
 } from "@/src/lib/checkout/order";
 import OrderSummary from "./OrderSummary";
 import CardFields, { type CardFieldsHandle } from "./CardFields";
-import { createYapeToken } from "./mp-client";
+import ThreeDSChallenge from "./ThreeDSChallenge";
+import { createYapeToken, getDeviceId, getMercadoPago } from "./mp-client";
 import { Field, PaymentBadge, SelectField } from "./fields";
 
 type Receipt = "boleta" | "factura";
@@ -84,6 +92,23 @@ export default function CheckoutForm() {
     "idle",
   );
   const [error, setError] = useState<string | null>(null);
+  /* 3D Secure: página del banco abierta dentro del checkout */
+  const [challenge, setChallenge] = useState<{
+    url: string;
+    creq: string;
+  } | null>(null);
+  const challengeCtl = useRef<{ poke(): void; cancel(): void } | null>(null);
+  const pokeChallenge = useCallback(() => challengeCtl.current?.poke(), []);
+  const cancelChallenge = useCallback(
+    () => challengeCtl.current?.cancel(),
+    [],
+  );
+
+  /* Carga Mercado Pago y su antifraude apenas se abre el checkout: el
+     Device ID necesita unos segundos para generarse antes de pagar */
+  useEffect(() => {
+    getMercadoPago().catch(() => {});
+  }, []);
 
   /* Totales: descuento sobre el subtotal; el envío gratis se evalúa ya con descuento */
   const discountAmount = discount
@@ -107,6 +132,53 @@ export default function CheckoutForm() {
     onApplyCode: applyCode,
     onRemoveCode: () => setDiscount(null),
   };
+
+  /* Tras el 3DS: consulta el pago cada 3 s hasta que se apruebe o rechace
+     (el banco da ~5 min; luego el pago expira) */
+  const waitForChallenge = (paymentId: string) =>
+    new Promise<{ status: string; orderNumber?: string; error?: string }>(
+      (resolve, reject) => {
+        const deadline = Date.now() + 6 * 60_000;
+        let timer: ReturnType<typeof setTimeout> | undefined;
+        let busy = false;
+        const finish = () => {
+          clearTimeout(timer);
+          challengeCtl.current = null;
+        };
+        const check = async () => {
+          if (busy || !challengeCtl.current) return;
+          busy = true;
+          clearTimeout(timer);
+          try {
+            const r = await fetch(`/api/checkout/status?id=${paymentId}`).then(
+              (res) => res.json(),
+            );
+            if (r.status && r.status !== "pending") {
+              finish();
+              return resolve(r);
+            }
+          } catch {
+            /* red intermitente: se reintenta */
+          } finally {
+            busy = false;
+          }
+          if (!challengeCtl.current) return;
+          if (Date.now() > deadline) {
+            finish();
+            return reject(new Error("challenge_expired"));
+          }
+          timer = setTimeout(check, 3000);
+        };
+        challengeCtl.current = {
+          poke: () => void check(),
+          cancel: () => {
+            finish();
+            reject(new Error("challenge_cancelled"));
+          },
+        };
+        timer = setTimeout(check, 3000);
+      },
+    );
 
   /* Mensaje legible para un código de error del servidor o de Mercado Pago */
   const errorMessage = (code: string) =>
@@ -173,9 +245,19 @@ export default function CheckoutForm() {
       const res = await fetch("/api/checkout/charge", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ checkout, ...pay }),
+        body: JSON.stringify({ checkout, ...pay, deviceId: getDeviceId() }),
       });
-      const result = await res.json();
+      let result = await res.json();
+
+      /* El banco pide 3D Secure: el cliente confirma en el iframe */
+      if (result.status === "challenge") {
+        setChallenge({ url: result.url, creq: result.creq });
+        try {
+          result = await waitForChallenge(result.paymentId);
+        } finally {
+          setChallenge(null);
+        }
+      }
 
       if (result.status === "paid" || result.status === "review") {
         clearCart();
@@ -228,6 +310,14 @@ export default function CheckoutForm() {
        la división desplazada para que todo quede centrado con márgenes iguales */
     <div className="font-ui lg:grid lg:min-h-[calc(100svh-90px)] lg:grid-cols-[calc(50%+3rem)_minmax(0,1fr)]">
       {/* Mientras se cobra: bloquea la página para que no se cierre ni se pague dos veces */}
+      {challenge && (
+        <ThreeDSChallenge
+          url={challenge.url}
+          creq={challenge.creq}
+          onComplete={pokeChallenge}
+          onCancel={cancelChallenge}
+        />
+      )}
       {status === "charging" && (
         <div
           role="alertdialog"

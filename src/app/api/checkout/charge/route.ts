@@ -26,6 +26,10 @@ export async function POST(request: Request) {
         ? body.paymentMethodId
         : "";
     const issuerId = Number(body.issuerId) || undefined;
+    const deviceId =
+      typeof body.deviceId === "string" && /^[\w-]{1,100}$/.test(body.deviceId)
+        ? body.deviceId
+        : undefined;
     if (!token || !paymentMethodId) {
       return Response.json({ error: "invalid_body" }, { status: 400 });
     }
@@ -41,6 +45,7 @@ export async function POST(request: Request) {
       token,
       paymentMethodId,
       issuerId,
+      deviceId,
     });
 
     if (status >= 400 || !data.id) {
@@ -64,6 +69,22 @@ export async function POST(request: Request) {
         chargeId: String(data.id),
       }).catch((e) => console.error("[email]", e));
       return Response.json({ status: "paid", orderNumber });
+    }
+
+    /* 3D Secure: el cliente confirma con su banco en el checkout */
+    const ds = data.three_ds_info;
+    if (
+      data.status_detail === "pending_challenge" &&
+      ds?.external_resource_url &&
+      ds.creq
+    ) {
+      return Response.json({
+        status: "challenge",
+        paymentId: String(data.id),
+        orderNumber,
+        url: ds.external_resource_url,
+        creq: ds.creq,
+      });
     }
 
     /* En revisión: Mercado Pago avisará por webhook cuando se resuelva */

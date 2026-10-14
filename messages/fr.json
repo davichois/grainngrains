@@ -671,7 +671,10 @@
       "high_risk": "Le paiement a été refusé pour des raisons de sécurité. Essayez un autre moyen de paiement.",
       "max_attempts": "Vous avez dépassé le nombre de tentatives autorisées. Utilisez un autre moyen de paiement.",
       "duplicated": "Vous venez d'effectuer un paiement identique. Vérifiez vos e-mails avant de payer à nouveau.",
-      "card_not_allowed": "Ce moyen de paiement n'est pas autorisé. Utilisez-en un autre."
+      "card_not_allowed": "Ce moyen de paiement n'est pas autorisé. Utilisez-en un autre.",
+      "challenge_failed": "Votre banque n'a pas pu vérifier le paiement. Réessayez ou utilisez un autre moyen de paiement.",
+      "challenge_expired": "La vérification auprès de votre banque a expiré. Veuillez réessayer le paiement.",
+      "challenge_cancelled": "Vous avez annulé la vérification. Aucun montant n'a été débité."
     },
     "poweredBy": "Paiements traités en toute sécurité par Mercado Pago",
     "chargingHint": "Ne fermez pas et ne rechargez pas cette page.",
@@ -691,7 +694,10 @@
       "cardNumber": "Vérifiez le numéro de carte.",
       "expirationDate": "Vérifiez la date d'expiration.",
       "securityCode": "Vérifiez le code de sécurité."
-    }
+    },
+    "challengeTitle": "Vérifiez votre paiement auprès de votre banque",
+    "challengeHint": "Votre banque doit confirmer que c'est bien vous. Suivez les étapes (code par SMS ou app bancaire).",
+    "challengeCancel": "Annuler la vérification"
   },
   "thanks": {
     "title": "Merci pour votre commande !",

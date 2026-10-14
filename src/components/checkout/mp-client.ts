@@ -8,6 +8,9 @@
 ─────────────────────────────────────────────────────────────── */
 
 const SDK_URL = "https://sdk.mercadopago.com/js/v2";
+/* Script antifraude: identifica el dispositivo (Device ID). Sin él,
+   Mercado Pago rechaza más pagos por "controles de seguridad" */
+const SECURITY_URL = "https://www.mercadopago.com/v2/security.js";
 
 export type SecureFieldType = "cardNumber" | "expirationDate" | "securityCode";
 
@@ -52,6 +55,7 @@ interface MercadoPagoInstance {
 
 declare global {
   interface Window {
+    MP_DEVICE_SESSION_ID?: string;
     MercadoPago?: new (
       publicKey: string,
       opts?: { locale?: string },
@@ -60,6 +64,21 @@ declare global {
 }
 
 let sdk: Promise<void> | null = null;
+let security = false;
+
+/** Carga el script antifraude una sola vez (no bloquea si falla) */
+function loadSecurity() {
+  if (security) return;
+  security = true;
+  const s = document.createElement("script");
+  s.src = SECURITY_URL;
+  s.async = true;
+  s.setAttribute("view", "checkout");
+  document.head.appendChild(s);
+}
+
+/** Device ID para la cabecera X-meli-session-id del pago */
+export const getDeviceId = () => window.MP_DEVICE_SESSION_ID || undefined;
 let instance: MercadoPagoInstance | null = null;
 
 function loadSdk() {
@@ -83,6 +102,7 @@ function loadSdk() {
 export async function getMercadoPago() {
   const publicKey = process.env.NEXT_PUBLIC_MP_PUBLIC_KEY;
   if (!publicKey) throw new Error("config");
+  loadSecurity();
   if (instance) return instance;
   await loadSdk();
   if (!window.MercadoPago) throw new Error("mp_unavailable");

@@ -38,10 +38,9 @@ const logo = () =>
   ).then((b) => b.toString("base64")));
 
 async function send(
-  to: string,
-  subject: string,
-  html: string,
-  replyTo?: string,
+  { to, subject, html, replyTo }: OrderEmail,
+  /** Clave de idempotencia de Resend: el mismo correo no sale dos veces (24 h) */
+  idempotencyKey?: string,
 ) {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.ORDERS_EMAIL_FROM;
@@ -57,6 +56,7 @@ async function send(
     headers: {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
+      ...(idempotencyKey && { "Idempotency-Key": idempotencyKey }),
     },
     body: JSON.stringify({
       from,
@@ -74,7 +74,8 @@ async function send(
       ...(replyTo && { reply_to: replyTo }),
     }),
   });
-  if (!res.ok)
+  /* 409: ese correo ya se envió (o se está enviando) con la misma clave */
+  if (!res.ok && res.status !== 409)
     console.error("[email] Resend respondió", res.status, await res.text());
 }
 
@@ -155,6 +156,8 @@ function totals(
 }
 
 interface OrderEmail {
+  /** store: aviso para alistar el pedido · customer: confirmación al cliente */
+  kind: "store" | "customer";
   to: string;
   subject: string;
   html: string;
@@ -193,7 +196,7 @@ export async function buildOrderEmails({
       preheader: `${c.firstName} ${c.lastName} · ${money(priced.total)} · ${input.payment === "wallet" ? "Yape" : "Tarjeta"}`,
       hero: {
         ...chrome.heroColors,
-        kicker: "Nuevo pedido pagado",
+        kicker: "Pedido pagado · listo para alistar",
         title: `${c.firstName} ${c.lastName}`,
         text: `Pago con ${input.payment === "wallet" ? "Yape" : "tarjeta"} aprobado por Mercado Pago (operación ${chargeId}). Prepara el envío y coordina la entrega con el cliente.`,
       },
@@ -229,8 +232,9 @@ export async function buildOrderEmails({
       footer: FOOTER,
     });
     emails.push({
+      kind: "store",
       to: storeTo,
-      subject: `Nuevo pedido ${orderNumber} · ${money(priced.total)}`,
+      subject: `Alistar pedido ${orderNumber} · ${money(priced.total)} pagado`,
       html,
       replyTo: c.email,
     });
@@ -279,6 +283,7 @@ export async function buildOrderEmails({
     footer: FOOTER,
   });
   emails.push({
+    kind: "customer",
     to: c.email,
     subject: t("subject", { order: orderNumber }),
     html,
@@ -286,10 +291,15 @@ export async function buildOrderEmails({
   return emails;
 }
 
+/**
+ * Envía los correos de un pago aprobado. Se puede llamar varias veces para
+ * el mismo pago (cobro, 3DS, webhook): la clave de idempotencia por pago
+ * hace que cada correo salga una sola vez.
+ */
 export async function sendOrderEmails(
   params: Parameters<typeof buildOrderEmails>[0],
 ) {
   for (const e of await buildOrderEmails(params)) {
-    await send(e.to, e.subject, e.html, e.replyTo);
+    await send(e, `order/${params.chargeId}/${e.kind}`);
   }
 }

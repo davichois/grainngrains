@@ -669,7 +669,10 @@
       "high_risk": "보안상의 이유로 결제가 거절되었습니다. 다른 결제 수단을 사용해 보세요.",
       "max_attempts": "허용된 시도 횟수를 초과했습니다. 다른 결제 수단을 사용하세요.",
       "duplicated": "방금 동일한 결제가 이루어졌습니다. 다시 결제하기 전에 이메일을 확인하세요.",
-      "card_not_allowed": "이 결제 수단은 사용할 수 없습니다. 다른 수단을 이용하세요."
+      "card_not_allowed": "이 결제 수단은 사용할 수 없습니다. 다른 수단을 이용하세요.",
+      "challenge_failed": "은행에서 결제를 인증하지 못했습니다. 다시 시도하거나 다른 결제 수단을 사용하세요.",
+      "challenge_expired": "은행 인증 시간이 만료되었습니다. 다시 결제해 주세요.",
+      "challenge_cancelled": "은행 인증을 취소했습니다. 결제되지 않았습니다."
     },
     "poweredBy": "결제는 Mercado Pago를 통해 안전하게 처리됩니다",
     "chargingHint": "이 페이지를 닫거나 새로고침하지 마세요.",
@@ -689,7 +692,10 @@
       "cardNumber": "카드 번호를 확인하세요.",
       "expirationDate": "유효기간을 확인하세요.",
       "securityCode": "보안 코드를 확인하세요."
-    }
+    },
+    "challengeTitle": "은행에서 결제를 인증하세요",
+    "challengeHint": "은행에서 본인 확인이 필요합니다. 안내에 따라 진행하세요(SMS 코드 또는 은행 앱).",
+    "challengeCancel": "인증 취소"
   },
   "thanks": {
     "title": "구매해 주셔서 감사합니다!",

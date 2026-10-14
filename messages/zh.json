@@ -671,7 +671,10 @@
       "high_risk": "出于安全原因，付款被拒绝。请尝试其他支付方式。",
       "max_attempts": "尝试次数已超过上限，请使用其他支付方式。",
       "duplicated": "您刚刚完成了一笔相同的付款，请先查看邮件再决定是否重新支付。",
-      "card_not_allowed": "不支持此支付方式，请使用其他方式。"
+      "card_not_allowed": "不支持此支付方式，请使用其他方式。",
+      "challenge_failed": "银行未能验证此次付款。请重试或使用其他支付方式。",
+      "challenge_expired": "银行验证已超时，请重新付款。",
+      "challenge_cancelled": "您已取消银行验证，未产生任何扣款。"
     },
     "poweredBy": "支付由 Mercado Pago 安全处理",
     "chargingHint": "请勿关闭或刷新此页面。",
@@ -691,7 +694,10 @@
       "cardNumber": "请检查卡号。",
       "expirationDate": "请检查有效期。",
       "securityCode": "请检查安全码。"
-    }
+    },
+    "challengeTitle": "请通过银行验证您的付款",
+    "challengeHint": "您的银行需要确认是您本人。请按步骤操作（短信验证码或银行应用）。",
+    "challengeCancel": "取消验证"
   },
   "thanks": {
     "title": "感谢你的购买！",

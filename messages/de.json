@@ -671,7 +671,10 @@
       "high_risk": "Die Zahlung wurde aus Sicherheitsgründen abgelehnt. Versuche eine andere Zahlungsart.",
       "max_attempts": "Du hast die zulässige Anzahl an Versuchen überschritten. Nutze eine andere Zahlungsart.",
       "duplicated": "Du hast gerade eine identische Zahlung getätigt. Prüfe deine E-Mails, bevor du erneut zahlst.",
-      "card_not_allowed": "Diese Zahlungsart ist nicht erlaubt. Bitte nutze eine andere."
+      "card_not_allowed": "Diese Zahlungsart ist nicht erlaubt. Bitte nutze eine andere.",
+      "challenge_failed": "Deine Bank konnte die Zahlung nicht verifizieren. Versuche es erneut oder nutze eine andere Zahlungsart.",
+      "challenge_expired": "Die Verifizierung bei deiner Bank ist abgelaufen. Bitte versuche die Zahlung erneut.",
+      "challenge_cancelled": "Du hast die Verifizierung abgebrochen. Es wurde nichts abgebucht."
     },
     "poweredBy": "Zahlungen sicher verarbeitet von Mercado Pago",
     "chargingHint": "Bitte schließe oder lade diese Seite nicht neu.",
@@ -691,7 +694,10 @@
       "cardNumber": "Prüfe die Kartennummer.",
       "expirationDate": "Prüfe das Ablaufdatum.",
       "securityCode": "Prüfe den Sicherheitscode."
-    }
+    },
+    "challengeTitle": "Bestätige deine Zahlung bei deiner Bank",
+    "challengeHint": "Deine Bank muss bestätigen, dass du es bist. Folge den Schritten (SMS-Code oder Banking-App).",
+    "challengeCancel": "Verifizierung abbrechen"
   },
   "thanks": {
     "title": "Danke für deine Bestellung!",

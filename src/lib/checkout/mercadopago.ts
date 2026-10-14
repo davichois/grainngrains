@@ -1,5 +1,13 @@
 import "server-only";
 import { createHmac, randomUUID, timingSafeEqual } from "node:crypto";
+import { getTranslations } from "next-intl/server";
+import {
+  COMBO_CATEGORY,
+  comboDetails,
+  findCombo,
+  findProduct,
+} from "@/src/components/product-showcase/data";
+import { SITE_URL } from "@/src/lib/site";
 import {
   payerIdentification,
   type CheckoutInput,
@@ -27,6 +35,8 @@ export interface MpPayment {
   date_created?: string;
   date_approved?: string | null;
   metadata?: Record<string, unknown>;
+  /** Solo si el banco pide 3D Secure (status_detail "pending_challenge") */
+  three_ds_info?: { external_resource_url?: string; creq?: string };
   message?: string;
   cause?: { code?: number | string; description?: string }[];
 }
@@ -57,21 +67,47 @@ function notificationUrl() {
  * recalculado en el servidor. El pedido completo viaja en `metadata` para
  * que el webhook pueda enviar los correos si el pago se aprueba más tarde.
  */
-export function createPayment(args: {
+export async function createPayment(args: {
   input: CheckoutInput;
   priced: PricedOrder;
   orderNumber: string;
   token: string;
   paymentMethodId: string;
   issuerId?: number;
+  /** Device ID del script antifraude (window.MP_DEVICE_SESSION_ID) */
+  deviceId?: string;
 }) {
   const { input, priced, orderNumber } = args;
   const c = input.customer;
   const a = input.address;
+  const t = await getTranslations({ locale: "es" });
+  /* Productos con nombre real, detalle e imagen: el antifraude aprueba
+     más cuando el pedido se describe completo */
+  const items = priced.lines.map((l) => {
+    const combo =
+      l.categoryId === COMBO_CATEGORY ? findCombo(l.productId) : undefined;
+    const image = combo
+      ? comboDetails(combo).products[0]?.product.image
+      : findProduct(l.categoryId, l.productId)?.image;
+    return {
+      id: `${l.categoryId}.${l.productId}.${l.size}.${l.grind}`,
+      title: combo
+        ? t(`cart.combos.${l.productId}.name`)
+        : t(`editions.${l.categoryId}.products.${l.productId}`),
+      description: `Café ${t(`shop.sizes.${l.size}`)} · ${t(`shop.grinds.${l.grind}`)}`,
+      category_id: "food",
+      quantity: l.qty,
+      unit_price: l.unitPrice,
+      ...(image && { picture_url: new URL(image, SITE_URL).toString() }),
+    };
+  });
   return request("/v1/payments", {
     method: "POST",
-    /* Evita cobrar dos veces si la petición se repite */
-    headers: { "X-Idempotency-Key": randomUUID() },
+    headers: {
+      /* Evita cobrar dos veces si la petición se repite */
+      "X-Idempotency-Key": randomUUID(),
+      ...(args.deviceId && { "X-meli-session-id": args.deviceId }),
+    },
     body: JSON.stringify({
       transaction_amount: priced.total,
       token: args.token,
@@ -81,6 +117,13 @@ export function createPayment(args: {
       payment_method_id: args.paymentMethodId,
       ...(args.issuerId && { issuer_id: args.issuerId }),
       external_reference: orderNumber,
+      /* 3D Secure: si el antifraude duda, el banco pide confirmar al cliente
+         en vez de rechazar. Requiere captura inmediata y sin modo binario */
+      ...(args.paymentMethodId !== "yape" && {
+        three_d_secure_mode: "optional",
+        capture: true,
+        binary_mode: false,
+      }),
       statement_descriptor: "GRAINNGRAINS",
       notification_url: notificationUrl(),
       payer: {
@@ -91,13 +134,7 @@ export function createPayment(args: {
       },
       /* Datos para el antifraude de Mercado Pago: más datos, menos rechazos */
       additional_info: {
-        items: priced.lines.map((l) => ({
-          id: `${l.categoryId}.${l.productId}`,
-          title: `${l.productId} ${l.size}`,
-          category_id: "food",
-          quantity: l.qty,
-          unit_price: l.unitPrice,
-        })),
+        items,
         payer: {
           first_name: c.firstName,
           last_name: c.lastName,
@@ -161,6 +198,8 @@ export function rejectionReason(detail: string | undefined, wallet: boolean) {
       return "call_bank";
     case "cc_amount_rate_limit_exceeded":
       return wallet ? "yape_limit_exceeded" : "call_bank";
+    case "cc_rejected_3ds_challenge":
+      return "challenge_failed";
     case "cc_rejected_high_risk":
     case "cc_rejected_blacklist":
       return "high_risk";

@@ -671,7 +671,10 @@
       "high_risk": "O pagamento foi recusado por segurança. Tente outro meio de pagamento.",
       "max_attempts": "Você excedeu o número de tentativas permitidas. Use outro meio de pagamento.",
       "duplicated": "Você acabou de fazer um pagamento idêntico. Verifique seu e-mail antes de pagar de novo.",
-      "card_not_allowed": "Este meio de pagamento não é permitido. Use outro."
+      "card_not_allowed": "Este meio de pagamento não é permitido. Use outro.",
+      "challenge_failed": "Seu banco não conseguiu verificar o pagamento. Tente novamente ou use outro meio de pagamento.",
+      "challenge_expired": "A verificação com seu banco expirou. Tente o pagamento novamente.",
+      "challenge_cancelled": "Você cancelou a verificação com seu banco. Nenhuma cobrança foi feita."
     },
     "poweredBy": "Pagamentos processados com segurança pelo Mercado Pago",
     "chargingHint": "Não feche nem recarregue esta página.",
@@ -691,7 +694,10 @@
       "cardNumber": "Verifique o número do cartão.",
       "expirationDate": "Verifique a validade.",
       "securityCode": "Verifique o código de segurança."
-    }
+    },
+    "challengeTitle": "Verifique seu pagamento com seu banco",
+    "challengeHint": "Seu banco precisa confirmar que é você. Siga os passos (código por SMS ou no app do banco).",
+    "challengeCancel": "Cancelar verificação"
   },
   "thanks": {
     "title": "Obrigado pela sua compra!",
