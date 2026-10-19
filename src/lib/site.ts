@@ -68,6 +68,9 @@ export const OG_LOCALE: Record<string, string> = {
   ko: "ko_KR",
 };
 
+/** Plataforma externa donde se verifica la trazabilidad de cada lote */
+export const TRACEABILITY_URL = "https://forestlandsentinel.grainngrains.org";
+
 /** Rutas públicas (sin prefijo de idioma) que deben indexarse. */
 export const ROUTES: string[] = [
   "",

@@ -13,11 +13,17 @@ import {
   DEPARTMENTS,
   GRINDS,
   SIZES,
-  discountFor,
   shippingCost,
   type GrindId,
   type SizeId,
 } from "@/src/lib/shop";
+import {
+  resolveCoupons,
+  type CouponContext,
+  type CouponResult,
+  type CouponSuccess,
+  type CouponUsage,
+} from "@/src/lib/coupons";
 
 /** Tope por pago con Yape en Mercado Pago, en soles */
 export const YAPE_MAX = 2000;
@@ -64,13 +70,92 @@ export interface PricedLine extends OrderLineInput {
 export interface PricedOrder {
   lines: PricedLine[];
   subtotal: number;
-  discountPercent: number;
+  /** Cupones y promociones aplicados (ya validados) */
+  coupons: { code: string; discount: number; percent?: number }[];
   discountAmount: number;
+  /** Productos de regalo de los cupones (van a S/ 0) */
+  gifts: OrderLineInput[];
   shipping: number;
   total: number;
 }
 
+export interface OrderTotals {
+  subtotal: number;
+  /** Resultado del cupón escrito (null si no hay) */
+  coupon: CouponResult | null;
+  /** Todo lo aplicado: cupón escrito y promociones automáticas */
+  applied: CouponSuccess[];
+  discountAmount: number;
+  /** Subtotal ya con descuento (base del envío gratis) */
+  afterDiscount: number;
+  /** null mientras no se elige departamento */
+  shipping: number | null;
+  total: number;
+}
+
+/**
+ * Totales del pedido: subtotal, cupones, envío y total. Es la MISMA cuenta
+ * en el checkout (para mostrarla) y en el servidor (para cobrar).
+ */
+export function computeTotals(
+  lines: {
+    categoryId: string;
+    productId: string;
+    size: SizeId;
+    grind?: GrindId;
+    qty: number;
+    unitPrice: number;
+  }[],
+  opts: Omit<CouponContext, "lines" | "subtotal" | "shippingRate"> & {
+    couponCode?: string;
+  },
+): OrderTotals {
+  const subtotal = round2(lines.reduce((s, l) => s + l.unitPrice * l.qty, 0));
+  const { couponCode, ...ctx } = opts;
+  /* Tarifa de la zona (sin el envío gratis por monto): base de los premios
+     de envío y del valor de cada promoción */
+  const shippingRate = shippingCost(ctx.department, 0) ?? 0;
+  const { applied, manual } = resolveCoupons(couponCode, {
+    ...ctx,
+    lines,
+    subtotal,
+    shippingRate,
+  });
+  const discountAmount = round2(
+    Math.min(
+      applied.reduce((s, r) => s + r.discount, 0),
+      subtotal,
+    ),
+  );
+  const afterDiscount = round2(subtotal - discountAmount);
+  const baseShipping = shippingCost(ctx.department, afterDiscount);
+  const shipping =
+    baseShipping === null
+      ? null
+      : applied.some((r) => r.freeShipping)
+        ? 0
+        : Math.max(
+            0,
+            round2(
+              baseShipping -
+                applied.reduce((s, r) => s + r.shippingDiscount, 0),
+            ),
+          );
+  const total = round2(afterDiscount + (shipping ?? 0));
+  return {
+    subtotal,
+    coupon: manual,
+    applied,
+    discountAmount,
+    afterDiscount,
+    shipping,
+    total,
+  };
+}
+
 export class OrderError extends Error {}
+
+const round2 = (n: number) => Math.round(n * 100) / 100;
 
 const str = (v: unknown, max = 200) =>
   typeof v === "string" ? v.trim().slice(0, max) : "";
@@ -164,31 +249,77 @@ function catalogPrice(line: OrderLineInput) {
   );
 }
 
-const round2 = (n: number) => Math.round(n * 100) / 100;
-
-/** Calcula el pedido con los precios del catálogo (misma lógica que el checkout) */
-export function priceOrder(input: CheckoutInput): PricedOrder {
+/** Calcula el pedido con los precios del catálogo (misma lógica que el checkout).
+    `now` permite repetir la cuenta de un pago ya hecho (p. ej. en el webhook)
+    con la vigencia de cupones de ese momento. */
+export function priceOrder(
+  input: CheckoutInput,
+  opts: { now?: Date; usage?: CouponUsage | null } = {},
+): PricedOrder {
   const lines = input.items.map((line) => {
     const unitPrice = catalogPrice(line);
     if (unitPrice === null) throw new OrderError("unknown_product");
     return { ...line, unitPrice, lineTotal: round2(unitPrice * line.qty) };
   });
-  const subtotal = round2(lines.reduce((s, l) => s + l.lineTotal, 0));
-  const discountPercent = input.discountCode
-    ? (discountFor(input.discountCode) ?? 0)
-    : 0;
-  const discountAmount = round2((subtotal * discountPercent) / 100);
-  const afterDiscount = round2(subtotal - discountAmount);
-  const shipping = shippingCost(input.address.department, afterDiscount) ?? 0;
-  const total = round2(afterDiscount + shipping);
-  if (total <= 0) throw new OrderError("invalid_total");
+  const totals = computeTotals(lines, {
+    department: input.address.department,
+    receiptType: input.receipt.type,
+    payment: input.payment,
+    locale: input.locale,
+    customer: {
+      email: input.customer.email,
+      document:
+        input.receipt.type === "factura"
+          ? input.receipt.ruc
+          : input.receipt.document,
+      newsletter: input.customer.newsletter,
+    },
+    couponCode: input.discountCode,
+    now: opts.now,
+    usage: opts.usage,
+  });
+  /* El checkout solo envía cupones válidos: si no aplica, algo cambió
+     (límite de usos, vigencia…). Se informa el motivo concreto. */
+  const c = totals.coupon;
+  if (c && !c.ok) {
+    const specific = [
+      "used_up",
+      "used_up_today",
+      "loyalty",
+      "already_used",
+      "first_purchase",
+      "unavailable",
+      "expired",
+    ];
+    throw new OrderError(
+      specific.includes(c.reason) ? `coupon_${c.reason}` : "coupon_invalid",
+    );
+  }
+  if (totals.total <= 0) throw new OrderError("invalid_total");
   return {
     lines,
-    subtotal,
-    discountPercent,
-    discountAmount,
-    shipping,
-    total,
+    subtotal: totals.subtotal,
+    coupons: totals.applied.map((r) => ({
+      code: r.coupon.code,
+      discount: r.discount,
+      percent: r.percent,
+    })),
+    discountAmount: totals.discountAmount,
+    gifts: totals.applied.flatMap((r) =>
+      r.gift
+        ? [
+            {
+              categoryId: r.gift.categoryId,
+              productId: r.gift.productId,
+              size: r.gift.size,
+              grind: r.gift.grind,
+              qty: r.gift.qty ?? 1,
+            },
+          ]
+        : [],
+    ),
+    shipping: totals.shipping ?? 0,
+    total: totals.total,
   };
 }
 

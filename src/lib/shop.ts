@@ -92,14 +92,3 @@ export function shippingCost(department: string, subtotal: number) {
   if (subtotal >= FREE_SHIPPING_FROM) return 0;
   return SHIPPING_RATES[shippingZone(department)];
 }
-
-/* ───────── Códigos de descuento ───────── */
-
-/** Código (en mayúsculas) → % de descuento sobre el subtotal */
-export const DISCOUNT_CODES: Record<string, number> = {
-  GRAIN10: 10,
-};
-
-export function discountFor(code: string) {
-  return DISCOUNT_CODES[code.trim().toUpperCase()] ?? null;
-}

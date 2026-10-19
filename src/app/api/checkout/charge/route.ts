@@ -6,7 +6,8 @@ import {
   YAPE_MAX,
 } from "@/src/lib/checkout/order";
 import { createPayment, rejectionReason } from "@/src/lib/checkout/mercadopago";
-import { sendOrderEmails } from "@/src/lib/checkout/email";
+import { completeOrder, customerDocument } from "@/src/lib/checkout/fulfill";
+import { loadCouponUsage } from "@/src/lib/coupons/usage";
 
 /* Cobro con Mercado Pago: valida el pedido, recalcula el total con el
    catálogo (nunca se usa un monto enviado por el navegador) y crea el pago
@@ -15,7 +16,12 @@ export async function POST(request: Request) {
   try {
     const body = (await request.json()) as Record<string, unknown>;
     const input = parseCheckoutInput(body.checkout);
-    const priced = priceOrder(input);
+    /* Límites de uso de cupones (veces, por cliente, primera compra) */
+    const usage = await loadCouponUsage({
+      email: input.customer.email,
+      document: customerDocument(input),
+    });
+    const priced = priceOrder(input, { usage });
     const wallet = input.payment === "wallet";
 
     const token = typeof body.token === "string" ? body.token.slice(0, 200) : "";
@@ -61,13 +67,13 @@ export async function POST(request: Request) {
     }
 
     if (data.status === "approved") {
-      /* Si el correo falla, el pago igual quedó hecho: no se informa error */
-      await sendOrderEmails({
+      /* Correos + usos de cupones; si fallan, el pago igual quedó hecho */
+      await completeOrder({
         input,
         priced,
         orderNumber,
-        chargeId: String(data.id),
-      }).catch((e) => console.error("[email]", e));
+        paymentId: String(data.id),
+      });
       return Response.json({ status: "paid", orderNumber });
     }
 

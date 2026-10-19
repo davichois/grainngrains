@@ -26,13 +26,13 @@ import {
   DEPARTMENTS,
   FREE_SHIPPING_FROM,
   SHIPPING_DAYS,
-  discountFor,
-  shippingCost,
   shippingZone,
 } from "@/src/lib/shop";
+import { normalizeCode, type CouponFailure } from "@/src/lib/coupons";
 import {
   YAPE_DEFAULT_LIMIT,
   YAPE_MAX,
+  computeTotals,
   payerIdentification,
 } from "@/src/lib/checkout/order";
 import OrderSummary from "./OrderSummary";
@@ -65,7 +65,7 @@ const tab = (active: boolean) =>
 export default function CheckoutForm() {
   const t = useTranslations("checkout");
   const hydrated = useHydrated();
-  const { items, total: subtotal, clearCart } = useCart();
+  const { items, clearCart } = useCart();
   const locale = useLocale();
   const router = useRouter();
   const ids = {
@@ -83,10 +83,31 @@ export default function CheckoutForm() {
   const cardRef = useRef<CardFieldsHandle>(null);
   /* El código de Yape es de un solo uso: se limpia si el pago falla */
   const [yapeOtp, setYapeOtp] = useState("");
-  const [discount, setDiscount] = useState<{
-    code: string;
-    percent: number;
-  } | null>(null);
+  /* Cupón ingresado; si sus reglas no se cumplen, se muestra qué falta */
+  const [couponCode, setCouponCode] = useState<string | null>(null);
+  /* Datos del cliente que piden algunas reglas de cupones (correo, DNI/RUC,
+     suscripción); se leen del formulario mientras se escribe */
+  const [customer, setCustomer] = useState({
+    email: "",
+    document: "",
+    newsletter: false,
+  });
+  const readCustomer = (form: HTMLFormElement) => {
+    const f = new FormData(form);
+    const next = {
+      email: String(f.get("email") ?? ""),
+      /* Solo existe el campo del comprobante elegido (DNI o RUC) */
+      document: String(f.get("ruc") ?? f.get("document") ?? ""),
+      newsletter: f.get("newsletter") === "on",
+    };
+    setCustomer((c) =>
+      c.email === next.email &&
+      c.document === next.document &&
+      c.newsletter === next.newsletter
+        ? c
+        : next,
+    );
+  };
   /* idle → preparing (tokenizando en Mercado Pago) → charging (cobrando) */
   const [status, setStatus] = useState<"idle" | "preparing" | "charging">(
     "idle",
@@ -110,27 +131,39 @@ export default function CheckoutForm() {
     getMercadoPago().catch(() => {});
   }, []);
 
-  /* Totales: descuento sobre el subtotal; el envío gratis se evalúa ya con descuento */
-  const discountAmount = discount
-    ? Math.round(subtotal * discount.percent) / 100
-    : 0;
-  const afterDiscount = subtotal - discountAmount;
-  const shipping = shippingCost(department, afterDiscount);
-  const total = afterDiscount + (shipping ?? 0);
-  const totals = { subtotal, discountAmount, afterDiscount, shipping, total };
+  /* Totales con la misma cuenta que el servidor (cupón, envío, total) */
+  const linesForTotals = items.map((i) => ({ ...i, unitPrice: i.price }));
+  const totalsFor = (code: string | null) =>
+    computeTotals(linesForTotals, {
+      department,
+      receiptType: receipt,
+      payment,
+      customer,
+      locale,
+      couponCode: code ?? undefined,
+    });
+  const totals = totalsFor(couponCode);
+  const { shipping, total } = totals;
 
-  const applyCode = (code: string) => {
-    const percent = discountFor(code);
-    if (percent === null) return false;
-    setDiscount({ code: code.trim().toUpperCase(), percent });
-    return true;
+  /* Rechaza solo códigos inexistentes o fuera de vigencia; si falta cumplir
+     una regla (monto, cantidad, factura…), el cupón queda y se indica qué falta */
+  const applyCode = (code: string): CouponFailure | null => {
+    const result = totalsFor(code).coupon;
+    if (
+      result &&
+      !result.ok &&
+      ["not_found", "expired", "not_started"].includes(result.reason)
+    ) {
+      return result;
+    }
+    setCouponCode(normalizeCode(code));
+    return null;
   };
 
   const summaryProps = {
     totals,
-    discount,
     onApplyCode: applyCode,
-    onRemoveCode: () => setDiscount(null),
+    onRemoveCode: () => setCouponCode(null),
   };
 
   /* Tras el 3DS: consulta el pago cada 3 s hasta que se apruebe o rechace
@@ -201,7 +234,8 @@ export default function CheckoutForm() {
         grind,
         qty,
       })),
-      discountCode: discount?.code,
+      /* Solo se envía si sus reglas se cumplen */
+      discountCode: totals.coupon?.ok ? (couponCode ?? undefined) : undefined,
       payment,
       customer: {
         email: get("email"),
@@ -368,6 +402,8 @@ export default function CheckoutForm() {
       <div className="bg-white px-5 py-6 sm:px-8 lg:flex lg:justify-end lg:py-10 lg:pl-8 lg:pr-12">
         <form
           onSubmit={handleSubmit}
+          onInput={(e) => readCustomer(e.currentTarget)}
+          onChange={(e) => readCustomer(e.currentTarget)}
           className="mx-auto w-full max-w-xl space-y-8 lg:mx-0 lg:max-w-[31rem]"
         >
           {/* Contacto */}

@@ -24,6 +24,8 @@ import { GrainngrainsLogo } from "./GrainngrainsLogo";
 import { useHeaderVisibility } from "./HeaderVisibility";
 import CoffeeTicket from "@/src/components/CoffeeTicket";
 import CartButton from "@/src/components/cart/CartButton";
+import SmartLink from "./SmartLink";
+import { TRACEABILITY_URL } from "@/src/lib/site";
 
 /* Píxeles de scroll a partir de los cuales reaparece el header oculto */
 const REVEAL_AT = 4;
@@ -295,7 +297,7 @@ function MegaMenuItem({
                       {col.links.map(
                         (link: { label: string; href: string }) => (
                           <li key={link.label}>
-                            <Link
+                            <SmartLink
                               href={link.href}
                               className="flex items-center justify-between py-2 text-md text-gray-700 font-normal hover:text-[#116e78] transition-colors group/link"
                             >
@@ -306,7 +308,7 @@ function MegaMenuItem({
                                 size={11}
                                 className="text-gray-200 group-hover/link:text-[#116e78] transition-colors shrink-0"
                               />
-                            </Link>
+                            </SmartLink>
                           </li>
                         ),
                       )}
@@ -375,7 +377,7 @@ function MegaMenuItem({
                 <ul>
                   {col.links.map((link) => (
                     <li key={link.label}>
-                      <Link
+                      <SmartLink
                         href={link.href}
                         className="flex items-center justify-between py-2 text-md text-gray-700 font-normal hover:text-[#116e78] transition-colors group/link"
                       >
@@ -384,7 +386,7 @@ function MegaMenuItem({
                           size={11}
                           className="text-gray-200 group-hover/link:text-[#116e78] transition-colors shrink-0"
                         />
-                      </Link>
+                      </SmartLink>
                     </li>
                   ))}
                 </ul>
@@ -439,7 +441,7 @@ export default function Header() {
             },
             {
               label: t("verifyTraceability"),
-              href: "/traceability",
+              href: TRACEABILITY_URL,
             },
           ],
         },

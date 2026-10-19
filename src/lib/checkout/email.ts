@@ -82,7 +82,12 @@ async function send(
 /** Productos del pedido con nombre, opciones, foto y color en el idioma pedido */
 async function emailLines(priced: PricedOrder, locale: string) {
   const t = await getTranslations({ locale });
-  return priced.lines.map((l): EmailLine => {
+  /* El regalo del cupón va al final, a S/ 0 */
+  const all = [
+    ...priced.lines.map((l) => ({ ...l, gift: false })),
+    ...priced.gifts.map((g) => ({ ...g, lineTotal: 0, gift: true })),
+  ];
+  return all.map((l): EmailLine => {
     const isCombo = l.categoryId === COMBO_CATEGORY;
     const combo = isCombo ? findCombo(l.productId) : undefined;
     const first = combo ? comboDetails(combo).products[0] : undefined;
@@ -92,9 +97,9 @@ async function emailLines(priced: PricedOrder, locale: string) {
       name: isCombo
         ? t(`cart.combos.${l.productId}.name`)
         : t(`editions.${l.categoryId}.products.${l.productId}`),
-      opts: `${t(`shop.sizes.${l.size}`)}${isCombo ? ` ${t("shop.each")}` : ""} · ${t(`shop.grinds.${l.grind}`)}`,
+      opts: `${t(`shop.sizes.${l.size}`)}${isCombo ? ` ${t("shop.each")}` : ""} · ${t(`shop.grinds.${l.grind}`)}${l.gift ? ` · ${t("orderEmail.gift")}` : ""}`,
       qty: l.qty,
-      total: money(l.lineTotal),
+      total: l.gift ? t("orderEmail.free") : money(l.lineTotal),
       image: first?.product.image ?? product?.image,
       bg: first?.bg ?? product?.cardBg ?? category?.color,
     };
@@ -138,15 +143,14 @@ function totals(
 ) {
   return [
     { label: labels.subtotal, value: money(priced.subtotal) },
-    ...(priced.discountAmount > 0
-      ? [
-          {
-            label: `${labels.discount} (−${priced.discountPercent}%)`,
-            value: `−${money(priced.discountAmount)}`,
-            accent: true,
-          },
-        ]
-      : []),
+    /* Una línea por cupón o promoción aplicada */
+    ...priced.coupons
+      .filter((c) => c.discount > 0)
+      .map((c) => ({
+        label: `${labels.discount} ${c.code}${c.percent ? ` (−${c.percent}%)` : ""}`,
+        value: `−${money(c.discount)}`,
+        accent: true,
+      })),
     {
       label: labels.shipping,
       value: priced.shipping === 0 ? labels.free : money(priced.shipping),
@@ -205,7 +209,7 @@ export async function buildOrderEmails({
       lines: await emailLines(priced, "es"),
       totals: totals(priced, {
         subtotal: "Subtotal",
-        discount: `Descuento ${input.discountCode ?? ""}`.trim(),
+        discount: "Cupón",
         shipping: "Envío",
         free: "Gratis",
       }),
@@ -221,6 +225,18 @@ export async function buildOrderEmails({
           ],
         },
         { heading: "Entrega", lines: addressLines },
+        ...(priced.coupons.length
+          ? [
+              {
+                heading: "Cupones y promociones",
+                lines: priced.coupons.map((c) =>
+                  c.discount > 0
+                    ? `${esc(c.code)} · −${money(c.discount)}`
+                    : esc(c.code),
+                ),
+              },
+            ]
+          : []),
         {
           heading: "Comprobante",
           lines:

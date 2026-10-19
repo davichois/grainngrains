@@ -6,6 +6,8 @@ import { FaInstagram, FaLinkedinIn, FaFacebook } from "react-icons/fa";
 import { Link } from "../i18n/navigation";
 import { useTranslations } from "next-intl";
 import { GrainngrainsLogo } from "./GrainngrainsLogo";
+import SmartLink from "./SmartLink";
+import { TRACEABILITY_URL } from "@/src/lib/site";
 
 const caveat = Caveat({
   subsets: ["latin"],
@@ -27,12 +29,12 @@ function FooterColumn({
       <ul className="flex flex-col gap-2">
         {links.map((link) => (
           <li key={link.label}>
-            <Link
+            <SmartLink
               href={link.href}
               className="text-[14.5px] text-gray-400 hover:text-cyan-900 transition-colors duration-150 leading-snug"
             >
               {link.label}
-            </Link>
+            </SmartLink>
           </li>
         ))}
       </ul>
@@ -59,7 +61,7 @@ export default function Footer() {
         },
         {
           label: t("verifyTraceability"),
-          href: "/traceability",
+          href: TRACEABILITY_URL,
         },
       ],
     },
