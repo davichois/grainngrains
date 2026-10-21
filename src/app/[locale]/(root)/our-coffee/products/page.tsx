@@ -20,7 +20,7 @@ export async function generateMetadata({
     locale,
     path: "/our-coffee/products",
     title: t("nav.ourCollection"),
-    description: metaText(t("motto")),
+    description: metaText(t.markup("motto", { trace: (chunks) => chunks })),
   });
 }
 

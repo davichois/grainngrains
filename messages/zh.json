@@ -1,6 +1,6 @@
 {
   "farmToFuture": "从农场到未来。",
-  "motto": "连接卓越的咖啡庄园与世界——从产地到杯中的品质、可追溯性与可持续发展。",
+  "motto": "连接卓越的咖啡庄园与世界——从产地到杯中的品质、<trace>可追溯性</trace>与可持续发展。",
   "home": {
     "sections": [
       {
@@ -47,7 +47,8 @@
     "ourCollection": "我们的系列",
     "greenCoffee": "绿咖啡",
     "verifyTraceability": "验证可追溯性",
-    "meetPartner": "我们的合作伙伴"
+    "meetPartner": "我们的合作伙伴",
+    "contact": "联系我们"
   },
   "history": {
     "intro1": "我们是一家家族企业，",
@@ -85,12 +86,12 @@
   "globalFootprint": {
     "hero": {
       "title": "我们的咖啡，连接到你的杯中。",
-      "description": "<strong>在 Grain and Grains，</strong>我们的秘鲁咖啡在每一颗咖啡豆中都体现了生产者的辛勤付出。我们在秘鲁主要咖啡产区拥有广泛的网络和布局，因此能够提供卓越品质、可追溯且可持续的咖啡。我们展示每款产品的来源，让您能够完全信赖我们。"
+      "description": "<strong>在 Grain and Grains，</strong>我们的秘鲁咖啡在每一颗咖啡豆中都体现了生产者的辛勤付出。我们在秘鲁主要咖啡产区拥有广泛的网络和布局，因此能够提供卓越品质、<trace>可追溯</trace>且可持续的咖啡。我们展示每款产品的来源，让您能够完全信赖我们。"
     },
     "footprint": {
       "heading": "我们的全球足迹",
       "paragraph1": "这一切都得益于我们与生产者和合作社的战略联盟，在这里每一颗咖啡豆都至关重要。这种紧密联系使我们能够适应咖啡种植的不可预测性，同时将这些产地连接到全球市场。",
-      "paragraph2": "我们直接管理供应链的每一个环节，从源头到最终目的地，从而确保每一批次的质量、安全、可追溯性与可靠性。我们在产地的存在以及经验，使我们能够提供符合全球标准的秘鲁咖啡，并在每个市场建立信任。",
+      "paragraph2": "我们直接管理供应链的每一个环节，从源头到最终目的地，从而确保每一批次的质量、安全、<trace>可追溯性</trace>与可靠性。我们在产地的存在以及经验，使我们能够提供符合全球标准的秘鲁咖啡，并在每个市场建立信任。",
       "cta": "了解更多"
     },
     "stats": {
@@ -151,12 +152,12 @@
     "faqs4": {
       "id": 4,
       "question": "这批咖啡豆具体来自哪里？",
-      "answer": "借助我们的数字工具和追溯系统，我们能够准确了解每一批咖啡从农场到您杯中的完整来源。"
+      "answer": "借助我们的数字工具和<trace>追溯</trace>系统，我们能够准确了解每一批咖啡从农场到您杯中的完整来源。"
     },
     "faqs5": {
       "id": 5,
       "question": "你们如何验证批次信息的可靠性？",
-      "answer": "我们使用独立的第三方审核机构来验证每批咖啡的数据，确保其来源、生产、质量和可追溯信息真实可靠。"
+      "answer": "我们使用独立的第三方审核机构来验证每批咖啡的数据，确保其来源、生产、质量和<trace>可追溯</trace>信息真实可靠。"
     },
     "faqs6": {
       "id": 6,
@@ -220,15 +221,15 @@
     "hero": {
       "subtitle": "我们的核心原则",
       "title": "优先打造供应链",
-      "description": "我们优先关注咖啡的可追溯性和可靠供应，让客户能够获得关于每一批咖啡从原产农场到最终杯中的清晰且准确的信息。通过积极参与整个价值链，我们提供更高的透明度、控制力和信任，帮助客户做出更稳妥的采购决策并建立更牢固的商业关系。"
+      "description": "我们优先关注咖啡的<trace>可追溯性</trace>和可靠供应，让客户能够获得关于每一批咖啡从原产农场到最终杯中的清晰且准确的信息。通过积极参与整个价值链，我们提供更高的透明度、控制力和信任，帮助客户做出更稳妥的采购决策并建立更牢固的商业关系。"
     },
     "ourPromise": {
       "title": "我们的承诺",
       "subtitle": "专注于：",
       "items": {
         "traceability": {
-          "title": "可追溯性与产地",
-          "description": "我们投资数字化工具和技术，以确保完全透明和可追溯。从农场到咖啡杯，我们都能准确掌握每一批咖啡的来源。"
+          "title": "<trace>可追溯性</trace>与产地",
+          "description": "我们投资数字化工具和技术，以确保完全透明和<trace>可追溯</trace>。从农场到咖啡杯，我们都能准确掌握每一批咖啡的来源。"
         },
         "commitmentToFarmersAndCooperatives": {
           "title": "对咖啡农与合作社的承诺",
@@ -236,7 +237,7 @@
         },
         "verification": {
           "title": "验证",
-          "description": "我们依靠独立第三方审核机构验证每批咖啡的数据，确保其来源、生产、品质和可追溯性信息真实可靠。"
+          "description": "我们依靠独立第三方审核机构验证每批咖啡的数据，确保其来源、生产、品质和<trace>可追溯性</trace>信息真实可靠。"
         },
         "riskAndCompliance": {
           "title": "风险与合规",
@@ -250,7 +251,10 @@
     }
   },
   "footer": {
-    "copyright": "版权所有。"
+    "copyright": "版权所有。",
+    "privacy": "隐私政策",
+    "terms": "条款和条件",
+    "cookies": "Cookie 政策"
   },
   "language": [
     {
@@ -364,102 +368,6 @@
     "learnMore": "了解更多",
     "requestAccess": "如需访问权限，请联系负责人。",
     "contact": "联系"
-  },
-  "traceability": {
-    "title": "可追溯性",
-    "subtitle": "输入您咖啡的追溯码，了解它的产地。",
-    "placeholder": "691445",
-    "search": "追溯",
-    "loading": "正在获取追溯数据…",
-    "loadingSteps": [
-      "正在连接产地网络…",
-      "正在验证批次代码…",
-      "正在获取农场数据…",
-      "正在加载风味档案…"
-    ],
-    "notFoundTitle": "未找到代码",
-    "notFound": "我们找不到该代码对应的咖啡。请核对后重试。",
-    "back": "搜索其他代码",
-    "traceabilityCode": "追溯码",
-    "coffeeFarm": "咖啡农场",
-    "origin": "产地",
-    "altitude": "海拔",
-    "variety": "品种",
-    "harvestSeason": "采收季",
-    "dryingMethod": "干燥方式",
-    "lotData": "批次数据",
-    "profile": "风味档案",
-    "texture": "质地",
-    "fragrance": "香气",
-    "acidity": "酸度",
-    "sweetness": "甜度",
-    "sensation": "口感",
-    "records": {
-      "GG691445": {
-        "edition": "经典晨间系列",
-        "notesTop": "巧克力 · 黑蜜 · 坚果",
-        "notesBottom": "可可 · 橙子 · 红糖 · 糖蜜",
-        "harvestSeason": "2026年5月",
-        "processMethod": "",
-        "dryingMethod": "高架床晾晒",
-        "historyTitle": "咖啡种植社区的力量",
-        "historyBody": "这款咖啡源自秘鲁亚马逊地区400多个咖啡种植家庭的共同努力，他们在CAFCER合作社的旗帜下团结一致。每一次收获都凝聚着世代相传的知识、对品质的执着以及对自然的尊重。通过咖啡，这个社区推动可持续发展，支持女性与青年的成长，并创造机会以增进种植家庭的福祉。每一杯都诉说着产地、奉献，以及当一个社区为更美好的未来携手努力时所产生的积极影响。",
-        "texture": "粗糙",
-        "fragrance": "甘蔗芽 · 巧克力 · 黑蜜",
-        "acidity": "迸发的橙香",
-        "sweetness": "红糖 · 细腻",
-        "sensation": "红糖 · 糖蜜"
-      },
-      "GG559011": {
-        "edition": "咖啡农系列",
-        "notesTop": "成熟菠萝 · 柑橘 · 花香 · 可可 · 枫蜜",
-        "notesBottom": "",
-        "harvestSeason": "2026年5月",
-        "processMethod": "厌氧水洗",
-        "dryingMethod": "高架床晾晒",
-        "historyTitle": "在咖啡园中度过的一生",
-        "historyBody": "奥斯马尔在咖啡园中长大，从小便懂得了劳作的价值、耐心以及对土地的尊重。他与妻子罗斯梅里决定延续这一家族传统，自2010年起经营自己的庄园，坚信品质能为家庭创造新的机遇。每一批咖啡都讲述着一个在咖啡中找到人生意义的家庭故事。",
-        "texture": "顺滑而有光泽",
-        "fragrance": "成熟菠萝",
-        "acidity": "柑橘、橘子",
-        "sweetness": "枫蜜",
-        "sensation": "牛奶巧克力 · 刺果番荔枝"
-      },
-      "GG253031": {
-        "edition": "咖啡农系列",
-        "notesTop": "草莓干 · 灯笼果 · 蜂蜜 · 白巧克力 · 香甜青葡萄 · 成熟芒果",
-        "notesBottom": "",
-        "harvestSeason": "2026年5月",
-        "processMethod": "蜜处理",
-        "dryingMethod": "高架床晾晒",
-        "historyTitle": "坚持不懈的故事",
-        "historyBody": "在秘鲁亚马逊的群山之中，埃利塞奥与妻子玛约里怀揣着一个梦想种植咖啡：为四个孩子创造更好的机会。尽管面临重重挑战，以及运送每一批收成所需的漫长路程，他们依然坚持追求品质与创新。他们的咖啡是坚持不懈、家庭劳作以及与这片养育他们的土地深厚情感的结晶。",
-        "texture": "柔顺 · 包裹感",
-        "fragrance": "甜红糖 · 橙花",
-        "acidity": "柑橘橙香",
-        "sweetness": "红糖 · 香草",
-        "sensation": "红糖 · 巧克力 · 青苹果"
-      },
-      "GG288501": {
-        "edition": "咖啡农系列",
-        "notesTop": "红糖 · 橙花 · 青苹果 · 焦糖 · 牛奶巧克力 · 香草",
-        "notesBottom": "",
-        "harvestSeason": "2026年5月",
-        "processMethod": "厌氧水洗",
-        "dryingMethod": "高架床晾晒",
-        "historyTitle": "",
-        "historyBody": "",
-        "texture": "柔顺",
-        "fragrance": "甜红糖 · 橙花",
-        "acidity": "柑橘橙香",
-        "sweetness": "红糖 · 香草",
-        "sensation": "红糖 · 巧克力 · 青苹果"
-      }
-    },
-    "download": "下载报告",
-    "reportTitle": "追溯报告",
-    "processMethod": "处理方式",
-    "history": "故事"
   },
   "certifications": {
     "heading": "我们的标签、认证与合作社伙伴。",
@@ -612,7 +520,7 @@
     "card": "信用卡或借记卡",
     "paymentRedirect": "付款时我们会将你转到安全的支付网关。",
     "pay": "支付 {amount}",
-    "terms": "付款即表示你同意我们的条款和隐私政策。",
+    "terms": "付款即表示您同意我们的<terms>条款和条件</terms>及<privacy>隐私政策</privacy>。",
     "summary": "订单摘要",
     "showSummary": "显示订单摘要",
     "hideSummary": "隐藏订单摘要",
@@ -794,5 +702,184 @@
     "shopHeaderAlt": "Grain & Grains 精品生豆",
     "partnerAlt": "Grain & Grains 与 CAFCER 的合作",
     "aboutTitle": "我们的故事"
+  },
+  "legal": {
+    "updated": "最后更新：{date}",
+    "onlyIn": "本文件提供西班牙语和英语版本，以下为英语版本。",
+    "contents": "目录",
+    "related": "法律文件",
+    "contact": "有疑问？请发邮件至"
+  },
+  "contact": {
+    "meta": {
+      "title": "联系与报价",
+      "description": "咨询问题、生豆或烘焙咖啡报价及批发采购，请联系我们。我们的团队全程为您服务。"
+    },
+    "kicker": "我们随时为您服务",
+    "title": "聊聊",
+    "titleAccent": "咖啡吧。",
+    "subtitle": "告诉我们您的需求：一般咨询、生豆或烘焙咖啡报价，或批发采购。我们的团队全程为您服务。",
+    "channels": {
+      "heading": "与我们联系",
+      "whatsapp": "WhatsApp",
+      "whatsappHint": "最快的联系方式",
+      "call": "致电我们",
+      "email": "发送邮件"
+    },
+    "formHeading": "给我们留言",
+    "typeLabel": "我们能为您做什么？",
+    "types": {
+      "general": "一般咨询",
+      "greenQuote": "生豆报价",
+      "roastedQuote": "烘焙咖啡报价",
+      "wholesale": "批发采购"
+    },
+    "fields": {
+      "name": "姓名",
+      "email": "电子邮箱",
+      "phone": "电话（选填）",
+      "company": "公司（选填）",
+      "country": "国家",
+      "volume": "预估数量",
+      "message": "您的留言",
+      "messageQuote": "请告诉我们您需要的咖啡：风味、认证和时间"
+    },
+    "volumeHint": {
+      "greenQuote": "例如：1 个货柜",
+      "roastedQuote": "例如：每月 50 公斤",
+      "wholesale": "例如：每月 30 公斤"
+    },
+    "consent": "我同意按照<privacy>隐私政策</privacy>使用我的数据来回复我的咨询。",
+    "submit": "发送留言",
+    "submitQuote": "申请报价",
+    "sending": "发送中…",
+    "success": {
+      "title": "留言已发送！",
+      "text": "感谢您的来信。我们已向您的邮箱发送确认信，并会尽快回复。",
+      "again": "再发一条留言"
+    },
+    "errors": {
+      "invalid_name": "请填写您的姓名。",
+      "invalid_email": "请检查您的电子邮箱。",
+      "invalid_phone": "请检查您的电话号码。",
+      "invalid_message": "请多写一些（至少 10 个字符）。",
+      "invalid_consent": "您必须同意隐私政策。",
+      "rate_limited": "您连续发送了多条留言，请几分钟后再试。",
+      "server": "留言发送失败。请重试或通过 WhatsApp 联系我们。"
+    },
+    "whatsappMessage": "您好 Grain & Grains，我需要帮助：",
+    "whatsappButtonMessage": "你好，Grain & Grains！我想购买你们的咖啡，用这次购买支持一位咖啡农。☕",
+    "whatsappButton": "需要帮助？",
+    "whatsappAria": "通过 WhatsApp 联系我们",
+    "email": {
+      "subject": "我们已收到您的留言 · Grain & Grains",
+      "preheader": "感谢您的来信，我们会尽快回复。",
+      "kicker": "留言已收到",
+      "title": "谢谢您，{name}！",
+      "text": "我们已收到您的留言，团队会尽快回复您。",
+      "reach": "想现在就聊？",
+      "whatsapp": "通过 WhatsApp 联系我们",
+      "outro": "回复此邮件即可直接联系我们的团队。"
+    },
+    "cardAside": "秘鲁精品咖啡"
+  },
+  "promo": {
+    "badge": "{count} 款精品咖啡",
+    "kicker": "秘鲁新鲜烘焙",
+    "title": "您的下一款心头好咖啡",
+    "titleAccent": "正在等您。",
+    "text": "来自秘鲁庄园的咖啡，从田间到杯中全程<trace>可追溯</trace>，咖啡豆或研磨任您选择。低至 {price}。",
+    "perkShipping": "满 {amount} 免运费",
+    "perkOrigin": "直接来自我们的咖啡农",
+    "coupon": "使用优惠码 <code></code> 立享 9 折",
+    "copy": "复制",
+    "copied": "已复制！",
+    "cta": "选购咖啡",
+    "later": "以后再说",
+    "close": "关闭"
+  },
+  "welcome": {
+    "cta": "选购咖啡",
+    "later": "以后再说",
+    "close": "关闭",
+    "edition": "系列",
+    "donation": "想通过捐赠支持我们？请发邮件至 <mail></mail>",
+    "donationSubject": "捐赠 — Grain & Grains",
+    "donationBody": "Grain & Grains 团队，你们好：\n\n我想通过捐赠来支持咖啡农。请告诉我该如何操作？\n\n谢谢。",
+    "teaser": "来一杯咖啡",
+    "teaserSub": "您的一杯咖啡，守护着一个家庭和一片森林",
+    "variants": {
+      "0": {
+        "kicker": "每一杯都有意义",
+        "title": "您的咖啡支持",
+        "titleAccent": "一位生产者。",
+        "text": "您购买的每一袋咖啡都直接惠及秘鲁的咖啡农家庭，通过<trace>溯源</trace>码还能看到它来自哪座庄园。"
+      },
+      "1": {
+        "kicker": "从田间到杯中",
+        "title": "您的咖啡",
+        "titleAccent": "有名字。",
+        "text": "每一罐都承载着一位秘鲁咖啡农的故事。通过<trace>溯源</trace>码，您可以了解他的庄园与收成。"
+      },
+      "2": {
+        "kicker": "秘鲁出品",
+        "title": "手工",
+        "titleAccent": "采摘。",
+        "text": "农民亲手挑选每一颗成熟的咖啡豆。购买我们的咖啡，这份辛劳将回馈给他们的家庭。"
+      },
+      "3": {
+        "kicker": "100% <trace>可溯源</trace>",
+        "title": "认识它的",
+        "titleAccent": "庄园。",
+        "text": "通过<trace>溯源</trace>码，您可以走完从庄园到杯中的旅程。全程透明，从田间到未来。"
+      },
+      "4": {
+        "kicker": "每次购买都有力量",
+        "title": "您的一杯",
+        "titleAccent": "守护森林。",
+        "text": "我们的咖啡与守护土地的家庭一同生长。选择它们，就是播种未来。"
+      },
+      "5": {
+        "kicker": "女性咖啡农",
+        "title": "有着女性面孔的",
+        "titleAccent": "咖啡。",
+        "text": "女性咖啡农系列诞生于引领自己土地的双手。您的购买助力她们的工作。"
+      },
+      "6": {
+        "kicker": "从秘鲁到您的餐桌",
+        "title": "一杯咖啡，",
+        "titleAccent": "两个世界。",
+        "text": "您的餐桌与秘鲁庄园在每一杯中相遇。Grain & Grains 让种植者与品鉴者走得更近。"
+      },
+      "7": {
+        "kicker": "您的下一杯",
+        "title": "享受",
+        "titleAccent": "并支持。",
+        "text": "享受一杯精品咖啡的同时，也支持着一个咖啡农家庭的生计。"
+      }
+    }
+  },
+  "intro": {
+    "aria": "Grain & Grains 开场介绍",
+    "skip": "跳过",
+    "final": "{count}+ 位咖啡农 · 他们都是 Grain & Grains · 100% <trace>可溯源</trace>",
+    "counter": "位咖啡农"
+  },
+  "notFound": {
+    "metaTitle": "页面未找到",
+    "kicker": "错误 404",
+    "title": "此页面不存在",
+    "text": "但咖啡是真的，1600 多位咖啡农在等你。",
+    "countdown": "{seconds} 秒后返回首页",
+    "home": "返回首页",
+    "shop": "查看我们的咖啡"
+  },
+  "seo": {
+    "homeTitle": "Grain & Grains：可溯源的秘鲁精品咖啡",
+    "homeHeading": "Grain & Grains：从农场到杯中、可溯源的秘鲁精品咖啡",
+    "globalFootprint": "全球足迹：走向世界的秘鲁咖啡",
+    "supplyChain": "可溯源的咖啡供应链",
+    "partners": "秘鲁的合作咖啡合作社",
+    "shop": "生豆、烘焙咖啡与研磨咖啡"
   }
 }

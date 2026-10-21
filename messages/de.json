@@ -1,6 +1,6 @@
 {
   "farmToFuture": "Vom Feld in die Zukunft.",
-  "motto": "Wir verbinden außergewöhnliche Kaffeefarmen mit der Welt – Qualität, Rückverfolgbarkeit und Nachhaltigkeit vom Ursprung bis in die Tasse.",
+  "motto": "Wir verbinden außergewöhnliche Kaffeefarmen mit der Welt – Qualität, <trace>Rückverfolgbarkeit</trace> und Nachhaltigkeit vom Ursprung bis in die Tasse.",
   "home": {
     "sections": [
       {
@@ -47,7 +47,8 @@
     "ourCollection": "Unsere Kollektion",
     "greenCoffee": "Grüne Kaffee-Spezialitäten",
     "verifyTraceability": "Rückverfolgbarkeit prüfen",
-    "meetPartner": "Unser Partner"
+    "meetPartner": "Unser Partner",
+    "contact": "Kontakt"
   },
   "history": {
     "intro1": "Wir sind ein interfamiliäres Unternehmen mit",
@@ -85,12 +86,12 @@
   "globalFootprint": {
     "hero": {
       "title": "Unser Kaffee, verbunden mit Ihrer Tasse.",
-      "description": "<strong>Bei Grain and Grains</strong> spiegelt unser peruanischer Kaffee die Arbeit und Hingabe der Produzenten in jeder einzelnen Bohne wider. Dank unseres umfangreichen Netzwerks und unserer Präsenz in den wichtigsten Kaffeeanbaugebieten Perus können wir Kaffees von außergewöhnlicher Qualität anbieten, die rückverfolgbar und nachhaltig sind. Wir zeigen die Herkunft jedes Produkts, damit Sie uns vollkommen vertrauen können."
+      "description": "<strong>Bei Grain and Grains</strong> spiegelt unser peruanischer Kaffee die Arbeit und Hingabe der Produzenten in jeder einzelnen Bohne wider. Dank unseres umfangreichen Netzwerks und unserer Präsenz in den wichtigsten Kaffeeanbaugebieten Perus können wir Kaffees von außergewöhnlicher Qualität anbieten, die <trace>rückverfolgbar</trace> und nachhaltig sind. Wir zeigen die Herkunft jedes Produkts, damit Sie uns vollkommen vertrauen können."
     },
     "footprint": {
       "heading": "Unsere globale Präsenz",
       "paragraph1": "All dies ist dank unserer strategischen Partnerschaften mit Produzenten und Genossenschaften möglich, bei denen jede Bohne zählt. Diese Nähe ermöglicht es uns, uns an die Unvorhersehbarkeit des Kaffeeanbaus anzupassen und gleichzeitig diese Ursprünge mit globalen Märkten zu verbinden.",
-      "paragraph2": "Wir steuern jede Phase der Lieferkette direkt – vom Ursprung bis zum Endziel – und gewährleisten so Qualität, Sicherheit, Rückverfolgbarkeit und Zuverlässigkeit in jeder Charge. Unsere Präsenz vor Ort sowie unsere Erfahrung ermöglichen es uns, peruanischen Kaffee nach globalen Standards anzubieten und Vertrauen in jedem Markt aufzubauen.",
+      "paragraph2": "Wir steuern jede Phase der Lieferkette direkt – vom Ursprung bis zum Endziel – und gewährleisten so Qualität, Sicherheit, <trace>Rückverfolgbarkeit</trace> und Zuverlässigkeit in jeder Charge. Unsere Präsenz vor Ort sowie unsere Erfahrung ermöglichen es uns, peruanischen Kaffee nach globalen Standards anzubieten und Vertrauen in jedem Markt aufzubauen.",
       "cta": "Mehr erfahren"
     },
     "stats": {
@@ -151,12 +152,12 @@
     "faqs4": {
       "id": 4,
       "question": "WOHER STAMMT DIESE KAFFEEPARTIE GENAU?",
-      "answer": "Dank unserer digitalen Tools und Rückverfolgbarkeitssysteme kennen wir den genauen Ursprung jeder Kaffeepartie – von der Farm bis in Ihre Tasse."
+      "answer": "Dank unserer digitalen Tools und <trace>Rückverfolgbarkeitssysteme</trace> kennen wir den genauen Ursprung jeder Kaffeepartie – von der Farm bis in Ihre Tasse."
     },
     "faqs5": {
       "id": 5,
       "question": "WIE ÜBERPRÜFEN SIE, OB DIE INFORMATIONEN ZUR PARTIE ZUVERLÄSSIG SIND?",
-      "answer": "Wir nutzen unabhängige externe Prüfer, um die Daten jeder Partie zu validieren und verlässliche Informationen über Herkunft, Produktion, Qualität und Rückverfolgbarkeit sicherzustellen."
+      "answer": "Wir nutzen unabhängige externe Prüfer, um die Daten jeder Partie zu validieren und verlässliche Informationen über Herkunft, Produktion, Qualität und <trace>Rückverfolgbarkeit</trace> sicherzustellen."
     },
     "faqs6": {
       "id": 6,
@@ -220,15 +221,15 @@
     "hero": {
       "subtitle": "Unser Unverzichtbares",
       "title": "DIE LIEFERKETTE PRIORISIEREN",
-      "description": "Wir priorisieren Rückverfolgbarkeit und eine zuverlässige Kaffeebeschaffung, damit unsere Kunden klare und präzise Informationen über jede Partie erhalten – von der Ursprungsfarm bis zur fertigen Tasse. Durch unsere aktive Beteiligung entlang der gesamten Wertschöpfungskette bieten wir mehr Transparenz, Kontrolle und Vertrauen und ermöglichen sicherere Kaufentscheidungen sowie stärkere Geschäftsbeziehungen."
+      "description": "Wir priorisieren <trace>Rückverfolgbarkeit</trace> und eine zuverlässige Kaffeebeschaffung, damit unsere Kunden klare und präzise Informationen über jede Partie erhalten – von der Ursprungsfarm bis zur fertigen Tasse. Durch unsere aktive Beteiligung entlang der gesamten Wertschöpfungskette bieten wir mehr Transparenz, Kontrolle und Vertrauen und ermöglichen sicherere Kaufentscheidungen sowie stärkere Geschäftsbeziehungen."
     },
     "ourPromise": {
       "title": "Unser Versprechen",
       "subtitle": "Fokussiert auf:",
       "items": {
         "traceability": {
-          "title": "Rückverfolgbarkeit & Herkunft",
-          "description": "Wir investieren in digitale Werkzeuge und Technologien, um vollständige Rückverfolgbarkeit und Transparenz zu gewährleisten. Wir kennen den genauen Ursprung jeder Charge – vom Anbau bis zur Tasse."
+          "title": "<trace>Rückverfolgbarkeit</trace> & Herkunft",
+          "description": "Wir investieren in digitale Werkzeuge und Technologien, um vollständige <trace>Rückverfolgbarkeit</trace> und Transparenz zu gewährleisten. Wir kennen den genauen Ursprung jeder Charge – vom Anbau bis zur Tasse."
         },
         "commitmentToFarmersAndCooperatives": {
           "title": "Engagement für Kaffeebauern und Genossenschaften",
@@ -236,7 +237,7 @@
         },
         "verification": {
           "title": "Verifizierung",
-          "description": "Unabhängige Prüfer validieren die Daten jeder Kaffeepartie, um zuverlässige Informationen über Herkunft, Produktion, Qualität und Rückverfolgbarkeit sicherzustellen."
+          "description": "Unabhängige Prüfer validieren die Daten jeder Kaffeepartie, um zuverlässige Informationen über Herkunft, Produktion, Qualität und <trace>Rückverfolgbarkeit</trace> sicherzustellen."
         },
         "riskAndCompliance": {
           "title": "Risiko & Compliance",
@@ -250,7 +251,10 @@
     }
   },
   "footer": {
-    "copyright": "Alle Rechte vorbehalten."
+    "copyright": "Alle Rechte vorbehalten.",
+    "privacy": "Datenschutzerklärung",
+    "terms": "AGB",
+    "cookies": "Cookie-Richtlinie"
   },
   "language": [
     {
@@ -364,102 +368,6 @@
     "learnMore": "Mehr erfahren",
     "requestAccess": "Für den Zugang wenden Sie sich bitte an den Verantwortlichen.",
     "contact": "Kontaktieren"
-  },
-  "traceability": {
-    "title": "Rückverfolgbarkeit",
-    "subtitle": "Gib den Rückverfolgungscode deines Kaffees ein, um seinen Ursprung zu entdecken.",
-    "placeholder": "691445",
-    "search": "Verfolgen",
-    "loading": "Rückverfolgungsdaten werden abgerufen…",
-    "loadingSteps": [
-      "Verbindung mit dem Ursprungsnetzwerk…",
-      "Überprüfung des Lot-Codes…",
-      "Abrufen der Farmdaten…",
-      "Sensorisches Profil wird geladen…"
-    ],
-    "notFoundTitle": "Code nicht gefunden",
-    "notFound": "Wir konnten keinen Kaffee mit diesem Code finden. Bitte überprüfe ihn und versuche es erneut.",
-    "back": "Anderen Code suchen",
-    "traceabilityCode": "Rückverfolgungscode",
-    "coffeeFarm": "Kaffeefarm",
-    "origin": "Herkunft",
-    "altitude": "Höhe",
-    "variety": "Varietät",
-    "harvestSeason": "Erntezeit",
-    "dryingMethod": "Trocknungsmethode",
-    "lotData": "Lot-Daten",
-    "profile": "Sensorisches Profil",
-    "texture": "Textur",
-    "fragrance": "Duft",
-    "acidity": "Säure",
-    "sweetness": "Süße",
-    "sensation": "Empfindung",
-    "records": {
-      "GG691445": {
-        "edition": "KLASSISCHE MORGEN-EDITION",
-        "notesTop": "Schokolade · Dunkler Honig · Nüsse",
-        "notesBottom": "Kakao · Orange · Panela · Melasse",
-        "harvestSeason": "Mai, 2026",
-        "processMethod": "",
-        "dryingMethod": "Auf Hochbeeten getrocknet",
-        "historyTitle": "Die Stärke einer Kaffeegemeinschaft",
-        "historyBody": "Dieser Kaffee entsteht aus der gemeinsamen Anstrengung von mehr als 400 Kaffeebauernfamilien im peruanischen Amazonasgebiet, vereint in der Kooperative CAFCER. Jede Ernte spiegelt Generationen von Wissen, das Engagement für Qualität und den Respekt vor der Natur wider. Durch den Kaffee fördert diese Gemeinschaft Nachhaltigkeit, unterstützt die Entwicklung von Frauen und Jugendlichen und schafft Chancen, die das Wohl der Produzentenfamilien stärken. Jede Tasse drückt den Ursprung, die Hingabe und die positive Wirkung aus, die entstehen, wenn eine Gemeinschaft gemeinsam für eine bessere Zukunft arbeitet.",
-        "texture": "Rau",
-        "fragrance": "Zuckerrohrknospe · Schokolade · dunkler Honig",
-        "acidity": "Spritzige Orange",
-        "sweetness": "Panela · dezent",
-        "sensation": "Panela · Melasse"
-      },
-      "GG559011": {
-        "edition": "EDITION KAFFEEBAUERN",
-        "notesTop": "Reife Ananas · Mandarine · Blumig · Kakao · Ahornhonig",
-        "notesBottom": "",
-        "harvestSeason": "Mai, 2026",
-        "processMethod": "Anaerobe Wäsche",
-        "dryingMethod": "Auf Hochbeeten getrocknet",
-        "historyTitle": "Ein Leben zwischen Kaffeeplantagen",
-        "historyBody": "Osmar wuchs zwischen Kaffeeplantagen auf und lernte von klein auf den Wert von Arbeit, Geduld und Respekt vor dem Land. Gemeinsam mit seiner Frau Rosmeri beschloss er, dieses Familienerbe fortzuführen, und seit 2010 bewirtschaften sie ihr eigenes Gut in der Überzeugung, dass Qualität neue Chancen für ihre Familie schaffen kann. Jede Charge erzählt die Geschichte einer Familie, die im Kaffee ihren Lebenssinn gefunden hat.",
-        "texture": "Cremig und glänzend",
-        "fragrance": "Reife Ananas",
-        "acidity": "Zitrus, Mandarine",
-        "sweetness": "Ahornhonig",
-        "sensation": "Milchschokolade · Stachelannone"
-      },
-      "GG253031": {
-        "edition": "EDITION KAFFEEBAUERN",
-        "notesTop": "Getrocknete Erdbeere · Physalis · Bienenhonig · Weiße Schokolade · Süße grüne Traube · Reife Mango",
-        "notesBottom": "",
-        "harvestSeason": "Mai, 2026",
-        "processMethod": "Honey",
-        "dryingMethod": "Auf Hochbeeten getrocknet",
-        "historyTitle": "Eine Geschichte der Beharrlichkeit",
-        "historyBody": "In den Bergen des peruanischen Amazonasgebiets bauen Eliseo und seine Frau Maryori Kaffee an, angetrieben von einem Traum: bessere Chancen für ihre vier Kinder zu schaffen. Trotz der Herausforderungen und der langen Wege, um jede Ernte zu transportieren, setzen sie weiterhin auf Qualität und Innovation. Ihr Kaffee ist das Ergebnis von Beharrlichkeit, familiärer Arbeit und einer tiefen Verbundenheit mit dem Land, in dem sie aufgewachsen sind.",
-        "texture": "Weich · umhüllend",
-        "fragrance": "Süße Panela · Orangenblüte",
-        "acidity": "Zitrusorange",
-        "sweetness": "Panela · Vanille",
-        "sensation": "Panela · Schokolade · grüner Apfel"
-      },
-      "GG288501": {
-        "edition": "EDITION KAFFEEBAUERN",
-        "notesTop": "Panela · Orangenblüte · Grüner Apfel · Karamell · Milchschokolade · Vanille",
-        "notesBottom": "",
-        "harvestSeason": "Mai, 2026",
-        "processMethod": "Anaerobe Wäsche",
-        "dryingMethod": "Auf Hochbeeten getrocknet",
-        "historyTitle": "",
-        "historyBody": "",
-        "texture": "Weich",
-        "fragrance": "Süße Panela · Orangenblüte",
-        "acidity": "Zitrusorange",
-        "sweetness": "Panela · Vanille",
-        "sensation": "Panela · Schokolade · grüner Apfel"
-      }
-    },
-    "download": "Bericht herunterladen",
-    "reportTitle": "Rückverfolgbarkeitsbericht",
-    "processMethod": "Aufbereitungsmethode",
-    "history": "Geschichte"
   },
   "certifications": {
     "heading": "Unsere Siegel, Zertifizierungen und Partnerkooperativen.",
@@ -612,7 +520,7 @@
     "card": "Kredit- oder Debitkarte",
     "paymentRedirect": "Beim Bezahlen leiten wir dich zu unserem sicheren Zahlungsanbieter weiter.",
     "pay": "{amount} bezahlen",
-    "terms": "Mit der Zahlung akzeptierst du unsere AGB und Datenschutzerklärung.",
+    "terms": "Mit der Zahlung akzeptierst du unsere <terms>AGB</terms> und die <privacy>Datenschutzerklärung</privacy>.",
     "summary": "Bestellübersicht",
     "showSummary": "Bestellübersicht anzeigen",
     "hideSummary": "Bestellübersicht ausblenden",
@@ -794,5 +702,184 @@
     "shopHeaderAlt": "Grüner Spezialitätenkaffee von Grain & Grains",
     "partnerAlt": "Partnerschaft zwischen Grain & Grains und CAFCER",
     "aboutTitle": "Unsere Geschichte"
+  },
+  "legal": {
+    "updated": "Zuletzt aktualisiert: {date}",
+    "onlyIn": "Dieses Dokument ist auf Spanisch und Englisch verfügbar. Hier siehst du die englische Fassung.",
+    "contents": "Inhalt",
+    "related": "Rechtliche Dokumente",
+    "contact": "Fragen? Schreib uns an"
+  },
+  "contact": {
+    "meta": {
+      "title": "Kontakt und Angebote",
+      "description": "Schreib uns für Fragen, Angebote für Roh- oder Röstkaffee und Großhandelskäufe. Unser Team begleitet dich von Anfang bis Ende."
+    },
+    "kicker": "Wir sind für dich da",
+    "title": "Lass uns über",
+    "titleAccent": "Kaffee reden.",
+    "subtitle": "Sag uns, was du brauchst: eine Frage, ein Angebot für Roh- oder Röstkaffee oder einen Großhandelskauf. Unser Team begleitet dich von Anfang bis Ende.",
+    "channels": {
+      "heading": "Sprich mit uns",
+      "whatsapp": "WhatsApp",
+      "whatsappHint": "Der schnellste Weg zu uns",
+      "call": "Ruf uns an",
+      "email": "Schreib uns"
+    },
+    "formHeading": "Schreib uns",
+    "typeLabel": "Wie können wir helfen?",
+    "types": {
+      "general": "Allgemeine Frage",
+      "greenQuote": "Angebot Rohkaffee",
+      "roastedQuote": "Angebot Röstkaffee",
+      "wholesale": "Großhandel"
+    },
+    "fields": {
+      "name": "Vor- und Nachname",
+      "email": "E-Mail",
+      "phone": "Telefon (optional)",
+      "company": "Firma (optional)",
+      "country": "Land",
+      "volume": "Geschätzte Menge",
+      "message": "Deine Nachricht",
+      "messageQuote": "Welchen Kaffee suchst du? Profil, Zertifizierungen und Zeitrahmen"
+    },
+    "volumeHint": {
+      "greenQuote": "Z. B. 1 Container",
+      "roastedQuote": "Z. B. 50 kg/Monat",
+      "wholesale": "Z. B. 30 kg/Monat"
+    },
+    "consent": "Ich bin einverstanden, dass meine Daten zur Beantwortung meiner Anfrage gemäß der <privacy>Datenschutzerklärung</privacy> verwendet werden.",
+    "submit": "Nachricht senden",
+    "submitQuote": "Angebot anfordern",
+    "sending": "Wird gesendet…",
+    "success": {
+      "title": "Nachricht gesendet!",
+      "text": "Danke für deine Nachricht. Wir haben dir eine Bestätigung geschickt und melden uns bald.",
+      "again": "Weitere Nachricht senden"
+    },
+    "errors": {
+      "invalid_name": "Bitte gib deinen Namen ein.",
+      "invalid_email": "Bitte prüfe deine E-Mail.",
+      "invalid_phone": "Bitte prüfe deine Telefonnummer.",
+      "invalid_message": "Erzähl uns etwas mehr (mindestens 10 Zeichen).",
+      "invalid_consent": "Du musst die Datenschutzerklärung akzeptieren.",
+      "rate_limited": "Du hast mehrere Nachrichten hintereinander gesendet. Versuche es in ein paar Minuten erneut.",
+      "server": "Wir konnten deine Nachricht nicht senden. Versuche es erneut oder schreib uns auf WhatsApp."
+    },
+    "whatsappMessage": "Hallo Grain & Grains, ich brauche Hilfe bei",
+    "whatsappButtonMessage": "Hallo, Grain & Grains! Ich möchte euren Kaffee kaufen und mit meinem Einkauf eine Kaffeebäuerin oder einen Kaffeebauern unterstützen. ☕",
+    "whatsappButton": "Brauchst du Hilfe?",
+    "whatsappAria": "Schreib uns auf WhatsApp",
+    "email": {
+      "subject": "Wir haben deine Nachricht erhalten · Grain & Grains",
+      "preheader": "Danke für deine Nachricht. Wir melden uns bald.",
+      "kicker": "Nachricht erhalten",
+      "title": "Danke, {name}!",
+      "text": "Wir haben deine Nachricht erhalten und unser Team meldet sich bald bei dir.",
+      "reach": "Lieber jetzt sprechen?",
+      "whatsapp": "Schreib uns auf WhatsApp",
+      "outro": "Wenn du auf diese E-Mail antwortest, erreicht sie direkt unser Team."
+    },
+    "cardAside": "Peruanischer Spezialitätenkaffee"
+  },
+  "promo": {
+    "badge": "{count} Spezialitätenkaffees",
+    "kicker": "Frisch geröstet in Peru",
+    "title": "Dein nächster Lieblingskaffee",
+    "titleAccent": "wartet.",
+    "text": "Kaffees von peruanischen Fincas, <trace>rückverfolgbar</trace> vom Feld bis in die Tasse, als ganze Bohne oder gemahlen. Ab {price}.",
+    "perkShipping": "Kostenloser Versand ab {amount}",
+    "perkOrigin": "Direkt von unseren Kaffeebauern",
+    "coupon": "10 % Rabatt mit dem Code <code></code>",
+    "copy": "Kopieren",
+    "copied": "Kopiert!",
+    "cta": "Kaffee kaufen",
+    "later": "Nicht jetzt",
+    "close": "Schließen"
+  },
+  "welcome": {
+    "cta": "Kaffee kaufen",
+    "later": "Nicht jetzt",
+    "close": "Schließen",
+    "edition": "Edition",
+    "donation": "Möchtest du lieber mit einer Spende helfen? Schreib uns an <mail></mail>",
+    "donationSubject": "Spende — Grain & Grains",
+    "donationBody": "Hallo Grain & Grains-Team,\n\nich möchte die Kaffeebäuerinnen und -bauern mit einer Spende unterstützen. Könnt ihr mir sagen, wie das geht?\n\nDanke.",
+    "teaser": "Kauf einen Kaffee",
+    "teaserSub": "Deine Tasse trägt eine Familie und ihren Wald",
+    "variants": {
+      "0": {
+        "kicker": "Jede Tasse zählt",
+        "title": "Dein Kaffee hilft",
+        "titleAccent": "einem Produzenten.",
+        "text": "Jeder Beutel, den du kaufst, kommt direkt einer Kaffeebauernfamilie in Peru zugute – und dank <trace>Rückverfolgbarkeitscode</trace> siehst du, von welcher Finca er stammt."
+      },
+      "1": {
+        "kicker": "Vom Feld in die Tasse",
+        "title": "Dein Kaffee",
+        "titleAccent": "hat einen Namen.",
+        "text": "Jede Dose trägt die Geschichte eines peruanischen Kaffeebauern. Ihr <trace>Rückverfolgbarkeitscode</trace> zeigt dir seine Finca und seine Ernte."
+      },
+      "2": {
+        "kicker": "Aus Peru",
+        "title": "Von Hand",
+        "titleAccent": "geerntet.",
+        "text": "Bäuerliche Hände pflücken jede reife Bohne. Wenn du unseren Kaffee kaufst, kommt diese Arbeit ihren Familien zugute."
+      },
+      "3": {
+        "kicker": "100 % <trace>rückverfolgbar</trace>",
+        "title": "Lerne seine",
+        "titleAccent": "Finca kennen.",
+        "text": "Mit seinem <trace>Rückverfolgbarkeitscode</trace> gehst du den Weg von der Finca bis in deine Tasse. Volle Transparenz."
+      },
+      "4": {
+        "kicker": "Jeder Kauf zählt",
+        "title": "Deine Tasse schützt",
+        "titleAccent": "den Wald.",
+        "text": "Unsere Kaffees wachsen bei Familien, die die Erde bewahren. Sie zu wählen heißt, Zukunft zu säen."
+      },
+      "5": {
+        "kicker": "Kaffeebäuerinnen",
+        "title": "Kaffee mit",
+        "titleAccent": "Frauengesicht.",
+        "text": "Die Edition Kaffeebäuerinnen entsteht aus Händen, die ihr Land führen. Dein Kauf stärkt ihre Arbeit."
+      },
+      "6": {
+        "kicker": "Von Peru auf deinen Tisch",
+        "title": "Ein Kaffee,",
+        "titleAccent": "zwei Welten.",
+        "text": "Dein Tisch und eine peruanische Finca treffen sich in jeder Tasse. Grain & Grains verbindet Erzeuger und Genießer."
+      },
+      "7": {
+        "kicker": "Deine nächste Tasse",
+        "title": "Genießen",
+        "titleAccent": "und helfen.",
+        "text": "Genieße einen Spezialitätenkaffee und unterstütze zugleich den Lebensunterhalt einer Kaffeebauernfamilie."
+      }
+    }
+  },
+  "intro": {
+    "aria": "Einführung von Grain & Grains",
+    "skip": "Intro überspringen",
+    "final": "+{count} Kaffeebauern · sie alle sind Grain & Grains · 100 % <trace>rückverfolgbar</trace>",
+    "counter": "Kaffeebauern"
+  },
+  "notFound": {
+    "metaTitle": "Seite nicht gefunden",
+    "kicker": "Fehler 404",
+    "title": "Diese Seite gibt es nicht",
+    "text": "Den Kaffee aber schon – und mehr als 1.600 Kaffeebauern warten auf dich.",
+    "countdown": "Weiter zur Startseite in {seconds} s",
+    "home": "Zur Startseite",
+    "shop": "Unsere Kaffees"
+  },
+  "seo": {
+    "homeTitle": "Grain & Grains: rückverfolgbarer Spezialitätenkaffee aus Peru",
+    "homeHeading": "Grain & Grains, rückverfolgbarer Spezialitätenkaffee aus Peru – von der Farm bis in die Tasse",
+    "globalFootprint": "Globale Präsenz: peruanischer Kaffee weltweit",
+    "supplyChain": "Rückverfolgbare Kaffee-Lieferkette",
+    "partners": "Partner-Kaffeekooperativen in Peru",
+    "shop": "Grüner, gerösteter & gemahlener Kaffee"
   }
 }

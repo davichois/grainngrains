@@ -8,6 +8,7 @@ import { StaggerContainer, Item, Tilt } from "@/src/components/motion/Motion";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { pageMetadata, metaText } from "@/src/lib/site";
+import { traceLink } from "@/src/components/TraceLink";
 
 export async function generateMetadata({
   params,
@@ -19,8 +20,12 @@ export async function generateMetadata({
   return pageMetadata({
     locale,
     path: "/about/supply-chain-excellence",
-    title: t("supply-chain-excellence.hero.title"),
-    description: metaText(t("supply-chain-excellence.hero.description")),
+    title: t("seo.supplyChain"),
+    description: metaText(
+      t.markup("supply-chain-excellence.hero.description", {
+        trace: (chunks) => chunks,
+      }),
+    ),
   });
 }
 import {
@@ -82,7 +87,7 @@ const steps = [
 type HeroSectionProps = {
   title: string;
   subtitle: string;
-  description: string;
+  description: React.ReactNode;
 };
 
 function HeroSection({ title, subtitle, description }: HeroSectionProps) {
@@ -118,12 +123,12 @@ export default function SupplyChainExcellence() {
     {
       id: 4,
       question: t("faqs.faqs4.question"),
-      answer: t("faqs.faqs4.answer"),
+      answer: t.rich("faqs.faqs4.answer", { trace: traceLink }),
     },
     {
       id: 5,
       question: t("faqs.faqs5.question"),
-      answer: t("faqs.faqs5.answer"),
+      answer: t.rich("faqs.faqs5.answer", { trace: traceLink }),
     },
     {
       id: 6,
@@ -147,7 +152,9 @@ export default function SupplyChainExcellence() {
       <HeroSection
         title={t("supply-chain-excellence.hero.title")}
         subtitle={t("supply-chain-excellence.hero.subtitle")}
-        description={t("supply-chain-excellence.hero.description")}
+        description={t.rich("supply-chain-excellence.hero.description", {
+          trace: traceLink,
+        })}
       />
       <section className="w-full px-6 py-10 sm:py-4 lg:py-6 ">
         {/* Icons row */}
@@ -157,8 +164,10 @@ export default function SupplyChainExcellence() {
         >
           {steps.map((step, i) => (
             <Item key={step.id} className="flex items-center">
-              <Tilt className="text-cyan-900 cursor-pointer" >
-                <div aria-label={step.label}>{step.icon}</div>
+              <Tilt className="text-cyan-900 cursor-pointer">
+                <div role="img" aria-label={step.label}>
+                  {step.icon}
+                </div>
               </Tilt>
 
               {i < steps.length - 1 && (

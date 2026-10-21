@@ -69,7 +69,7 @@ export default function DegreeReports({
             <div className="relative w-full h-96 xl:h-full">
               <Image
                 src={cardImage}
-                alt={degree.title}
+                alt=""
                 fill
                 sizes="(max-width: 640px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"

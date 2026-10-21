@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { preload } from "react-dom";
 import { Link } from "@/src/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import CertificationsSection from "../../../components/CertificationsSection";
@@ -8,7 +9,7 @@ import {
   StaggerContainer,
   Item,
 } from "@/src/components/motion/Motion";
-import { metaText, buildAlternates, absUrl, localizedPath } from "@/src/lib/site";
+import { metaText, pageMetadata } from "@/src/lib/site";
 
 export async function generateMetadata({
   params,
@@ -17,23 +18,35 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale });
-  const description = metaText(t("motto"));
-  return {
+  const description = metaText(
+    t.markup("motto", { trace: (chunks) => chunks }),
+  );
+  return pageMetadata({
+    locale,
+    path: "",
+    title: t("seo.homeTitle"),
     description,
-    alternates: buildAlternates(locale, ""),
-    openGraph: { url: absUrl(localizedPath(locale, "")), description },
-  };
+  });
 }
 
 export default async function Home() {
   const t = await getTranslations();
+  /* La portada del video es lo primero grande que se ve: se pide antes */
+  preload("/videos/intro-poster.jpg", { as: "image", fetchPriority: "high" });
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <ScrollProgress color="#F63049" />
+      {/* Título principal de la página (para buscadores y lectores de
+          pantalla): el inicio abre con un video, sin texto visible */}
+      <h1 className="sr-only">{t("seo.homeHeading")}</h1>
 
       <Reveal className="relative block w-full overflow-hidden text-white">
-        <Link href="/our-coffee/products" className="block cursor-pointer">
+        <Link
+          href="/our-coffee/products"
+          aria-label={t("nav.ourCollection")}
+          className="block cursor-pointer"
+        >
           <video
             className="pointer-events-none block w-full h-auto object-cover mt-30"
             poster="/videos/intro-poster.jpg"
@@ -90,6 +103,7 @@ export default async function Home() {
               className="inline-block mt-8 text-amber-50 border-2 border-amber-50 px-6 py-2 text-sm font-semibold uppercase tracking-wide transition-all duration-300 ease-out will-change-transform hover:scale-105 active:scale-95 hover:bg-[#F63049] hover:text-[#FFE054] hover:border-[#FFE054] focus:outline-none focus:ring-2 focus:ring-[#F63049] focus:ring-offset-2 md:mt-12 md:px-8 md:py-2 md:text-base lg:mt-16 lg:px-10 lg:py-3 lg:text-lg"
             >
               {t("home.readMore")}
+              <span className="sr-only">: {t("nav.sustainability")}</span>
             </Link>
           </Item>
         </StaggerContainer>
@@ -133,6 +147,7 @@ export default async function Home() {
               className="inline-block mt-8 text-[#982332] border-2 border-[#982332] px-6 py-2 text-sm font-semibold uppercase tracking-wide transition-all duration-300 ease-out will-change-transform hover:scale-105 active:scale-95 hover:bg-[#b1d21c] hover:text-[#982332] hover:border-[#982332] focus:outline-none focus:ring-2 focus:ring-[#982332] focus:ring-offset-2 md:mt-12 md:px-8 md:py-2 md:text-base lg:mt-16 lg:px-10 lg:py-3 lg:text-lg"
             >
               {t("home.readMore")}
+              <span className="sr-only">: {t("nav.meetPartner")}</span>
             </Link>
           </Item>
         </StaggerContainer>
@@ -166,6 +181,9 @@ export default async function Home() {
               className="inline-block mt-8 text-amber-50 border-2 border-amber-50 px-6 py-2 text-sm font-semibold uppercase tracking-wide transition-all duration-300 ease-out will-change-transform hover:scale-105 active:scale-95 hover:text-cyan-800 hover:border-cyan-900 focus:outline-none focus:ring-2 focus:ring-[#F63049] focus:ring-offset-2 md:mt-12 md:px-8 md:py-2 md:text-base lg:mt-16 lg:px-10 lg:py-3 lg:text-lg"
             >
               {t("home.knowMore")}
+              <span className="sr-only">
+                : {t("nav.ggHistory")} G&G
+              </span>
             </Link>
           </Item>
         </StaggerContainer>

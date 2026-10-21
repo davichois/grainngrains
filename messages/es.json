@@ -1,6 +1,6 @@
 {
   "farmToFuture": "Del campo al futuro.",
-  "motto": "Conectando fincas de café excepcionales con el mundo: calidad, trazabilidad y sostenibilidad desde el origen hasta la taza.",
+  "motto": "Conectando fincas de café excepcionales con el mundo: calidad, <trace>trazabilidad</trace> y sostenibilidad desde el origen hasta la taza.",
   "home": {
     "sections": [
       {
@@ -47,7 +47,8 @@
     "ourCollection": "Nuestra colección",
     "greenCoffee": "Café Verde Especiales",
     "verifyTraceability": "Verificar Trazabilidad",
-    "meetPartner": "Nuestro partner"
+    "meetPartner": "Nuestro partner",
+    "contact": "Contacto"
   },
   "history": {
     "intro1": "Somos una empresa interfamiliar con",
@@ -148,12 +149,12 @@
   "globalFootprint": {
     "hero": {
       "title": "Nuestro café, conectado a tu taza.",
-      "description": "<strong>En Grain and Grains, </strong>nuestro café peruano refleja el esfuerzo del productor en cada grano. Nuestra amplia red y presencia en las principales regiones cafetaleras del Perú nos permiten ofrecer cafés de calidad excepcional, trazables y sostenibles. Mostramos el origen de cada producto para que confíes plenamente en nosotros."
+      "description": "<strong>En Grain and Grains, </strong>nuestro café peruano refleja el esfuerzo del productor en cada grano. Nuestra amplia red y presencia en las principales regiones cafetaleras del Perú nos permiten ofrecer cafés de calidad excepcional, <trace>trazables</trace> y sostenibles. Mostramos el origen de cada producto para que confíes plenamente en nosotros."
     },
     "footprint": {
       "heading": "Nuestra huella global",
       "paragraph1": "Todo es posible gracias a nuestras alianzas estratégicas con productores y cooperativas, donde cada grano es fundamental para nosotros. Esta cercanía nos permite adaptarnos a la imprevisibilidad propia de la caficultura, mientras conectamos estos orígenes con mercados a nivel global.",
-      "paragraph2": "Gestionamos de manera directa cada etapa de la cadena de suministro, desde el origen hasta el destino final, lo que nos permite garantizar calidad, inocuidad, trazabilidad y seguridad en cada lote. Nuestra presencia en campo, junto con nuestra experiencia, nos permite ofrecer café peruano con estándares globales y generar confianza en cada destino.",
+      "paragraph2": "Gestionamos de manera directa cada etapa de la cadena de suministro, desde el origen hasta el destino final, lo que nos permite garantizar calidad, inocuidad, <trace>trazabilidad</trace> y seguridad en cada lote. Nuestra presencia en campo, junto con nuestra experiencia, nos permite ofrecer café peruano con estándares globales y generar confianza en cada destino.",
       "cta": "Leer más"
     },
     "stats": {
@@ -214,12 +215,12 @@
     "faqs4": {
       "id": 4,
       "question": "¿DE DÓNDE PROVIENE EXACTAMENTE ESTE LOTE DE CAFÉ?",
-      "answer": "Conocemos el origen exacto de cada lote de café, desde la finca hasta tu taza, gracias a nuestras herramientas digitales y sistemas de trazabilidad."
+      "answer": "Conocemos el origen exacto de cada lote de café, desde la finca hasta tu taza, gracias a nuestras herramientas digitales y sistemas de <trace>trazabilidad</trace>."
     },
     "faqs5": {
       "id": 5,
       "question": "¿CÓMO VERIFICAN QUE LA INFORMACIÓN DEL LOTE SEA CONFIABLE?",
-      "answer": "Utilizamos auditores independientes y externos para validar los datos de cada lote, asegurando información confiable sobre su origen, producción, calidad y trazabilidad."
+      "answer": "Utilizamos auditores independientes y externos para validar los datos de cada lote, asegurando información confiable sobre su origen, producción, calidad y <trace>trazabilidad</trace>."
     },
     "faqs6": {
       "id": 6,
@@ -283,15 +284,15 @@
     "hero": {
       "subtitle": "Nuestro no negociable",
       "title": "PRIORIZAR LA CADENA DE SUMINISTRO",
-      "description": "Priorizamos la trazabilidad y el suministro confiable de café para que nuestros clientes cuenten con información clara y precisa sobre cada lote, desde la finca de origen hasta la taza final. Al participar activamente en toda la cadena de valor, ofrecemos mayor transparencia, control y confianza, facilitando decisiones de compra más seguras y relaciones comerciales más sólidas."
+      "description": "Priorizamos la <trace>trazabilidad</trace> y el suministro confiable de café para que nuestros clientes cuenten con información clara y precisa sobre cada lote, desde la finca de origen hasta la taza final. Al participar activamente en toda la cadena de valor, ofrecemos mayor transparencia, control y confianza, facilitando decisiones de compra más seguras y relaciones comerciales más sólidas."
     },
     "ourPromise": {
       "title": "Nuestra promesa",
       "subtitle": "Enfocados en:",
       "items": {
         "traceability": {
-          "title": "Trazabilidad y Origen",
-          "description": "Invertimos en equipos y herramientas digitales para garantizar la trazabilidad y la transparencia totales. Conocemos el origen exacto de cada lote, desde la granja hasta su taza. Lo manejamos con Forest Land Sentinel, una plataforma hecho por nuestro equipo para tener mayor control."
+          "title": "<trace>Trazabilidad</trace> y Origen",
+          "description": "Invertimos en equipos y herramientas digitales para garantizar la <trace>trazabilidad</trace> y la transparencia totales. Conocemos el origen exacto de cada lote, desde la granja hasta su taza. Lo manejamos con Forest Land Sentinel, una plataforma hecho por nuestro equipo para tener mayor control."
         },
         "commitmentToFarmersAndCooperatives": {
           "title": "Compromiso con caficultores y cooperativas",
@@ -299,7 +300,7 @@
         },
         "verification": {
           "title": "Verificación",
-          "description": "Utilizamos auditores independientes y externos para los datos de cada lote de café, de tal manera asegurar información confiable sobre su origen, producción, calidad y trazabilidad en Forest Land Sentinel y Clean Cup Alliance."
+          "description": "Utilizamos auditores independientes y externos para los datos de cada lote de café, de tal manera asegurar información confiable sobre su origen, producción, calidad y <trace>trazabilidad</trace> en Forest Land Sentinel y Clean Cup Alliance."
         },
         "riskAndCompliance": {
           "title": "Riesgo y cumplimiento",
@@ -313,7 +314,10 @@
     }
   },
   "footer": {
-    "copyright": "Todos los derechos reservados."
+    "copyright": "Todos los derechos reservados.",
+    "privacy": "Política de privacidad",
+    "terms": "Términos y condiciones",
+    "cookies": "Política de cookies"
   },
   "language": [
     {
@@ -428,102 +432,6 @@
     "requestAccess": "Para obtener acceso, comunícate con el encargado.",
     "contact": "Contactar"
   },
-  "traceability": {
-    "title": "Trazabilidad",
-    "subtitle": "Ingresa el código de trazabilidad de tu café para conocer su origen.",
-    "placeholder": "691445",
-    "search": "Rastrear",
-    "loading": "Obteniendo datos de trazabilidad…",
-    "loadingSteps": [
-      "Conectando con la red de origen…",
-      "Verificando el código del lote…",
-      "Recuperando datos de la finca…",
-      "Cargando perfil sensorial…"
-    ],
-    "notFoundTitle": "Código no encontrado",
-    "notFound": "No encontramos ningún café con ese código. Verifica e intenta de nuevo.",
-    "back": "Buscar otro código",
-    "traceabilityCode": "Código de trazabilidad",
-    "coffeeFarm": "Finca de café",
-    "origin": "Origen",
-    "altitude": "Altitud",
-    "variety": "Variedad",
-    "harvestSeason": "Cosecha",
-    "dryingMethod": "Método de secado",
-    "lotData": "Datos del lote",
-    "profile": "Perfil sensorial",
-    "texture": "Textura",
-    "fragrance": "Fragancia",
-    "acidity": "Acidez",
-    "sweetness": "Dulzura",
-    "sensation": "Sensación",
-    "records": {
-      "GG691445": {
-        "edition": "EDICIÓN CLÁSICO DE LA MAÑANA",
-        "notesTop": "Chocolate · Miel negra · Nueces",
-        "notesBottom": "Cacao · Naranja · Panela · Melaza",
-        "harvestSeason": "Mayo, 2026",
-        "processMethod": "",
-        "dryingMethod": "Secado en camas elevadas",
-        "historyTitle": "La fuerza de una comunidad cafetalera",
-        "historyBody": "Este café nace del esfuerzo colectivo de más de 400 familias caficultoras de la Amazonía peruana, unidas por la Cooperativa CAFCER. Cada cosecha refleja generaciones de conocimiento, compromiso con la calidad y respeto por la naturaleza. A través del café, esta comunidad impulsa la sostenibilidad, promueve el desarrollo de mujeres y jóvenes, y crea oportunidades que fortalecen el bienestar de las familias productoras. Cada taza expresa el origen, la dedicación y el impacto positivo que surge cuando una comunidad trabaja unida por un futuro mejor.",
-        "texture": "Rugosa",
-        "fragrance": "Brote de caña de azúcar · chocolate · miel negra",
-        "acidity": "Naranja vibrante",
-        "sweetness": "Panela · sutil",
-        "sensation": "Panela · melaza"
-      },
-      "GG559011": {
-        "edition": "EDICIÓN CAFICULTORES",
-        "notesTop": "Piña madura · Mandarina · Floral · Cacao · Miel de maple",
-        "notesBottom": "",
-        "harvestSeason": "Mayo, 2026",
-        "processMethod": "Lavado anaeróbico",
-        "dryingMethod": "Secado en camas elevadas",
-        "historyTitle": "Una vida entre cultivos de café",
-        "historyBody": "Osmar creció entre cafetales, aprendiendo desde niño el valor del trabajo, la paciencia y el respeto por la tierra. Junto a su esposa Rosmeri, decidió continuar ese legado familiar y, desde 2010, cultivan su propia finca con la convicción de que la calidad puede crear nuevas oportunidades para su familia. Cada lote cuenta la historia de una familia que ha encontrado en el café su propósito de vida.",
-        "texture": "Cremosa y brillante",
-        "fragrance": "Piña madura",
-        "acidity": "Cítrica, mandarina",
-        "sweetness": "Miel de maple",
-        "sensation": "Chocolate con leche · guanábana"
-      },
-      "GG253031": {
-        "edition": "EDICIÓN CAFICULTORES",
-        "notesTop": "Fresa deshidratada · Aguaymanto · Miel de abeja · Chocolate blanco · Uva verde dulce · Mango maduro",
-        "notesBottom": "",
-        "harvestSeason": "Mayo, 2026",
-        "processMethod": "Honey",
-        "dryingMethod": "Secado en camas elevadas",
-        "historyTitle": "Una historia de perseverancia",
-        "historyBody": "En las montañas de la Amazonía peruana, Eliseo y su esposa Maryori cultivan café impulsados por un sueño: crear mejores oportunidades para sus cuatro hijos. A pesar de los desafíos y los largos recorridos para transportar cada cosecha, continúan apostando por la calidad y la innovación. Su café es el resultado de la perseverancia, el trabajo familiar y una profunda conexión con la tierra que los vio crecer.",
-        "texture": "Suave · envolvente",
-        "fragrance": "Panela dulce · flor de naranjo",
-        "acidity": "Naranja cítrica",
-        "sweetness": "Panela · vainilla",
-        "sensation": "Panela · chocolate · manzana verde"
-      },
-      "GG288501": {
-        "edition": "EDICIÓN CAFICULTORES",
-        "notesTop": "Panela · Flor de naranja · Manzana verde · Caramelo · Chocolate con leche · Vainilla",
-        "notesBottom": "",
-        "harvestSeason": "Mayo, 2026",
-        "processMethod": "Lavado anaeróbico",
-        "dryingMethod": "Secado en camas elevadas",
-        "historyTitle": "",
-        "historyBody": "",
-        "texture": "Suave",
-        "fragrance": "Panela dulce · flor de naranjo",
-        "acidity": "Naranja cítrica",
-        "sweetness": "Panela · vainilla",
-        "sensation": "Panela · chocolate · manzana verde"
-      }
-    },
-    "download": "Descargar informe",
-    "reportTitle": "Informe de trazabilidad",
-    "processMethod": "Método de proceso",
-    "history": "Historia"
-  },
   "certifications": {
     "heading": "Nuestras etiquetas, certificaciones y cooperativas aliadas.",
     "description": "Asumimos nuestra responsabilidad y predicamos con el ejemplo. Como miembros de diversas organizaciones, colaboramos con otras empresas para promover la sostenibilidad. Recurrimos a certificaciones y sellos de calidad reconocidos para que terceros avalen nuestros esfuerzos y nuestro compromiso. Esto permite a los consumidores y socios conocer lo que hacemos y verificar nuestras acciones.",
@@ -612,7 +520,7 @@
     "card": "Tarjeta de crédito o débito",
     "paymentRedirect": "Al pagar te llevaremos a la pasarela segura para completar el pago.",
     "pay": "Pagar {amount}",
-    "terms": "Al pagar aceptas nuestros términos y condiciones y la política de privacidad.",
+    "terms": "Al pagar aceptas nuestros <terms>términos y condiciones</terms> y la <privacy>política de privacidad</privacy>.",
     "summary": "Resumen del pedido",
     "showSummary": "Mostrar resumen del pedido",
     "hideSummary": "Ocultar resumen del pedido",
@@ -794,5 +702,184 @@
     "shopHeaderAlt": "Café verde de especialidad de Grain & Grains",
     "partnerAlt": "Alianza entre Grain & Grains y CAFCER",
     "aboutTitle": "Nuestra historia"
+  },
+  "legal": {
+    "updated": "Última actualización: {date}",
+    "onlyIn": "—",
+    "contents": "Contenido",
+    "related": "Documentos legales",
+    "contact": "¿Dudas? Escríbenos a"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contacto y cotizaciones",
+      "description": "Escríbenos para consultas, cotizaciones de café verde o tostado y compras mayoristas. Nuestro equipo te acompaña de principio a fin."
+    },
+    "kicker": "Estamos para ayudarte",
+    "title": "Hablemos de",
+    "titleAccent": "café.",
+    "subtitle": "Cuéntanos qué necesitas: una consulta, una cotización de café verde o tostado, o una compra mayorista. Nuestro equipo te acompaña de principio a fin.",
+    "channels": {
+      "heading": "Habla con nosotros",
+      "whatsapp": "WhatsApp",
+      "whatsappHint": "La forma más rápida de escribirnos",
+      "call": "Llámanos",
+      "email": "Escríbenos"
+    },
+    "formHeading": "Escríbenos",
+    "typeLabel": "¿En qué te ayudamos?",
+    "types": {
+      "general": "Consulta general",
+      "greenQuote": "Cotización café verde",
+      "roastedQuote": "Cotización café tostado",
+      "wholesale": "Compra mayorista"
+    },
+    "fields": {
+      "name": "Nombre y apellido",
+      "email": "Correo electrónico",
+      "phone": "Celular (opcional)",
+      "company": "Empresa (opcional)",
+      "country": "País",
+      "volume": "Volumen estimado",
+      "message": "Tu mensaje",
+      "messageQuote": "Cuéntanos qué café buscas, perfil, certificaciones y plazos"
+    },
+    "volumeHint": {
+      "greenQuote": "Ej.: 1 contenedor",
+      "roastedQuote": "Ej.: 50 kg/mes",
+      "wholesale": "Ej.: 30 kg/mes"
+    },
+    "consent": "Acepto que usen mis datos para responder mi consulta, según la <privacy>política de privacidad</privacy>.",
+    "submit": "Enviar mensaje",
+    "submitQuote": "Solicitar cotización",
+    "sending": "Enviando…",
+    "success": {
+      "title": "¡Mensaje enviado!",
+      "text": "Gracias por escribirnos. Te enviamos una confirmación a tu correo y te responderemos muy pronto.",
+      "again": "Enviar otro mensaje"
+    },
+    "errors": {
+      "invalid_name": "Escribe tu nombre.",
+      "invalid_email": "Revisa tu correo electrónico.",
+      "invalid_phone": "Revisa tu número de celular.",
+      "invalid_message": "Cuéntanos un poco más (al menos 10 caracteres).",
+      "invalid_consent": "Debes aceptar la política de privacidad.",
+      "rate_limited": "Enviaste varios mensajes seguidos. Inténtalo de nuevo en unos minutos.",
+      "server": "No pudimos enviar tu mensaje. Inténtalo de nuevo o escríbenos por WhatsApp."
+    },
+    "whatsappMessage": "Hola Grain & Grains, necesito ayuda con",
+    "whatsappButtonMessage": "¡Hola, Grain & Grains! Quiero comprar su café y apoyar a un caficultor con mi compra. ☕",
+    "whatsappButton": "¿Necesitas ayuda?",
+    "whatsappAria": "Escríbenos por WhatsApp",
+    "email": {
+      "subject": "Recibimos tu mensaje · Grain & Grains",
+      "preheader": "Gracias por escribirnos. Te responderemos muy pronto.",
+      "kicker": "Mensaje recibido",
+      "title": "¡Gracias, {name}!",
+      "text": "Recibimos tu mensaje y nuestro equipo te responderá muy pronto.",
+      "reach": "¿Prefieres hablar ahora?",
+      "whatsapp": "Escríbenos por WhatsApp",
+      "outro": "Si respondes este correo, le llegará directamente a nuestro equipo."
+    },
+    "cardAside": "Café peruano de especialidad"
+  },
+  "promo": {
+    "badge": "{count} cafés de especialidad",
+    "kicker": "Recién tostado en Perú",
+    "title": "Tu próximo café favorito",
+    "titleAccent": "te espera.",
+    "text": "Cafés de fincas peruanas con <trace>trazabilidad</trace> del campo a tu taza, en grano o molidos a tu gusto. Desde {price}.",
+    "perkShipping": "Envío gratis desde {amount}",
+    "perkOrigin": "Directo de nuestros caficultores",
+    "coupon": "10% de descuento con el código <code></code>",
+    "copy": "Copiar",
+    "copied": "¡Copiado!",
+    "cta": "Comprar café",
+    "later": "Ahora no",
+    "close": "Cerrar"
+  },
+  "welcome": {
+    "cta": "Comprar café",
+    "later": "Ahora no",
+    "close": "Cerrar",
+    "edition": "Edición",
+    "donation": "¿Prefieres apoyar con una donación? Escríbenos a <mail></mail>",
+    "donationSubject": "Donación — Grain & Grains",
+    "donationBody": "Hola, equipo de Grain & Grains:\n\nQuiero apoyar a los caficultores con una donación. ¿Me cuentan cómo puedo hacerlo?\n\nGracias.",
+    "teaser": "Compra un café",
+    "teaserSub": "Tu taza sostiene a una familia y a su bosque",
+    "variants": {
+      "0": {
+        "kicker": "Cada taza cuenta",
+        "title": "Tu café apoya",
+        "titleAccent": "a un productor.",
+        "text": "Cada bolsa que compras llega directo a una familia caficultora del Perú, y con su código de <trace>trazabilidad</trace> puedes ver de qué finca viene."
+      },
+      "1": {
+        "kicker": "Del campo a tu taza",
+        "title": "Tu café",
+        "titleAccent": "tiene nombre.",
+        "text": "Cada lata lleva la historia de un caficultor peruano. Con su código de <trace>trazabilidad</trace> conoces su finca y su cosecha."
+      },
+      "2": {
+        "kicker": "Hecho en el Perú",
+        "title": "Cosechado",
+        "titleAccent": "a mano.",
+        "text": "Manos campesinas eligen cada grano maduro. Cuando compras nuestro café, ese trabajo vuelve a sus familias."
+      },
+      "3": {
+        "kicker": "100% <trace>trazable</trace>",
+        "title": "Conoce su",
+        "titleAccent": "finca.",
+        "text": "Con su código de <trace>trazabilidad</trace> recorres el camino desde la finca hasta tu taza. Transparencia total, del campo al futuro."
+      },
+      "4": {
+        "kicker": "Cada compra suma",
+        "title": "Tu taza cuida",
+        "titleAccent": "el bosque.",
+        "text": "Nuestros cafés crecen junto a familias que protegen la tierra. Elegirlos es sembrar futuro."
+      },
+      "5": {
+        "kicker": "Mujeres caficultoras",
+        "title": "Café con rostro",
+        "titleAccent": "de mujer.",
+        "text": "La Edición Mujeres Caficultoras nace de manos que lideran su tierra. Tu compra impulsa su trabajo."
+      },
+      "6": {
+        "kicker": "Del Perú a tu mesa",
+        "title": "Un café,",
+        "titleAccent": "dos mundos.",
+        "text": "Tu mesa y una finca peruana se encuentran en cada taza. Grain & Grains acerca a quien cultiva con quien disfruta."
+      },
+      "7": {
+        "kicker": "Tu próxima taza",
+        "title": "Disfruta",
+        "titleAccent": "y apoya.",
+        "text": "Disfruta un café de especialidad y, al mismo tiempo, impulsa el sustento de una familia caficultora."
+      }
+    }
+  },
+  "intro": {
+    "aria": "Presentación de Grain & Grains",
+    "skip": "Saltar intro",
+    "final": "+{count} caficultores · todos son Grain & Grains · 100% <trace>trazable</trace>",
+    "counter": "caficultores"
+  },
+  "notFound": {
+    "metaTitle": "Página no encontrada",
+    "kicker": "Error 404",
+    "title": "Esta página no existe",
+    "text": "Pero el café sí, y más de 1 600 caficultores te esperan.",
+    "countdown": "Te llevamos al inicio en {seconds} s",
+    "home": "Ir al inicio",
+    "shop": "Ver nuestros cafés"
+  },
+  "seo": {
+    "homeTitle": "Grain & Grains: café peruano de especialidad trazable",
+    "homeHeading": "Grain & Grains, café peruano de especialidad trazable del campo a tu taza",
+    "globalFootprint": "Huella global: café peruano en el mundo",
+    "supplyChain": "Cadena de suministro de café trazable",
+    "partners": "Cooperativas aliadas de café en Perú",
+    "shop": "Café verde, tostado y molido"
   }
 }

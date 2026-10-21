@@ -41,11 +41,12 @@ export interface OrderEmailData {
     title: string;
     text: string;
   };
-  orderLabel: string;
-  orderNumber: string;
-  lines: EmailLine[];
-  totals: { label: string; value: string; accent?: boolean }[];
-  total: { label: string; value: string };
+  /* Detalle del pedido (opcional: los correos de contacto no lo llevan) */
+  orderLabel?: string;
+  orderNumber?: string;
+  lines?: EmailLine[];
+  totals?: { label: string; value: string; accent?: boolean }[];
+  total?: { label: string; value: string };
   blocks: EmailBlock[];
   cta?: { label: string; href: string };
   outro?: string;
@@ -99,7 +100,8 @@ function productRows(lines: EmailLine[]) {
 }
 
 function totalRows(data: OrderEmailData) {
-  const rows = data.totals
+  if (!data.total) return "";
+  const rows = (data.totals ?? [])
     .map(
       (r) => `
 <tr>
@@ -185,10 +187,18 @@ export function renderOrderEmail(data: OrderEmailData) {
                 <!-- Detalle del pedido -->
                 <tr>
                   <td class="gg-pad" style="padding:36px 32px 8px">
-                    ${sectionHeading(data.orderLabel, "0 0 4px")}
-                    <p style="margin:0 0 18px;font-family:${FONT};font-size:22px;font-weight:800;color:${INK}">${esc(data.orderNumber)}</p>
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-top:1px solid ${LINE}"><tbody>${productRows(data.lines)}</tbody></table>
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-top:16px"><tbody>${totalRows(data)}</tbody></table>
+                    ${
+                      data.orderLabel && data.orderNumber
+                        ? `${sectionHeading(data.orderLabel, "0 0 4px")}
+                    <p style="margin:0 0 18px;font-family:${FONT};font-size:22px;font-weight:800;color:${INK}">${esc(data.orderNumber)}</p>`
+                        : ""
+                    }
+                    ${
+                      data.lines?.length
+                        ? `<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-top:1px solid ${LINE}"><tbody>${productRows(data.lines)}</tbody></table>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-top:16px"><tbody>${totalRows(data)}</tbody></table>`
+                        : ""
+                    }
                     ${blocks(data.blocks)}
                     ${cta}
                     ${outro}

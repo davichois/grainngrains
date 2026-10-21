@@ -9,11 +9,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale });
-  const title = `${t("partner.headingTop")} ${t("partner.headingBottom")}`;
   return pageMetadata({
     locale,
     path: "/about/partner-cooperatives",
-    title,
+    title: t("seo.partners"),
     description: metaText(t("partner.heroDescription")),
   });
 }

@@ -4,17 +4,23 @@ import Image from "next/image";
 import { MapPin, Handshake, ShieldCheck, Scale, BarChart2 } from "lucide-react";
 import ourpromise from "@/public/images/about/ourpromise.webp";
 import { useTranslations } from "next-intl";
+import { traceLink } from "@/src/components/TraceLink";
 
 export default function OurPromise() {
   const t = useTranslations("supply-chain-excellence");
   const ta = useTranslations("a11y");
+  /* Las menciones de trazabilidad llevan a Forestland Sentinel */
+  const rich = (key: Parameters<typeof t.rich>[0]) =>
+    t.rich(key, { trace: traceLink });
   const promises = [
     {
+      id: "traceability",
       icon: MapPin,
-      title: t("ourPromise.items.traceability.title"),
-      description: t("ourPromise.items.traceability.description"),
+      title: rich("ourPromise.items.traceability.title"),
+      description: rich("ourPromise.items.traceability.description"),
     },
     {
+      id: "commitment",
       icon: Handshake,
       title: t("ourPromise.items.commitmentToFarmersAndCooperatives.title"),
       description: t(
@@ -22,16 +28,19 @@ export default function OurPromise() {
       ),
     },
     {
+      id: "verification",
       icon: ShieldCheck,
       title: t("ourPromise.items.verification.title"),
-      description: t("ourPromise.items.verification.description"),
+      description: rich("ourPromise.items.verification.description"),
     },
     {
+      id: "risk",
       icon: Scale,
       title: t("ourPromise.items.riskAndCompliance.title"),
       description: t("ourPromise.items.riskAndCompliance.description"),
     },
     {
+      id: "data",
       icon: BarChart2,
       title: t("ourPromise.items.dataAndInsights.title"),
       description: t("ourPromise.items.dataAndInsights.description"),
@@ -62,15 +71,15 @@ export default function OurPromise() {
                 {t("ourPromise.title")}
               </span>
             </p>
-            <h3 className="text-2xl md:text-4xl font-semibold text-gray-900">
+            <h2 className="text-2xl md:text-4xl font-semibold text-gray-900">
               {t("ourPromise.subtitle")}
-            </h3>
+            </h2>
           </div>
 
           {/* Promise items */}
           <div className="flex flex-col gap-6 md:gap-8">
-            {promises.map(({ icon: Icon, title, description }) => (
-              <div key={title} className="flex gap-5 md:gap-6 items-start">
+            {promises.map(({ id, icon: Icon, title, description }) => (
+              <div key={id} className="flex gap-5 md:gap-6 items-start">
                 <div className="p-4 shrink-0 rounded-sm">
                   <Icon size={36} strokeWidth={1.5} className="text-cyan-900" />
                 </div>

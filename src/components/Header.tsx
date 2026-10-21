@@ -508,6 +508,7 @@ export default function Header() {
         },
       ],
     },
+    { name: t("contact"), href: "/contact" },
   ];
 
   useEffect(() => {
@@ -729,15 +730,17 @@ export default function Header() {
                           </Link>
                         </li>
                       ))}
-                      <Link
-                        href={item.href}
-                        className="flex items-center justify-between py-2 text-sm text-[#116e78] font-medium hover:text-[#116e78]/80"
-                      >
-                        <span>
-                          {item.historyLabel} <strong>G&G</strong>
-                        </span>
-                        <ArrowUpRight size={13} className="text-[#116e78]" />
-                      </Link>
+                      <li>
+                        <Link
+                          href={item.href}
+                          className="flex items-center justify-between py-2 text-sm text-[#116e78] font-medium hover:text-[#116e78]/80"
+                        >
+                          <span>
+                            {item.historyLabel} <strong>G&G</strong>
+                          </span>
+                          <ArrowUpRight size={13} className="text-[#116e78]" />
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                 </li>

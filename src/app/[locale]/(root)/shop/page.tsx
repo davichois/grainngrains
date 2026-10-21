@@ -19,12 +19,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale });
-  const title = `${t("shop.types.greenCoffee")} · ${t("shop.types.roastedCoffee")} · ${t("shop.types.groundCoffee")}`;
   return pageMetadata({
     locale,
     path: "/shop",
-    title,
-    description: metaText(t("motto")),
+    title: t("seo.shop"),
+    description: metaText(t.markup("motto", { trace: (chunks) => chunks })),
   });
 }
 
@@ -133,17 +132,17 @@ export default async function Home() {
 
       <section className="text-[#0a656f] bg-gray-100 py-10 px-6 mt-14">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-[clamp(25px,4.2vw,26px)] font-thin">
+          <h2 className="text-[clamp(25px,4.2vw,26px)] font-thin">
             {t("shop.whatsOurCoffee")}
-          </h3>
+          </h2>
         </div>
       </section>
 
       <section className="text-white bg-cyan-950 py-10 md:py-25 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="font-thin tracking-wide text-[clamp(1.4rem,5vw,2.6rem)] mb-3">
+          <h2 className="font-thin tracking-wide text-[clamp(1.4rem,5vw,2.6rem)] mb-3">
             {t("shop.degreePresentationTitle")}
-          </h1>
+          </h2>
           <strong className="font-black tracking-tight leading-[0.85] text-[clamp(1.8rem,5vw,10rem)] wrap-break-word">
             {t("shop.degreePresentationSubtitle")}
           </strong>

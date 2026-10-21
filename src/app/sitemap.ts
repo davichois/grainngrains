@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/src/i18n/routing";
 import { ROUTES, absUrl, localizedPath } from "@/src/lib/site";
+import { LEGAL_LOCALES } from "@/src/content/legal";
+import { LEGAL_PATHS } from "@/src/lib/legal-metadata";
 
 /**
  * Sitemap multilingüe: una entrada por idioma de cada ruta, con enlaces
@@ -9,7 +11,22 @@ import { ROUTES, absUrl, localizedPath } from "@/src/lib/site";
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  return ROUTES.flatMap((path) => {
+  /* Páginas legales: solo existen en español e inglés */
+  const legal = Object.values(LEGAL_PATHS).flatMap((path) => {
+    const languages: Record<string, string> = Object.fromEntries(
+      LEGAL_LOCALES.map((l) => [l, absUrl(localizedPath(l, path))]),
+    );
+    languages["x-default"] = absUrl(localizedPath("en", path));
+    return LEGAL_LOCALES.map((locale) => ({
+      url: absUrl(localizedPath(locale, path)),
+      lastModified,
+      changeFrequency: "yearly" as const,
+      priority: 0.3,
+      alternates: { languages },
+    }));
+  });
+
+  const pages = ROUTES.flatMap((path) => {
     const languages: Record<string, string> = {};
     for (const l of routing.locales) {
       languages[l] = absUrl(localizedPath(l, path));
@@ -28,4 +45,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages },
     }));
   });
+
+  return [...pages, ...legal];
 }

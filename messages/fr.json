@@ -1,6 +1,6 @@
 {
   "farmToFuture": "De la ferme au futur.",
-  "motto": "Nous connectons des exploitations caféières d’exception au monde — qualité, traçabilité et durabilité de l’origine à la tasse.",
+  "motto": "Nous connectons des exploitations caféières d’exception au monde — qualité, <trace>traçabilité</trace> et durabilité de l’origine à la tasse.",
   "home": {
     "sections": [
       {
@@ -47,7 +47,8 @@
     "ourCollection": "Notre collection",
     "greenCoffee": "Spécialités de Café Vert",
     "verifyTraceability": "Vérifier la Traçabilité",
-    "meetPartner": "Notre partenaire"
+    "meetPartner": "Notre partenaire",
+    "contact": "Contact"
   },
   "history": {
     "intro1": "Nous sommes une entreprise interfamiliale avec",
@@ -85,12 +86,12 @@
   "globalFootprint": {
     "hero": {
       "title": "Notre café, connecté à votre tasse.",
-      "description": "<strong>Chez Grain and Grains</strong>, chaque café d’origine péruvienne reflète l’effort du producteur dans chaque grain. Notre vaste réseau et notre présence dans les principales régions caféières du Pérou nous permettent d’offrir des cafés d’une qualité exceptionnelle, traçables et durables. Nous mettons en avant l’origine de chaque produit afin que vous puissiez nous faire pleinement confiance."
+      "description": "<strong>Chez Grain and Grains</strong>, chaque café d’origine péruvienne reflète l’effort du producteur dans chaque grain. Notre vaste réseau et notre présence dans les principales régions caféières du Pérou nous permettent d’offrir des cafés d’une qualité exceptionnelle, <trace>traçables</trace> et durables. Nous mettons en avant l’origine de chaque produit afin que vous puissiez nous faire pleinement confiance."
     },
     "footprint": {
       "heading": "Notre empreinte mondiale",
       "paragraph1": "Tout est possible grâce à nos partenariats stratégiques avec des producteurs et des coopératives, où chaque grain compte. Cette proximité nous permet de nous adapter à l’imprévisibilité de la caféiculture tout en reliant ces origines aux marchés mondiaux.",
-      "paragraph2": "Nous gérons directement chaque étape de la chaîne d’approvisionnement, de l’origine à la destination finale, ce qui nous permet de garantir la qualité, la sécurité sanitaire, la traçabilité et la fiabilité de chaque lot. Notre présence sur le terrain, associée à notre expérience, nous permet de proposer un café péruvien répondant aux standards internationaux et d’inspirer confiance sur chaque marché.",
+      "paragraph2": "Nous gérons directement chaque étape de la chaîne d’approvisionnement, de l’origine à la destination finale, ce qui nous permet de garantir la qualité, la sécurité sanitaire, la <trace>traçabilité</trace> et la fiabilité de chaque lot. Notre présence sur le terrain, associée à notre expérience, nous permet de proposer un café péruvien répondant aux standards internationaux et d’inspirer confiance sur chaque marché.",
       "cta": "En savoir plus"
     },
     "stats": {
@@ -151,12 +152,12 @@
     "faqs4": {
       "id": 4,
       "question": "D'OÙ PROVIENT EXACTEMENT CE LOT DE CAFÉ ?",
-      "answer": "Nous connaissons l'origine exacte de chaque lot de café, de la ferme à votre tasse, grâce à nos outils numériques et à nos systèmes de traçabilité."
+      "answer": "Nous connaissons l'origine exacte de chaque lot de café, de la ferme à votre tasse, grâce à nos outils numériques et à nos systèmes de <trace>traçabilité</trace>."
     },
     "faqs5": {
       "id": 5,
       "question": "COMMENT VÉRIFIEZ-VOUS QUE LES INFORMATIONS SUR LE LOT SONT FIABLES ?",
-      "answer": "Nous faisons appel à des auditeurs indépendants pour valider les données de chaque lot et garantir des informations fiables sur son origine, sa production, sa qualité et sa traçabilité."
+      "answer": "Nous faisons appel à des auditeurs indépendants pour valider les données de chaque lot et garantir des informations fiables sur son origine, sa production, sa qualité et sa <trace>traçabilité</trace>."
     },
     "faqs6": {
       "id": 6,
@@ -220,15 +221,15 @@
     "hero": {
       "subtitle": "Notre Incontournable",
       "title": "PRIORISER LA CHAÎNE D'APPROVISIONNEMENT",
-      "description": "Nous accordons la priorité à la traçabilité et à un approvisionnement fiable en café afin que nos clients disposent d'informations claires et précises sur chaque lot, de la ferme d'origine à la tasse finale. En participant activement à toute la chaîne de valeur, nous offrons davantage de transparence, de contrôle et de confiance, facilitant des décisions d'achat plus sûres et des relations commerciales plus solides."
+      "description": "Nous accordons la priorité à la <trace>traçabilité</trace> et à un approvisionnement fiable en café afin que nos clients disposent d'informations claires et précises sur chaque lot, de la ferme d'origine à la tasse finale. En participant activement à toute la chaîne de valeur, nous offrons davantage de transparence, de contrôle et de confiance, facilitant des décisions d'achat plus sûres et des relations commerciales plus solides."
     },
     "ourPromise": {
       "title": "Notre Engagement",
       "subtitle": "Axé sur :",
       "items": {
         "traceability": {
-          "title": "Traçabilité et Origine",
-          "description": "Nous investissons dans des outils numériques afin de garantir une traçabilité et une transparence complètes. Nous connaissons l'origine exacte de chaque lot, de la ferme à la tasse. Nous le gérons grâce à Forest Land Sentinel, une plateforme développée par notre équipe."
+          "title": "<trace>Traçabilité</trace> et Origine",
+          "description": "Nous investissons dans des outils numériques afin de garantir une <trace>traçabilité</trace> et une transparence complètes. Nous connaissons l'origine exacte de chaque lot, de la ferme à la tasse. Nous le gérons grâce à Forest Land Sentinel, une plateforme développée par notre équipe."
         },
         "commitmentToFarmersAndCooperatives": {
           "title": "Engagement envers les Producteurs et Coopératives",
@@ -236,7 +237,7 @@
         },
         "verification": {
           "title": "Vérification",
-          "description": "Nous faisons appel à des auditeurs indépendants pour vérifier les données de chaque lot de café, garantissant des informations fiables sur l'origine, la production, la qualité et la traçabilité."
+          "description": "Nous faisons appel à des auditeurs indépendants pour vérifier les données de chaque lot de café, garantissant des informations fiables sur l'origine, la production, la qualité et la <trace>traçabilité</trace>."
         },
         "riskAndCompliance": {
           "title": "Gestion des Risques et Conformité",
@@ -250,7 +251,10 @@
     }
   },
   "footer": {
-    "copyright": "Tous droits réservés."
+    "copyright": "Tous droits réservés.",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions générales",
+    "cookies": "Politique de cookies"
   },
   "language": [
     {
@@ -364,102 +368,6 @@
     "learnMore": "En savoir plus",
     "requestAccess": "Pour obtenir l'accès, contactez le responsable.",
     "contact": "Contacter"
-  },
-  "traceability": {
-    "title": "Traçabilité",
-    "subtitle": "Saisissez le code de traçabilité de votre café pour découvrir son origine.",
-    "placeholder": "691445",
-    "search": "Tracer",
-    "loading": "Récupération des données de traçabilité…",
-    "loadingSteps": [
-      "Connexion au réseau d'origine…",
-      "Vérification du code du lot…",
-      "Récupération des données de la ferme…",
-      "Chargement du profil sensoriel…"
-    ],
-    "notFoundTitle": "Code introuvable",
-    "notFound": "Nous n'avons trouvé aucun café avec ce code. Veuillez vérifier et réessayer.",
-    "back": "Chercher un autre code",
-    "traceabilityCode": "Code de traçabilité",
-    "coffeeFarm": "Ferme de café",
-    "origin": "Origine",
-    "altitude": "Altitude",
-    "variety": "Variété",
-    "harvestSeason": "Récolte",
-    "dryingMethod": "Méthode de séchage",
-    "lotData": "Données du lot",
-    "profile": "Profil sensoriel",
-    "texture": "Texture",
-    "fragrance": "Arôme",
-    "acidity": "Acidité",
-    "sweetness": "Douceur",
-    "sensation": "Sensation",
-    "records": {
-      "GG691445": {
-        "edition": "ÉDITION CLASSIQUE DU MATIN",
-        "notesTop": "Chocolat · Miel foncé · Noix",
-        "notesBottom": "Cacao · Orange · Panela · Mélasse",
-        "harvestSeason": "Mai, 2026",
-        "processMethod": "",
-        "dryingMethod": "Séché sur lits surélevés",
-        "historyTitle": "La force d'une communauté caféicole",
-        "historyBody": "Ce café naît de l'effort collectif de plus de 400 familles de caféiculteurs de l'Amazonie péruvienne, réunies au sein de la Coopérative CAFCER. Chaque récolte reflète des générations de savoir-faire, un engagement envers la qualité et le respect de la nature. À travers le café, cette communauté favorise la durabilité, soutient le développement des femmes et des jeunes, et crée des opportunités qui renforcent le bien-être des familles productrices. Chaque tasse exprime l'origine, le dévouement et l'impact positif qui naissent lorsqu'une communauté travaille unie pour un avenir meilleur.",
-        "texture": "Rugueuse",
-        "fragrance": "Bourgeon de canne à sucre · chocolat · miel foncé",
-        "acidity": "Orange éclatante",
-        "sweetness": "Panela · subtile",
-        "sensation": "Panela · mélasse"
-      },
-      "GG559011": {
-        "edition": "ÉDITION CAFÉICULTEURS",
-        "notesTop": "Ananas mûr · Mandarine · Floral · Cacao · Sirop d'érable",
-        "notesBottom": "",
-        "harvestSeason": "Mai, 2026",
-        "processMethod": "Lavage anaérobie",
-        "dryingMethod": "Séché sur lits surélevés",
-        "historyTitle": "Une vie parmi les plantations de café",
-        "historyBody": "Osmar a grandi parmi les caféières, apprenant dès l'enfance la valeur du travail, la patience et le respect de la terre. Avec son épouse Rosmeri, il a décidé de poursuivre cet héritage familial et, depuis 2010, ils cultivent leur propre domaine avec la conviction que la qualité peut créer de nouvelles opportunités pour leur famille. Chaque lot raconte l'histoire d'une famille qui a trouvé dans le café le sens de sa vie.",
-        "texture": "Crémeuse et brillante",
-        "fragrance": "Ananas mûr",
-        "acidity": "Agrumes, mandarine",
-        "sweetness": "Sirop d'érable",
-        "sensation": "Chocolat au lait · corossol"
-      },
-      "GG253031": {
-        "edition": "ÉDITION CAFÉICULTEURS",
-        "notesTop": "Fraise déshydratée · Physalis · Miel d'abeille · Chocolat blanc · Raisin vert doux · Mangue mûre",
-        "notesBottom": "",
-        "harvestSeason": "Mai, 2026",
-        "processMethod": "Honey",
-        "dryingMethod": "Séché sur lits surélevés",
-        "historyTitle": "Une histoire de persévérance",
-        "historyBody": "Dans les montagnes de l'Amazonie péruvienne, Eliseo et son épouse Maryori cultivent le café, animés par un rêve : créer de meilleures opportunités pour leurs quatre enfants. Malgré les défis et les longs trajets nécessaires pour transporter chaque récolte, ils continuent de miser sur la qualité et l'innovation. Leur café est le fruit de la persévérance, du travail familial et d'un lien profond avec la terre qui les a vus grandir.",
-        "texture": "Douce · enveloppante",
-        "fragrance": "Panela douce · fleur d'oranger",
-        "acidity": "Orange acidulée",
-        "sweetness": "Panela · vanille",
-        "sensation": "Panela · chocolat · pomme verte"
-      },
-      "GG288501": {
-        "edition": "ÉDITION CAFÉICULTEURS",
-        "notesTop": "Panela · Fleur d'oranger · Pomme verte · Caramel · Chocolat au lait · Vanille",
-        "notesBottom": "",
-        "harvestSeason": "Mai, 2026",
-        "processMethod": "Lavage anaérobie",
-        "dryingMethod": "Séché sur lits surélevés",
-        "historyTitle": "",
-        "historyBody": "",
-        "texture": "Douce",
-        "fragrance": "Panela douce · fleur d'oranger",
-        "acidity": "Orange acidulée",
-        "sweetness": "Panela · vanille",
-        "sensation": "Panela · chocolat · pomme verte"
-      }
-    },
-    "download": "Télécharger le rapport",
-    "reportTitle": "Rapport de traçabilité",
-    "processMethod": "Méthode de traitement",
-    "history": "Histoire"
   },
   "certifications": {
     "heading": "Nos labels, certifications et coopératives partenaires.",
@@ -612,7 +520,7 @@
     "card": "Carte de crédit ou de débit",
     "paymentRedirect": "Lors du paiement, nous vous redirigerons vers notre passerelle sécurisée.",
     "pay": "Payer {amount}",
-    "terms": "En payant, vous acceptez nos conditions générales et notre politique de confidentialité.",
+    "terms": "En payant, vous acceptez nos <terms>conditions générales</terms> et notre <privacy>politique de confidentialité</privacy>.",
     "summary": "Récapitulatif de commande",
     "showSummary": "Afficher le récapitulatif",
     "hideSummary": "Masquer le récapitulatif",
@@ -794,5 +702,184 @@
     "shopHeaderAlt": "Café vert de spécialité Grain & Grains",
     "partnerAlt": "Partenariat entre Grain & Grains et CAFCER",
     "aboutTitle": "Notre histoire"
+  },
+  "legal": {
+    "updated": "Dernière mise à jour : {date}",
+    "onlyIn": "Ce document est disponible en espagnol et en anglais. Voici la version anglaise.",
+    "contents": "Sommaire",
+    "related": "Documents juridiques",
+    "contact": "Des questions ? Écrivez-nous à"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact et devis",
+      "description": "Écrivez-nous pour vos questions, devis de café vert ou torréfié et achats en gros. Notre équipe vous accompagne du début à la fin."
+    },
+    "kicker": "Nous sommes là pour vous",
+    "title": "Parlons",
+    "titleAccent": "café.",
+    "subtitle": "Dites-nous ce dont vous avez besoin : une question, un devis de café vert ou torréfié, ou un achat en gros. Notre équipe vous accompagne du début à la fin.",
+    "channels": {
+      "heading": "Parlez-nous",
+      "whatsapp": "WhatsApp",
+      "whatsappHint": "Le moyen le plus rapide de nous joindre",
+      "call": "Appelez-nous",
+      "email": "Écrivez-nous"
+    },
+    "formHeading": "Écrivez-nous",
+    "typeLabel": "Comment pouvons-nous vous aider ?",
+    "types": {
+      "general": "Question générale",
+      "greenQuote": "Devis café vert",
+      "roastedQuote": "Devis café torréfié",
+      "wholesale": "Achat en gros"
+    },
+    "fields": {
+      "name": "Nom et prénom",
+      "email": "E-mail",
+      "phone": "Téléphone (facultatif)",
+      "company": "Entreprise (facultatif)",
+      "country": "Pays",
+      "volume": "Volume estimé",
+      "message": "Votre message",
+      "messageQuote": "Dites-nous quel café vous cherchez : profil, certifications et délais"
+    },
+    "volumeHint": {
+      "greenQuote": "Ex. : 1 conteneur",
+      "roastedQuote": "Ex. : 50 kg/mois",
+      "wholesale": "Ex. : 30 kg/mois"
+    },
+    "consent": "J'accepte que mes données soient utilisées pour répondre à ma demande, conformément à la <privacy>politique de confidentialité</privacy>.",
+    "submit": "Envoyer le message",
+    "submitQuote": "Demander un devis",
+    "sending": "Envoi…",
+    "success": {
+      "title": "Message envoyé !",
+      "text": "Merci de nous avoir écrit. Nous vous avons envoyé une confirmation et vous répondrons très vite.",
+      "again": "Envoyer un autre message"
+    },
+    "errors": {
+      "invalid_name": "Indiquez votre nom.",
+      "invalid_email": "Vérifiez votre e-mail.",
+      "invalid_phone": "Vérifiez votre numéro de téléphone.",
+      "invalid_message": "Dites-nous-en un peu plus (au moins 10 caractères).",
+      "invalid_consent": "Vous devez accepter la politique de confidentialité.",
+      "rate_limited": "Vous avez envoyé plusieurs messages à la suite. Réessayez dans quelques minutes.",
+      "server": "Nous n'avons pas pu envoyer votre message. Réessayez ou écrivez-nous sur WhatsApp."
+    },
+    "whatsappMessage": "Bonjour Grain & Grains, j'ai besoin d'aide pour",
+    "whatsappButtonMessage": "Bonjour, Grain & Grains ! Je voudrais acheter votre café et soutenir un caféiculteur avec mon achat. ☕",
+    "whatsappButton": "Besoin d'aide ?",
+    "whatsappAria": "Écrivez-nous sur WhatsApp",
+    "email": {
+      "subject": "Nous avons reçu votre message · Grain & Grains",
+      "preheader": "Merci de nous avoir écrit. Nous vous répondrons très vite.",
+      "kicker": "Message reçu",
+      "title": "Merci, {name} !",
+      "text": "Nous avons reçu votre message et notre équipe vous répondra très vite.",
+      "reach": "Vous préférez parler maintenant ?",
+      "whatsapp": "Écrivez-nous sur WhatsApp",
+      "outro": "Si vous répondez à cet e-mail, il arrivera directement à notre équipe."
+    },
+    "cardAside": "Café de spécialité du Pérou"
+  },
+  "promo": {
+    "badge": "{count} cafés de spécialité",
+    "kicker": "Fraîchement torréfié au Pérou",
+    "title": "Votre prochain café préféré",
+    "titleAccent": "vous attend.",
+    "text": "Des cafés de fermes péruviennes, <trace>traçables</trace> du champ à la tasse, en grains ou moulus selon vos goûts. Dès {price}.",
+    "perkShipping": "Livraison gratuite dès {amount}",
+    "perkOrigin": "Directement de nos caféiculteurs",
+    "coupon": "10 % de réduction avec le code <code></code>",
+    "copy": "Copier",
+    "copied": "Copié !",
+    "cta": "Acheter du café",
+    "later": "Plus tard",
+    "close": "Fermer"
+  },
+  "welcome": {
+    "cta": "Acheter du café",
+    "later": "Plus tard",
+    "close": "Fermer",
+    "edition": "Édition",
+    "donation": "Vous préférez soutenir par un don ? Écrivez-nous à <mail></mail>",
+    "donationSubject": "Don — Grain & Grains",
+    "donationBody": "Bonjour l'équipe Grain & Grains,\n\nJe souhaite soutenir les caféiculteurs par un don. Pouvez-vous m'indiquer comment faire ?\n\nMerci.",
+    "teaser": "Achetez un café",
+    "teaserSub": "Votre tasse soutient une famille et sa forêt",
+    "variants": {
+      "0": {
+        "kicker": "Chaque tasse compte",
+        "title": "Votre café soutient",
+        "titleAccent": "un producteur.",
+        "text": "Chaque sachet acheté va directement à une famille de caféiculteurs au Pérou, et son code de <trace>traçabilité</trace> vous montre de quelle ferme il vient."
+      },
+      "1": {
+        "kicker": "Du champ à la tasse",
+        "title": "Votre café",
+        "titleAccent": "a un nom.",
+        "text": "Chaque boîte porte l'histoire d'un caféiculteur péruvien. Son code de <trace>traçabilité</trace> vous montre sa ferme et sa récolte."
+      },
+      "2": {
+        "kicker": "Fait au Pérou",
+        "title": "Cueilli",
+        "titleAccent": "à la main.",
+        "text": "Des mains paysannes cueillent chaque grain mûr. En achetant notre café, ce travail revient à leurs familles."
+      },
+      "3": {
+        "kicker": "100 % <trace>traçable</trace>",
+        "title": "Découvrez sa",
+        "titleAccent": "ferme.",
+        "text": "Son code de <trace>traçabilité</trace> vous fait parcourir le chemin de la ferme à votre tasse. Transparence totale."
+      },
+      "4": {
+        "kicker": "Chaque achat compte",
+        "title": "Votre tasse protège",
+        "titleAccent": "la forêt.",
+        "text": "Nos cafés poussent aux côtés de familles qui protègent la terre. Les choisir, c'est semer l'avenir."
+      },
+      "5": {
+        "kicker": "Femmes caféicultrices",
+        "title": "Un café au visage",
+        "titleAccent": "de femme.",
+        "text": "L'Édition Femmes Caféicultrices naît de mains qui dirigent leur terre. Votre achat soutient leur travail."
+      },
+      "6": {
+        "kicker": "Du Pérou à votre table",
+        "title": "Un café,",
+        "titleAccent": "deux mondes.",
+        "text": "Votre table et une ferme péruvienne se rencontrent dans chaque tasse. Grain & Grains rapproche producteurs et amateurs."
+      },
+      "7": {
+        "kicker": "Votre prochaine tasse",
+        "title": "Savourez",
+        "titleAccent": "et soutenez.",
+        "text": "Savourez un café de spécialité tout en soutenant la subsistance d'une famille de caféiculteurs."
+      }
+    }
+  },
+  "intro": {
+    "aria": "Présentation de Grain & Grains",
+    "skip": "Passer l'intro",
+    "final": "+{count} caféiculteurs · tous sont Grain & Grains · 100 % <trace>traçable</trace>",
+    "counter": "caféiculteurs"
+  },
+  "notFound": {
+    "metaTitle": "Page introuvable",
+    "kicker": "Erreur 404",
+    "title": "Cette page n'existe pas",
+    "text": "Mais le café, oui, et plus de 1 600 caféiculteurs vous attendent.",
+    "countdown": "Retour à l'accueil dans {seconds} s",
+    "home": "Aller à l'accueil",
+    "shop": "Voir nos cafés"
+  },
+  "seo": {
+    "homeTitle": "Grain & Grains : café de spécialité péruvien traçable",
+    "homeHeading": "Grain & Grains, café de spécialité péruvien traçable, de la ferme à la tasse",
+    "globalFootprint": "Empreinte mondiale : café péruvien dans le monde",
+    "supplyChain": "Chaîne d'approvisionnement de café traçable",
+    "partners": "Coopératives de café partenaires au Pérou",
+    "shop": "Café vert, torréfié et moulu"
   }
 }

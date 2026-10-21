@@ -27,7 +27,7 @@ const money = (n: number) =>
     n,
   );
 
-const FOOTER = `Grain &amp; Grains S.A.C. · RUC 20616226488<br />Lima, Perú · +51 930 625 619 · <a href="${SITE_URL}" style="color:#898989">grainngrains.org</a>`;
+export const FOOTER = `Grain &amp; Grains S.A.C. · RUC 20616226488<br />Lima, Perú · +51 930 625 619 · <a href="${SITE_URL}" style="color:#898989">grainngrains.org</a>`;
 
 /* Logo incrustado en el correo (cid:gg-logo): se ve aunque la imagen no esté
    publicada en la web y no lo bloquean los clientes que ocultan imágenes remotas */
@@ -37,11 +37,11 @@ const logo = () =>
     path.join(process.cwd(), "public/images/email/logo.png"),
   ).then((b) => b.toString("base64")));
 
-async function send(
-  { to, subject, html, replyTo }: OrderEmail,
+export async function sendEmail(
+  { to, subject, html, replyTo }: Omit<OrderEmail, "kind">,
   /** Clave de idempotencia de Resend: el mismo correo no sale dos veces (24 h) */
   idempotencyKey?: string,
-) {
+): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.ORDERS_EMAIL_FROM;
   if (!apiKey || !from) {
@@ -49,7 +49,7 @@ async function send(
       "[email] RESEND_API_KEY u ORDERS_EMAIL_FROM no configurados; no se envió:",
       subject,
     );
-    return;
+    return false;
   }
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -75,8 +75,11 @@ async function send(
     }),
   });
   /* 409: ese correo ya se envió (o se está enviando) con la misma clave */
-  if (!res.ok && res.status !== 409)
+  if (!res.ok && res.status !== 409) {
     console.error("[email] Resend respondió", res.status, await res.text());
+    return false;
+  }
+  return true;
 }
 
 /** Productos del pedido con nombre, opciones, foto y color en el idioma pedido */
@@ -107,10 +110,10 @@ async function emailLines(priced: PricedOrder, locale: string) {
 }
 
 /** Elementos comunes con la web: lema, cinta de ediciones, cierre y colores */
-async function siteChrome(locale: string, priced: PricedOrder) {
+export async function siteChrome(locale: string, priced?: PricedOrder) {
   const t = await getTranslations({ locale });
   /* El bloque de color usa la edición del primer café del pedido */
-  const first = priced.lines[0];
+  const first = priced?.lines[0];
   const combo =
     first?.categoryId === COMBO_CATEGORY
       ? findCombo(first.productId)
@@ -316,6 +319,6 @@ export async function sendOrderEmails(
   params: Parameters<typeof buildOrderEmails>[0],
 ) {
   for (const e of await buildOrderEmails(params)) {
-    await send(e, `order/${params.chargeId}/${e.kind}`);
+    await sendEmail(e, `order/${params.chargeId}/${e.kind}`);
   }
 }

@@ -14,7 +14,7 @@ export async function generateMetadata({
     locale,
     path: "/our-coffee/innovation-in-coffee",
     title: t("nav.coffeeInnovation"),
-    description: metaText(t("motto")),
+    description: metaText(t.markup("motto", { trace: (chunks) => chunks })),
     noIndex: true,
   });
 }

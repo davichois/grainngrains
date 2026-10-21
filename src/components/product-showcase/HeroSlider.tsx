@@ -275,16 +275,21 @@ export default function HeroSlider({
       </button>
 
       {/* Puntos */}
-      <div className="absolute bottom-[clamp(22px,3vw,36px)] right-[clamp(18px,4vw,56px)] z-30 flex gap-2">
+      {/* Cada punto es un botón de 24 px (fácil de tocar) con el punto al centro */}
+      <div className="absolute bottom-[clamp(14px,3vw,28px)] right-[clamp(10px,4vw,48px)] z-30 flex">
         {categories.map((_, i) => (
           <button
             key={i}
             aria-label={`Go to slide ${i + 1}`}
             onClick={() => goToCategory(i)}
-            className={`h-2 w-2 cursor-pointer rounded-full transition-all duration-200 ${
-              i === activeCat ? "scale-[1.3] bg-white" : "bg-white/35"
-            }`}
-          />
+            className="flex h-6 w-6 cursor-pointer items-center justify-center"
+          >
+            <span
+              className={`h-2 w-2 rounded-full transition-all duration-200 ${
+                i === activeCat ? "scale-[1.3] bg-white" : "bg-white/35"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </div>

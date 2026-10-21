@@ -7,7 +7,8 @@ import { Link } from "../i18n/navigation";
 import { useTranslations } from "next-intl";
 import { GrainngrainsLogo } from "./GrainngrainsLogo";
 import SmartLink from "./SmartLink";
-import { TRACEABILITY_URL } from "@/src/lib/site";
+import { CONTACT, TRACEABILITY_URL } from "@/src/lib/site";
+import { traceLink } from "@/src/components/TraceLink";
 
 const caveat = Caveat({
   subsets: ["latin"],
@@ -100,6 +101,7 @@ export default function Footer() {
           label: t("supplyChainExcellence"),
           href: "/about/supply-chain-excellence",
         },
+        { label: t("contact"), href: "/contact" },
       ],
     },
   ];
@@ -110,7 +112,11 @@ export default function Footer() {
       href: "https://www.instagram.com/grainngrains",
       label: "Instagram",
     },
-    { icon: FaLinkedinIn, href: "https://www.linkedin.com/company/grain-grains-coffee", label: "LinkedIn" },
+    {
+      icon: FaLinkedinIn,
+      href: "https://www.linkedin.com/company/grain-grains-coffee",
+      label: "LinkedIn",
+    },
     {
       icon: FaFacebook,
       href: "https://www.facebook.com/profile.php?id=61584672518944",
@@ -118,9 +124,10 @@ export default function Footer() {
     },
   ];
 
+  /* Con un toque: llamar o escribir */
   const contact = [
-    { icon: Phone, text: "+51 927 645 665" },
-    { icon: Mail, text: "tradingna@grainngrains.org" },
+    { icon: Phone, text: CONTACT.phone, href: CONTACT.phoneHref },
+    { icon: Mail, text: CONTACT.email, href: `mailto:${CONTACT.email}` },
   ];
 
   return (
@@ -141,16 +148,8 @@ export default function Footer() {
             </p>
           </div>
 
-          <a
-            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
-              "tradingna@grainngrains.org",
-            )}&su=${encodeURIComponent(
-              "Contacto — Grain & Grains",
-            )}&body=${encodeURIComponent(
-              "Hola equipo de Grain & Grains,\n\nMe gustaría ponerme en contacto con ustedes para obtener más información.\n\nGracias.",
-            )}`}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/contact"
             className="group inline-flex items-center gap-2 border border-[#116e78] text-[#116e78] text-xl font-medium px-6 py-4 hover:bg-[#116e78] hover:text-white transition-all duration-200 shrink-0 rounded-full"
           >
             <Mail size={18} />
@@ -159,7 +158,7 @@ export default function Footer() {
               size={18}
               className="opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
             />
-          </a>
+          </Link>
         </div>
 
         {/* ── DIVIDER ── */}
@@ -176,15 +175,26 @@ export default function Footer() {
 
             {/* Description */}
             <p className="text-[14px] text-gray-400 leading-relaxed">
-              {tbase("motto")}
+              {tbase.rich("motto", { trace: traceLink })}
             </p>
 
             {/* Contact */}
             <ul className="flex flex-col gap-2">
-              {contact.map(({ icon: Icon, text }) => (
-                <li key={text} className="flex items-start gap-2">
-                  <Icon size={13} className="text-[#116e78] mt-0.75 shrink-0" />
-                  <span className="text-[13.5px] text-gray-400">{text}</span>
+              {contact.map(({ icon: Icon, text, href }) => (
+                <li key={text}>
+                  <a
+                    href={href}
+                    className="group flex items-start gap-2 text-[13.5px] text-gray-400 transition-colors hover:text-[#116e78]"
+                  >
+                    <Icon
+                      size={13}
+                      aria-hidden
+                      className="text-[#116e78] mt-0.75 shrink-0"
+                    />
+                    <span className="underline-offset-4 group-hover:underline">
+                      {text}
+                    </span>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -226,14 +236,17 @@ export default function Footer() {
         <div className="py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-[13px] text-gray-400">
           <p>{`© ${year} Grain & Grains S.A.C. ${tbase("footer.copyright")} - RUC: 20616226488`}</p>
 
-          <nav className="items-center gap-4 flex-wrap justify-center hidden">
+          <nav
+            aria-label={tbase("legal.related")}
+            className="flex flex-wrap items-center justify-center gap-4"
+          >
             {[
-              { label: "Privacy Policy", href: "/privacy" },
-              { label: "Terms of Use", href: "/terms" },
-              { label: "Cookie Settings", href: "/cookies" },
+              { label: tbase("footer.privacy"), href: "/privacy" },
+              { label: tbase("footer.terms"), href: "/terms" },
+              { label: tbase("footer.cookies"), href: "/cookies" },
             ].map((link) => (
               <Link
-                key={link.label}
+                key={link.href}
                 href={link.href}
                 className="hover:text-gray-600 transition-colors"
               >

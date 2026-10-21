@@ -810,7 +810,29 @@ export default function CheckoutForm() {
                   ? t("charging")
                   : t("pay", { amount: formatPrice(total) })}
             </button>
-            <p className="text-center text-xs text-gray-500">{t("terms")}</p>
+            <p className="text-center text-xs text-gray-500">
+              {/* Se abren en otra pestaña para no perder el checkout */}
+              {t.rich("terms", {
+                terms: (chunks) => (
+                  <Link
+                    href="/terms"
+                    target="_blank"
+                    className="underline underline-offset-2 hover:text-gray-900"
+                  >
+                    {chunks}
+                  </Link>
+                ),
+                privacy: (chunks) => (
+                  <Link
+                    href="/privacy"
+                    target="_blank"
+                    className="underline underline-offset-2 hover:text-gray-900"
+                  >
+                    {chunks}
+                  </Link>
+                ),
+              })}
+            </p>
             <p className="flex items-center justify-center gap-1.5 text-[11px] text-gray-400">
               <ShieldCheck size={13} aria-hidden />
               {t("poweredBy")}

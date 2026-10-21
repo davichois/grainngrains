@@ -109,9 +109,9 @@ export default function HistoryGrainAndGrains() {
       <section className="text-cyan-900 bg-white py-20 md:py-45 px-6">
         <StaggerContainer once={false} className="max-w-4xl mx-auto text-center">
           <Item>
-            <h1 className="font-normal tracking-wide text-[clamp(1.4rem,5vw,1.6rem)] mb-3">
+            <h2 className="font-normal tracking-wide text-[clamp(1.4rem,5vw,1.6rem)] mb-3">
               {t("intro3")}
-            </h1>
+            </h2>
           </Item>
           <Item>
             <strong className="font-black tracking-tight leading-[0.85] text-[clamp(1.8rem,5vw,10rem)] wrap-break-word">

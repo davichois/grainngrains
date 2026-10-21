@@ -9,11 +9,13 @@ import huellaglobal from "@/public/images/about/huellaglobal.webp";
 import Faqs from "@/src/components/Faqs";
 import Reveal from "@/src/components/Reveal";
 import { StaggerContainer, Item } from "@/src/components/motion/Motion";
+import { traceLink } from "@/src/components/TraceLink";
 
 const richTextTags = {
   strong: (chunks: React.ReactNode) => (
     <strong className="text-neutral-900 font-semibold">{chunks}</strong>
   ),
+  trace: traceLink,
 };
 
 function PrimaryBtn({
@@ -101,10 +103,10 @@ function FootprintSection() {
               {t.rich("paragraph1", richTextTags)}
             </p>
           </Item>
-          {/* paragraph2 is plain text */}
+          {/* paragraph2: texto con la mención de trazabilidad enlazada */}
           <Item>
             <p className="text-base md:text-lg leading-relaxed text-neutral-700 mb-10">
-              {t("paragraph2")}
+              {t.rich("paragraph2", richTextTags)}
             </p>
           </Item>
           <Item>

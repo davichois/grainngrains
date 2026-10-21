@@ -135,3 +135,135 @@ header::before {
   pointer-events: none;
   z-index: -1;
 }
+
+/* Entrada suave: fundido con un leve desplazamiento hacia arriba.
+   Para escalonar, se pasa un retraso con style={{ animationDelay }} */
+@keyframes softIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes softFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.soft-in {
+  animation: softIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.soft-fade {
+  animation: softFade 0.45s ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .soft-in,
+  .soft-fade {
+    animation: none;
+  }
+}
+
+/* Intro: el "&" cae girando desde cerca y desenfocado, rebota hasta su
+   sitio y luego se queda "respirando" (se mece apenas) mientras se lee */
+@keyframes ampIn {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(2.6) rotate(-28deg);
+  }
+  45% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(0.88) rotate(6deg);
+  }
+  70% {
+    transform: scale(1.06) rotate(-2deg);
+  }
+  85% {
+    transform: scale(0.98) rotate(1deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes ampFloat {
+  0%,
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-4deg) translateY(-3%) scale(1.03);
+  }
+}
+.amp-in {
+  animation:
+    ampIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both,
+    ampFloat 2.2s ease-in-out 0.9s infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .amp-in {
+    animation: none;
+  }
+}
+
+/* Modal de promoción: entra y sale con fundido y una escala mínima */
+@keyframes promoIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes promoOut {
+  to {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+}
+.promo-dialog[open] {
+  animation: promoIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.promo-dialog[open]::backdrop {
+  animation: softFade 0.5s ease-out both;
+}
+.promo-dialog.promo-closing {
+  animation: promoOut 0.28s ease-in both;
+}
+.promo-dialog.promo-closing::backdrop {
+  animation: softFade 0.28s ease-in reverse both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .promo-dialog[open],
+  .promo-dialog[open]::backdrop,
+  .promo-dialog.promo-closing,
+  .promo-dialog.promo-closing::backdrop {
+    animation: none;
+  }
+}
+
+/* Recordatorio tipo pestaña: sube desde el borde inferior */
+@keyframes teaserIn {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+.teaser-in {
+  animation: teaserIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .teaser-in {
+    animation: none;
+  }
+}

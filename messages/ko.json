@@ -1,6 +1,6 @@
 {
   "farmToFuture": "농장에서 미래로.",
-  "motto": "탁월한 커피 농장을 세계와 연결합니다 — 원산지에서 컵까지 품질, 추적성, 지속가능성.",
+  "motto": "탁월한 커피 농장을 세계와 연결합니다 — 원산지에서 컵까지 품질, <trace>추적성</trace>, 지속가능성.",
   "home": {
     "sections": [
       {
@@ -45,7 +45,8 @@
     "ourCollection": "우리의 컬렉션",
     "greenCoffee": "스페셜티 생두",
     "verifyTraceability": "추적성 확인",
-    "meetPartner": "우리의 파트너"
+    "meetPartner": "우리의 파트너",
+    "contact": "문의"
   },
   "history": {
     "intro1": "우리는 다음을 지닌 가족 기업입니다",
@@ -83,12 +84,12 @@
   "globalFootprint": {
     "hero": {
       "title": "우리의 커피, 당신의 컵으로 연결되다.",
-      "description": "<strong>Grain and Grains</strong>에서 우리의 페루 커피는 모든 원두에 생산자의 헌신을 담고 있습니다. 페루 주요 커피 산지 전역에 걸친 광범위한 네트워크와 입지를 통해 우리는 탁월하고 추적 가능하며 지속가능한 커피를 제공합니다. 모든 제품의 원산지를 투명하게 보여드려 당신이 우리를 온전히 신뢰할 수 있도록 합니다."
+      "description": "<strong>Grain and Grains</strong>에서 우리의 페루 커피는 모든 원두에 생산자의 헌신을 담고 있습니다. 페루 주요 커피 산지 전역에 걸친 광범위한 네트워크와 입지를 통해 우리는 탁월하고 <trace>추적 가능</trace>하며 지속가능한 커피를 제공합니다. 모든 제품의 원산지를 투명하게 보여드려 당신이 우리를 온전히 신뢰할 수 있도록 합니다."
     },
     "footprint": {
       "heading": "우리의 글로벌 발자취",
       "paragraph1": "이 모든 것은 한 알 한 알이 중요한 생산자 및 협동조합과의 전략적 파트너십 덕분에 가능합니다. 이러한 긴밀한 연결을 통해 우리는 커피 농사의 예측 불가능성에 적응하면서 이 원산지들을 글로벌 시장과 연결합니다.",
-      "paragraph2": "우리는 원산지에서 최종 목적지까지 공급망의 모든 단계를 직접 관리하여 모든 로트의 품질, 안전, 추적성, 보안을 보장합니다. 현장에서의 존재감과 경험을 결합해 글로벌 기준의 페루 커피를 전하고 모든 목적지에서 신뢰를 쌓습니다.",
+      "paragraph2": "우리는 원산지에서 최종 목적지까지 공급망의 모든 단계를 직접 관리하여 모든 로트의 품질, 안전, <trace>추적성</trace>, 보안을 보장합니다. 현장에서의 존재감과 경험을 결합해 글로벌 기준의 페루 커피를 전하고 모든 목적지에서 신뢰를 쌓습니다.",
       "cta": "더 보기"
     },
     "stats": {
@@ -149,12 +150,12 @@
     "faqs4": {
       "id": 4,
       "question": "이 커피 로트는 정확히 어디에서 오나요?",
-      "answer": "디지털 도구와 추적성 시스템 덕분에 우리는 농장에서 컵까지 모든 커피 로트의 정확한 원산지를 알고 있습니다."
+      "answer": "디지털 도구와 <trace>추적성</trace> 시스템 덕분에 우리는 농장에서 컵까지 모든 커피 로트의 정확한 원산지를 알고 있습니다."
     },
     "faqs5": {
       "id": 5,
       "question": "로트 정보가 신뢰할 수 있는지 어떻게 확인하나요?",
-      "answer": "우리는 독립적인 제3자 감사 기관을 통해 각 로트의 데이터를 검증하여 원산지, 생산, 품질, 추적성에 대한 신뢰할 수 있는 정보를 보장합니다."
+      "answer": "우리는 독립적인 제3자 감사 기관을 통해 각 로트의 데이터를 검증하여 원산지, 생산, 품질, <trace>추적성</trace>에 대한 신뢰할 수 있는 정보를 보장합니다."
     },
     "faqs6": {
       "id": 6,
@@ -218,15 +219,15 @@
     "hero": {
       "subtitle": "타협할 수 없는 가치",
       "title": "공급망을 최우선으로",
-      "description": "우리는 추적성과 신뢰할 수 있는 커피 소싱을 우선시하여, 고객이 원산지 농장에서 최종 컵까지 모든 로트에 대한 명확하고 정확한 정보를 갖도록 합니다. 가치 사슬 전반에 적극적으로 참여함으로써 더 큰 투명성과 통제력, 신뢰를 제공하여 보다 안전한 구매 결정과 더 견고한 비즈니스 관계를 가능하게 합니다."
+      "description": "우리는 <trace>추적성</trace>과 신뢰할 수 있는 커피 소싱을 우선시하여, 고객이 원산지 농장에서 최종 컵까지 모든 로트에 대한 명확하고 정확한 정보를 갖도록 합니다. 가치 사슬 전반에 적극적으로 참여함으로써 더 큰 투명성과 통제력, 신뢰를 제공하여 보다 안전한 구매 결정과 더 견고한 비즈니스 관계를 가능하게 합니다."
     },
     "ourPromise": {
       "title": "우리의 약속",
       "subtitle": "집중하는 것:",
       "items": {
         "traceability": {
-          "title": "추적성과 원산지",
-          "description": "우리는 완전한 추적성과 투명성을 보장하기 위해 디지털 도구와 기술에 투자합니다. 농장에서 컵까지 모든 로트의 정확한 원산지를 알고 있으며, 우리 팀이 개발한 플랫폼 Forest Land Sentinel을 통해 더 큰 통제력과 가시성을 확보합니다."
+          "title": "<trace>추적성</trace>과 원산지",
+          "description": "우리는 완전한 <trace>추적성</trace>과 투명성을 보장하기 위해 디지털 도구와 기술에 투자합니다. 농장에서 컵까지 모든 로트의 정확한 원산지를 알고 있으며, 우리 팀이 개발한 플랫폼 Forest Land Sentinel을 통해 더 큰 통제력과 가시성을 확보합니다."
         },
         "commitmentToFarmersAndCooperatives": {
           "title": "농부 및 협동조합에 대한 헌신",
@@ -234,7 +235,7 @@
         },
         "verification": {
           "title": "검증",
-          "description": "우리는 독립적인 제3자 감사 기관을 통해 각 커피 로트의 데이터를 검증하여 Forest Land Sentinel과 Clean Cup Alliance 내에서 원산지, 생산, 품질, 추적성에 대한 신뢰할 수 있는 정보를 보장합니다."
+          "description": "우리는 독립적인 제3자 감사 기관을 통해 각 커피 로트의 데이터를 검증하여 Forest Land Sentinel과 Clean Cup Alliance 내에서 원산지, 생산, 품질, <trace>추적성</trace>에 대한 신뢰할 수 있는 정보를 보장합니다."
         },
         "riskAndCompliance": {
           "title": "리스크 및 컴플라이언스",
@@ -248,7 +249,10 @@
     }
   },
   "footer": {
-    "copyright": "모든 권리 보유."
+    "copyright": "모든 권리 보유.",
+    "privacy": "개인정보 처리방침",
+    "terms": "이용약관",
+    "cookies": "쿠키 정책"
   },
   "language": [
     {
@@ -362,102 +366,6 @@
     "learnMore": "자세히 보기",
     "requestAccess": "접근 권한을 얻으려면 담당자에게 문의하세요.",
     "contact": "문의하기"
-  },
-  "traceability": {
-    "title": "추적성",
-    "subtitle": "커피의 추적 코드를 입력하여 원산지를 확인하세요.",
-    "placeholder": "691445",
-    "search": "추적",
-    "loading": "추적 데이터를 불러오는 중…",
-    "loadingSteps": [
-      "원산지 네트워크에 연결 중…",
-      "로트 코드 확인 중…",
-      "농장 데이터를 가져오는 중…",
-      "관능 프로필을 불러오는 중…"
-    ],
-    "notFoundTitle": "코드를 찾을 수 없습니다",
-    "notFound": "해당 코드의 커피를 찾지 못했습니다. 확인 후 다시 시도해 주세요.",
-    "back": "다른 코드 검색",
-    "traceabilityCode": "추적 코드",
-    "coffeeFarm": "커피 농장",
-    "origin": "원산지",
-    "altitude": "고도",
-    "variety": "품종",
-    "harvestSeason": "수확 시기",
-    "dryingMethod": "건조 방식",
-    "lotData": "로트 정보",
-    "profile": "관능 프로필",
-    "texture": "텍스처",
-    "fragrance": "프래그런스",
-    "acidity": "산미",
-    "sweetness": "단맛",
-    "sensation": "감각",
-    "records": {
-      "GG691445": {
-        "edition": "클래식 모닝 에디션",
-        "notesTop": "초콜릿 · 다크 허니 · 견과류",
-        "notesBottom": "카카오 · 오렌지 · 파넬라 · 당밀",
-        "harvestSeason": "2026년 5월",
-        "processMethod": "",
-        "dryingMethod": "고상 건조(레이즈드 베드)",
-        "historyTitle": "커피 재배 공동체의 힘",
-        "historyBody": "이 커피는 페루 아마존의 400개 이상 커피 재배 가족들이 CAFCER 협동조합 아래 하나로 뭉쳐 이룬 공동의 노력의 결실입니다. 모든 수확에는 여러 세대에 걸친 지식과 품질에 대한 헌신, 자연에 대한 존중이 담겨 있습니다. 커피를 통해 이 공동체는 지속가능성을 추진하고 여성과 청년의 성장을 지원하며 농가의 복지를 높이는 기회를 만듭니다. 한 잔 한 잔이 원산지와 헌신, 그리고 공동체가 더 나은 미래를 위해 함께 일할 때 생겨나는 긍정적인 임팩트를 이야기합니다.",
-        "texture": "거친",
-        "fragrance": "사탕수수 새싹 · 초콜릿 · 다크 허니",
-        "acidity": "톡 쏘는 오렌지",
-        "sweetness": "파넬라 · 은은한",
-        "sensation": "파넬라 · 당밀"
-      },
-      "GG559011": {
-        "edition": "커피 농부 에디션",
-        "notesTop": "잘 익은 파인애플 · 만다린 · 플로럴 · 카카오 · 메이플 허니",
-        "notesBottom": "",
-        "harvestSeason": "2026년 5월",
-        "processMethod": "혐기성 워시드",
-        "dryingMethod": "고상 건조(레이즈드 베드)",
-        "historyTitle": "커피밭에서 보낸 인생",
-        "historyBody": "오스마르는 커피밭에서 자라며 어릴 때부터 노동의 가치와 인내, 땅에 대한 존중을 배웠습니다. 아내 로스메리와 함께 그 가족 유산을 이어가기로 결심하고, 2010년부터 품질이 가족에게 새로운 기회를 만들어 줄 수 있다는 믿음으로 자신들의 농장을 일구어 왔습니다. 모든 로트는 커피에서 삶의 목적을 찾은 한 가족의 이야기를 전합니다.",
-        "texture": "크리미하고 윤기 있는",
-        "fragrance": "잘 익은 파인애플",
-        "acidity": "시트러스, 만다린",
-        "sweetness": "메이플 허니",
-        "sensation": "밀크 초콜릿 · 사워솝"
-      },
-      "GG253031": {
-        "edition": "커피 농부 에디션",
-        "notesTop": "건조 딸기 · 꽈리(아과이만토) · 꿀 · 화이트 초콜릿 · 달콤한 청포도 · 잘 익은 망고",
-        "notesBottom": "",
-        "harvestSeason": "2026년 5월",
-        "processMethod": "허니",
-        "dryingMethod": "고상 건조(레이즈드 베드)",
-        "historyTitle": "끈기의 이야기",
-        "historyBody": "페루 아마존의 산속에서 엘리세오와 아내 마리요리는 하나의 꿈에 이끌려 커피를 재배합니다: 네 자녀에게 더 나은 기회를 만들어 주는 것입니다. 수확물을 운반하기 위한 긴 여정과 여러 어려움에도 불구하고 그들은 품질과 혁신을 향한 노력을 이어갑니다. 그들의 커피는 끈기와 가족의 노동, 그리고 자신들을 길러 준 땅과의 깊은 유대의 결실입니다.",
-        "texture": "부드럽고 · 감싸는 듯한",
-        "fragrance": "달콤한 파넬라 · 오렌지 꽃",
-        "acidity": "시트러스 오렌지",
-        "sweetness": "파넬라 · 바닐라",
-        "sensation": "파넬라 · 초콜릿 · 청사과"
-      },
-      "GG288501": {
-        "edition": "커피 농부 에디션",
-        "notesTop": "파넬라 · 오렌지 꽃 · 청사과 · 카라멜 · 밀크 초콜릿 · 바닐라",
-        "notesBottom": "",
-        "harvestSeason": "2026년 5월",
-        "processMethod": "혐기성 워시드",
-        "dryingMethod": "고상 건조(레이즈드 베드)",
-        "historyTitle": "",
-        "historyBody": "",
-        "texture": "부드러운",
-        "fragrance": "달콤한 파넬라 · 오렌지 꽃",
-        "acidity": "시트러스 오렌지",
-        "sweetness": "파넬라 · 바닐라",
-        "sensation": "파넬라 · 초콜릿 · 청사과"
-      }
-    },
-    "download": "리포트 다운로드",
-    "reportTitle": "추적성 리포트",
-    "processMethod": "가공 방식",
-    "history": "스토리"
   },
   "certifications": {
     "heading": "우리의 라벨, 인증, 그리고 파트너 협동조합.",
@@ -610,7 +518,7 @@
     "card": "신용카드 또는 체크카드",
     "paymentRedirect": "결제 시 안전한 결제 페이지로 이동합니다.",
     "pay": "{amount} 결제하기",
-    "terms": "결제 시 이용약관 및 개인정보 처리방침에 동의하는 것으로 간주됩니다.",
+    "terms": "결제하면 <terms>이용약관</terms> 및 <privacy>개인정보 처리방침</privacy>에 동의하는 것으로 간주됩니다.",
     "summary": "주문 요약",
     "showSummary": "주문 요약 보기",
     "hideSummary": "주문 요약 숨기기",
@@ -792,5 +700,184 @@
     "shopHeaderAlt": "Grain & Grains 스페셜티 생두",
     "partnerAlt": "Grain & Grains와 CAFCER의 파트너십",
     "aboutTitle": "우리의 이야기"
+  },
+  "legal": {
+    "updated": "최종 업데이트: {date}",
+    "onlyIn": "이 문서는 스페인어와 영어로 제공됩니다. 아래는 영어 버전입니다.",
+    "contents": "목차",
+    "related": "법률 문서",
+    "contact": "문의 사항은 다음 주소로 보내 주세요"
+  },
+  "contact": {
+    "meta": {
+      "title": "문의 및 견적",
+      "description": "문의 사항, 생두·원두 견적, 도매 구매는 연락 주세요. 저희 팀이 처음부터 끝까지 함께합니다."
+    },
+    "kicker": "언제든 도와드릴게요",
+    "title": "커피 이야기를",
+    "titleAccent": "나눠요.",
+    "subtitle": "필요한 것을 알려 주세요: 일반 문의, 생두·원두 견적 또는 도매 구매. 저희 팀이 처음부터 끝까지 함께합니다.",
+    "channels": {
+      "heading": "문의하기",
+      "whatsapp": "WhatsApp",
+      "whatsappHint": "가장 빠른 연락 방법",
+      "call": "전화하기",
+      "email": "이메일 보내기"
+    },
+    "formHeading": "메시지 보내기",
+    "typeLabel": "무엇을 도와드릴까요?",
+    "types": {
+      "general": "일반 문의",
+      "greenQuote": "생두 견적",
+      "roastedQuote": "원두 견적",
+      "wholesale": "도매 구매"
+    },
+    "fields": {
+      "name": "이름",
+      "email": "이메일",
+      "phone": "전화 (선택)",
+      "company": "회사 (선택)",
+      "country": "국가",
+      "volume": "예상 수량",
+      "message": "문의 내용",
+      "messageQuote": "찾으시는 커피, 프로필, 인증, 일정을 알려 주세요"
+    },
+    "volumeHint": {
+      "greenQuote": "예: 컨테이너 1대",
+      "roastedQuote": "예: 월 50kg",
+      "wholesale": "예: 월 30kg"
+    },
+    "consent": "<privacy>개인정보 처리방침</privacy>에 따라 문의 답변을 위해 제 정보가 사용되는 것에 동의합니다.",
+    "submit": "메시지 보내기",
+    "submitQuote": "견적 요청하기",
+    "sending": "보내는 중…",
+    "success": {
+      "title": "메시지를 보냈습니다!",
+      "text": "문의해 주셔서 감사합니다. 이메일로 확인 메일을 보내드렸으며 곧 답변드리겠습니다.",
+      "again": "다른 메시지 보내기"
+    },
+    "errors": {
+      "invalid_name": "이름을 입력하세요.",
+      "invalid_email": "이메일을 확인하세요.",
+      "invalid_phone": "전화번호를 확인하세요.",
+      "invalid_message": "조금 더 자세히 적어 주세요(10자 이상).",
+      "invalid_consent": "개인정보 처리방침에 동의해야 합니다.",
+      "rate_limited": "연속으로 여러 번 보내셨습니다. 몇 분 후 다시 시도하세요.",
+      "server": "메시지를 보내지 못했습니다. 다시 시도하거나 WhatsApp으로 연락하세요."
+    },
+    "whatsappMessage": "안녕하세요 Grain & Grains, 도움이 필요합니다:",
+    "whatsappButtonMessage": "안녕하세요, Grain & Grains! 커피를 구매해서 커피 농부를 응원하고 싶어요. ☕",
+    "whatsappButton": "도움이 필요하신가요?",
+    "whatsappAria": "WhatsApp으로 문의하기",
+    "email": {
+      "subject": "메시지를 받았습니다 · Grain & Grains",
+      "preheader": "문의해 주셔서 감사합니다. 곧 답변드리겠습니다.",
+      "kicker": "메시지 접수",
+      "title": "{name}님, 감사합니다!",
+      "text": "메시지를 받았습니다. 저희 팀이 곧 답변드리겠습니다.",
+      "reach": "지금 바로 이야기하고 싶으신가요?",
+      "whatsapp": "WhatsApp으로 문의하기",
+      "outro": "이 이메일에 회신하면 저희 팀에 바로 전달됩니다."
+    },
+    "cardAside": "페루 스페셜티 커피"
+  },
+  "promo": {
+    "badge": "스페셜티 커피 {count}종",
+    "kicker": "페루에서 갓 볶은",
+    "title": "다음 인생 커피가",
+    "titleAccent": "기다리고 있어요.",
+    "text": "밭에서 잔까지 <trace>추적 가능한</trace> 페루 농장의 커피, 원두 또는 원하는 분쇄도로. {price}부터.",
+    "perkShipping": "{amount} 이상 무료 배송",
+    "perkOrigin": "커피 농부에게서 직접",
+    "coupon": "코드 <code></code>로 10% 할인",
+    "copy": "복사",
+    "copied": "복사됨!",
+    "cta": "커피 구매하기",
+    "later": "나중에",
+    "close": "닫기"
+  },
+  "welcome": {
+    "cta": "커피 구매하기",
+    "later": "나중에",
+    "close": "닫기",
+    "edition": "에디션",
+    "donation": "기부로 응원하고 싶으신가요? <mail></mail>로 연락 주세요",
+    "donationSubject": "기부 — Grain & Grains",
+    "donationBody": "Grain & Grains 팀께\n\n커피 농부들을 기부로 응원하고 싶습니다. 방법을 알려 주실 수 있나요?\n\n감사합니다.",
+    "teaser": "커피 사러 가기",
+    "teaserSub": "당신의 한 잔이 한 가족과 그 숲을 지켜요",
+    "variants": {
+      "0": {
+        "kicker": "한 잔이 소중해요",
+        "title": "당신의 커피가",
+        "titleAccent": "생산자를 응원해요.",
+        "text": "구매하신 커피 한 봉지는 페루의 커피 농가에 직접 전해지고, <trace>추적</trace> 코드로 어느 농장에서 왔는지도 확인할 수 있어요."
+      },
+      "1": {
+        "kicker": "농장에서 잔까지",
+        "title": "커피에도",
+        "titleAccent": "이름이 있어요.",
+        "text": "한 캔 한 캔에 페루 커피 농부의 이야기가 담겨 있어요. <trace>추적</trace> 코드로 농장과 수확을 알 수 있어요."
+      },
+      "2": {
+        "kicker": "페루에서",
+        "title": "손으로",
+        "titleAccent": "수확했어요.",
+        "text": "농부의 손이 잘 익은 원두를 하나하나 골라요. 저희 커피를 사면 그 노력이 가족에게 돌아가요."
+      },
+      "3": {
+        "kicker": "100% <trace>추적 가능</trace>",
+        "title": "그 농장을",
+        "titleAccent": "만나 보세요.",
+        "text": "<trace>추적</trace> 코드로 농장에서 당신의 잔까지 이어진 길을 따라가 보세요. 완전한 투명성."
+      },
+      "4": {
+        "kicker": "구매가 힘이 돼요",
+        "title": "당신의 한 잔이",
+        "titleAccent": "숲을 지켜요.",
+        "text": "저희 커피는 땅을 지키는 가족들과 함께 자라요. 이 커피를 고르는 것은 미래를 심는 일이에요."
+      },
+      "5": {
+        "kicker": "여성 커피 농부",
+        "title": "여성의 얼굴을 한",
+        "titleAccent": "커피.",
+        "text": "여성 커피 농부 에디션은 자신의 땅을 이끄는 손에서 태어났어요. 당신의 구매가 그들의 일을 응원해요."
+      },
+      "6": {
+        "kicker": "페루에서 식탁까지",
+        "title": "한 잔의 커피,",
+        "titleAccent": "두 개의 세계.",
+        "text": "당신의 식탁과 페루의 농장이 한 잔 안에서 만나요. Grain & Grains는 재배하는 사람과 즐기는 사람을 이어요."
+      },
+      "7": {
+        "kicker": "당신의 다음 한 잔",
+        "title": "즐기고",
+        "titleAccent": "응원하세요.",
+        "text": "스페셜티 커피를 즐기면서 동시에 커피 농가의 생계를 응원할 수 있어요."
+      }
+    }
+  },
+  "intro": {
+    "aria": "Grain & Grains 소개",
+    "skip": "건너뛰기",
+    "final": "커피 농부 {count}명 이상 · 모두가 Grain & Grains · 100% <trace>추적 가능</trace>",
+    "counter": "명의 커피 농부"
+  },
+  "notFound": {
+    "metaTitle": "페이지를 찾을 수 없습니다",
+    "kicker": "오류 404",
+    "title": "존재하지 않는 페이지입니다",
+    "text": "하지만 커피는 있어요. 1,600명이 넘는 커피 농부가 기다리고 있어요.",
+    "countdown": "{seconds}초 후 홈으로 이동합니다",
+    "home": "홈으로",
+    "shop": "커피 보기"
+  },
+  "seo": {
+    "homeTitle": "Grain & Grains: 추적 가능한 페루 스페셜티 커피",
+    "homeHeading": "Grain & Grains, 농장에서 컵까지 추적 가능한 페루 스페셜티 커피",
+    "globalFootprint": "글로벌 발자취: 세계로 가는 페루 커피",
+    "supplyChain": "추적 가능한 커피 공급망",
+    "partners": "페루 파트너 커피 협동조합",
+    "shop": "생두·원두·분쇄 커피"
   }
 }

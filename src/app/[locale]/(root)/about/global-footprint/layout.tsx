@@ -12,11 +12,12 @@ export async function generateMetadata({
   return pageMetadata({
     locale,
     path: "/about/global-footprint",
-    title: t("globalFootprint.hero.title"),
+    title: t("seo.globalFootprint"),
     description: metaText(
       t.markup("globalFootprint.hero.description", {
         strong: (chunks) => chunks,
-      })
+        trace: (chunks) => chunks,
+      }),
     ),
   });
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Montserrat } from "next/font/google";
+import { Jost, Montserrat } from "next/font/google";
 import "../globals.css";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
@@ -13,6 +13,7 @@ import {
   OG_LOCALE,
   absUrl,
   localizedPath,
+  metaText,
 } from "@/src/lib/site";
 
 const futura = localFont({
@@ -55,6 +56,16 @@ const futura = localFont({
   ],
   variable: "--font-futura",
   display: "swap",
+  /* Sin respaldo Arial: las letras que faltan las pone Jost (abajo) */
+  adjustFontFallback: false,
+});
+
+/* Los archivos de Futura no traen tildes, Ñ ni ¿¡. Jost (inspirada en
+   Futura, con todos los acentos) dibuja solo esas letras faltantes */
+const jost = Jost({
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  variable: "--font-jost",
 });
 
 /* Tipografía de interfaz (opciones, formularios, precios) en la tienda */
@@ -71,7 +82,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale });
-  const description = t("motto");
+  const description = metaText(
+    t.markup("motto", { trace: (chunks) => chunks }),
+  );
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -109,12 +122,11 @@ export async function generateMetadata({
       description,
       images: ["/og-image.png"],
     },
+    /* Indexar y seguir enlaces es lo normal (no hace falta decirlo): así
+       las páginas que no se indexan (404, noIndex) no reciben dos órdenes
+       contradictorias */
     robots: {
-      index: true,
-      follow: true,
       googleBot: {
-        index: true,
-        follow: true,
         "max-image-preview": "large",
         "max-snippet": -1,
         "max-video-preview": -1,
@@ -125,7 +137,9 @@ export async function generateMetadata({
       languages: Object.fromEntries(
         routing.locales
           .map((l) => [l, absUrl(localizedPath(l, ""))])
-          .concat([["x-default", absUrl(localizedPath(routing.defaultLocale, ""))]]),
+          .concat([
+            ["x-default", absUrl(localizedPath(routing.defaultLocale, ""))],
+          ]),
       ),
     },
     ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
@@ -169,7 +183,7 @@ export default async function RootLayout({ children, params }: Props) {
         image: absUrl("/og-image.png"),
         email: BRAND.email,
         slogan: BRAND.slogan,
-        description: t("motto"),
+        description: metaText(t.markup("motto", { trace: (chunks) => chunks })),
         sameAs: BRAND.social,
       },
       {
@@ -186,7 +200,12 @@ export default async function RootLayout({ children, params }: Props) {
 
   return (
     <html lang={locale} className={montserrat.variable}>
-      <body className={futura.className}>
+      <body
+        className={`${futura.variable} ${jost.variable}`}
+        style={{
+          fontFamily: `${futura.style.fontFamily}, ${jost.style.fontFamily}, Arial, sans-serif`,
+        }}
+      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

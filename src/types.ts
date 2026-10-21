@@ -76,7 +76,6 @@ export type SustainabilityBlock = {
   text: string;
 };
 
-
 export interface CategoryCarouselProps {
   items: CategoryItem[];
   itemWidth?: {
@@ -94,7 +93,8 @@ export interface CategoryCarouselProps {
 export interface FAQ {
   id: number;
   question: string;
-  answer: string;
+  /** Texto o texto con enlaces (p. ej. trazabilidad → Forestland Sentinel) */
+  answer: React.ReactNode;
 }
 
 export interface FAQSectionProps {

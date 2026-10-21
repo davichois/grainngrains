@@ -1,6 +1,6 @@
 {
   "farmToFuture": "From Farm to Future.",
-  "motto": "Connecting exceptional coffee farms to the world — quality, traceability, and sustainability from origin to cup.",
+  "motto": "Connecting exceptional coffee farms to the world — quality, <trace>traceability</trace>, and sustainability from origin to cup.",
   "home": {
     "sections": [
       {
@@ -45,7 +45,8 @@
     "ourCollection": "Our Collections",
     "greenCoffee": "Specialty green coffees",
     "verifyTraceability": "Verify Traceability",
-    "meetPartner": "Our partner"
+    "meetPartner": "Our partner",
+    "contact": "Contact"
   },
   "history": {
     "intro1": "We are an interfamily company with",
@@ -83,12 +84,12 @@
   "globalFootprint": {
     "hero": {
       "title": "Our coffee, connected to your cup.",
-      "description": "<strong>At Grain and Grains,</strong> our Peruvian coffee reflects the producer’s dedication in every bean. Our extensive network and presence across Peru’s main coffee-growing regions allow us to offer exceptional, traceable, and sustainable coffees. We showcase the origin of every product so you can place your full trust in us."
+      "description": "<strong>At Grain and Grains,</strong> our Peruvian coffee reflects the producer’s dedication in every bean. Our extensive network and presence across Peru’s main coffee-growing regions allow us to offer exceptional, <trace>traceable</trace>, and sustainable coffees. We showcase the origin of every product so you can place your full trust in us."
     },
     "footprint": {
       "heading": "Our global footprint",
       "paragraph1": "Everything is possible thanks to our strategic partnerships with producers and cooperatives, where every bean matters. This close connection allows us to adapt to the unpredictability of coffee farming while connecting these origins to global markets.",
-      "paragraph2": "We directly manage every stage of the supply chain, from origin to final destination, ensuring quality, safety, traceability, and security in every batch. Our presence in the field, combined with our experience, allows us to deliver Peruvian coffee with global standards and build trust in every destination.",
+      "paragraph2": "We directly manage every stage of the supply chain, from origin to final destination, ensuring quality, safety, <trace>traceability</trace>, and security in every batch. Our presence in the field, combined with our experience, allows us to deliver Peruvian coffee with global standards and build trust in every destination.",
       "cta": "Read more"
     },
     "stats": {
@@ -149,12 +150,12 @@
     "faqs4": {
       "id": 4,
       "question": "WHERE EXACTLY DOES THIS COFFEE LOT COME FROM?",
-      "answer": "We know the exact origin of every coffee lot, from the farm to your cup, thanks to our digital tools and traceability systems."
+      "answer": "We know the exact origin of every coffee lot, from the farm to your cup, thanks to our digital tools and <trace>traceability</trace> systems."
     },
     "faqs5": {
       "id": 5,
       "question": "HOW DO YOU VERIFY THAT THE LOT INFORMATION IS RELIABLE?",
-      "answer": "We use independent third-party auditors to validate the data for each lot, ensuring reliable information about its origin, production, quality, and traceability."
+      "answer": "We use independent third-party auditors to validate the data for each lot, ensuring reliable information about its origin, production, quality, and <trace>traceability</trace>."
     },
     "faqs6": {
       "id": 6,
@@ -218,15 +219,15 @@
     "hero": {
       "subtitle": "Our Non-Negotiable",
       "title": "PRIORITIZING THE SUPPLY CHAIN",
-      "description": "We prioritize traceability and reliable coffee sourcing so our clients have clear and accurate information about every lot, from the farm of origin to the final cup. By actively participating throughout the value chain, we provide greater transparency, control, and confidence, enabling safer purchasing decisions and stronger business relationships."
+      "description": "We prioritize <trace>traceability</trace> and reliable coffee sourcing so our clients have clear and accurate information about every lot, from the farm of origin to the final cup. By actively participating throughout the value chain, we provide greater transparency, control, and confidence, enabling safer purchasing decisions and stronger business relationships."
     },
     "ourPromise": {
       "title": "Our Promise",
       "subtitle": "Focused on:",
       "items": {
         "traceability": {
-          "title": "Traceability & Origin",
-          "description": "We invest in digital tools and technology to ensure complete traceability and transparency. We know the exact origin of every lot, from farm to cup. We manage this through Forest Land Sentinel, a platform developed by our team to provide greater control and visibility."
+          "title": "<trace>Traceability</trace> & Origin",
+          "description": "We invest in digital tools and technology to ensure complete <trace>traceability</trace> and transparency. We know the exact origin of every lot, from farm to cup. We manage this through Forest Land Sentinel, a platform developed by our team to provide greater control and visibility."
         },
         "commitmentToFarmersAndCooperatives": {
           "title": "Commitment to Farmers & Cooperatives",
@@ -234,7 +235,7 @@
         },
         "verification": {
           "title": "Verification",
-          "description": "We rely on independent third-party auditors to verify data for each coffee lot, ensuring reliable information on origin, production, quality, and traceability within Forest Land Sentinel and Clean Cup Alliance."
+          "description": "We rely on independent third-party auditors to verify data for each coffee lot, ensuring reliable information on origin, production, quality, and <trace>traceability</trace> within Forest Land Sentinel and Clean Cup Alliance."
         },
         "riskAndCompliance": {
           "title": "Risk & Compliance",
@@ -248,7 +249,10 @@
     }
   },
   "footer": {
-    "copyright": "All rights reserved."
+    "copyright": "All rights reserved.",
+    "privacy": "Privacy policy",
+    "terms": "Terms and conditions",
+    "cookies": "Cookie policy"
   },
   "language": [
     {
@@ -362,102 +366,6 @@
     "learnMore": "Learn more",
     "requestAccess": "To get access, please contact the person in charge.",
     "contact": "Contact"
-  },
-  "traceability": {
-    "title": "Traceability",
-    "subtitle": "Enter your coffee's traceability code to discover its origin.",
-    "placeholder": "691445",
-    "search": "Track",
-    "loading": "Fetching traceability data…",
-    "loadingSteps": [
-      "Connecting to the origin network…",
-      "Verifying the lot code…",
-      "Retrieving farm data…",
-      "Loading sensory profile…"
-    ],
-    "notFoundTitle": "Code not found",
-    "notFound": "We couldn't find any coffee with that code. Please check and try again.",
-    "back": "Search another code",
-    "traceabilityCode": "Traceability code",
-    "coffeeFarm": "Coffee farm",
-    "origin": "Origin",
-    "altitude": "Altitude",
-    "variety": "Variety",
-    "harvestSeason": "Harvest season",
-    "dryingMethod": "Drying method",
-    "lotData": "Lot data",
-    "profile": "Sensory profile",
-    "texture": "Texture",
-    "fragrance": "Fragrance",
-    "acidity": "Acidity",
-    "sweetness": "Sweetness",
-    "sensation": "Sensation",
-    "records": {
-      "GG691445": {
-        "edition": "CLASSIC MORNING EDITION",
-        "notesTop": "Chocolate · Dark honey · Nuts",
-        "notesBottom": "Cocoa · Orange · Panela · Molasses",
-        "harvestSeason": "May, 2026",
-        "processMethod": "",
-        "dryingMethod": "Raised-Bed Dried",
-        "historyTitle": "The strength of a coffee-growing community",
-        "historyBody": "This coffee is the result of the collective efforts of more than 400 coffee-growing families in the Peruvian Amazon, united under the CAFCER Cooperative. Each harvest reflects generations of knowledge, a commitment to quality, and respect for nature. Through coffee, this community promotes sustainability, supports the development of women and youth, and creates opportunities that enhance the well-being of farming families. Every cup expresses the origin, dedication, and positive impact that arise when a community works together for a better future.",
-        "texture": "Rough",
-        "fragrance": "Sugarcane bud · chocolate · dark honey",
-        "acidity": "Springing orange",
-        "sweetness": "Panela · subtle",
-        "sensation": "Panela · molasses"
-      },
-      "GG559011": {
-        "edition": "COFFEE GROWERS EDITION",
-        "notesTop": "Ripe pineapple · Mandarin · Floral · Cocoa · Maple honey",
-        "notesBottom": "",
-        "harvestSeason": "May, 2026",
-        "processMethod": "Anaerobic washing",
-        "dryingMethod": "Raised-Bed Dried",
-        "historyTitle": "A life among coffee plantations",
-        "historyBody": "Osmar grew up among coffee plantations, learning from a young age the value of hard work, patience, and respect for the land. Together with his wife, Rosmeri, he decided to carry on that family legacy, and since 2010, they have been farming their own estate with the conviction that quality can create new opportunities for their family. Each batch tells the story of a family that has found its life's purpose in coffee.",
-        "texture": "Creamy and shiny",
-        "fragrance": "Ripe pineapple",
-        "acidity": "Citrus, mandarin",
-        "sweetness": "Maple honey",
-        "sensation": "Milk chocolate · soursop"
-      },
-      "GG253031": {
-        "edition": "COFFEE GROWERS EDITION",
-        "notesTop": "Dried strawberry · Cape gooseberry · Honey · White chocolate · Sweet green grape · Ripe mango",
-        "notesBottom": "",
-        "harvestSeason": "May, 2026",
-        "processMethod": "Honey",
-        "dryingMethod": "Raised-Bed Dried",
-        "historyTitle": "A story of perseverance",
-        "historyBody": "In the mountains of the Peruvian Amazon, Eliseo and his wife Maryori grow coffee, driven by a dream: to create better opportunities for their four children. Despite the challenges and the long journeys required to transport each harvest, they remain committed to quality and innovation. Their coffee is the result of perseverance, family hard work, and a deep connection to the land where they grew up.",
-        "texture": "Soft · enveloping",
-        "fragrance": "Sweet panela · orange blossom",
-        "acidity": "Citrus orange",
-        "sweetness": "Panela · vanilla",
-        "sensation": "Panela · chocolate · green apple"
-      },
-      "GG288501": {
-        "edition": "COFFEE GROWERS EDITION",
-        "notesTop": "Panela · Orange blossom · Green apple · Caramel · Milk chocolate · Vanilla",
-        "notesBottom": "",
-        "harvestSeason": "May, 2026",
-        "processMethod": "Anaerobic washing",
-        "dryingMethod": "Raised-Bed Dried",
-        "historyTitle": "",
-        "historyBody": "",
-        "texture": "Soft",
-        "fragrance": "Sweet panela · orange blossom",
-        "acidity": "Citrus orange",
-        "sweetness": "Panela · vanilla",
-        "sensation": "Panela · chocolate · green apple"
-      }
-    },
-    "download": "Download report",
-    "reportTitle": "Traceability report",
-    "processMethod": "Process method",
-    "history": "History"
   },
   "certifications": {
     "heading": "Our labels, certifications and partner cooperatives.",
@@ -610,7 +518,7 @@
     "card": "Credit or debit card",
     "paymentRedirect": "When you pay, we'll take you to our secure payment gateway.",
     "pay": "Pay {amount}",
-    "terms": "By paying you agree to our terms and conditions and privacy policy.",
+    "terms": "By paying you accept our <terms>terms and conditions</terms> and <privacy>privacy policy</privacy>.",
     "summary": "Order summary",
     "showSummary": "Show order summary",
     "hideSummary": "Hide order summary",
@@ -792,5 +700,184 @@
     "shopHeaderAlt": "Grain & Grains specialty green coffee",
     "partnerAlt": "Partnership between Grain & Grains and CAFCER",
     "aboutTitle": "Our history"
+  },
+  "legal": {
+    "updated": "Last updated: {date}",
+    "onlyIn": "—",
+    "contents": "Contents",
+    "related": "Legal documents",
+    "contact": "Questions? Write to us at"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact and quotes",
+      "description": "Write to us for questions, green or roasted coffee quotes and wholesale purchases. Our team will guide you every step of the way."
+    },
+    "kicker": "We're here to help",
+    "title": "Let's talk",
+    "titleAccent": "coffee.",
+    "subtitle": "Tell us what you need: a question, a green or roasted coffee quote, or a wholesale purchase. Our team will guide you every step of the way.",
+    "channels": {
+      "heading": "Talk to us",
+      "whatsapp": "WhatsApp",
+      "whatsappHint": "The fastest way to reach us",
+      "call": "Call us",
+      "email": "Email us"
+    },
+    "formHeading": "Write to us",
+    "typeLabel": "How can we help?",
+    "types": {
+      "general": "General question",
+      "greenQuote": "Green coffee quote",
+      "roastedQuote": "Roasted coffee quote",
+      "wholesale": "Wholesale purchase"
+    },
+    "fields": {
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "company": "Company (optional)",
+      "country": "Country",
+      "volume": "Estimated volume",
+      "message": "Your message",
+      "messageQuote": "Tell us what coffee you're looking for, profile, certifications and timing"
+    },
+    "volumeHint": {
+      "greenQuote": "E.g. 1 container",
+      "roastedQuote": "E.g. 50 kg/month",
+      "wholesale": "E.g. 30 kg/month"
+    },
+    "consent": "I agree that my data will be used to answer my request, according to the <privacy>privacy policy</privacy>.",
+    "submit": "Send message",
+    "submitQuote": "Request a quote",
+    "sending": "Sending…",
+    "success": {
+      "title": "Message sent!",
+      "text": "Thanks for writing. We sent a confirmation to your email and will get back to you very soon.",
+      "again": "Send another message"
+    },
+    "errors": {
+      "invalid_name": "Please enter your name.",
+      "invalid_email": "Please check your email.",
+      "invalid_phone": "Please check your phone number.",
+      "invalid_message": "Tell us a bit more (at least 10 characters).",
+      "invalid_consent": "You must accept the privacy policy.",
+      "rate_limited": "You sent several messages in a row. Please try again in a few minutes.",
+      "server": "We couldn't send your message. Try again or write to us on WhatsApp."
+    },
+    "whatsappMessage": "Hi Grain & Grains, I need help with",
+    "whatsappButtonMessage": "Hi, Grain & Grains! I'd like to buy your coffee and support a coffee farmer with my purchase. ☕",
+    "whatsappButton": "Need help?",
+    "whatsappAria": "Message us on WhatsApp",
+    "email": {
+      "subject": "We received your message · Grain & Grains",
+      "preheader": "Thanks for writing. We'll get back to you very soon.",
+      "kicker": "Message received",
+      "title": "Thank you, {name}!",
+      "text": "We received your message and our team will get back to you very soon.",
+      "reach": "Prefer to talk now?",
+      "whatsapp": "Message us on WhatsApp",
+      "outro": "If you reply to this email, it will go straight to our team."
+    },
+    "cardAside": "Peruvian specialty coffee"
+  },
+  "promo": {
+    "badge": "{count} specialty coffees",
+    "kicker": "Freshly roasted in Peru",
+    "title": "Your next favorite coffee",
+    "titleAccent": "is waiting.",
+    "text": "Coffees from Peruvian farms, <trace>traceable</trace> from field to cup, whole bean or ground the way you like. From {price}.",
+    "perkShipping": "Free shipping from {amount}",
+    "perkOrigin": "Straight from our coffee farmers",
+    "coupon": "10% off with the code <code></code>",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "cta": "Shop coffee",
+    "later": "Not now",
+    "close": "Close"
+  },
+  "welcome": {
+    "cta": "Shop coffee",
+    "later": "Not now",
+    "close": "Close",
+    "edition": "Edition",
+    "donation": "Would you rather support with a donation? Write to us at <mail></mail>",
+    "donationSubject": "Donation — Grain & Grains",
+    "donationBody": "Hello, Grain & Grains team:\n\nI'd like to support the coffee farmers with a donation. Could you tell me how I can do it?\n\nThank you.",
+    "teaser": "Buy a coffee",
+    "teaserSub": "Your cup sustains a family and their forest",
+    "variants": {
+      "0": {
+        "kicker": "Every cup counts",
+        "title": "Your coffee supports",
+        "titleAccent": "a farmer.",
+        "text": "Every bag you buy goes straight to a coffee-growing family in Peru, and its <trace>traceability</trace> code shows you which farm it comes from."
+      },
+      "1": {
+        "kicker": "From farm to cup",
+        "title": "Your coffee",
+        "titleAccent": "has a name.",
+        "text": "Every tin carries the story of a Peruvian coffee farmer. Its <trace>traceability</trace> code shows you their farm and their harvest."
+      },
+      "2": {
+        "kicker": "Made in Peru",
+        "title": "Picked",
+        "titleAccent": "by hand.",
+        "text": "Farmers' hands pick every ripe bean. When you buy our coffee, that work goes back to their families."
+      },
+      "3": {
+        "kicker": "100% <trace>traceable</trace>",
+        "title": "Meet its",
+        "titleAccent": "farm.",
+        "text": "Its <trace>traceability</trace> code takes you from the farm to your cup. Full transparency, from farm to future."
+      },
+      "4": {
+        "kicker": "Every purchase adds up",
+        "title": "Your cup protects",
+        "titleAccent": "the forest.",
+        "text": "Our coffees grow alongside families who care for the land. Choosing them is planting the future."
+      },
+      "5": {
+        "kicker": "Women coffee growers",
+        "title": "Coffee with",
+        "titleAccent": "a woman's face.",
+        "text": "The Women Coffee Growers Edition is born from hands that lead their land. Your purchase powers their work."
+      },
+      "6": {
+        "kicker": "From Peru to your table",
+        "title": "One coffee,",
+        "titleAccent": "two worlds.",
+        "text": "Your table and a Peruvian farm meet in every cup. Grain & Grains brings growers and coffee lovers together."
+      },
+      "7": {
+        "kicker": "Your next cup",
+        "title": "Enjoy",
+        "titleAccent": "and support.",
+        "text": "Enjoy a specialty coffee and, at the same time, support a coffee-growing family's livelihood."
+      }
+    }
+  },
+  "intro": {
+    "aria": "Grain & Grains introduction",
+    "skip": "Skip intro",
+    "final": "+{count} coffee farmers · all of them are Grain & Grains · 100% <trace>traceable</trace>",
+    "counter": "coffee farmers"
+  },
+  "notFound": {
+    "metaTitle": "Page not found",
+    "kicker": "Error 404",
+    "title": "This page doesn't exist",
+    "text": "But the coffee does, and more than 1,600 coffee farmers are waiting for you.",
+    "countdown": "Taking you home in {seconds} s",
+    "home": "Go to home",
+    "shop": "See our coffees"
+  },
+  "seo": {
+    "homeTitle": "Grain & Grains: Traceable Peruvian Specialty Coffee",
+    "homeHeading": "Grain & Grains, traceable Peruvian specialty coffee from farm to cup",
+    "globalFootprint": "Global Footprint: Peruvian Coffee Worldwide",
+    "supplyChain": "Traceable Coffee Supply Chain",
+    "partners": "Partner Coffee Cooperatives in Peru",
+    "shop": "Green, Roasted & Ground Coffee"
   }
 }

@@ -36,6 +36,21 @@ export const BRAND = {
   ],
 } as const;
 
+/** Datos de contacto: se usan en el pie, la página de contacto y WhatsApp */
+export const CONTACT = {
+  phone: "+51 927 645 665",
+  /** Para enlaces tel: (llamar con un toque) */
+  phoneHref: "tel:+51927645665",
+  /** Número para wa.me (sin + ni espacios) */
+  whatsapp: "51927645665",
+  email: BRAND.email,
+  city: "Lima, Perú",
+} as const;
+
+/** Enlace de WhatsApp con un mensaje ya escrito */
+export const whatsappUrl = (text: string) =>
+  `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(text)}`;
+
 /** Palabras clave base de la marca/sector (es/en) para la metadata. */
 export const SITE_KEYWORDS = [
   "Grain & Grains",
@@ -81,7 +96,7 @@ export const ROUTES: string[] = [
   "/about/partner-cooperatives",
   "/sustainability",
   "/shop",
-  "/traceability",
+  "/contact",
 ];
 
 /**
@@ -133,18 +148,23 @@ export function pageMetadata(opts: {
   path?: string;
   title: string;
   description: string;
-  /** Si true, evita indexación (p. ej. páginas dinámicas de trazabilidad). */
+  /** Si true, evita indexación. */
   noIndex?: boolean;
   images?: string[];
 }): Metadata {
-  const { locale, path = "", title, description, noIndex, images } = opts;
+  const { locale, path = "", description, noIndex, images } = opts;
   const url = absUrl(localizedPath(locale, path));
+  /* Siempre con la marca ("… | Grain & Grains"), salvo que ya la lleve.
+     Se arma aquí (absolute) para no depender de la plantilla del layout */
+  const title = opts.title.includes(BRAND.name)
+    ? opts.title
+    : `${opts.title} | ${BRAND.name}`;
   const ogImages = (images ?? ["/og-image.png"]).map((src) =>
     src.startsWith("http") ? src : absUrl(src),
   );
 
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: buildAlternates(locale, path),
     ...(noIndex

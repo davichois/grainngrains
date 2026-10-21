@@ -6,8 +6,10 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      // Evita indexar las APIs internas de optimización de imágenes de Next.
-      disallow: ["/api/", "/_next/"],
+      /* Solo las APIs internas. /_next/ NO se bloquea: de ahí salen el CSS,
+         el JavaScript y las imágenes optimizadas, y Google los necesita
+         para ver la página como un visitante (y mostrar las imágenes) */
+      disallow: ["/api/"],
     },
     sitemap: absUrl("/sitemap.xml"),
     host: absUrl(""),
