@@ -393,14 +393,17 @@ export default function IntroSplash() {
         {/* En celular, una G debajo de la otra */}
         <div
           ref={logo}
-          className={`flex flex-col items-center font-black uppercase leading-none tracking-[-0.03em] transition-[translate,opacity] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:flex-row ${
+          className={`flex flex-col items-center font-black uppercase leading-none tracking-[-0.03em] transition-[translate,opacity] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] text-[clamp(3rem,17vw,4.5rem)] sm:flex-row sm:text-[clamp(4.5rem,13vw,13rem)] ${
             phase === "start"
               ? "translate-y-3 opacity-0 motion-reduce:translate-y-0"
               : "translate-y-0 opacity-100"
           }`}
-          style={{ fontSize: "clamp(4.5rem, 13vw, 13rem)" }}
         >
-          <span ref={(el) => void (gs.current[0] = el)}>G</span>
+          {/* En celular la palabra completa (Grain / Grains); desde sm, G & G */}
+          <span ref={(el) => void (gs.current[0] = el)}>
+            <span className="sm:hidden">Grain</span>
+            <span className="hidden sm:inline">G</span>
+          </span>
 
           {/* El "&" se abre en un hueco por donde pasan los nombres */}
           <span
@@ -450,7 +453,10 @@ export default function IntroSplash() {
             </span>
           </span>
 
-          <span ref={(el) => void (gs.current[1] = el)}>G</span>
+          <span ref={(el) => void (gs.current[1] = el)}>
+            <span className="sm:hidden">Grains</span>
+            <span className="hidden sm:inline">G</span>
+          </span>
         </div>
 
         <p
