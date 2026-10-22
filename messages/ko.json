@@ -326,12 +326,12 @@
       }
     },
     "infused": {
-      "name": "인퓨즈드 에디션",
-      "bigBot": "인퓨즈드",
-      "subtitle": "가장 호기심 많은 입맛을 위해 재해석된 커피로, 향신료와 과일, 꽃을 인퓨즈하여 예상치 못한 감각을 깨웁니다. 각 종류는 새로운 향과 뉘앙스를 탐험하라는 초대이며, 우리 커피의 진한 베이스에 창의적인 터치를 더합니다. 새로운 것에 도전하는 이들을 위한, 한 모금마다 색다른 경험.",
+      "name": "익스페리멘탈 에디션",
+      "bigBot": "익스페리멘탈",
+      "subtitle": "가장 호기심 많은 입맛을 위해 재해석된 커피로, 향신료와 과일, 꽃을 실험적으로 더해 예상치 못한 감각을 깨웁니다. 각 종류는 새로운 향과 뉘앙스를 탐험하라는 초대이며, 우리 커피의 진한 베이스에 창의적인 터치를 더합니다. 새로운 것에 도전하는 이들을 위한, 한 모금마다 색다른 경험.",
       "products": {
-        "vanilla-infused": "바닐라 인퓨즈드 커피",
-        "guanabana-infused": "구아나바나 인퓨즈드 커피"
+        "vanilla-infused": "바닐라 익스페리멘탈 커피",
+        "guanabana-infused": "구아나바나 익스페리멘탈 커피"
       }
     }
   },
@@ -467,7 +467,7 @@
         "name": "여성 농부 듀오"
       },
       "infusedDuo": {
-        "name": "인퓨즈드 듀오"
+        "name": "익스페리멘탈 듀오"
       }
     },
     "certifications": "인증",
@@ -861,7 +861,8 @@
     "aria": "Grain & Grains 소개",
     "skip": "건너뛰기",
     "final": "커피 농부 {count}명 이상 · 모두가 Grain & Grains · 100% <trace>추적 가능</trace>",
-    "counter": "명의 커피 농부"
+    "counter": "명의 커피 농부",
+    "title": "커피 농부"
   },
   "notFound": {
     "metaTitle": "페이지를 찾을 수 없습니다",
@@ -879,5 +880,22 @@
     "supplyChain": "추적 가능한 커피 공급망",
     "partners": "페루 파트너 커피 협동조합",
     "shop": "생두·원두·분쇄 커피"
+  },
+  "originHero": {
+    "kicker": "스페셜티 커피의",
+    "big1": "진짜",
+    "big2": "원산지",
+    "sub": "를 만나보세요"
+  },
+  "installApp": {
+    "button": "앱 설치",
+    "tagline": "더 빠르게, 한 번의 탭으로",
+    "short": "설치",
+    "aria": "Grain & Grains를 앱으로 설치",
+    "iosTitle": "Grain & Grains 설치",
+    "iosStep1": "공유 버튼을 탭하세요",
+    "iosStep2": "‘홈 화면에 추가’를 선택하세요",
+    "close": "닫기",
+    "done": "완료! Grain & Grains 앱이 설치되었어요"
   }
 }

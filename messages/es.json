@@ -391,12 +391,12 @@
       }
     },
     "infused": {
-      "name": "Edición Infusionados",
-      "bigBot": "INFUSIONADOS",
-      "subtitle": "Café reinventado para los paladares más curiosos, infusionado con especias, frutas y flores que despiertan sensaciones inesperadas. Cada variedad es una invitación a explorar nuevos aromas y matices, combinando la base intensa de nuestro café con toques creativos. Una experiencia diferente en cada sorbo, para quienes se atreven a probar algo nuevo.",
+      "name": "Edición Experimental",
+      "bigBot": "EXPERIMENTAL",
+      "subtitle": "Café reinventado para los paladares más curiosos: experimental, con especias, frutas y flores que despiertan sensaciones inesperadas. Cada variedad es una invitación a explorar nuevos aromas y matices, combinando la base intensa de nuestro café con toques creativos. Una experiencia diferente en cada sorbo, para quienes se atreven a probar algo nuevo.",
       "products": {
-        "vanilla-infused": "Café Infusionado con Vainilla",
-        "guanabana-infused": "Café Infusionado con Guanábana"
+        "vanilla-infused": "Café Experimental de Vainilla",
+        "guanabana-infused": "Café Experimental de Guanábana"
       }
     }
   },
@@ -469,7 +469,7 @@
         "name": "Dúo Mujeres Caficultoras"
       },
       "infusedDuo": {
-        "name": "Dúo Infusionados"
+        "name": "Dúo Experimental"
       }
     },
     "certifications": "Certificaciones",
@@ -863,7 +863,8 @@
     "aria": "Presentación de Grain & Grains",
     "skip": "Saltar intro",
     "final": "+{count} caficultores · todos son Grain & Grains · 100% <trace>trazable</trace>",
-    "counter": "caficultores"
+    "counter": "caficultores",
+    "title": "CAFICULTORES"
   },
   "notFound": {
     "metaTitle": "Página no encontrada",
@@ -881,5 +882,22 @@
     "supplyChain": "Cadena de suministro de café trazable",
     "partners": "Cooperativas aliadas de café en Perú",
     "shop": "Café verde, tostado y molido"
+  },
+  "originHero": {
+    "kicker": "Descubre el",
+    "big1": "VERDADERO",
+    "big2": "ORIGEN",
+    "sub": "del Café de Especialidad"
+  },
+  "installApp": {
+    "button": "Instalar app",
+    "tagline": "Más rápida, a un toque",
+    "short": "Instalar",
+    "aria": "Instalar Grain & Grains como aplicación",
+    "iosTitle": "Instala Grain & Grains",
+    "iosStep1": "Toca el botón Compartir",
+    "iosStep2": "Elige «Agregar a inicio»",
+    "close": "Cerrar",
+    "done": "¡Listo! Ya tienes la app de Grain & Grains"
   }
 }

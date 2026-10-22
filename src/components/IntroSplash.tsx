@@ -9,6 +9,7 @@ import {
   type IntroPalette,
 } from "@/src/content/intro-palettes";
 import { introAmp, introHand, introMono } from "@/src/lib/intro-fonts";
+import ScrambleText from "@/src/components/ScrambleText";
 import { traceLink } from "@/src/components/TraceLink";
 
 /* ───────────────────────────────────────────────────────────────
@@ -85,6 +86,8 @@ function ampMetrics(size: number) {
  *  centro, para que al entrar la pantalla se llene de página. Devuelve la
  *  distancia desde el centro/línea base del "&" */
 function strokeTarget(size: number) {
+  /* Sin tamaño (p. ej. la intro quedó oculta): zoom al centro */
+  if (!(size > 0)) return { dx: 0, dy: 0 };
   const { ascent, descent } = ampMetrics(size);
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d", { willReadFrequently: true });
@@ -92,6 +95,7 @@ function strokeTarget(size: number) {
   ctx.font = ampFont(size);
   const W = Math.ceil(ctx.measureText("&").width + size * 0.4);
   const H = Math.ceil(ascent + descent);
+  if (!(W > 0 && H > 0)) return { dx: 0, dy: 0 };
   canvas.width = W;
   canvas.height = H;
   ctx.font = ampFont(size);
@@ -390,6 +394,19 @@ export default function IntroSplash() {
       <div
         className={`flex flex-col items-center ${portal ? "invisible" : ""}`}
       >
+        {/* Justo arriba de G & G: "CAFICULTORES" desencriptándose (ellos
+            son Grain & Grains) */}
+        <p
+          className={`${introMono.className} mb-3 whitespace-nowrap text-center font-medium uppercase tracking-[0.35em] transition-opacity duration-500 sm:mb-5 ${
+            phase === "start" || out ? "opacity-0" : "opacity-100"
+          }`}
+          style={{
+            color: palette.accent,
+            fontSize: "clamp(0.95rem, 2.2vw, 1.35rem)",
+          }}
+        >
+          <ScrambleText text={t("title")} delay={SHOW_LOGO} duration={1300} />
+        </p>
         {/* En celular, una G debajo de la otra */}
         <div
           ref={logo}
@@ -437,7 +454,7 @@ export default function IntroSplash() {
                 /* Nombres largos, un poco más chicos: siempre se leen completos */
                 style={{
                   fontSize:
-                    producer.name.length > 24
+                    producer.name.length > 20
                       ? "clamp(1.55rem, 3vw, 2.7rem)"
                       : "clamp(1.9rem, 3.6vw, 3.3rem)",
                 }}
@@ -497,7 +514,6 @@ export default function IntroSplash() {
           </>
         )}
       </p>
-
       <button
         type="button"
         onClick={finish}

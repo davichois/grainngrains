@@ -12,8 +12,13 @@ import {
   X,
   ChevronRight,
   ArrowUpRight,
+  Download,
+  Share,
+  SquarePlus,
 } from "lucide-react";
+import Image from "next/image";
 import { Link } from "../i18n/navigation";
+import { installApp, useInstallApp } from "@/src/lib/install-app";
 import {
   Language,
   LanguageSelectorProps,
@@ -402,6 +407,10 @@ function MegaMenuItem({
 export default function Header() {
   const t = useTranslations("nav");
   const ta = useTranslations("a11y");
+  const ti = useTranslations("installApp");
+  /* "Instalar app" en el menú del celular (en computadora es la pestaña lateral) */
+  const install = useInstallApp();
+  const [iosSteps, setIosSteps] = useState(false);
 
   const [scrolled, setScrolled] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -747,6 +756,58 @@ export default function Header() {
               );
             })}
           </ul>
+
+          {install.mode !== "hidden" && (
+            <div className="mt-5">
+              {/* Como una ficha de tienda de apps: ícono, nombre y "INSTALAR" */}
+              <button
+                type="button"
+                onClick={() =>
+                  install.mode === "ios" ? setIosSteps((v) => !v) : installApp()
+                }
+                aria-label={ti("aria")}
+                aria-expanded={install.mode === "ios" ? iosSteps : undefined}
+                className="group flex w-full items-center gap-3 rounded-2xl border border-gray-100 bg-gray-50/70 p-3 text-left transition-colors active:bg-gray-100"
+              >
+                <Image
+                  src="/icon-192.png"
+                  alt=""
+                  width={44}
+                  height={44}
+                  className="h-11 w-11 shrink-0 rounded-xl shadow-[0_4px_12px_-4px_rgba(17,110,120,0.45)]"
+                />
+                <span className="flex min-w-0 flex-col leading-tight">
+                  <span className="truncate text-sm font-semibold text-gray-800">
+                    Grain &amp; Grains
+                  </span>
+                  <span className="truncate text-xs text-gray-500">
+                    {ti("tagline")}
+                  </span>
+                </span>
+                <span className="ml-auto inline-flex shrink-0 items-center gap-1 rounded-full border-2 border-[#116e78] px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-[#116e78] transition-colors group-active:bg-[#116e78] group-active:text-white">
+                  <Download size={12} aria-hidden className="install-nudge" />
+                  {ti("short")}
+                </span>
+              </button>
+              {/* iPhone/iPad: Safari solo instala con Compartir → Agregar a inicio */}
+              {install.mode === "ios" && iosSteps && (
+                <ol className="soft-fade mt-2 space-y-2 rounded-2xl border border-[#116e78]/25 p-4 text-sm text-gray-700">
+                  <li className="flex items-center gap-2">
+                    <Share size={16} aria-hidden className="text-[#116e78]" />
+                    {ti("iosStep1")}
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <SquarePlus
+                      size={16}
+                      aria-hidden
+                      className="text-[#116e78]"
+                    />
+                    {ti("iosStep2")}
+                  </li>
+                </ol>
+              )}
+            </div>
+          )}
 
           <div className="mt-5 pt-4 border-t border-gray-100">
             <LanguageDropdown languages={languages} />

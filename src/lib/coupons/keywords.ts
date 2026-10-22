@@ -56,6 +56,9 @@ const EDICIONES: Record<string, string> = {
   mujeres: "women",
   clasicos: "classic",
   clásicos: "classic",
+  experimental: "infused",
+  experimentales: "infused",
+  /* nombre anterior de la edición (los cupones viejos siguen funcionando) */
   infusionados: "infused",
 };
 const edicion = (e: string) => EDICIONES[e.toLowerCase()] ?? e;
@@ -195,7 +198,7 @@ export const requiereCantidad = (producto: string, cantidad: number) =>
 export const variedadMinima = (n: number) => regla({ minDistinct: n });
 
 /* Qué productos reciben el descuento */
-/** ediciones("caficultores", "mujeres", "clasicos", "infusionados") */
+/** ediciones("caficultores", "mujeres", "clasicos", "experimental") */
 export const ediciones = (...e: string[]) =>
   regla({ editions: e.map(edicion) });
 export const exceptoEdiciones = (...e: string[]) =>

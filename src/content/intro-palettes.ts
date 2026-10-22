@@ -24,11 +24,11 @@ export const INTRO_PALETTES: IntroPalette[] = [
   { id: "donEdwinFarm", bg: "#DF7B00", ink: "#282829", accent: "#FFF1E2" },
   /* Finca Don Osmar: carmesí y retrato salmón */
   { id: "donOsmarFarm", bg: "#A70E2D", ink: "#FBE9E4", accent: "#F4A497" },
-  /* Hijas del Bosque: fucsia intenso (el rosa de la lata llevado a fucsia),
-     letras rosa muy claro y el rosa de la lata como acento */
+  /* Hijas del Bosque: fucsia de la marca (#FF0064, el de la edición
+     mujeres), letras rosa muy claro y el rosa de la lata como acento */
   {
     id: "daughtersOfTheForest",
-    bg: "#E0157A",
+    bg: "#FF0064",
     ink: "#FFF0F6",
     accent: "#FCBCDD",
   },

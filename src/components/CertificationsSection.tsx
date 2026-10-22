@@ -41,9 +41,11 @@ export default async function CertificationsSection() {
 
       <StaggerContainer className="relative z-10 mx-auto max-w-4xl text-center">
         <Item>
+          {/* Se adapta al ancho y corta con guion las palabras muy largas
+              ("CERTIFICACIONES", "PARTNERKOOPERATIVEN"…) para no salirse */}
           <h2
-            className="font-black uppercase leading-[0.95] tracking-tight text-[#8dbe22]"
-            style={{ fontSize: "clamp(2.25rem, 7vw, 4.5rem)" }}
+            className="font-black uppercase leading-[0.95] tracking-tight text-[#8dbe22] hyphens-auto wrap-break-word"
+            style={{ fontSize: "clamp(1.4rem, 7.5vw, 4.5rem)" }}
           >
             {t("heading")}
           </h2>
@@ -61,8 +63,8 @@ export default async function CertificationsSection() {
         {/* Claim */}
         <Reveal direction="right">
           <h3
-            className="font-black uppercase leading-[0.95] tracking-tight md:text-right text-[#8dbe22]"
-            style={{ fontSize: "clamp(1.75rem, 4.5vw, 3.25rem)" }}
+            className="font-black uppercase leading-[0.95] tracking-tight md:text-right text-[#8dbe22] hyphens-auto wrap-break-word"
+            style={{ fontSize: "clamp(1.4rem, 6.5vw, 3.25rem)" }}
           >
             {t("claim")}
           </h3>
@@ -91,8 +93,8 @@ export default async function CertificationsSection() {
         {/* Claim */}
         <Reveal direction="left">
           <h3
-            className="font-black uppercase leading-[0.95] tracking-tight md:text-right text-[#8dbe22]"
-            style={{ fontSize: "clamp(1.75rem, 4.5vw, 3.25rem)" }}
+            className="font-black uppercase leading-[0.95] tracking-tight md:text-right text-[#8dbe22] hyphens-auto wrap-break-word"
+            style={{ fontSize: "clamp(1.4rem, 6.5vw, 3.25rem)" }}
           >
             {t("cooperatives")}
           </h3>

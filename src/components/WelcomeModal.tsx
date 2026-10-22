@@ -67,9 +67,11 @@ export default function WelcomeModal() {
   const [closing, setClosing] = useState(false);
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
-  /* Recordatorio "Compra un café" abajo a la derecha tras cerrar sin comprar */
-  const [teaser, setTeaser] = useState(false);
-  /* Cerrado con la ✕: vuelve a salir a los pocos segundos */
+  /* Recordatorio "Compra un café" (pestaña abajo a la izquierda): queda
+     activo tras la tarjeta de bienvenida o, en otras páginas, a los pocos
+     segundos. Si se va (✕, tocarla, ir a comprar), vuelve a los 8 s. Nunca
+     se muestra con la tarjeta abierta ni en la tienda o el checkout */
+  const [armed, setArmed] = useState(false);
   const [snoozed, setSnoozed] = useState(false);
   /* Mensaje que se muestra (se elige al azar cada vez que se abre) */
   const [variant, setVariant] = useState(0);
@@ -81,7 +83,6 @@ export default function WelcomeModal() {
     const open = () => {
       timer = setTimeout(() => {
         if (document.querySelector("dialog[open]")) return;
-        setTeaser(false);
         const v = pickVariant();
         setVariant(v);
         const edition = EDITIONS.findIndex((c) => c.id === VARIANT_EDITION[v]);
@@ -104,14 +105,32 @@ export default function WelcomeModal() {
     };
   }, [pathname]);
 
+  /* Escondida: vuelve a los 8 s, pase lo que pase */
   useEffect(() => {
     if (!snoozed) return;
-    const timer = setTimeout(() => {
-      setSnoozed(false);
-      setTeaser(true);
-    }, TEASER_AGAIN_MS);
+    const timer = setTimeout(() => setSnoozed(false), TEASER_AGAIN_MS);
     return () => clearTimeout(timer);
   }, [snoozed]);
+
+  /* Fuera del inicio (donde no sale la tarjeta): se activa a los 8 s de
+     terminar la intro */
+  useEffect(() => {
+    if (armed || pathname === "/") return;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const arm = () => {
+      timer = setTimeout(() => setArmed(true), TEASER_AGAIN_MS);
+    };
+    const intro = (window as unknown as { __ggIntro?: string }).__ggIntro;
+    if (intro === "running") {
+      window.addEventListener(INTRO_DONE_EVENT, arm, { once: true });
+    } else {
+      arm();
+    }
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener(INTRO_DONE_EVENT, arm);
+    };
+  }, [armed, pathname]);
 
   /* Rota las ediciones mientras está abierto (se pausa al pasar el mouse) */
   useEffect(() => {
@@ -124,9 +143,11 @@ export default function WelcomeModal() {
   }, [isOpen, paused]);
 
   /* Cierre suave: anima la salida y luego cierra */
-  /** Cierra con animación; si no fue para comprar, deja el recordatorio */
+  /** Cierra con animación y deja el recordatorio (si fue a comprar, sale
+   *  a los 8 s, ya fuera de la tienda) */
   const close = useCallback((toShop = false) => {
-    if (!toShop) setTeaser(true);
+    setArmed(true);
+    if (toShop) setSnoozed(true);
     setClosing(true);
     setTimeout(() => {
       dialog.current?.close();
@@ -225,19 +246,45 @@ export default function WelcomeModal() {
                     {tEditions(`${edition.id}.bigBot`)}
                   </span>
                 </p>
-                <div className="flex shrink-0 gap-1.5">
-                  {EDITIONS.map((c, i) => (
-                    <button
-                      key={c.id}
-                      type="button"
-                      onClick={() => setActive(i)}
-                      aria-label={tEditions(`${c.id}.name`)}
-                      aria-current={i === active}
-                      className={`h-2 cursor-pointer rounded-full border border-[#2E2E2E]/40 transition-all duration-500 ease-out ${
-                        i === active ? "w-6 bg-[#2E2E2E]" : "w-2 bg-white/80"
-                      }`}
-                    />
-                  ))}
+                {/* Puntos en el color de las letras de la edición: el activo es
+                    una píldora que se llena mientras está en pantalla */}
+                <div className="flex shrink-0 items-center gap-1.5">
+                  {EDITIONS.map((c, i) => {
+                    const ink = edition.headingColor ?? "#fff";
+                    const current = i === active;
+                    return (
+                      <button
+                        key={c.id}
+                        type="button"
+                        onClick={() => setActive(i)}
+                        aria-label={tEditions(`${c.id}.name`)}
+                        aria-current={current}
+                        className={`relative h-2 cursor-pointer overflow-hidden rounded-full transition-all duration-500 ease-out ${
+                          current
+                            ? "w-8"
+                            : "w-2 opacity-45 hover:scale-125 hover:opacity-90"
+                        }`}
+                        style={{
+                          backgroundColor: current
+                            ? `color-mix(in srgb, ${ink} 35%, transparent)`
+                            : ink,
+                        }}
+                      >
+                        {current && (
+                          <span
+                            key={`fill-${active}`}
+                            aria-hidden
+                            className="dot-fill absolute inset-y-0 left-0 w-full origin-left rounded-full"
+                            style={{
+                              backgroundColor: ink,
+                              animationDuration: `${ROTATE_MS}ms`,
+                              animationPlayState: paused ? "paused" : "running",
+                            }}
+                          />
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -310,15 +357,12 @@ export default function WelcomeModal() {
       </dialog>
 
       {/* Recordatorio tipo pestaña: abajo a la izquierda, pegado al borde de la pantalla */}
-      {teaser && !isOpen && !onShopPage && (
+      {armed && !snoozed && !isOpen && !onShopPage && (
         <div className="teaser-in fixed bottom-0 left-4 z-40 sm:left-8">
           <div className="relative rounded-t-2xl border-2 border-b-0 border-[#2E2E2E] bg-white shadow-[0_-10px_40px_-8px_rgba(0,0,0,0.3)]">
             <Link
               href="/our-coffee/products"
-              onClick={() => {
-                setTeaser(false);
-                setSnoozed(false);
-              }}
+              onClick={() => setSnoozed(true)}
               className="block rounded-t-[14px] px-8 py-3.5 text-center sm:px-12 text-[#2E2E2E] transition-colors duration-500 ease-out hover:bg-[#2E2E2E] hover:text-white"
             >
               <span className="block text-lg font-black uppercase leading-none tracking-tight sm:text-xl">
@@ -332,10 +376,7 @@ export default function WelcomeModal() {
             {/* ✕ flotando sobre la pestaña, sin tocar sus esquinas */}
             <button
               type="button"
-              onClick={() => {
-                setTeaser(false);
-                setSnoozed(true);
-              }}
+              onClick={() => setSnoozed(true)}
               aria-label={t("close")}
               className="absolute -top-10 right-0 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-[#2E2E2E] text-white shadow-[0_4px_12px_rgba(0,0,0,0.3)] outline-none transition-colors duration-300 hover:bg-[#3a3a3a] focus-visible:ring-2 focus-visible:ring-[#2E2E2E] focus-visible:ring-offset-2"
             >

@@ -3,6 +3,7 @@ import Header from "@/src/components/Header";
 import { HeaderVisibilityProvider } from "@/src/components/HeaderVisibility";
 import { CartProvider } from "@/src/components/cart/CartContext";
 import WhatsAppButton from "@/src/components/WhatsAppButton";
+import InstallAppButton from "@/src/components/InstallAppButton";
 import PromoModal from "@/src/components/PromoModal";
 import WelcomeModal from "@/src/components/WelcomeModal";
 import IntroSplash from "@/src/components/IntroSplash";
@@ -21,6 +22,8 @@ export default async function RootLayout({
         {children}
         <Footer />
         <WhatsAppButton />
+        {/* "Instalar app": encima del botón de WhatsApp */}
+        <InstallAppButton />
         <PromoModal />
         <WelcomeModal />
       </CartProvider>

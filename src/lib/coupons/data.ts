@@ -35,8 +35,8 @@
      requiereCantidad("donEliseoFarm", 2)     Al menos 2 bolsas de ese producto
      variedadMinima(3)                        Al menos 3 cafés distintos
    Qué productos reciben el descuento
-     ediciones("caficultores", "mujeres", "clasicos", "infusionados")
-     exceptoEdiciones("infusionados")
+     ediciones("caficultores", "mujeres", "clasicos", "experimental")
+     exceptoEdiciones("experimental")
      productos("donEliseoFarm")   exceptoProductos("vanilla-infused")
      presentacion("1kg")          sinCombos      soloCombos
      moliendas("grano entero", "fino")
@@ -77,7 +77,7 @@
      inactivo       Desactivado sin borrarlo
      nota("…")      Nota interna, no se muestra
 
-   Ediciones: caficultores, mujeres, clasicos, infusionados
+   Ediciones: caficultores, mujeres, clasicos, experimental
    Productos: donEliseoFarm, donEdwinFarm, donOsmarFarm,
               daughtersOfTheForest, guardiansOfTheEarth, morningClassic,
               vanilla-infused, guanabana-infused
@@ -154,7 +154,7 @@ export const COUPONS: Coupon[] = [
   cupon("GRAIN10", porcentaje(10), nota("10% en toda la tienda")),
   cupon("BIENVENIDO15", porcentaje(15, { tope: 40 }), compraMinima(120)),
   cupon("CAFICULTOR20", porcentaje(20), ediciones("caficultores"), sinCombos),
-  cupon("CLASICOS12", porcentaje(12), exceptoEdiciones("infusionados")),
+  cupon("CLASICOS12", porcentaje(12), exceptoEdiciones("experimental")),
   cupon("COMBO10", porcentaje(10), soloCombos),
   cupon("PRUEBA30", porcentaje(30), compraMaxima(150), cantidadMaxima(2)),
 
@@ -198,9 +198,9 @@ export const COUPONS: Coupon[] = [
   /* ── Regalo ── */
   cupon(
     "DOSELISEO",
-    regalo("infusionados", "vanilla-infused"),
+    regalo("experimental", "vanilla-infused"),
     requiereCantidad("donEliseoFarm", 2),
-    nota("Lleva 2 Don Eliseo y te regalamos un Infusionado de Vainilla"),
+    nota("Lleva 2 Don Eliseo y te regalamos un Experimental de Vainilla"),
   ),
   cupon(
     "REGALO",

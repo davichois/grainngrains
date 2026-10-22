@@ -326,12 +326,12 @@
       }
     },
     "infused": {
-      "name": "Infused Edition",
-      "bigBot": "INFUSED",
-      "subtitle": "Coffee reinvented for the most curious palates, infused with spices, fruits and flowers that awaken unexpected sensations. Each variety is an invitation to explore new aromas and nuances, blending the intense base of our coffee with creative touches. A different experience in every sip, for those who dare to try something new.",
+      "name": "Experimental Edition",
+      "bigBot": "EXPERIMENTAL",
+      "subtitle": "Coffee reinvented for the most curious palates: experimental, with spices, fruits and flowers that awaken unexpected sensations. Each variety is an invitation to explore new aromas and nuances, blending the intense base of our coffee with creative touches. A different experience in every sip, for those who dare to try something new.",
       "products": {
-        "vanilla-infused": "Vanilla Infused Coffee",
-        "guanabana-infused": "Guanabana Infused Coffee"
+        "vanilla-infused": "Vanilla Experimental Coffee",
+        "guanabana-infused": "Guanabana Experimental Coffee"
       }
     }
   },
@@ -467,7 +467,7 @@
         "name": "Women Farmers Duo"
       },
       "infusedDuo": {
-        "name": "Infused Duo"
+        "name": "Experimental Duo"
       }
     },
     "certifications": "Certifications",
@@ -861,7 +861,8 @@
     "aria": "Grain & Grains introduction",
     "skip": "Skip intro",
     "final": "+{count} coffee farmers · all of them are Grain & Grains · 100% <trace>traceable</trace>",
-    "counter": "coffee farmers"
+    "counter": "coffee farmers",
+    "title": "COFFEE FARMERS"
   },
   "notFound": {
     "metaTitle": "Page not found",
@@ -879,5 +880,22 @@
     "supplyChain": "Traceable Coffee Supply Chain",
     "partners": "Partner Coffee Cooperatives in Peru",
     "shop": "Green, Roasted & Ground Coffee"
+  },
+  "originHero": {
+    "kicker": "Discover the",
+    "big1": "TRUE",
+    "big2": "ORIGIN",
+    "sub": "of Specialty Coffee"
+  },
+  "installApp": {
+    "button": "Install app",
+    "tagline": "Faster, one tap away",
+    "short": "Install",
+    "aria": "Install Grain & Grains as an app",
+    "iosTitle": "Install Grain & Grains",
+    "iosStep1": "Tap the Share button",
+    "iosStep2": "Choose “Add to Home Screen”",
+    "close": "Close",
+    "done": "Done! You now have the Grain & Grains app"
   }
 }

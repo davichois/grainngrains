@@ -5,7 +5,6 @@ import {
   CATEGORIES,
   CERTIFICATIONS,
 } from "@/src/components/product-showcase/data";
-import { HideHeaderAtTop } from "@/src/components/HeaderVisibility";
 import { BRAND, SITE_URL, pageMetadata, metaText } from "@/src/lib/site";
 import { SIZES } from "@/src/lib/shop";
 
@@ -75,12 +74,15 @@ export default async function ProductPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <HideHeaderAtTop />
       {/* Título principal de la página (el slider lo muestra de forma visual) */}
       <h1 className="sr-only">
         {t("nav.ourCollection")} · {BRAND.name}
       </h1>
-      <ProductShowcase />
+      {/* El encabezado queda siempre a la vista (126 px): el slider empieza
+          justo debajo */}
+      <div className="pt-[7.875rem]">
+        <ProductShowcase />
+      </div>
     </>
   );
 }

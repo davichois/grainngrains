@@ -7,7 +7,10 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: BRAND.name,
     description:
       "Connecting exceptional coffee farms to the world — quality, traceability, and sustainability from origin to cup.",
+    /* Identidad fija de la app instalada y desde dónde abre */
+    id: "/",
     start_url: "/",
+    scope: "/",
     display: "standalone",
     background_color: "#ffffff",
     theme_color: "#116e78",

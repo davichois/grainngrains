@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { preload } from "react-dom";
 import { Link } from "@/src/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import CertificationsSection from "../../../components/CertificationsSection";
-import Reveal from "@/src/components/Reveal";
+import OriginHero from "@/src/components/origin-hero/OriginHero";
 import {
   ScrollProgress,
   StaggerContainer,
@@ -31,39 +30,22 @@ export async function generateMetadata({
 
 export default async function Home() {
   const t = await getTranslations();
-  /* La portada del video es lo primero grande que se ve: se pide antes */
-  preload("/videos/intro-poster.jpg", { as: "image", fetchPriority: "high" });
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <ScrollProgress color="#F63049" />
       {/* Título principal de la página (para buscadores y lectores de
-          pantalla): el inicio abre con un video, sin texto visible */}
+          pantalla) */}
       <h1 className="sr-only">{t("seo.homeHeading")}</h1>
 
-      <Reveal className="relative block w-full overflow-hidden text-white">
-        <Link
-          href="/our-coffee/products"
-          aria-label={t("nav.ourCollection")}
-          className="block cursor-pointer"
-        >
-          <video
-            className="pointer-events-none block w-full h-auto object-cover mt-30"
-            poster="/videos/intro-poster.jpg"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            controls={false}
-            disablePictureInPicture
-            aria-hidden="true"
-          >
-            <source src="/videos/intro.webm" type="video/webm" />
-            <source src="/videos/intro.mp4" type="video/mp4" />
-          </video>
-        </Link>
-      </Reveal>
+      {/* Portada: las latas pasando sobre "Descubre el verdadero origen…" */}
+      <Link
+        href="/our-coffee/products"
+        aria-label={t("nav.ourCollection")}
+        className="mt-30 block w-full cursor-pointer"
+      >
+        <OriginHero />
+      </Link>
       <section className="flex min-h-[50svh] md:min-h-[60svh] lg:min-h-[70vh] w-full items-center justify-center bg-[#F63049] px-6 py-12 md:px-10 md:py-16 lg:py-24">
         <StaggerContainer
           className="mx-auto max-w-7xl text-center"
@@ -80,10 +62,13 @@ export default async function Home() {
                 {t("home.sections.0.title")}
               </span>
 
+              {/* Crece con la pantalla pero sin salirse: la palabra más larga
+                  ("BIODIVERSIDAD", "BIODIVERSIDADE"…) mide ~9,3 veces el tamaño
+                  de letra, así que se limita al ancho disponible */}
               <span
                 className="block font-black tracking-[-0.03em] text-[#FFE054]"
                 style={{
-                  fontSize: "clamp(3rem, 10vw, 8.75rem)",
+                  fontSize: "clamp(1.75rem, calc(10.2vw - 6px), 8.75rem)",
                 }}
               >
                 {t("home.sections.0.subtitle")}
@@ -152,7 +137,7 @@ export default async function Home() {
           </Item>
         </StaggerContainer>
       </section>
-      <section className="flex  items-center justify-center bg-[#00b8db] w-full py-20">
+      <section className="flex items-center justify-center bg-[#00b8db] w-full px-6 py-20 md:px-10">
         <StaggerContainer
           className="mx-auto max-w-5xl text-center"
           once={false}
@@ -164,7 +149,9 @@ export default async function Home() {
           </Item>
 
           <Item>
-            <h2 className="font-black uppercase leading-[0.9] tracking-tight text-sky-950 text-[clamp(3.5rem,10vw,8rem)]">
+            {/* Se adapta al ancho y corta con guion las palabras muy largas
+                (p. ej. "FAMILIENUNTERNEHMEN" en alemán) para no salirse */}
+            <h2 className="font-black uppercase leading-[0.9] tracking-tight text-sky-950 text-[clamp(2rem,10vw,8rem)] hyphens-auto wrap-break-word">
               {t("home.sections.1.subtitle")}
             </h2>
           </Item>
@@ -181,9 +168,7 @@ export default async function Home() {
               className="inline-block mt-8 text-amber-50 border-2 border-amber-50 px-6 py-2 text-sm font-semibold uppercase tracking-wide transition-all duration-300 ease-out will-change-transform hover:scale-105 active:scale-95 hover:text-cyan-800 hover:border-cyan-900 focus:outline-none focus:ring-2 focus:ring-[#F63049] focus:ring-offset-2 md:mt-12 md:px-8 md:py-2 md:text-base lg:mt-16 lg:px-10 lg:py-3 lg:text-lg"
             >
               {t("home.knowMore")}
-              <span className="sr-only">
-                : {t("nav.ggHistory")} G&G
-              </span>
+              <span className="sr-only">: {t("nav.ggHistory")} G&G</span>
             </Link>
           </Item>
         </StaggerContainer>

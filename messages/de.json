@@ -328,12 +328,12 @@
       }
     },
     "infused": {
-      "name": "Aufguss-Edition",
-      "bigBot": "AUFGUSS",
+      "name": "Experimental-Edition",
+      "bigBot": "EXPERIMENTAL",
       "subtitle": "Kaffee neu erfunden für die neugierigsten Gaumen, verfeinert mit Gewürzen, Früchten und Blüten, die unerwartete Empfindungen wecken. Jede Sorte ist eine Einladung, neue Aromen und Nuancen zu entdecken, und verbindet die intensive Basis unseres Kaffees mit kreativen Akzenten. Ein anderes Erlebnis in jedem Schluck – für alle, die etwas Neues wagen.",
       "products": {
-        "vanilla-infused": "Mit Vanille Infundierter Kaffee",
-        "guanabana-infused": "Mit Guanábana Infundierter Kaffee"
+        "vanilla-infused": "Experimenteller Kaffee mit Vanille",
+        "guanabana-infused": "Experimenteller Kaffee mit Guanábana"
       }
     }
   },
@@ -469,7 +469,7 @@
         "name": "Kaffeebäuerinnen-Duo"
       },
       "infusedDuo": {
-        "name": "Aroma-Duo"
+        "name": "Experimental-Duo"
       }
     },
     "certifications": "Zertifizierungen",
@@ -863,7 +863,8 @@
     "aria": "Einführung von Grain & Grains",
     "skip": "Intro überspringen",
     "final": "+{count} Kaffeebauern · sie alle sind Grain & Grains · 100 % <trace>rückverfolgbar</trace>",
-    "counter": "Kaffeebauern"
+    "counter": "Kaffeebauern",
+    "title": "KAFFEEBAUERN"
   },
   "notFound": {
     "metaTitle": "Seite nicht gefunden",
@@ -881,5 +882,22 @@
     "supplyChain": "Rückverfolgbare Kaffee-Lieferkette",
     "partners": "Partner-Kaffeekooperativen in Peru",
     "shop": "Grüner, gerösteter & gemahlener Kaffee"
+  },
+  "originHero": {
+    "kicker": "Entdecke den",
+    "big1": "WAHREN",
+    "big2": "URSPRUNG",
+    "sub": "des Spezialitätenkaffees"
+  },
+  "installApp": {
+    "button": "App installieren",
+    "tagline": "Schneller, nur ein Tipp",
+    "short": "Installieren",
+    "aria": "Grain & Grains als App installieren",
+    "iosTitle": "Grain & Grains installieren",
+    "iosStep1": "Tippe auf „Teilen“",
+    "iosStep2": "Wähle „Zum Home-Bildschirm“",
+    "close": "Schließen",
+    "done": "Fertig! Du hast jetzt die Grain & Grains App"
   }
 }

@@ -328,12 +328,12 @@
       }
     },
     "infused": {
-      "name": "风味浸萃系列",
-      "bigBot": "浸萃",
-      "subtitle": "为最具好奇心的味蕾重新诠释的咖啡，注入香料、水果与花卉，唤起意想不到的感受。每一款都是探索全新香气与层次的邀约，将我们咖啡的浓郁底蕴与富有创意的点缀融为一体。每一口都是不同的体验，献给敢于尝新的人。",
+      "name": "实验系列",
+      "bigBot": "实验",
+      "subtitle": "为最具好奇心的味蕾重新诠释的咖啡，以实验精神融入香料、水果与花卉，唤起意想不到的感受。每一款都是探索全新香气与层次的邀约，将我们咖啡的浓郁底蕴与富有创意的点缀融为一体。每一口都是不同的体验，献给敢于尝新的人。",
       "products": {
-        "vanilla-infused": "香草浸萃咖啡",
-        "guanabana-infused": "番荔枝浸萃咖啡"
+        "vanilla-infused": "香草实验咖啡",
+        "guanabana-infused": "番荔枝实验咖啡"
       }
     }
   },
@@ -469,7 +469,7 @@
         "name": "女性咖啡农双享"
       },
       "infusedDuo": {
-        "name": "风味咖啡双享"
+        "name": "实验咖啡双享"
       }
     },
     "certifications": "认证",
@@ -863,7 +863,8 @@
     "aria": "Grain & Grains 开场介绍",
     "skip": "跳过",
     "final": "{count}+ 位咖啡农 · 他们都是 Grain & Grains · 100% <trace>可溯源</trace>",
-    "counter": "位咖啡农"
+    "counter": "位咖啡农",
+    "title": "咖啡农"
   },
   "notFound": {
     "metaTitle": "页面未找到",
@@ -881,5 +882,22 @@
     "supplyChain": "可溯源的咖啡供应链",
     "partners": "秘鲁的合作咖啡合作社",
     "shop": "生豆、烘焙咖啡与研磨咖啡"
+  },
+  "originHero": {
+    "kicker": "探索精品咖啡的",
+    "big1": "真正",
+    "big2": "源头",
+    "sub": "从产地到你的杯中"
+  },
+  "installApp": {
+    "button": "安装应用",
+    "tagline": "更快，一点即开",
+    "short": "安装",
+    "aria": "将 Grain & Grains 安装为应用",
+    "iosTitle": "安装 Grain & Grains",
+    "iosStep1": "点按“分享”按钮",
+    "iosStep2": "选择“添加到主屏幕”",
+    "close": "关闭",
+    "done": "完成！你已拥有 Grain & Grains 应用"
   }
 }

@@ -32,7 +32,8 @@ export default function ProductShowcase({
 
       <section
         ref={productsRef}
-        className="px-0"
+        /* Al bajar con la flecha, queda justo debajo del encabezado fijo */
+        className="scroll-mt-[7.875rem] px-0"
       >
         <ProductGrid category={categories[active]} />
       </section>

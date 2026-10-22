@@ -212,6 +212,50 @@ header::before {
   }
 }
 
+/* "Instalar app": la flecha de descarga da un saltito cada pocos segundos */
+@keyframes installNudge {
+  0%,
+  78%,
+  100% {
+    transform: translateY(0);
+  }
+  84% {
+    transform: translateY(3px);
+  }
+  90% {
+    transform: translateY(-2px);
+  }
+  95% {
+    transform: translateY(1px);
+  }
+}
+.install-nudge {
+  animation: installNudge 3.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .install-nudge {
+    animation: none;
+  }
+}
+
+/* Tarjeta de bienvenida: el punto activo se llena mientras dura la edición */
+@keyframes dotFill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.dot-fill {
+  animation: dotFill linear both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .dot-fill {
+    animation: none;
+  }
+}
+
 /* Modal de promoción: entra y sale con fundido y una escala mínima */
 @keyframes promoIn {
   from {

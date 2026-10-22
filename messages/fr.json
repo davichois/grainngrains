@@ -328,12 +328,12 @@
       }
     },
     "infused": {
-      "name": "Édition Infusés",
-      "bigBot": "INFUSÉS",
-      "subtitle": "Le café réinventé pour les palais les plus curieux, infusé d'épices, de fruits et de fleurs qui éveillent des sensations inattendues. Chaque variété est une invitation à explorer de nouveaux arômes et nuances, alliant la base intense de notre café à des touches créatives. Une expérience différente à chaque gorgée, pour ceux qui osent essayer quelque chose de nouveau.",
+      "name": "Édition Expérimentale",
+      "bigBot": "EXPÉRIMENTAL",
+      "subtitle": "Le café réinventé pour les palais les plus curieux : expérimental, avec des épices, des fruits et des fleurs qui éveillent des sensations inattendues. Chaque variété est une invitation à explorer de nouveaux arômes et nuances, alliant la base intense de notre café à des touches créatives. Une expérience différente à chaque gorgée, pour ceux qui osent essayer quelque chose de nouveau.",
       "products": {
-        "vanilla-infused": "Café Infusé à la Vanille",
-        "guanabana-infused": "Café Infusé au Corossol"
+        "vanilla-infused": "Café Expérimental à la Vanille",
+        "guanabana-infused": "Café Expérimental au Corossol"
       }
     }
   },
@@ -469,7 +469,7 @@
         "name": "Duo Caféicultrices"
       },
       "infusedDuo": {
-        "name": "Duo Infusés"
+        "name": "Duo Expérimental"
       }
     },
     "certifications": "Certifications",
@@ -863,7 +863,8 @@
     "aria": "Présentation de Grain & Grains",
     "skip": "Passer l'intro",
     "final": "+{count} caféiculteurs · tous sont Grain & Grains · 100 % <trace>traçable</trace>",
-    "counter": "caféiculteurs"
+    "counter": "caféiculteurs",
+    "title": "CAFÉICULTEURS"
   },
   "notFound": {
     "metaTitle": "Page introuvable",
@@ -881,5 +882,22 @@
     "supplyChain": "Chaîne d'approvisionnement de café traçable",
     "partners": "Coopératives de café partenaires au Pérou",
     "shop": "Café vert, torréfié et moulu"
+  },
+  "originHero": {
+    "kicker": "Découvrez la",
+    "big1": "VÉRITABLE",
+    "big2": "ORIGINE",
+    "sub": "du café de spécialité"
+  },
+  "installApp": {
+    "button": "Installer l'app",
+    "tagline": "Plus rapide, à portée de doigt",
+    "short": "Installer",
+    "aria": "Installer Grain & Grains comme application",
+    "iosTitle": "Installer Grain & Grains",
+    "iosStep1": "Touchez le bouton Partager",
+    "iosStep2": "Choisissez « Sur l'écran d'accueil »",
+    "close": "Fermer",
+    "done": "C'est fait ! Vous avez l'app Grain & Grains"
   }
 }

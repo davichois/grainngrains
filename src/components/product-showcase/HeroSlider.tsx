@@ -160,7 +160,7 @@ export default function HeroSlider({
 
   return (
     <div
-      className="relative h-[90vh] w-screen overflow-hidden"
+      className="relative h-[calc(100svh-7.875rem)] min-h-[30rem] w-full overflow-hidden"
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
     >

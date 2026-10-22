@@ -1,0 +1,90 @@
+/* ───────────────────────────────────────────────────────────────
+   Portada del inicio "Descubre el verdadero origen del café de
+   especialidad" hecha en código (antes era un video de 1280×694).
+   Todo se mide en proporción al ancho del bloque (cqw), así se ve igual
+   en cualquier pantalla y nunca se pixela.
+   Colores: los de cada lata (medidos del video; la rosada, Hijas del
+   Bosque, usa el fucsia de la intro), con cambios parejos de
+   1,6 s entre una lata y la siguiente. Tiempos calculados a partir de
+   CANS en OriginHero.tsx: si cambian, regenerar.
+─────────────────────────────────────────────────────────────── */
+
+.stage {
+  container-type: inline-size;
+  aspect-ratio: 1280 / 694;
+  background-color: #c7354e;
+  animation: originBg 22.52s linear infinite;
+}
+
+.text {
+  color: #f6cc52;
+  animation: originText 22.52s linear infinite;
+}
+
+/* Cada lata cruza de derecha a izquierda a velocidad constante (como en
+   el video: ~3,8 s de borde a borde) y espera fuera hasta su turno */
+.can {
+  animation: originCan 22.52s linear infinite both;
+}
+
+/* 100cqw → -30.3cqw (ancho de la lata) en 3,86 s = 17,14 % de la vuelta */
+@keyframes originCan {
+  0% { transform: translateX(100cqw); }
+  17.14% { transform: translateX(-30.3cqw); }
+  100% { transform: translateX(-30.3cqw); }
+}
+
+/* Sin movimiento: queda quieta la primera lata, al centro */
+@media (prefers-reduced-motion: reduce) {
+  .stage,
+  .text,
+  .can {
+    animation: none;
+  }
+  .can {
+    transform: translateX(-30.3cqw);
+  }
+  .can:first-of-type {
+    transform: translateX(34.85cqw);
+  }
+}
+
+@keyframes originBg {
+  0.00% { background-color: #C7354E; animation-timing-function: ease-in-out; }
+  10.79% { background-color: #C7354E; animation-timing-function: ease-in-out; }
+  17.90% { background-color: #B7BD43; animation-timing-function: ease-in-out; }
+  23.29% { background-color: #B7BD43; animation-timing-function: ease-in-out; }
+  30.40% { background-color: #FF0064; animation-timing-function: ease-in-out; }
+  35.79% { background-color: #FF0064; animation-timing-function: ease-in-out; }
+  42.90% { background-color: #267F47; animation-timing-function: ease-in-out; }
+  48.29% { background-color: #267F47; animation-timing-function: ease-in-out; }
+  55.40% { background-color: #F1A543; animation-timing-function: ease-in-out; }
+  60.77% { background-color: #F1A543; animation-timing-function: ease-in-out; }
+  67.87% { background-color: #F4CA42; animation-timing-function: ease-in-out; }
+  73.27% { background-color: #F4CA42; animation-timing-function: ease-in-out; }
+  80.37% { background-color: #F35044; animation-timing-function: ease-in-out; }
+  85.77% { background-color: #F35044; animation-timing-function: ease-in-out; }
+  92.87% { background-color: #D13448; animation-timing-function: ease-in-out; }
+  92.90% { background-color: #D13448; animation-timing-function: ease-in-out; }
+  100.00% { background-color: #C7354E; animation-timing-function: ease-in-out; }
+}
+
+@keyframes originText {
+  0.00% { color: #F6CC52; animation-timing-function: ease-in-out; }
+  10.79% { color: #F6CC52; animation-timing-function: ease-in-out; }
+  17.90% { color: #2F6B27; animation-timing-function: ease-in-out; }
+  23.29% { color: #2F6B27; animation-timing-function: ease-in-out; }
+  30.40% { color: #FFF0F6; animation-timing-function: ease-in-out; }
+  35.79% { color: #FFF0F6; animation-timing-function: ease-in-out; }
+  42.90% { color: #532066; animation-timing-function: ease-in-out; }
+  48.29% { color: #532066; animation-timing-function: ease-in-out; }
+  55.40% { color: #545F7F; animation-timing-function: ease-in-out; }
+  60.77% { color: #545F7F; animation-timing-function: ease-in-out; }
+  67.87% { color: #9D2F45; animation-timing-function: ease-in-out; }
+  73.27% { color: #9D2F45; animation-timing-function: ease-in-out; }
+  80.37% { color: #8DB9B4; animation-timing-function: ease-in-out; }
+  85.77% { color: #8DB9B4; animation-timing-function: ease-in-out; }
+  92.87% { color: #F5D56D; animation-timing-function: ease-in-out; }
+  92.90% { color: #F5D56D; animation-timing-function: ease-in-out; }
+  100.00% { color: #F6CC52; animation-timing-function: ease-in-out; }
+}
