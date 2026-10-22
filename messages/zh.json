@@ -347,27 +347,25 @@
     },
     "blocks": [
       {
-        "eyebrow": "以卓越所要求的严谨评估每一批次。",
-        "title": "Clean Cup Alliance",
-        "imageAlt": "Clean Cup Alliance",
-        "description": "我们基于SCA标准的杯测系统能够精准且一致地测量、比较并记录每份样品的品质，将感官评估转化为可验证的信任。"
-      },
-      {
-        "eyebrow": "以独特风味致敬产地。",
-        "title": "Grain & Grains 秘鲁风味轮",
-        "imageAlt": "风味轮",
-        "description": "这一工具受SCA方法论启发，并以我们自有的亚马逊风味轮加以丰富，揭示每款咖啡的独特特征，连接风土、文化与杯中体验。"
-      },
-      {
-        "eyebrow": "通过数据与持续行动守护产地。",
+        "eyebrow": "你的咖啡，可追溯到农场。",
         "title": "Forest Land Sentinel",
         "imageAlt": "Forest Land Sentinel",
-        "description": "通过区域监测与技术支持，我们发现改进机会、管理风险，并强化可持续实践，保障农场与社区的未来。"
+        "description": "我们的溯源平台。它在地图上定位每一座农场，监测土地，并为咖啡农提供技术支持，让每一批咖啡以经过验证的产地、零毁林、并以守护森林与社区的方式，来到你的杯中。"
+      },
+      {
+        "eyebrow": "风味，也在诉说它的来处。",
+        "title": "Grain & Grains 秘鲁风味轮",
+        "imageAlt": "风味轮",
+        "description": "我们专属的风味轮，以 SCA 风味轮为灵感，并加入亚马逊的异域风味，如阿瓜赫果、刺果番荔枝、卡姆果与古布阿苏。它帮助你辨识每款咖啡的独特之处，选出最合你口味的那一杯。"
+      },
+      {
+        "eyebrow": "品质，是量出来的，而不只是承诺。",
+        "title": "Clean Cup Alliance",
+        "imageAlt": "Clean Cup Alliance",
+        "description": "我们按照 SCA 规程杯测每一批咖啡：分数、瑕疵与杯中风味，全部记录且可比较。由此确保干净、稳定的一杯，我们提供的每一款咖啡，其品质都有数据为证。"
       }
     ],
-    "learnMore": "了解更多",
-    "requestAccess": "如需访问权限，请联系负责人。",
-    "contact": "联系"
+    "learnMore": "了解更多"
   },
   "certifications": {
     "heading": "我们的标签、认证与合作社伙伴。",

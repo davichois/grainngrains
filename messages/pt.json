@@ -347,27 +347,25 @@
     },
     "blocks": [
       {
-        "eyebrow": "Cada lote avaliado com o rigor que a excelência exige.",
-        "title": "Clean Cup Alliance",
-        "imageAlt": "Clean Cup Alliance",
-        "description": "Nosso sistema de prova baseado nos padrões SCA permite medir, comparar e documentar a qualidade de cada amostra com precisão e consistência, transformando a avaliação sensorial em confiança verificável."
-      },
-      {
-        "eyebrow": "Honrando a origem por meio de seus sabores únicos.",
-        "title": "Roda de Sabores Peruana por Grain & Grains",
-        "imageAlt": "Roda de Sabores",
-        "description": "Inspirada na metodologia SCA e enriquecida com nossa própria roda de sabores amazônica, esta ferramenta revela as características distintivas de cada café, conectando o território, a cultura e a experiência na xícara."
-      },
-      {
-        "eyebrow": "Proteger a origem por meio de dados e ação constante.",
+        "eyebrow": "Seu café, rastreável até a fazenda.",
         "title": "Forest Land Sentinel",
         "imageAlt": "Forest Land Sentinel",
-        "description": "Por meio do monitoramento territorial e da assistência técnica, identificamos oportunidades de melhoria, gerenciamos riscos e fortalecemos práticas sustentáveis que asseguram o futuro de nossas fazendas e comunidades."
+        "description": "Nossa plataforma de rastreabilidade. Ela localiza cada fazenda no mapa, monitora o território e acompanha os cafeicultores com assistência técnica, para que cada lote chegue à sua xícara com origem verificada, livre de desmatamento e com práticas que cuidam da floresta e de suas comunidades."
+      },
+      {
+        "eyebrow": "O sabor também conta de onde vem.",
+        "title": "Roda de Sabores Peruana por Grain & Grains",
+        "imageAlt": "Roda de Sabores",
+        "description": "Nossa própria roda de sabores, inspirada na da SCA e ampliada com sabores amazônicos exóticos como o buriti (aguaje), a graviola, o camu-camu e o cupuaçu. Ela ajuda você a reconhecer o que torna cada café único e a escolher o que combina com o seu gosto."
+      },
+      {
+        "eyebrow": "Qualidade que se mede, não só se promete.",
+        "title": "Clean Cup Alliance",
+        "imageAlt": "Clean Cup Alliance",
+        "description": "Provamos cada lote com os protocolos da SCA: pontuação, defeitos e perfil na xícara, documentados e comparáveis. Assim garantimos uma xícara limpa e consistente, e cada café que oferecemos chega com sua qualidade respaldada por dados."
       }
     ],
-    "learnMore": "Saiba mais",
-    "requestAccess": "Para obter acesso, entre em contato com o responsável.",
-    "contact": "Contatar"
+    "learnMore": "Saiba mais"
   },
   "certifications": {
     "heading": "Nossos selos, certificações e cooperativas parceiras.",

@@ -347,27 +347,25 @@
     },
     "blocks": [
       {
-        "eyebrow": "Jedes Los mit der Sorgfalt bewertet, die Exzellenz verlangt.",
-        "title": "Clean Cup Alliance",
-        "imageAlt": "Clean Cup Alliance",
-        "description": "Unser auf SCA-Standards basierendes Cupping-System ermöglicht es, die Qualität jeder Probe präzise und konsistent zu messen, zu vergleichen und zu dokumentieren – und macht die sensorische Bewertung zu überprüfbarem Vertrauen."
-      },
-      {
-        "eyebrow": "Den Ursprung durch seine einzigartigen Aromen ehren.",
-        "title": "Peruanisches Aromarad von Grain & Grains",
-        "imageAlt": "Aromarad",
-        "description": "Inspiriert von der SCA-Methodik und ergänzt durch unser eigenes amazonisches Aromarad, offenbart dieses Werkzeug die unverwechselbaren Merkmale jedes Kaffees und verbindet Territorium, Kultur und das Geschmackserlebnis in der Tasse."
-      },
-      {
-        "eyebrow": "Den Ursprung durch Daten und beständiges Handeln schützen.",
+        "eyebrow": "Dein Kaffee, rückverfolgbar bis zur Farm.",
         "title": "Forest Land Sentinel",
         "imageAlt": "Forest Land Sentinel",
-        "description": "Durch territoriales Monitoring und technische Unterstützung erkennen wir Verbesserungspotenziale, steuern Risiken und stärken nachhaltige Praktiken, die die Zukunft unserer Farmen und Gemeinschaften sichern."
+        "description": "Unsere Plattform für Rückverfolgbarkeit. Sie verortet jede Farm auf der Karte, überwacht das Gebiet und begleitet die Bauern mit technischer Beratung – damit jede Partie mit verifizierter Herkunft, entwaldungsfrei und mit Praktiken, die den Wald und seine Gemeinschaften schützen, in deine Tasse kommt."
+      },
+      {
+        "eyebrow": "Auch der Geschmack erzählt, woher er kommt.",
+        "title": "Peruanisches Aromarad von Grain & Grains",
+        "imageAlt": "Aromarad",
+        "description": "Unser eigenes Aromarad, inspiriert vom SCA-Rad und erweitert um exotische Aromen aus dem Amazonas wie Aguaje, Stachelannone, Camu Camu und Cupuaçu. Es hilft dir zu erkennen, was jeden Kaffee einzigartig macht, und den zu wählen, der zu deinem Geschmack passt."
+      },
+      {
+        "eyebrow": "Qualität, die gemessen wird – nicht nur versprochen.",
+        "title": "Clean Cup Alliance",
+        "imageAlt": "Clean Cup Alliance",
+        "description": "Wir verkosten jede Partie nach SCA-Protokollen: Punktzahl, Defekte und Tassenprofil, dokumentiert und vergleichbar. So garantieren wir eine saubere, gleichbleibende Tasse, und jeder Kaffee, den wir anbieten, kommt mit datenbasierter Qualität."
       }
     ],
-    "learnMore": "Mehr erfahren",
-    "requestAccess": "Für den Zugang wenden Sie sich bitte an den Verantwortlichen.",
-    "contact": "Kontaktieren"
+    "learnMore": "Mehr erfahren"
   },
   "certifications": {
     "heading": "Unsere Siegel, Zertifizierungen und Partnerkooperativen.",

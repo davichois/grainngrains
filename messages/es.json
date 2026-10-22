@@ -410,27 +410,25 @@
     },
     "blocks": [
       {
-        "eyebrow": "Cada lote evaluado con el rigor que exige la excelencia.",
-        "title": "Clean Cup Alliance",
-        "imageAlt": "Clean Cup Alliance",
-        "description": "Nuestro sistema de catación basado en los estándares SCA permite medir, comparar y documentar la calidad de cada muestra con precisión y consistencia, transformando la evaluación sensorial en confianza verificable."
-      },
-      {
-        "eyebrow": "Honrando el origen a través de sus sabores únicos.",
-        "title": "Rueda de Sabores Peruano por Grain & Grains",
-        "imageAlt": "Rueda de Sabores",
-        "description": "Inspirada en la metodología SCA y enriquecida con nuestra propia rueda de sabores amazónica, esta herramienta revela las características distintivas de cada café, conectando el territorio, la cultura y la experiencia en taza."
-      },
-      {
-        "eyebrow": "Proteger el origen mediante datos y acción constante.",
+        "eyebrow": "Tu café, rastreable hasta la finca.",
         "title": "Forest Land Sentinel",
         "imageAlt": "Forest Land Sentinel",
-        "description": "A través del monitoreo territorial y la asistencia técnica, identificamos oportunidades de mejora, gestionamos riesgos y fortalecemos prácticas sostenibles que aseguran el futuro de nuestras fincas y comunidades."
+        "description": "Nuestra plataforma de trazabilidad. Ubica cada finca en el mapa, monitorea el territorio y acompaña a los caficultores con asistencia técnica, para que cada lote llegue a tu taza con origen verificado, libre de deforestación y con prácticas que cuidan el bosque y a sus comunidades."
+      },
+      {
+        "eyebrow": "El sabor también cuenta de dónde viene.",
+        "title": "Rueda de Sabores Peruano por Grain & Grains",
+        "imageAlt": "Rueda de Sabores",
+        "description": "Nuestra propia rueda de sabores, inspirada en la de la SCA y ampliada con sabores amazónicos exóticos como el aguaje, la guanábana, el camu camu y el copoazú. Te ayuda a reconocer lo que hace único a cada café y a elegir el que va con tu gusto."
+      },
+      {
+        "eyebrow": "Calidad que se mide, no solo se promete.",
+        "title": "Clean Cup Alliance",
+        "imageAlt": "Clean Cup Alliance",
+        "description": "Catamos cada lote con los protocolos de la SCA: puntaje, defectos y perfil en taza, documentados y comparables. Así garantizamos una taza limpia y consistente, y cada café que ofrecemos llega con su calidad respaldada por datos."
       }
     ],
-    "learnMore": "Saber más",
-    "requestAccess": "Para obtener acceso, comunícate con el encargado.",
-    "contact": "Contactar"
+    "learnMore": "Saber más"
   },
   "certifications": {
     "heading": "Nuestras etiquetas, certificaciones y cooperativas aliadas.",

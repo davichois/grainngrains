@@ -347,27 +347,25 @@
     },
     "blocks": [
       {
-        "eyebrow": "Chaque lot évalué avec la rigueur qu'exige l'excellence.",
-        "title": "Clean Cup Alliance",
-        "imageAlt": "Clean Cup Alliance",
-        "description": "Notre système de dégustation basé sur les normes SCA permet de mesurer, comparer et documenter la qualité de chaque échantillon avec précision et constance, transformant l'évaluation sensorielle en confiance vérifiable."
-      },
-      {
-        "eyebrow": "Honorer l'origine à travers ses saveurs uniques.",
-        "title": "Roue des Saveurs Péruvienne par Grain & Grains",
-        "imageAlt": "Roue des Saveurs",
-        "description": "Inspirée de la méthodologie SCA et enrichie de notre propre roue des saveurs amazonienne, cet outil révèle les caractéristiques distinctives de chaque café, reliant le territoire, la culture et l'expérience en tasse."
-      },
-      {
-        "eyebrow": "Protéger l'origine grâce aux données et à une action constante.",
+        "eyebrow": "Votre café, traçable jusqu'à la ferme.",
         "title": "Forest Land Sentinel",
         "imageAlt": "Forest Land Sentinel",
-        "description": "Grâce au suivi territorial et à l'assistance technique, nous identifions des opportunités d'amélioration, gérons les risques et renforçons des pratiques durables qui assurent l'avenir de nos fermes et de nos communautés."
+        "description": "Notre plateforme de traçabilité. Elle situe chaque ferme sur la carte, surveille le territoire et accompagne les producteurs avec une assistance technique, pour que chaque lot arrive dans votre tasse avec une origine vérifiée, sans déforestation et cultivé avec des pratiques qui protègent la forêt et ses communautés."
+      },
+      {
+        "eyebrow": "La saveur raconte aussi d'où elle vient.",
+        "title": "Roue des Saveurs Péruvienne par Grain & Grains",
+        "imageAlt": "Roue des Saveurs",
+        "description": "Notre propre roue des saveurs, inspirée de celle de la SCA et enrichie de saveurs amazoniennes exotiques comme l'aguaje, le corossol, le camu camu et le cupuaçu. Elle vous aide à reconnaître ce qui rend chaque café unique et à choisir celui qui vous ressemble."
+      },
+      {
+        "eyebrow": "Une qualité mesurée, pas seulement promise.",
+        "title": "Clean Cup Alliance",
+        "imageAlt": "Clean Cup Alliance",
+        "description": "Nous dégustons chaque lot selon les protocoles de la SCA : score, défauts et profil en tasse, documentés et comparables. C'est ainsi que nous garantissons une tasse propre et régulière, et chaque café que nous proposons arrive avec une qualité étayée par des données."
       }
     ],
-    "learnMore": "En savoir plus",
-    "requestAccess": "Pour obtenir l'accès, contactez le responsable.",
-    "contact": "Contacter"
+    "learnMore": "En savoir plus"
   },
   "certifications": {
     "heading": "Nos labels, certifications et coopératives partenaires.",

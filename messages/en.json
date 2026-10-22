@@ -345,27 +345,25 @@
     },
     "blocks": [
       {
-        "eyebrow": "Every lot evaluated with the rigor that excellence demands.",
-        "title": "Clean Cup Alliance",
-        "imageAlt": "Clean Cup Alliance",
-        "description": "Our cupping system based on SCA standards lets us measure, compare and document the quality of every sample with precision and consistency, turning sensory evaluation into verifiable trust."
-      },
-      {
-        "eyebrow": "Honoring origin through its unique flavors.",
-        "title": "Peruvian Flavor Wheel by Grain & Grains",
-        "imageAlt": "Flavor Wheel",
-        "description": "Inspired by the SCA methodology and enriched with our own Amazonian flavor wheel, this tool reveals the distinctive characteristics of each coffee, connecting territory, culture and the in-cup experience."
-      },
-      {
-        "eyebrow": "Protecting origin through data and constant action.",
+        "eyebrow": "Your coffee, traceable back to the farm.",
         "title": "Forest Land Sentinel",
         "imageAlt": "Forest Land Sentinel",
-        "description": "Through territorial monitoring and technical assistance, we identify improvement opportunities, manage risks and strengthen sustainable practices that secure the future of our farms and communities."
+        "description": "Our traceability platform. It maps every farm, monitors the land and supports farmers with technical assistance, so every lot reaches your cup with a verified origin, deforestation-free and grown with practices that protect the forest and its communities."
+      },
+      {
+        "eyebrow": "Flavor also tells where it comes from.",
+        "title": "Peruvian Flavor Wheel by Grain & Grains",
+        "imageAlt": "Flavor Wheel",
+        "description": "Our own flavor wheel, inspired by the SCA wheel and expanded with exotic Amazonian flavors such as aguaje, soursop, camu camu and cupuaçu. It helps you recognize what makes each coffee unique and choose the one that suits your taste."
+      },
+      {
+        "eyebrow": "Quality that is measured, not just promised.",
+        "title": "Clean Cup Alliance",
+        "imageAlt": "Clean Cup Alliance",
+        "description": "We cup every lot following SCA protocols: score, defects and cup profile, documented and comparable. That is how we guarantee a clean, consistent cup, and every coffee we offer comes with its quality backed by data."
       }
     ],
-    "learnMore": "Learn more",
-    "requestAccess": "To get access, please contact the person in charge.",
-    "contact": "Contact"
+    "learnMore": "Learn more"
   },
   "certifications": {
     "heading": "Our labels, certifications and partner cooperatives.",

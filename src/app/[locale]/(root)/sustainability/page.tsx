@@ -10,7 +10,7 @@ import {
   Parallax,
   Tilt,
 } from "@/src/components/motion/Motion";
-import { pageMetadata, metaText } from "@/src/lib/site";
+import { pageMetadata, metaText, TRACEABILITY_URL } from "@/src/lib/site";
 
 export async function generateMetadata({
   params,
@@ -27,24 +27,24 @@ export async function generateMetadata({
   });
 }
 
-// Correo del encargado para solicitar acceso (tercer bloque)
-const MANAGER_EMAIL = "tradingna@grainngrains.org";
-
-// Solo estilos/recursos; los textos vienen de las traducciones (messages/*.json)
+// Solo estilos/recursos; los textos vienen de las traducciones (messages/*.json),
+// en el mismo orden: Forest Land Sentinel, Rueda de Sabores, Clean Cup Alliance
 const blockStyles: {
   image: string;
   bg: string;
   border: string;
   text: string;
   link?: string;
-  restricted?: boolean;
+  /** Botón con el texto de "Verificar trazabilidad" (menú) en vez de "Conocer más" */
+  traceability?: boolean;
 }[] = [
   {
-    image: "/images/sustainability/cleancupalliance.svg",
-    bg: "bg-[#FEFDDF]",
-    border: "bg-[#FEFDDF]",
+    image: "/images/sustainability/FLS.svg",
+    bg: "bg-[#FFB200]",
+    border: "bg-[#ff9d00]",
     text: "text-[#25343F]",
-    link: "https://cleancup.grainngrains.org", // TODO: URL real de Clean Cup Alliance
+    link: TRACEABILITY_URL, // Forest Land Sentinel: nuestra página de trazabilidad
+    traceability: true,
   },
   {
     image: "/images/sustainability/flowerwheels.svg",
@@ -54,16 +54,17 @@ const blockStyles: {
     link: "https://flavorwheel.grainngrains.org", // TODO: URL real de la Rueda de Sabores
   },
   {
-    image: "/images/sustainability/FLS.svg",
-    bg: "bg-[#FFB200]",
-    border: "bg-[#ff9d00]",
+    image: "/images/sustainability/cleancupalliance.svg",
+    bg: "bg-[#FEFDDF]",
+    border: "bg-[#FEFDDF]",
     text: "text-[#25343F]",
-    restricted: true, // Acceso bajo solicitud al encargado
+    link: "https://cleancup.grainngrains.org", // TODO: URL real de Clean Cup Alliance
   },
 ];
 
 export default async function Sustainability() {
   const t = await getTranslations("sustainability");
+  const tNav = await getTranslations("nav");
 
   return (
     <div className="bg-white text-cyan-950 overflow-x-hidden w-full mt-20 md:mt-24 lg:mt-30">
@@ -177,42 +178,22 @@ export default async function Sustainability() {
                       </p>
                     </Item>
 
-                    {/* CTA: botón de redirección o aviso de acceso restringido */}
+                    {/* CTA: botón de redirección (Forest Land Sentinel: "Verificar
+                        trazabilidad", como en el menú) */}
                     <Item>
-                      {style.restricted ? (
-                        <div className="mt-6">
-                          <p className="mb-3 text-sm font-medium sm:text-base">
-                            {t("requestAccess")}
-                          </p>
-                          <a
-                            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
-                              MANAGER_EMAIL,
-                            )}&su=${encodeURIComponent(
-                              `${title} — ${t("requestAccess")}`,
-                            )}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group/btn inline-flex items-center justify-center gap-2 border-2 border-[#25343F] px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-[#25343F] transition-all duration-200 hover:bg-[#25343F] hover:text-white hover:shadow-lg hover:-translate-y-0.5"
-                          >
-                            {t("contact")}
-                            <span className="transition-transform duration-200 group-hover/btn:translate-x-1">
-                              →
-                            </span>
-                          </a>
-                        </div>
-                      ) : (
-                        <a
-                          href={style.link ?? "#"}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group/btn mt-6 inline-flex items-center justify-center gap-2 border-2 border-[#25343F] px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-[#25343F] transition-all duration-200 hover:bg-[#25343F] hover:text-white hover:shadow-lg hover:-translate-y-0.5"
-                        >
-                          {t("learnMore")}
-                          <span className="transition-transform duration-200 group-hover/btn:translate-x-1">
-                            →
-                          </span>
-                        </a>
-                      )}
+                      <a
+                        href={style.link ?? "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/btn mt-6 inline-flex items-center justify-center gap-2 border-2 border-[#25343F] px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-[#25343F] transition-all duration-200 hover:bg-[#25343F] hover:text-white hover:shadow-lg hover:-translate-y-0.5"
+                      >
+                        {style.traceability
+                          ? tNav("verifyTraceability")
+                          : t("learnMore")}
+                        <span className="transition-transform duration-200 group-hover/btn:translate-x-1">
+                          →
+                        </span>
+                      </a>
                     </Item>
                   </StaggerContainer>
                 </div>
