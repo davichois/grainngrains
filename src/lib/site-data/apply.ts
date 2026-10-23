@@ -48,6 +48,9 @@ export interface ProductOverride {
   deleted?: boolean;
   prices?: Partial<Record<SizeId, number>> | null;
   stock?: Partial<Record<SizeId, number | null>> | null;
+  /** Agotado a mano: todo el café o algunas presentaciones */
+  soldOut?: boolean;
+  soldOutSizes?: SizeId[];
   image?: string | null;
   hoverImage?: string | null;
   cardBg?: string | null;
@@ -65,6 +68,8 @@ export interface CoffeeOptionsData {
     optionId: string;
     /** Visible para el cliente */
     active: boolean;
+    /** Agotada en este café */
+    soldOut?: boolean;
     sort: number | null;
   }[];
 }
@@ -171,6 +176,8 @@ function customProduct(o: ProductOverride): ShowcaseProduct | null {
     ...(o.image && { image: o.image }),
     ...(o.hoverImage && { hoverImage: o.hoverImage }),
     ...(o.stock && { stock: { ...o.stock } }),
+    ...(o.soldOut && { soldOut: true }),
+    ...(o.soldOutSizes?.length && { soldOutSizes: [...o.soldOutSizes] }),
   };
 }
 
@@ -230,6 +237,8 @@ export function buildCatalog(
                    precios del panel, reemplazan a los del código */
                 prices: po.prices?.["250g"] ? validPrices(po.prices) : { ...p.prices },
                 ...(po.stock && { stock: { ...po.stock } }),
+                ...(po.soldOut && { soldOut: true }),
+                ...(po.soldOutSizes?.length && { soldOutSizes: [...po.soldOutSizes] }),
                 ...(po.image && { image: po.image }),
                 ...(po.hoverImage && { hoverImage: po.hoverImage }),
                 ...(po.cardBg && { cardBg: po.cardBg }),
@@ -296,7 +305,7 @@ export function withOptions(
     return o.links
       .filter((l) => l.productId === productId && l.kind === kind && l.active && masters.some((m) => m.id === l.optionId && m.active))
       .sort((a, b) => (a.sort ?? order(a.optionId)) - (b.sort ?? order(b.optionId)))
-      .map((l) => ({ id: l.optionId }));
+      .map((l) => ({ id: l.optionId, ...(l.soldOut && { soldOut: true }) }));
   };
   return categories.map((c) => ({
     ...c,

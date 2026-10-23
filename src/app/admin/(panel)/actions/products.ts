@@ -139,6 +139,8 @@ export async function saveProduct(_prev: ActionState, form: FormData): Promise<A
         deleted: false,
         prices,
         stock,
+        sold_out: form.get("sold_out") === "on",
+        sold_out_sizes: SIZES.filter((sz) => form.get(`sold_out_${sz}`) === "on"),
         image: base && image === (base.product.image ?? "") ? null : image || null,
         hover_image: base && hoverImage === (base.product.hoverImage ?? "") ? null : hoverImage || null,
         card_bg: base && cardBg === (base.product.cardBg ?? "") ? null : cardBg || null,
@@ -162,6 +164,7 @@ export async function saveProduct(_prev: ActionState, form: FormData): Promise<A
               product_id: id,
               [col]: o.id,
               active: form.get(`${kind}_visible_${o.id}`) === "on",
+              sold_out: form.get(`${kind}_soldout_${o.id}`) === "on",
               sort: i * 10,
             })),
           );
@@ -176,6 +179,7 @@ export async function saveProduct(_prev: ActionState, form: FormData): Promise<A
         precios: prices,
         stock,
         activo: form.get("active") === "on",
+        ...(form.get("sold_out") === "on" && { agotado: true }),
       }),
     ]);
     /* Fotos de Drive que se cambiaron: se borran si nadie más las usa */

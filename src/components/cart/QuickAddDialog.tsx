@@ -22,6 +22,7 @@ import {
   GRINDS,
   sizesOf,
   type GrindId,
+  type ProductOption,
   type SizeId,
 } from "@/src/lib/shop";
 import {
@@ -102,7 +103,7 @@ function QuickAddContent({
   const tCart = useTranslations("cart");
   const tEditions = useTranslations("editions");
   const { addItem } = useCart();
-  const [size, setSize] = useState<SizeId>(DEFAULT_SIZE);
+  const [sizePick, setSize] = useState<SizeId>();
   const [grind, setGrind] = useState<GrindId>(DEFAULT_GRIND);
   const [qty, setQty] = useState(1);
   const sizeName = useId();
@@ -112,13 +113,19 @@ function QuickAddContent({
 
   /* Varietal y proceso: el cliente elige uno de cada uno (si el café los
      ofrece); empieza en el primero. No cambian el precio */
-  const options = productOptions(
-    target.kind === "product" ? findProduct(target.categoryId, target.productId) : undefined,
-  );
+  const targetProduct = target.kind === "product" ? findProduct(target.categoryId, target.productId) : undefined;
+  const options = productOptions(targetProduct);
   const [varietalPick, setVarietal] = useState<string>();
   const [processPick, setProcess] = useState<string>();
-  const varietal = options.varietals.find((o) => o.id === varietalPick) ?? options.varietals[0];
-  const process = options.processes.find((o) => o.id === processPick) ?? options.processes[0];
+  /* Lo agotado no se elige: empieza en la primera que queda */
+  const first = (list: ProductOption[]) => list.find((o) => !o.soldOut) ?? list[0];
+  const varietal = options.varietals.find((o) => o.id === varietalPick) ?? first(options.varietals);
+  const process = options.processes.find((o) => o.id === processPick) ?? first(options.processes);
+  /* Presentación: la elegida o la primera con stock */
+  const size =
+    sizePick ??
+    (targetProduct && sizesOf(targetProduct.prices).find((s) => stockOf(targetProduct, s) > 0)) ??
+    DEFAULT_SIZE;
   const optionName = (kind: "varietals" | "processes", id: string) =>
     t.has(`${kind}.${id}`) ? t(`${kind}.${id}`) : id;
 
@@ -319,7 +326,7 @@ function QuickAddContent({
                       className="sr-only"
                     />
                     {v.stock(s) < 1 && (
-                      <span className="absolute -top-2 rounded-full bg-gray-900 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
+                      <span className="absolute -top-2.5 rounded-full bg-gray-900 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-white">
                         {t("soldOut")}
                       </span>
                     )}
@@ -355,7 +362,9 @@ function QuickAddContent({
                   {list.map((o) => (
                     <label
                       key={o.id}
-                      className={`${selectable(current?.id === o.id)} flex items-center gap-1.5 rounded-full px-3.5 py-2 text-sm`}
+                      className={`${selectable(current?.id === o.id)} flex items-center gap-1.5 rounded-full px-3.5 py-2 text-sm ${
+                        o.soldOut ? "pointer-events-none opacity-50" : ""
+                      }`}
                     >
                       <input
                         type="radio"
@@ -363,9 +372,15 @@ function QuickAddContent({
                         value={o.id}
                         checked={current?.id === o.id}
                         onChange={() => set(o.id)}
+                        disabled={o.soldOut}
                         className="sr-only"
                       />
-                      {optionName(kind, o.id)}
+                      <span className={o.soldOut ? "line-through decoration-gray-400" : ""}>{optionName(kind, o.id)}</span>
+                      {o.soldOut && (
+                        <span className="rounded-full bg-gray-900 px-1.5 py-px text-[10px] font-bold uppercase tracking-wide text-white">
+                          {t("soldOut")}
+                        </span>
+                      )}
                     </label>
                   ))}
                 </div>

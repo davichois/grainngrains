@@ -70,6 +70,8 @@ create table if not exists products (
   deleted boolean not null default false,     -- eliminado (los del código se pueden restaurar)
   prices jsonb,                               -- { "250g": 45, "1kg": 150 }
   stock jsonb,                                -- { "250g": 20, "1kg": null }  (null = sin límite)
+  sold_out boolean not null default false,    -- agotado a mano (todo el café)
+  sold_out_sizes jsonb,                       -- presentaciones agotadas a mano: ["1kg"]
   image text,
   hover_image text,
   card_bg text,                               -- color de fondo de la tarjeta
@@ -122,6 +124,7 @@ create table if not exists product_varietals (
   product_id text not null,
   varietal_id text not null references varietals (id) on delete cascade,
   active boolean not null default true,       -- visible para el cliente
+  sold_out boolean not null default false,    -- agotada en este café
   sort integer,
   primary key (product_id, varietal_id)
 );
@@ -130,6 +133,7 @@ create table if not exists product_processes (
   product_id text not null,
   process_id text not null references processes (id) on delete cascade,
   active boolean not null default true,       -- visible para el cliente
+  sold_out boolean not null default false,    -- agotado en este café
   sort integer,
   primary key (product_id, process_id)
 );
@@ -193,6 +197,10 @@ alter table products add column if not exists card_bg text;
 alter table products add column if not exists certifications jsonb;
 alter table products add column if not exists sort integer;
 alter table combos add column if not exists items jsonb;
+alter table products add column if not exists sold_out boolean not null default false;
+alter table products add column if not exists sold_out_sizes jsonb;
+alter table product_varietals add column if not exists sold_out boolean not null default false;
+alter table product_processes add column if not exists sold_out boolean not null default false;
 
 -- Descuenta stock de una presentación sin bajar de 0 (null = sin límite)
 create or replace function decrement_stock(p_id text, p_size text, p_qty int)

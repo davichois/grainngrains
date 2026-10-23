@@ -33,11 +33,14 @@ export function setSizes(extra: SizeSetting[] = []) {
 /* ───────── Varietales y procesos ─────────
    Se crean en el panel (Productos → Varietales y procesos). Sus nombres
    van en i18n: shop.varietals.<id> y shop.processes.<id>. Cada café dice
-   cuáles ofrece; no cambian el precio ni tienen stock propio. */
+   cuáles ofrece; no cambian el precio. Desde el panel se pueden marcar
+   como agotadas en un café. */
 
 /** Opción de un café: una varietal o un proceso que el cliente puede elegir */
 export interface ProductOption {
   id: string;
+  /** Marcada como agotada en el panel (se ve, pero no se puede elegir) */
+  soldOut?: boolean;
 }
 
 export const VARIETALS: string[] = [];

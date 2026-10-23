@@ -58,6 +58,16 @@ export default async function ProductForm({
             <input type="checkbox" name="active" defaultChecked={p ? p.active : true} className="h-6 w-6 accent-[#0FC0FC]" />
           </label>
 
+          <label className="flex cursor-pointer items-center justify-between gap-3 border border-adm-line px-4 py-3.5 hover:border-adm-faint has-checked:border-adm-red-line">
+            <span>
+              <span className="block font-semibold">Agotado</span>
+              <span className="text-xs text-adm-muted">
+                Se sigue viendo en la web con el sello «Agotado», pero nadie lo puede comprar. Para agotar solo una presentación o una varietal, márcalo abajo.
+              </span>
+            </span>
+            <input type="checkbox" name="sold_out" defaultChecked={p?.soldOut ?? false} className="h-6 w-6 shrink-0 accent-[#E5484D]" />
+          </label>
+
           <div className="grid gap-3 sm:grid-cols-[1fr_8rem]">
             <label className="block">
               <span className={labelCls}>Edición</span>
@@ -118,6 +128,7 @@ export default async function ProductForm({
       <Card title="Precio y stock por presentación">
         <p className="mb-4 text-xs text-adm-muted">
           250 g es obligatoria. En las demás, si dejas el precio vacío, el café no se vende en esa presentación. Stock vacío = sin límite.
+          Con 0 unidades, o marcada como agotada, la presentación sale «Agotado».
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
           {sizes.map((s) => (
@@ -141,6 +152,10 @@ export default async function ProductForm({
                 <span className={labelCls}>Unidades disponibles</span>
                 <input name={`stock_${s.id}`} inputMode="numeric" defaultValue={p?.stock?.[s.id] ?? ""} placeholder="Sin límite" className={fieldCls} />
               </label>
+              <label className="mt-3 flex cursor-pointer items-center gap-2.5 text-[0.8125rem] font-medium">
+                <input type="checkbox" name={`sold_out_${s.id}`} defaultChecked={p?.soldOutSizes.includes(s.id) ?? false} className="h-4 w-4 accent-[#E5484D]" />
+                Agotada (sin importar las unidades)
+              </label>
             </div>
           ))}
         </div>
@@ -149,7 +164,7 @@ export default async function ProductForm({
       <Card title="Varietales y procesos">
         <p className="mb-4 text-xs text-adm-muted">
           Elige de la lista las que tiene este café y, de esas, cuáles ve el cliente al comprar (elige una varietal y un proceso).
-          No cambian el precio; el stock sigue siendo el de cada presentación.{" "}
+          No cambian el precio. Si se te acaba una, márcala como agotada: el cliente la ve tachada y no la puede elegir.{" "}
           <Link href="/admin/opciones" className="font-semibold text-adm-cyan-ink underline underline-offset-2">Administrar listas</Link>
         </p>
         <div className="space-y-6">

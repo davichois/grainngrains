@@ -310,6 +310,9 @@ async function productsViewUncached() {
           prices: p.prices,
           codePrices: code?.prices ?? null,
           stock: p.stock ?? {},
+          /* Agotado a mano (todo el café o algunas presentaciones) */
+          soldOut: Boolean(p.soldOut),
+          soldOutSizes: p.soldOutSizes ?? [],
           sort: o?.sort ?? null,
           hasOverride: Boolean(o && code),
         };
@@ -365,10 +368,10 @@ async function optionLinksUncached(kind: OptionKind) {
     () => db.select<Record<string, unknown>>(LINK_TABLE[kind], { order: "sort.asc.nullslast" }),
     [] as Record<string, unknown>[],
   );
-  const out = new Map<string, { id: string; active: boolean }[]>();
+  const out = new Map<string, { id: string; active: boolean; soldOut: boolean }[]>();
   for (const r of rows) {
     const list = out.get(String(r.product_id)) ?? [];
-    list.push({ id: String(r[LINK_COL[kind]]), active: Boolean(r.active) });
+    list.push({ id: String(r[LINK_COL[kind]]), active: Boolean(r.active), soldOut: Boolean(r.sold_out) });
     out.set(String(r.product_id), list);
   }
   return out;

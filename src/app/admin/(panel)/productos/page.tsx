@@ -15,7 +15,8 @@ export const metadata: Metadata = { title: "Productos y stock" };
 const linkCls =
   "inline-flex items-center gap-1.5 border border-adm-line3 bg-adm-surface px-3 py-1.5 text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-adm-ink transition-colors hover:border-adm-strong";
 
-function StockPill({ n }: { n: number | null | undefined }) {
+function StockPill({ n, soldOut }: { n: number | null | undefined; soldOut?: boolean }) {
+  if (soldOut) return <span className="border border-adm-red-line px-2 py-0.5 text-[0.6875rem] font-semibold text-adm-red">Agotada</span>;
   if (n === null || n === undefined)
     return <span className="border border-adm-line2 px-2 py-0.5 text-[0.6875rem] font-semibold text-adm-faint">∞</span>;
   return (
@@ -40,10 +41,10 @@ export default async function ProductsPage() {
   ]);
   const label = new Map(sizes.map((s) => [s.id, s.label]));
   const optName = new Map([...varietals, ...processes].map((o) => [o.id, o.label]));
-  const optText = (list: { id: string; active: boolean }[]) =>
+  const optText = (list: { id: string; active: boolean; soldOut: boolean }[]) =>
     list
       .filter((o) => optName.has(o.id))
-      .map((o) => `${optName.get(o.id)}${o.active ? "" : " (oculta)"}`)
+      .map((o) => `${optName.get(o.id)}${o.active ? "" : " (oculta)"}${o.soldOut ? " (agotada)" : ""}`)
       .join(", ");
   const ready = dbReady();
 
@@ -112,6 +113,7 @@ export default async function ProductsPage() {
                       <p className="truncate font-semibold">
                         {p.name}
                         {p.custom && <span className="ml-2 text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-adm-cyan-ink">nuevo</span>}
+                        {p.soldOut && <span className="ml-2 border border-adm-red-line px-1.5 py-px text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-adm-red">agotado</span>}
                       </p>
                       <div className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1.5 text-xs">
                         {sizes
@@ -120,7 +122,7 @@ export default async function ProductsPage() {
                             <span key={s.id} className="flex items-center gap-1.5 whitespace-nowrap">
                               <span className="font-bold">{label.get(s.id)}</span>
                               <span className="tabular-nums text-adm-sub">{money(p.prices[s.id])}</span>
-                              <StockPill n={p.stock?.[s.id]} />
+                              <StockPill n={p.stock?.[s.id]} soldOut={p.soldOutSizes.includes(s.id)} />
                             </span>
                           ))}
                       </div>

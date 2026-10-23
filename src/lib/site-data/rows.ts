@@ -12,6 +12,8 @@ export type ProductRow = {
   deleted: boolean;
   prices: ProductOverride["prices"];
   stock: ProductOverride["stock"];
+  sold_out: boolean | null;
+  sold_out_sizes: string[] | null;
   image: string | null;
   hover_image: string | null;
   card_bg: string | null;
@@ -23,8 +25,8 @@ export type ProductRow = {
 export type OptionRow = { id: string; active: boolean; sort: number | null };
 
 /** Varietal o proceso que tiene un café (product_varietals / product_processes) */
-export type ProductVarietalRow = { product_id: string; varietal_id: string; active: boolean; sort: number | null };
-export type ProductProcessRow = { product_id: string; process_id: string; active: boolean; sort: number | null };
+export type ProductVarietalRow = { product_id: string; varietal_id: string; active: boolean; sold_out: boolean | null; sort: number | null };
+export type ProductProcessRow = { product_id: string; process_id: string; active: boolean; sold_out: boolean | null; sort: number | null };
 
 export type EditionRow = {
   id: string;
@@ -47,6 +49,8 @@ export const toProduct = (r: ProductRow): ProductOverride => ({
   deleted: r.deleted,
   prices: r.prices,
   stock: r.stock,
+  soldOut: Boolean(r.sold_out),
+  soldOutSizes: r.sold_out_sizes ?? [],
   image: r.image,
   hoverImage: r.hover_image,
   cardBg: r.card_bg,

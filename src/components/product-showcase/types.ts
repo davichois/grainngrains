@@ -40,6 +40,10 @@ export interface ShowcaseProduct {
   /** Unidades disponibles por presentación (desde el panel). Sin dato o
    *  null = sin límite */
   stock?: Partial<Record<SizeId, number | null>>;
+  /** Agotado a mano desde el panel: todo el café… */
+  soldOut?: boolean;
+  /** …o solo algunas presentaciones */
+  soldOutSizes?: SizeId[];
   /** Varietales que el cliente puede elegir (con su recargo) */
   varietals?: ProductOption[];
   /** Procesos que el cliente puede elegir (con su recargo) */

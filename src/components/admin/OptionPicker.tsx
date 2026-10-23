@@ -1,15 +1,16 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Eye, EyeOff, Plus, Search, X } from "lucide-react";
+import { Ban, Eye, EyeOff, Plus, Search, X } from "lucide-react";
 
 type Option = { id: string; label: string; active: boolean };
-type Picked = { id: string; visible: boolean };
+type Picked = { id: string; visible: boolean; soldOut: boolean };
 
 /**
  * Varietales o procesos de un café: se eligen de la lista con un buscador y,
- * de los elegidos, se decide cuáles ve el cliente. Envía los mismos campos
- * que espera saveProduct: `<kind>_on_<id>` y `<kind>_visible_<id>`.
+ * de los elegidos, se decide cuáles ve el cliente y cuáles están agotadas.
+ * Envía los campos que espera saveProduct: `<kind>_on_<id>`,
+ * `<kind>_visible_<id>` y `<kind>_soldout_<id>`.
  */
 export default function OptionPicker({
   kind,
@@ -22,10 +23,10 @@ export default function OptionPicker({
   /** Lista completa (incluidas las inactivas en la lista general) */
   options: Option[];
   /** Las que ya tiene el café */
-  initial: { id: string; active: boolean }[];
+  initial: { id: string; active: boolean; soldOut?: boolean }[];
 }) {
   const [picked, setPicked] = useState<Picked[]>(
-    initial.filter((i) => options.some((o) => o.id === i.id)).map((i) => ({ id: i.id, visible: i.active })),
+    initial.filter((i) => options.some((o) => o.id === i.id)).map((i) => ({ id: i.id, visible: i.active, soldOut: Boolean(i.soldOut) })),
   );
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
@@ -51,7 +52,7 @@ export default function OptionPicker({
   }, [open]);
 
   const add = (id: string) => {
-    setPicked((p) => [...p, { id, visible: true }]);
+    setPicked((p) => [...p, { id, visible: true, soldOut: false }]);
     setQuery("");
     setActive(0);
     setOpen(false);
@@ -68,6 +69,7 @@ export default function OptionPicker({
         <span key={p.id}>
           <input type="hidden" name={`${kind}_on_${p.id}`} value="on" />
           {p.visible && <input type="hidden" name={`${kind}_visible_${p.id}`} value="on" />}
+          {p.soldOut && <input type="hidden" name={`${kind}_soldout_${p.id}`} value="on" />}
         </span>
       ))}
 
@@ -147,7 +149,7 @@ export default function OptionPicker({
           {picked.map((p) => {
             const o = label(p.id);
             return (
-              <li key={p.id} className={`flex items-center gap-3 px-4 py-2.5 ${p.visible ? "" : "bg-adm-subtle"}`}>
+              <li key={p.id} className={`flex flex-wrap items-center gap-x-3 gap-y-2 px-4 py-2.5 ${p.visible ? "" : "bg-adm-subtle"}`}>
                 <span className={`min-w-0 flex-1 truncate text-sm font-semibold ${p.visible ? "" : "text-adm-muted line-through decoration-adm-faint"}`}>
                   {o?.label ?? p.id}
                   {o && !o.active && <span className="ml-2 text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-adm-red no-underline">inactiva en la lista</span>}
@@ -163,6 +165,19 @@ export default function OptionPicker({
                 >
                   {p.visible ? <Eye size={13} /> : <EyeOff size={13} />}
                   {p.visible ? "Visible al cliente" : "Oculta al cliente"}
+                </button>
+                <button
+                  type="button"
+                  role="switch"
+                  aria-checked={p.soldOut}
+                  onClick={() => setPicked((list) => list.map((x) => (x.id === p.id ? { ...x, soldOut: !x.soldOut } : x)))}
+                  title="Agotada: el cliente la ve tachada y no la puede elegir"
+                  className={`inline-flex cursor-pointer items-center gap-1.5 border px-2.5 py-1 text-[0.625rem] font-semibold uppercase tracking-[0.14em] transition-colors ${
+                    p.soldOut ? "border-adm-red-line bg-adm-red-tint text-adm-red" : "border-adm-line3 text-adm-muted hover:border-adm-strong"
+                  }`}
+                >
+                  <Ban size={13} />
+                  {p.soldOut ? "Agotada" : "Hay stock"}
                 </button>
                 <button
                   type="button"

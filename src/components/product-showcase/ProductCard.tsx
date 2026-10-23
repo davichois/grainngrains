@@ -36,8 +36,9 @@ export default function ProductCard({
   const fromPrice = tShop("from", {
     price: formatPrice(product.prices[DEFAULT_SIZE]),
   });
-  /* Sin stock en ninguna presentación */
+  /* Sin stock en ninguna presentación (por unidades o marcado en el panel) */
   const soldOut = sizesOf(product.prices).every((s) => !inStock(product, s));
+  const fade = soldOut ? "grayscale-[0.85] opacity-80" : "";
 
   return (
     <article
@@ -52,11 +53,11 @@ export default function ProductCard({
           alt={t("productImageAlt", { name })}
           fill
           sizes={IMG_SIZES}
-          className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+          className={`object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04] ${fade}`}
         />
       ) : (
         <div
-          className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+          className={`absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04] ${fade}`}
           style={{ background: product.bg }}
         />
       )}
@@ -97,10 +98,13 @@ export default function ProductCard({
         }}
       />
 
+      {/* Agotado: sello al centro de la foto (no tapa los sellos de certificación) */}
       {soldOut && (
-        <span className="absolute left-3 top-3 z-30 rounded-full bg-gray-900 px-3 py-1 font-ui text-xs font-bold uppercase tracking-wide text-white">
-          {tShop("soldOut")}
-        </span>
+        <div aria-hidden className="pointer-events-none absolute -inset-x-[15%] top-[32%] z-30 flex -rotate-6 justify-center border-y-2 border-white bg-gray-950/85 py-[0.1em] shadow-[0_10px_30px_-10px_rgba(0,0,0,0.6)] backdrop-blur-sm">
+          <span className="font-ui text-[clamp(40px,4.6vw,76px)] font-black uppercase leading-none tracking-[0.08em] text-white">
+            {tShop("soldOut")}
+          </span>
+        </div>
       )}
 
       {/* Nombre sobre la imagen + barra "Agregar al carrito" pegada al borde inferior */}
@@ -117,24 +121,30 @@ export default function ProductCard({
             openQuickAdd({ kind: "product", categoryId, productId: product.id })
           }
           aria-haspopup="dialog"
-          aria-label={t("addNamed", { name, price: fromPrice })}
-          className="group/btn pointer-events-auto relative flex w-full cursor-pointer items-center justify-between gap-3 overflow-hidden whitespace-nowrap bg-white px-[clamp(14px,1.8vw,28px)] py-[clamp(10px,1vw,16px)] text-[clamp(13px,1vw,16px)] font-bold tracking-wide text-[#116e78] transition-colors duration-300 hover:bg-[#116e78] hover:text-white"
+          aria-label={soldOut ? `${name} · ${tShop("soldOut")}` : t("addNamed", { name, price: fromPrice })}
+          className={`group/btn pointer-events-auto relative flex w-full cursor-pointer items-center justify-between gap-3 overflow-hidden whitespace-nowrap px-[clamp(14px,1.8vw,28px)] py-[clamp(10px,1vw,16px)] text-[clamp(13px,1vw,16px)] font-bold tracking-wide transition-colors duration-300 ${
+            soldOut ? "bg-gray-100 text-gray-500 hover:bg-gray-200" : "bg-white text-[#116e78] hover:bg-[#116e78] hover:text-white"
+          }`}
         >
           {/* Destello que cruza la barra cada pocos segundos */}
-          <span
-            aria-hidden
-            className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-linear-to-r from-transparent via-[#116e78]/15 to-transparent motion-safe:animate-[shine_3.5s_ease-in-out_infinite] group-hover/btn:hidden"
-          />
+          {!soldOut && (
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-linear-to-r from-transparent via-[#116e78]/15 to-transparent motion-safe:animate-[shine_3.5s_ease-in-out_infinite] group-hover/btn:hidden"
+            />
+          )}
 
           <span className="relative flex items-center gap-3">
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#116e78] text-white transition-[transform,background-color,color] duration-300 group-hover/btn:scale-110 group-hover/btn:bg-white group-hover/btn:text-[#116e78]">
+            <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white transition-[transform,background-color,color] duration-300 ${
+              soldOut ? "bg-gray-400" : "bg-[#116e78] group-hover/btn:scale-110 group-hover/btn:bg-white group-hover/btn:text-[#116e78]"
+            }`}>
               <ShoppingBag
                 size={17}
                 strokeWidth={2.4}
                 className="transition-transform duration-300 group-hover/btn:-rotate-12"
               />
             </span>
-            <span>{t("add")}</span>
+            <span>{soldOut ? tShop("soldOut") : t("add")}</span>
           </span>
           <data
             value={product.prices[DEFAULT_SIZE]}

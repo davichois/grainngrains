@@ -54,8 +54,8 @@ export async function loadSiteData(): Promise<SiteData> {
         varietals: varietals.map(({ id, active, sort }) => ({ id, active, sort })),
         processes: processes.map(({ id, active, sort }) => ({ id, active, sort })),
         links: [
-          ...pVarietals.map((l) => ({ productId: l.product_id, kind: "varietals" as const, optionId: l.varietal_id, active: l.active, sort: l.sort })),
-          ...pProcesses.map((l) => ({ productId: l.product_id, kind: "processes" as const, optionId: l.process_id, active: l.active, sort: l.sort })),
+          ...pVarietals.map((l) => ({ productId: l.product_id, kind: "varietals" as const, optionId: l.varietal_id, active: l.active, soldOut: Boolean(l.sold_out), sort: l.sort })),
+          ...pProcesses.map((l) => ({ productId: l.product_id, kind: "processes" as const, optionId: l.process_id, active: l.active, soldOut: Boolean(l.sold_out), sort: l.sort })),
         ],
       },
       coupons: coupons.map((c) => ({

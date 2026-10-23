@@ -212,21 +212,41 @@ export function optionsLabel(
   return parts.length ? ` · ${parts.join(" · ")}` : "";
 }
 
-/** Unidades disponibles de una presentación; Infinity si no hay límite */
-export function stockOf(
-  product: Pick<ShowcaseProduct, "stock"> | undefined,
-  size: SizeId,
+/** ¿Queda alguna varietal y algún proceso para elegir? (si el café los
+ *  ofrece y están todos agotados, el café no se puede comprar) */
+export function optionsLeft(product: Pick<ShowcaseProduct, "varietals" | "processes"> | undefined) {
+  const { varietals, processes } = productOptions(product);
+  const left = (list: ProductOption[]) => !list.length || list.some((o) => !o.soldOut);
+  return left(varietals) && left(processes);
+}
+
+/** ¿La varietal o el proceso elegido está agotado en este café? */
+export function optionSoldOut(
+  product: Pick<ShowcaseProduct, "varietals" | "processes"> | undefined,
+  varietal?: string,
+  process?: string,
 ) {
+  const { varietals, processes } = productOptions(product);
+  return (
+    varietals.some((o) => o.id === varietal && o.soldOut) ||
+    processes.some((o) => o.id === process && o.soldOut)
+  );
+}
+
+type StockFields = Pick<ShowcaseProduct, "stock" | "soldOut" | "soldOutSizes" | "varietals" | "processes">;
+
+/** Unidades disponibles de una presentación; Infinity si no hay límite.
+ *  Lo agotado a mano en el panel (el café, la presentación o todas sus
+ *  varietales/procesos) cuenta como 0 */
+export function stockOf(product: Partial<StockFields> | undefined, size: SizeId) {
+  if (product?.soldOut || product?.soldOutSizes?.includes(size) || !optionsLeft(product)) return 0;
   const n = product?.stock?.[size];
   return typeof n === "number" ? Math.max(0, n) : Infinity;
 }
 
 /** ¿Se puede comprar `qty` de esta presentación? */
-export const inStock = (
-  product: Pick<ShowcaseProduct, "stock"> | undefined,
-  size: SizeId,
-  qty = 1,
-) => stockOf(product, size) >= qty;
+export const inStock = (product: Partial<StockFields> | undefined, size: SizeId, qty = 1) =>
+  stockOf(product, size) >= qty;
 
 /** Un combo se puede comprar si todos sus cafés están (en su presentación) */
 export const comboInStock = (combo: ShowcaseCombo, qty = 1) =>

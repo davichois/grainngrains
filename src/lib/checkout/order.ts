@@ -11,6 +11,7 @@ import {
   findProduct,
   productCategory,
   validOptions,
+  optionSoldOut,
   inStock,
 } from "@/src/components/product-showcase/data";
 import {
@@ -263,6 +264,8 @@ function catalogPrice(line: OrderLineInput) {
   if (base === undefined) return null;
   /* Varietal y proceso: deben ser de este café */
   if (!validOptions(product, line.varietal, line.process)) throw new OrderError("invalid_option");
+  /* …y no estar agotados (marcados a mano en el panel) */
+  if (optionSoldOut(product, line.varietal, line.process)) throw new OrderError("out_of_stock");
   return base;
 }
 
