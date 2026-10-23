@@ -408,6 +408,19 @@ export default function Header() {
   const t = useTranslations("nav");
   const ta = useTranslations("a11y");
   const ti = useTranslations("installApp");
+  /* Acceso discreto al panel: 3 toques al logo en menos de un segundo. Solo
+     lleva a la página de acceso (usuario y contraseña); el panel no viaja
+     dentro de la web pública */
+  const taps = useRef<number[]>([]);
+  const onLogoTap = (e: React.MouseEvent) => {
+    const now = Date.now();
+    taps.current = [...taps.current.filter((t) => now - t < 900), now];
+    if (taps.current.length >= 2) e.preventDefault();
+    if (taps.current.length >= 3) {
+      taps.current = [];
+      window.location.assign("/admin");
+    }
+  };
   /* "Instalar app" en el menú del celular (en computadora es la pestaña lateral) */
   const install = useInstallApp();
   const [iosSteps, setIosSteps] = useState(false);
@@ -576,8 +589,8 @@ export default function Header() {
         <div className="w-full max-w-screen-2xl mx-auto sm:px-10 px-2 ">
           {/* ── TOP BAR: logo + utility nav ── */}
           <div className="flex items-center px-4 lg:px-8 xl:px-10 py-2">
-            {/* Logo */}
-            <div className="shrink-0">
+            {/* Logo (3 toques seguidos → acceso al panel) */}
+            <div className="shrink-0" onClickCapture={onLogoTap}>
               <GrainngrainsLogo tagline={t("farmToFuture")} />
             </div>
 

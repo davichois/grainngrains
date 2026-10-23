@@ -227,11 +227,13 @@ export default function CheckoutForm() {
     const get = (k: string) => String(f.get(k) ?? "");
     const checkout = {
       locale,
-      items: items.map(({ categoryId, productId, size, grind, qty }) => ({
+      items: items.map(({ categoryId, productId, size, grind, varietal, process, qty }) => ({
         categoryId,
         productId,
         size,
         grind,
+        varietal,
+        process,
         qty,
       })),
       /* Solo se envía si sus reglas se cumplen */

@@ -44,6 +44,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "lirp.cdn-website.com",
       },
+      /* Fotos subidas desde el panel (n8n → Google Drive) */
+      { protocol: "https", hostname: "drive.google.com" },
+      { protocol: "https", hostname: "lh3.googleusercontent.com" },
+      { protocol: "https", hostname: "*.googleusercontent.com" },
     ],
   },
 };

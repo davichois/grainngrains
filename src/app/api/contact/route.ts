@@ -1,6 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import { ContactError, isQuote, parseContact } from "@/src/lib/contact";
 import { FOOTER, sendEmail, siteChrome } from "@/src/lib/checkout/email";
+import { ensureSiteData } from "@/src/lib/site-data/load";
+import { saveMessage } from "@/src/lib/admin/messages-store";
 import { esc, renderOrderEmail } from "@/src/lib/checkout/email-template";
 import { CONTACT, whatsappUrl } from "@/src/lib/site";
 
@@ -50,6 +52,12 @@ export async function POST(request: Request) {
       return Response.json({ error: `invalid_${e.message}` }, { status: 400 });
     throw e;
   }
+
+  /* Contacto del panel (teléfono y correo de los correos) */
+  await ensureSiteData();
+
+  /* Queda en la bandeja del panel (si falla la base, igual llega el correo) */
+  await saveMessage(input);
 
   const to = process.env.CONTACT_EMAIL_TO || process.env.ORDERS_EMAIL_TO;
   if (!to) {

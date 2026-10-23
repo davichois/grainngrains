@@ -44,7 +44,8 @@ const FADE_MS = 1800;
 /** Dentro de la salida: primero se abren las G y luego el "&" es ventana */
 const PORTAL_AT = FADE_MS * 0.22;
 
-const TOTAL = PRODUCER_NAMES.length;
+/** Cuántos caficultores hay (los del panel pueden cambiar la lista) */
+const total = () => PRODUCER_NAMES.length;
 
 type Phase = "start" | "logo" | "open" | "closed" | "out" | "gone";
 
@@ -61,13 +62,13 @@ interface Portal {
 /** Nombre que se ve en el instante `ms`: uno cada NAME_MS, legible */
 function nameIndexAt(ms: number) {
   const t = Math.max(0, ms - NAMES_START);
-  return Math.min(Math.floor(t / NAME_MS), TOTAL - 1);
+  return Math.min(Math.floor(t / NAME_MS), total() - 1);
 }
 
 /** El contador sí recorre a todos los caficultores (rápido, con aceleración) */
 function countAt(ms: number) {
   const p = Math.min(Math.max(0, ms - NAMES_START) / NAMES_MS, 1);
-  return Math.max(1, Math.round(TOTAL * p * p));
+  return Math.max(1, Math.round(total() * p * p));
 }
 
 const ampFont = (size: number) =>
@@ -342,7 +343,7 @@ export default function IntroSplash() {
   const producer = producers[index];
   const fmt = new Intl.NumberFormat(locale);
   /* Cifra redonda para el cierre: "+1 600" */
-  const rounded = fmt.format(Math.floor(TOTAL / 100) * 100);
+  const rounded = fmt.format(Math.floor(total() / 100) * 100);
 
   return (
     <div
@@ -492,7 +493,7 @@ export default function IntroSplash() {
         style={{
           width: "100%",
           backgroundColor: palette.accent,
-          transform: `scaleX(${phase === "start" ? 0 : closed ? 1 : count / TOTAL})`,
+          transform: `scaleX(${phase === "start" ? 0 : closed ? 1 : count / total()})`,
         }}
       />
 

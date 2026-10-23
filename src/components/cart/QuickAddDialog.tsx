@@ -9,13 +9,18 @@ import {
   COMBO_CATEGORY,
   COMBO_SIZE,
   comboDetails,
+  findProduct,
+  productOptions,
+  comboItemSize,
+  comboSizeText,
   findCombo,
+  stockOf,
 } from "@/src/components/product-showcase/data";
 import {
   DEFAULT_GRIND,
   DEFAULT_SIZE,
   GRINDS,
-  SIZES,
+  sizesOf,
   type GrindId,
   type SizeId,
 } from "@/src/lib/shop";
@@ -102,6 +107,29 @@ function QuickAddContent({
   const [qty, setQty] = useState(1);
   const sizeName = useId();
   const grindName = useId();
+  const varietalName = useId();
+  const processName = useId();
+
+  /* Varietal y proceso: el cliente elige uno de cada uno (si el café los
+     ofrece); empieza en el primero. No cambian el precio */
+  const options = productOptions(
+    target.kind === "product" ? findProduct(target.categoryId, target.productId) : undefined,
+  );
+  const [varietalPick, setVarietal] = useState<string>();
+  const [processPick, setProcess] = useState<string>();
+  const varietal = options.varietals.find((o) => o.id === varietalPick) ?? options.varietals[0];
+  const process = options.processes.find((o) => o.id === processPick) ?? options.processes[0];
+  const optionName = (kind: "varietals" | "processes", id: string) =>
+    t.has(`${kind}.${id}`) ? t(`${kind}.${id}`) : id;
+
+  /* Presentaciones del combo: la nota de siempre si todo va en 250 g;
+     si no, "1 kg c/u" o "1 kg + 250 g" */
+  const comboTarget = target.kind === "combo" ? findCombo(target.comboId) : undefined;
+  const comboSize = comboTarget ? comboItemSize(comboTarget.items[0] ?? {}) : COMBO_SIZE;
+  const comboSizesText =
+    comboTarget && comboTarget.items.some((i) => comboItemSize(i) !== COMBO_SIZE)
+      ? comboSizeText(comboTarget, (s) => t(`sizes.${s}`), t("each"))
+      : null;
 
   /* Datos según sea un café o un combo */
   let view: {
@@ -113,6 +141,8 @@ function QuickAddContent({
     media: React.ReactNode;
     image?: string;
     prices?: Record<SizeId, number>;
+    /** Unidades disponibles por presentación (Infinity = sin límite) */
+    stock: (s: SizeId) => number;
     item: Omit<NewCartItem, "grind">;
   } | null = null;
 
@@ -134,6 +164,9 @@ function QuickAddContent({
           />
         ),
         image: products[0]?.product.image,
+        /* El combo alcanza hasta donde alcance su café con menos stock */
+        stock: () =>
+          Math.min(...products.map((p) => stockOf(p.product, p.size))),
         item: {
           categoryId: COMBO_CATEGORY,
           productId: combo.id,
@@ -161,12 +194,15 @@ function QuickAddContent({
           />
         ),
         image: product.image,
+        stock: (s) => stockOf(product, s),
         item: {
           categoryId: category.id,
           productId: product.id,
           image: product.image,
           size,
           price: product.prices[size],
+          ...(varietal && { varietal: varietal.id }),
+          ...(process && { process: process.id }),
         },
       };
     }
@@ -174,10 +210,15 @@ function QuickAddContent({
 
   if (!view) return null;
   const v = view;
+  /* Stock de la presentación elegida (los combos van en 250 g) */
+  const available = v.stock(v.prices ? size : COMBO_SIZE);
+  const soldOut = available < 1;
+  const count = Math.min(qty, Math.max(1, available));
 
   const handleAdd = (e: React.MouseEvent<HTMLButtonElement>) => {
     const from = e.currentTarget;
-    flyToCart(from, v.image).then(() => addItem({ ...v.item, grind }, qty));
+    if (soldOut) return;
+    flyToCart(from, v.image).then(() => addItem({ ...v.item, grind }, count));
     onAdded(v.name);
     onClose();
   };
@@ -229,6 +270,15 @@ function QuickAddContent({
                 </s>
               )}
             </p>
+            {/* Pocas unidades: se avisa */}
+            {!soldOut && available <= 5 && (
+              <p
+                aria-live="polite"
+                className="mt-1 font-ui text-sm font-semibold text-[#c8642c]"
+              >
+                {t("lowStock", { count: available })}
+              </p>
+            )}
           </div>
           <button
             type="button"
@@ -250,19 +300,29 @@ function QuickAddContent({
                 {t("size")}
               </legend>
               <div className="flex flex-wrap gap-3">
-                {SIZES.map((s) => (
+                {sizesOf(v.prices).map((s) => (
                   <label
                     key={s}
-                    className={`${selectable(size === s)} flex w-28 flex-col items-center gap-1 rounded-lg px-3 py-3 text-center`}
+                    className={`${selectable(size === s)} relative flex w-28 flex-col items-center gap-1 rounded-lg px-3 py-3 text-center ${
+                      v.stock(s) < 1 ? "opacity-50" : ""
+                    }`}
                   >
                     <input
                       type="radio"
                       name={sizeName}
                       value={s}
                       checked={size === s}
-                      onChange={() => setSize(s)}
+                      onChange={() => {
+                        setSize(s);
+                        setQty(1);
+                      }}
                       className="sr-only"
                     />
+                    {v.stock(s) < 1 && (
+                      <span className="absolute -top-2 rounded-full bg-gray-900 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
+                        {t("soldOut")}
+                      </span>
+                    )}
                     <SizeIcon size={s} className="h-7 w-7 opacity-70" />
                     <span className="text-sm font-semibold tabular-nums">
                       {formatPrice(v.prices![s])}
@@ -274,9 +334,43 @@ function QuickAddContent({
             </fieldset>
           ) : (
             <p className="flex items-center gap-2 text-sm text-gray-600">
-              <SizeIcon size={COMBO_SIZE} className="h-6 w-6 text-gray-400" />
-              {t("comboSizeNote")}
+              <SizeIcon size={comboSize} className="h-6 w-6 text-gray-400" />
+              {comboSize === COMBO_SIZE && comboSizesText === null
+                ? t("comboSizeNote")
+                : comboSizesText}
             </p>
+          )}
+
+          {/* Varietal y proceso (si el café los ofrece) */}
+          {(
+            [
+              ["varietals", options.varietals, varietal, setVarietal, varietalName, t("varietal")],
+              ["processes", options.processes, process, setProcess, processName, t("process")],
+            ] as const
+          ).map(([kind, list, current, set, groupName, legend]) =>
+            list.length > 0 ? (
+              <fieldset key={kind}>
+                <legend className="mb-3 text-lg font-semibold text-gray-900">{legend}</legend>
+                <div className="flex flex-wrap gap-2">
+                  {list.map((o) => (
+                    <label
+                      key={o.id}
+                      className={`${selectable(current?.id === o.id)} flex items-center gap-1.5 rounded-full px-3.5 py-2 text-sm`}
+                    >
+                      <input
+                        type="radio"
+                        name={groupName}
+                        value={o.id}
+                        checked={current?.id === o.id}
+                        onChange={() => set(o.id)}
+                        className="sr-only"
+                      />
+                      {optionName(kind, o.id)}
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+            ) : null,
           )}
 
           {/* Molienda: píldoras con el ícono de cada método */}
@@ -325,13 +419,14 @@ function QuickAddContent({
               aria-live="polite"
               className="w-7 text-center font-semibold tabular-nums"
             >
-              {qty}
+              {count}
             </output>
             <button
               type="button"
-              onClick={() => setQty((q) => q + 1)}
+              onClick={() => setQty((q) => Math.min(q + 1, available))}
+              disabled={count >= available}
               aria-label={tCart("increase")}
-              className="flex h-full w-10 cursor-pointer items-center justify-center rounded-r-full text-gray-600 hover:text-gray-900"
+              className="flex h-full w-10 cursor-pointer items-center justify-center rounded-r-full text-gray-600 hover:text-gray-900 disabled:cursor-not-allowed disabled:opacity-30"
             >
               <Plus size={16} />
             </button>
@@ -339,17 +434,23 @@ function QuickAddContent({
           <button
             type="button"
             onClick={handleAdd}
-            className="flex min-w-0 flex-1 cursor-pointer items-center justify-center gap-2.5 rounded-full bg-gray-900 px-4 py-3.5 font-semibold text-white transition-colors hover:bg-[#116e78]"
+            disabled={soldOut}
+            className="flex min-w-0 flex-1 cursor-pointer items-center justify-center gap-2.5 rounded-full bg-gray-900 px-4 py-3.5 font-semibold text-white transition-colors hover:bg-[#116e78] disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-600"
           >
             <ShoppingBag size={18} aria-hidden className="shrink-0" />
-            <span className="truncate">{t("addShort")}</span>
-
-            <data
-              value={v.unitPrice * qty}
-              className="shrink-0 whitespace-nowrap tabular-nums"
-            >
-              {formatPrice(v.unitPrice * qty)}
-            </data>
+            {soldOut ? (
+              <span className="truncate">{t("soldOut")}</span>
+            ) : (
+              <>
+                <span className="truncate">{t("addShort")}</span>
+                <data
+                  value={v.unitPrice * count}
+                  className="shrink-0 whitespace-nowrap tabular-nums"
+                >
+                  {formatPrice(v.unitPrice * count)}
+                </data>
+              </>
+            )}
           </button>
         </div>
       </div>

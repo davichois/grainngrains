@@ -215,7 +215,11 @@
     "freeShippingRemaining": "Plus que <b>{amount}</b> pour la livraison gratuite",
     "freeShippingReached": "Votre commande bénéficie de la <b>livraison gratuite</b> !",
     "freeShippingProgress": "Progression vers la livraison gratuite",
-    "addShort": "Ajouter"
+    "addShort": "Ajouter",
+    "soldOut": "Épuisé",
+    "lowStock": "Plus que {count}",
+    "varietal": "Variété",
+    "process": "Procédé"
   },
   "supply-chain-excellence": {
     "hero": {
@@ -586,7 +590,8 @@
       "coupon_unavailable": "Votre coupon n'est pas disponible pour le moment. Retirez-le pour continuer.",
       "coupon_expired": "Votre coupon a expiré. Retirez-le pour continuer.",
       "coupon_used_up_today": "Votre coupon a atteint sa limite du jour. Retirez-le pour continuer.",
-      "coupon_loyalty": "Ce coupon est réservé aux clients fidèles. Retirez-le pour continuer."
+      "coupon_loyalty": "Ce coupon est réservé aux clients fidèles. Retirez-le pour continuer.",
+      "out_of_stock": "L'un des cafés de votre panier vient d'être épuisé. Vérifiez votre panier et réessayez."
     },
     "poweredBy": "Paiements traités en toute sécurité par Mercado Pago",
     "chargingHint": "Ne fermez pas et ne rechargez pas cette page.",
@@ -897,5 +902,16 @@
     "iosStep2": "Choisissez « Sur l'écran d'accueil »",
     "close": "Fermer",
     "done": "C'est fait ! Vous avez l'app Grain & Grains"
+  },
+  "orderShipped": {
+    "subject": "Votre commande {number} est en route",
+    "preheader": "Votre café Grain & Grains a été expédié",
+    "kicker": "Commande expédiée",
+    "title": "Votre café est en route !",
+    "text": "Nous avons préparé votre commande {number} et elle est en route vers votre adresse. Merci de soutenir les caféiculteurs avec votre achat.",
+    "shipping": "Livraison",
+    "carrier": "Transporteur : {carrier}",
+    "tracking": "Numéro de suivi : {code}",
+    "address": "Adresse"
   }
 }

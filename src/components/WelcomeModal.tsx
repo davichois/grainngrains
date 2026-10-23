@@ -44,7 +44,9 @@ const TEASER_AGAIN_MS = 8000;
 /** Cada cuánto pasa a la siguiente edición */
 const ROTATE_MS = 3200;
 
-const EDITIONS = CATEGORIES.filter((c) => c.panelImage);
+/** Ediciones con imagen de panel (se calcula al usarlas: el catálogo puede
+ *  cambiar desde el panel) */
+const editionsOf = () => CATEGORIES.filter((c) => c.panelImage);
 
 /** Enlace que abre un correo nuevo en Gmail con destinatario, asunto y texto */
 function gmailCompose(to: string, subject: string, body: string) {
@@ -85,7 +87,9 @@ export default function WelcomeModal() {
         if (document.querySelector("dialog[open]")) return;
         const v = pickVariant();
         setVariant(v);
-        const edition = EDITIONS.findIndex((c) => c.id === VARIANT_EDITION[v]);
+        const edition = editionsOf().findIndex(
+          (c) => c.id === VARIANT_EDITION[v],
+        );
         setActive(edition >= 0 ? edition : 0);
         dialog.current?.showModal();
         card.current?.focus({ preventScroll: true });
@@ -134,9 +138,9 @@ export default function WelcomeModal() {
 
   /* Rota las ediciones mientras está abierto (se pausa al pasar el mouse) */
   useEffect(() => {
-    if (!isOpen || paused || EDITIONS.length < 2) return;
+    if (!isOpen || paused || editionsOf().length < 2) return;
     const timer = setInterval(
-      () => setActive((i) => (i + 1) % EDITIONS.length),
+      () => setActive((i) => (i + 1) % editionsOf().length),
       ROTATE_MS,
     );
     return () => clearInterval(timer);
@@ -156,6 +160,7 @@ export default function WelcomeModal() {
     }, 280);
   }, []);
 
+  const EDITIONS = editionsOf();
   const edition = EDITIONS[active];
 
   return (

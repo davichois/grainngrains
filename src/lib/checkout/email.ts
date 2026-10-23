@@ -4,6 +4,8 @@ import {
   CATEGORIES,
   COMBO_CATEGORY,
   comboDetails,
+  comboSizeText,
+  optionsLabel,
   findCombo,
   findProduct,
 } from "@/src/components/product-showcase/data";
@@ -100,7 +102,7 @@ async function emailLines(priced: PricedOrder, locale: string) {
       name: isCombo
         ? t(`cart.combos.${l.productId}.name`)
         : t(`editions.${l.categoryId}.products.${l.productId}`),
-      opts: `${t(`shop.sizes.${l.size}`)}${isCombo ? ` ${t("shop.each")}` : ""} · ${t(`shop.grinds.${l.grind}`)}${l.gift ? ` · ${t("orderEmail.gift")}` : ""}`,
+      opts: `${combo ? comboSizeText(combo, (s) => t(`shop.sizes.${s}`), t("shop.each")) : t(`shop.sizes.${l.size}`)} · ${t(`shop.grinds.${l.grind}`)}${optionsLabel(l, (k, id) => (t.has(`shop.${k}.${id}`) ? t(`shop.${k}.${id}`) : id))}${l.gift ? ` · ${t("orderEmail.gift")}` : ""}`,
       qty: l.qty,
       total: l.gift ? t("orderEmail.free") : money(l.lineTotal),
       image: first?.product.image ?? product?.image,

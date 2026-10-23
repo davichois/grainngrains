@@ -118,5 +118,5 @@ export function GrindIcon({ grind, ...props }: IconProps & { grind: GrindId }) {
 }
 
 export function SizeIcon({ size, ...props }: IconProps & { size: SizeId }) {
-  return <BagIcon large={size === "1kg"} {...props} />;
+  return <BagIcon large={size !== "250g"} {...props} />;
 }

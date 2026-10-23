@@ -19,6 +19,8 @@ export async function GET(request: Request) {
       return Response.json({ status: "paid", orderNumber });
     }
     if (data.status === "rejected" || data.status === "cancelled") {
+      /* Queda como rechazado en el panel */
+      await fulfillPayment(data).catch((e) => console.error("[orders]", e));
       return Response.json({
         status: "failed",
         error:

@@ -1,10 +1,13 @@
 import {
   OrderError,
+  checkStock,
   newOrderNumber,
   parseCheckoutInput,
   priceOrder,
   YAPE_MAX,
 } from "@/src/lib/checkout/order";
+import { ensureSiteData } from "@/src/lib/site-data/load";
+import { saveOrder } from "@/src/lib/admin/orders-store";
 import { createPayment, rejectionReason } from "@/src/lib/checkout/mercadopago";
 import { completeOrder, customerDocument } from "@/src/lib/checkout/fulfill";
 import { loadCouponUsage } from "@/src/lib/coupons/usage";
@@ -14,6 +17,8 @@ import { loadCouponUsage } from "@/src/lib/coupons/usage";
    con el token de tarjeta o de Yape generado en el checkout. */
 export async function POST(request: Request) {
   try {
+    /* Precios, stock y cupones del panel */
+    await ensureSiteData();
     const body = (await request.json()) as Record<string, unknown>;
     const input = parseCheckoutInput(body.checkout);
     /* Límites de uso de cupones (veces, por cliente, primera compra) */
@@ -22,9 +27,11 @@ export async function POST(request: Request) {
       document: customerDocument(input),
     });
     const priced = priceOrder(input, { usage });
+    checkStock(priced);
     const wallet = input.payment === "wallet";
 
-    const token = typeof body.token === "string" ? body.token.slice(0, 200) : "";
+    const token =
+      typeof body.token === "string" ? body.token.slice(0, 200) : "";
     const paymentMethodId = wallet
       ? "yape"
       : typeof body.paymentMethodId === "string" &&
@@ -55,7 +62,12 @@ export async function POST(request: Request) {
     });
 
     if (status >= 400 || !data.id) {
-      console.error("[mercadopago] pago no creado", status, data.message, data.cause);
+      console.error(
+        "[mercadopago] pago no creado",
+        status,
+        data.message,
+        data.cause,
+      );
       /* 401/403: credenciales; otro 4xx: datos de la tarjeta o del código Yape */
       const reason =
         status >= 500 || status === 401 || status === 403
@@ -63,7 +75,10 @@ export async function POST(request: Request) {
           : wallet
             ? "yape_check"
             : "check_card_data";
-      return Response.json({ status: "failed", error: reason }, { status: 402 });
+      return Response.json(
+        { status: "failed", error: reason },
+        { status: 402 },
+      );
     }
 
     if (data.status === "approved") {
@@ -75,6 +90,17 @@ export async function POST(request: Request) {
         paymentId: String(data.id),
       });
       return Response.json({ status: "paid", orderNumber });
+    }
+
+    /* Aún sin aprobar (3D Secure o revisión): queda como pendiente en el panel */
+    if (data.status === "in_process" || data.status === "pending") {
+      await saveOrder({
+        input,
+        priced,
+        orderNumber,
+        paymentId: String(data.id),
+        paymentStatus: data.status,
+      });
     }
 
     /* 3D Secure: el cliente confirma con su banco en el checkout */

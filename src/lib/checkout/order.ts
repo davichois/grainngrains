@@ -5,9 +5,13 @@
 ─────────────────────────────────────────────────────────────── */
 import {
   COMBO_CATEGORY,
+  comboItemSize,
   comboDetails,
   findCombo,
   findProduct,
+  productCategory,
+  validOptions,
+  inStock,
 } from "@/src/components/product-showcase/data";
 import {
   DEPARTMENTS,
@@ -35,6 +39,9 @@ export interface OrderLineInput {
   productId: string;
   size: SizeId;
   grind: GrindId;
+  /** Varietal y proceso elegidos (si el café los ofrece) */
+  varietal?: string;
+  process?: string;
   qty: number;
 }
 
@@ -181,11 +188,18 @@ export function parseCheckoutInput(body: unknown): CheckoutInput {
       throw new OrderError("invalid_qty");
     if (!SIZES.includes(size) || !GRINDS.includes(grind))
       throw new OrderError("invalid_option");
+    const varietal = str(i.varietal, 60) || undefined;
+    const process = str(i.process, 60) || undefined;
+    const productId = str(i.productId);
+    const categoryId = str(i.categoryId);
     return {
-      categoryId: str(i.categoryId),
-      productId: str(i.productId),
+      /* Edición actual (el café se puede haber movido desde el panel) */
+      categoryId: categoryId === COMBO_CATEGORY ? categoryId : (productCategory(productId) ?? categoryId),
+      productId,
       size,
       grind,
+      ...(varietal && { varietal }),
+      ...(process && { process }),
       qty,
     };
   });
@@ -244,9 +258,12 @@ function catalogPrice(line: OrderLineInput) {
     const combo = findCombo(line.productId);
     return combo ? comboDetails(combo).price : null;
   }
-  return (
-    findProduct(line.categoryId, line.productId)?.prices[line.size] ?? null
-  );
+  const product = findProduct(line.categoryId, line.productId);
+  const base = product?.prices[line.size];
+  if (base === undefined) return null;
+  /* Varietal y proceso: deben ser de este café */
+  if (!validOptions(product, line.varietal, line.process)) throw new OrderError("invalid_option");
+  return base;
 }
 
 /** Calcula el pedido con los precios del catálogo (misma lógica que el checkout).
@@ -321,6 +338,33 @@ export function priceOrder(
     shipping: totals.shipping ?? 0,
     total: totals.total,
   };
+}
+
+/** Revisa que haya stock de todo lo que se va a cobrar (regalos incluidos) */
+export function checkStock(priced: PricedOrder) {
+  const units = new Map<string, number>();
+  const add = (
+    categoryId: string,
+    productId: string,
+    size: SizeId,
+    qty: number,
+  ) => {
+    const k = `${categoryId}|${productId}|${size}`;
+    units.set(k, (units.get(k) ?? 0) + qty);
+  };
+  for (const l of [...priced.lines, ...priced.gifts]) {
+    if (l.categoryId === COMBO_CATEGORY) {
+      findCombo(l.productId)?.items.forEach((i) =>
+        add(i.categoryId, i.productId, comboItemSize(i), l.qty),
+      );
+    } else add(l.categoryId, l.productId, l.size, l.qty);
+  }
+  for (const [k, qty] of units) {
+    const [categoryId, productId, size] = k.split("|");
+    if (!inStock(findProduct(categoryId, productId), size as SizeId, qty)) {
+      throw new OrderError("out_of_stock");
+    }
+  }
 }
 
 /** Número de pedido legible, p. ej. GG-20261011-4F7Q */

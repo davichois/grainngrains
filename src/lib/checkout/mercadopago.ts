@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import {
   COMBO_CATEGORY,
   comboDetails,
+  optionsLabel,
   findCombo,
   findProduct,
 } from "@/src/components/product-showcase/data";
@@ -94,7 +95,7 @@ export async function createPayment(args: {
       title: combo
         ? t(`cart.combos.${l.productId}.name`)
         : t(`editions.${l.categoryId}.products.${l.productId}`),
-      description: `Café ${t(`shop.sizes.${l.size}`)} · ${t(`shop.grinds.${l.grind}`)}`,
+      description: `Café ${t(`shop.sizes.${l.size}`)} · ${t(`shop.grinds.${l.grind}`)}${optionsLabel(l, (k, id) => (t.has(`shop.${k}.${id}`) ? t(`shop.${k}.${id}`) : id))}`,
       category_id: "food",
       quantity: l.qty,
       unit_price: l.unitPrice,

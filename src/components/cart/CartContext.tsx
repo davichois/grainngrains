@@ -16,6 +16,7 @@ import {
   comboDetails,
   findCombo,
   findProduct,
+  productCategory,
 } from "@/src/components/product-showcase/data";
 import {
   DEFAULT_SIZE,
@@ -33,7 +34,7 @@ const priceFormatter = new Intl.NumberFormat("es-PE", {
 export const formatPrice = (amount: number) => priceFormatter.format(amount);
 
 export interface CartItem {
-  /** Clave única: edición + producto + presentación + molienda */
+  /** Clave única: edición + producto + presentación + molienda + varietal + proceso */
   key: string;
   /** Edición del producto (i18n: editions.<categoryId>); "combo" para combos */
   categoryId: string;
@@ -43,6 +44,9 @@ export interface CartItem {
   /** Presentación (en combos, la de cada café del combo) */
   size: SizeId;
   grind: GrindId;
+  /** Varietal y proceso elegidos (si el café los ofrece) */
+  varietal?: string;
+  process?: string;
   /** Precio unitario en soles (se toma del catálogo en data.ts) */
   price: number;
   qty: number;
@@ -56,7 +60,7 @@ export type QuickAddTarget =
   | { kind: "combo"; comboId: string };
 
 const itemKey = (i: NewCartItem) =>
-  [i.categoryId, i.productId, i.size, i.grind].join(".");
+  [i.categoryId, i.productId, i.size, i.grind, i.varietal ?? "", i.process ?? ""].join(".");
 
 /* ───────────────────────────────────────────────────────────────
    Store del carrito persistido en localStorage. Se lee con
@@ -158,7 +162,17 @@ interface CartValue {
 const CartContext = createContext<CartValue | null>(null);
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const items = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const stored = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  /* Cada café con su edición actual (se puede haber movido desde el panel) */
+  const items = useMemo(
+    () =>
+      stored.map((i) =>
+        i.categoryId === COMBO_CATEGORY
+          ? i
+          : { ...i, categoryId: productCategory(i.productId) ?? i.categoryId },
+      ),
+    [stored],
+  );
   const [isOpen, setIsOpen] = useState(false);
   const [quickAdd, setQuickAdd] = useState<QuickAddTarget | null>(null);
 

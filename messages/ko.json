@@ -213,7 +213,11 @@
     "freeShippingRemaining": "<b>{amount}</b> 더 담으면 무료 배송",
     "freeShippingReached": "주문이 <b>무료 배송</b>됩니다!",
     "freeShippingProgress": "무료 배송까지의 진행률",
-    "addShort": "담기"
+    "addShort": "담기",
+    "soldOut": "품절",
+    "lowStock": "{count}개 남음",
+    "varietal": "품종",
+    "process": "가공 방식"
   },
   "supply-chain-excellence": {
     "hero": {
@@ -584,7 +588,8 @@
       "coupon_unavailable": "지금은 쿠폰을 사용할 수 없습니다. 쿠폰을 삭제하고 계속하세요.",
       "coupon_expired": "쿠폰이 만료되었습니다. 쿠폰을 삭제하고 계속하세요.",
       "coupon_used_up_today": "쿠폰이 오늘 한도에 도달했습니다. 쿠폰을 삭제하고 계속하세요.",
-      "coupon_loyalty": "단골 고객 전용 쿠폰입니다. 쿠폰을 삭제하고 계속하세요."
+      "coupon_loyalty": "단골 고객 전용 쿠폰입니다. 쿠폰을 삭제하고 계속하세요.",
+      "out_of_stock": "장바구니의 커피 하나가 방금 품절되었어요. 장바구니를 확인하고 다시 시도해 주세요."
     },
     "poweredBy": "결제는 Mercado Pago를 통해 안전하게 처리됩니다",
     "chargingHint": "이 페이지를 닫거나 새로고침하지 마세요.",
@@ -895,5 +900,16 @@
     "iosStep2": "‘홈 화면에 추가’를 선택하세요",
     "close": "닫기",
     "done": "완료! Grain & Grains 앱이 설치되었어요"
+  },
+  "orderShipped": {
+    "subject": "주문 {number} 이(가) 배송 중입니다",
+    "preheader": "Grain & Grains 커피가 발송되었어요",
+    "kicker": "발송 완료",
+    "title": "커피가 배송 중이에요!",
+    "text": "주문 {number} 을(를) 포장해 주소로 보냈어요. 구매로 커피 농부를 응원해 주셔서 감사합니다.",
+    "shipping": "배송",
+    "carrier": "택배사: {carrier}",
+    "tracking": "운송장 번호: {code}",
+    "address": "주소"
   }
 }

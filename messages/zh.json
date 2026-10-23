@@ -215,7 +215,11 @@
     "freeShippingRemaining": "再购 <b>{amount}</b> 即可免运费",
     "freeShippingReached": "你的订单<b>免运费</b>！",
     "freeShippingProgress": "免运费进度",
-    "addShort": "加入"
+    "addShort": "加入",
+    "soldOut": "已售罄",
+    "lowStock": "仅剩 {count} 件",
+    "varietal": "品种",
+    "process": "处理法"
   },
   "supply-chain-excellence": {
     "hero": {
@@ -586,7 +590,8 @@
       "coupon_unavailable": "您的优惠券暂不可用，请移除后继续。",
       "coupon_expired": "您的优惠券已过期，请移除后继续。",
       "coupon_used_up_today": "您的优惠券今日已达上限，请移除后继续。",
-      "coupon_loyalty": "此优惠券仅限老顾客，请移除后继续。"
+      "coupon_loyalty": "此优惠券仅限老顾客，请移除后继续。",
+      "out_of_stock": "购物车中的一款咖啡刚刚售罄。请检查购物车后重试。"
     },
     "poweredBy": "支付由 Mercado Pago 安全处理",
     "chargingHint": "请勿关闭或刷新此页面。",
@@ -897,5 +902,16 @@
     "iosStep2": "选择“添加到主屏幕”",
     "close": "关闭",
     "done": "完成！你已拥有 Grain & Grains 应用"
+  },
+  "orderShipped": {
+    "subject": "您的订单 {number} 已发货",
+    "preheader": "您的 Grain & Grains 咖啡已发出",
+    "kicker": "订单已发货",
+    "title": "您的咖啡正在路上！",
+    "text": "您的订单 {number} 已打包并寄往您的地址。感谢您通过购买支持咖啡农。",
+    "shipping": "配送",
+    "carrier": "快递公司：{carrier}",
+    "tracking": "运单号：{code}",
+    "address": "地址"
   }
 }

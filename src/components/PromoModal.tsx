@@ -8,6 +8,7 @@ import { Link, usePathname } from "@/src/i18n/navigation";
 import { formatPrice } from "@/src/components/cart/CartContext";
 import { CATEGORIES } from "@/src/components/product-showcase/data";
 import { FREE_SHIPPING_FROM } from "@/src/lib/shop";
+import { PROMO } from "@/src/lib/site";
 import { INTRO_DONE_EVENT } from "@/src/components/IntroSplash";
 import { traceLink } from "@/src/components/TraceLink";
 
@@ -16,20 +17,20 @@ import { traceLink } from "@/src/components/TraceLink";
 const STORAGE_KEY = "gg-promo-seen";
 const DELAY_MS = 3500;
 const HIDE_DAYS = 3;
-/** Código del cupón que se promociona (debe existir en src/lib/coupons/data.ts) */
-const PROMO_CODE = "GRAIN10";
 /** Páginas donde no estorba: ya está comprando */
 const SKIP = ["/our-coffee/products", "/checkout"];
 
 /** Fotos de todos los cafés del catálogo (se actualiza solo al agregar uno) */
-const ALL_COFFEES = CATEGORIES.flatMap((c) =>
-  c.products.flatMap((p) => (p.image ? [p.image] : [])),
-);
+const allCoffees = () =>
+  CATEGORIES.flatMap((c) =>
+    c.products.flatMap((p) => (p.image ? [p.image] : [])),
+  );
 
 /** Precio más bajo del catálogo (bolsa de 250 g) */
-const FROM_PRICE = Math.min(
-  ...CATEGORIES.flatMap((c) => c.products.map((p) => p.prices["250g"])),
-);
+const fromPrice = () =>
+  Math.min(
+    ...CATEGORIES.flatMap((c) => c.products.map((p) => p.prices["250g"])),
+  );
 
 function recentlySeen() {
   try {
@@ -64,7 +65,9 @@ export default function PromoModal() {
     if (
       pathname === "/" ||
       SKIP.some((p) => pathname.startsWith(p)) ||
-      recentlySeen()
+      recentlySeen() ||
+      /* Apagada desde el panel */
+      !PROMO.enabled
     )
       return;
     let timer: ReturnType<typeof setTimeout> | undefined;
@@ -99,7 +102,7 @@ export default function PromoModal() {
 
   const copyCode = async () => {
     try {
-      await navigator.clipboard.writeText(PROMO_CODE);
+      await navigator.clipboard.writeText(PROMO.code);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
@@ -141,7 +144,7 @@ export default function PromoModal() {
             aria-hidden
             className="grid h-full grid-cols-4 grid-rows-2 sm:grid-cols-2 sm:grid-rows-4"
           >
-            {ALL_COFFEES.map((src) => (
+            {allCoffees().map((src) => (
               <li
                 key={src}
                 className="relative aspect-square overflow-hidden sm:aspect-auto"
@@ -158,7 +161,7 @@ export default function PromoModal() {
             ))}
           </ul>
           <span className="absolute bottom-3 left-3 rounded-full bg-[#1E1E1E] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.15em] text-[#FFBE30]">
-            {t("badge", { count: ALL_COFFEES.length })}
+            {t("badge", { count: allCoffees().length })}
           </span>
         </div>
 
@@ -179,7 +182,7 @@ export default function PromoModal() {
           </h2>
           <p className="mt-3 text-[15px] leading-relaxed text-[#787878]">
             {t.rich("text", {
-              price: formatPrice(FROM_PRICE),
+              price: formatPrice(fromPrice()),
               trace: traceLink,
             })}
           </p>
@@ -201,7 +204,7 @@ export default function PromoModal() {
               {t.rich("coupon", {
                 code: () => (
                   <strong className="font-black tracking-wider">
-                    {PROMO_CODE}
+                    {PROMO.code}
                   </strong>
                 ),
               })}

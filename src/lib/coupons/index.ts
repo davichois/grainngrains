@@ -8,6 +8,7 @@ import {
   COMBO_CATEGORY,
   findCombo,
   findProduct,
+  productCategory,
 } from "@/src/components/product-showcase/data";
 import {
   shippingZone,
@@ -286,8 +287,9 @@ export const tracksUsage = (c: Coupon) => {
 
 /** Ediciones que trae una línea (un combo puede mezclar varias) */
 function editionsOf(line: CouponLine) {
-  if (line.categoryId !== COMBO_CATEGORY) return [line.categoryId];
-  return findCombo(line.productId)?.items.map((i) => i.categoryId) ?? [];
+  /* La edición actual del café (se puede haber movido de edición) */
+  if (line.categoryId !== COMBO_CATEGORY) return [productCategory(line.productId) ?? line.categoryId];
+  return findCombo(line.productId)?.items.map((i) => productCategory(i.productId) ?? i.categoryId) ?? [];
 }
 
 function productsOf(line: CouponLine) {

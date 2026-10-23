@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ensureSiteData } from "@/src/lib/site-data/load";
 import { getTranslations } from "next-intl/server";
 import { ProductShowcase } from "@/src/components/product-showcase";
 import {
@@ -6,7 +7,7 @@ import {
   CERTIFICATIONS,
 } from "@/src/components/product-showcase/data";
 import { BRAND, SITE_URL, pageMetadata, metaText } from "@/src/lib/site";
-import { SIZES } from "@/src/lib/shop";
+import { sizesOf } from "@/src/lib/shop";
 
 export async function generateMetadata({
   params,
@@ -28,6 +29,8 @@ export default async function ProductPage({
 }: {
   params: Promise<{ locale: string }>;
 }) {
+  /* Catálogo y contacto con los datos del panel */
+  await ensureSiteData();
   const { locale } = await params;
   const t = await getTranslations({ locale });
   const pageUrl = `${SITE_URL}/${locale}/our-coffee/products`;
@@ -49,14 +52,14 @@ export default async function ProductPage({
         name: t(`editions.${c.id}.products.${p.id}`),
         category: t(`editions.${c.id}.name`),
         description: metaText(t(`editions.${c.id}.subtitle`)),
-        ...(p.image && { image: `${SITE_URL}${p.image}` }),
+        ...(p.image && { image: p.image.startsWith("http") ? p.image : `${SITE_URL}${p.image}` }),
         brand: { "@type": "Brand", name: BRAND.name },
         hasCertification: p.certifications.map((id) => ({
           "@type": "Certification",
           name: CERTIFICATIONS[id].name,
         })),
         /* Una oferta por presentación (250 g, 1 kg) */
-        offers: SIZES.map((size) => ({
+        offers: sizesOf(p.prices).map((size) => ({
           "@type": "Offer",
           name: t(`shop.sizes.${size}`),
           price: p.prices[size].toFixed(2),

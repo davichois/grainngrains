@@ -3,8 +3,9 @@ import {
   CertificationId,
   ShowcaseCategory,
   ShowcaseCombo,
+  ShowcaseProduct,
 } from "./types";
-import type { SizeId } from "@/src/lib/shop";
+import { PROCESSES, VARIETALS, type ProductOption, type SizeId } from "@/src/lib/shop";
 
 /* ───────────────────────────────────────────────────────────────
    Los TEXTOS (name, subtitle, bigTop, bigBot, nombre de producto) están
@@ -162,10 +163,76 @@ export const CATEGORIES: ShowcaseCategory[] = [
 
 /** Busca un producto del catálogo por edición e id */
 export function findProduct(categoryId: string, productId: string) {
-  return CATEGORIES.find((c) => c.id === categoryId)?.products.find(
-    (p) => p.id === productId,
+  return (
+    CATEGORIES.find((c) => c.id === categoryId)?.products.find((p) => p.id === productId) ??
+    /* El café se movió a otra edición (carritos, combos o cupones guardados
+       con la edición anterior siguen funcionando) */
+    CATEGORIES.flatMap((c) => c.products).find((p) => p.id === productId)
   );
 }
+
+/** Edición en la que está hoy un café (se pueden mover desde el panel) */
+export function productCategory(productId: string) {
+  return CATEGORIES.find((c) => c.products.some((p) => p.id === productId))?.id;
+}
+
+/** Varietales y procesos que ofrece un café (solo los que siguen en las
+ *  listas del panel) */
+export function productOptions(product: Pick<ShowcaseProduct, "varietals" | "processes"> | undefined) {
+  const keep = (list: ProductOption[] | undefined, valid: string[]) =>
+    (list ?? []).filter((o) => valid.includes(o.id));
+  return {
+    varietals: keep(product?.varietals, VARIETALS),
+    processes: keep(product?.processes, PROCESSES),
+  };
+}
+
+/** ¿La varietal y el proceso elegidos son de este café? (si el café ofrece
+ *  varietales o procesos, hay que elegir uno de cada uno) */
+export function validOptions(
+  product: Pick<ShowcaseProduct, "varietals" | "processes"> | undefined,
+  varietal?: string,
+  process?: string,
+) {
+  const { varietals, processes } = productOptions(product);
+  const ok = (list: ProductOption[], id?: string) =>
+    list.length ? list.some((o) => o.id === id) : !id;
+  return ok(varietals, varietal) && ok(processes, process);
+}
+
+/** " · Geisha · Lavado" para mostrar en el carrito, el checkout y el correo */
+export function optionsLabel(
+  item: { varietal?: string; process?: string },
+  name: (kind: "varietals" | "processes", id: string) => string,
+) {
+  const parts = [
+    item.varietal && name("varietals", item.varietal),
+    item.process && name("processes", item.process),
+  ].filter(Boolean);
+  return parts.length ? ` · ${parts.join(" · ")}` : "";
+}
+
+/** Unidades disponibles de una presentación; Infinity si no hay límite */
+export function stockOf(
+  product: Pick<ShowcaseProduct, "stock"> | undefined,
+  size: SizeId,
+) {
+  const n = product?.stock?.[size];
+  return typeof n === "number" ? Math.max(0, n) : Infinity;
+}
+
+/** ¿Se puede comprar `qty` de esta presentación? */
+export const inStock = (
+  product: Pick<ShowcaseProduct, "stock"> | undefined,
+  size: SizeId,
+  qty = 1,
+) => stockOf(product, size) >= qty;
+
+/** Un combo se puede comprar si todos sus cafés están (en su presentación) */
+export const comboInStock = (combo: ShowcaseCombo, qty = 1) =>
+  combo.items.every((i) =>
+    inStock(findProduct(i.categoryId, i.productId), comboItemSize(i), qty),
+  );
 
 /* ───────── Combos (se recomiendan en el carrito) ───────── */
 export const COMBOS: ShowcaseCombo[] = [
@@ -209,8 +276,23 @@ export const COMBOS: ShowcaseCombo[] = [
 /** "Edición" con la que se guardan los combos en el carrito */
 export const COMBO_CATEGORY = "combo";
 
-/** Presentación de cada café dentro de un combo */
+/** Presentación de un café dentro de un combo si no se eligió otra */
 export const COMBO_SIZE: SizeId = "250g";
+
+/** Presentación de un café del combo */
+export const comboItemSize = (i: { size?: SizeId }) => i.size ?? COMBO_SIZE;
+
+/** "250 g c/u" si todos van en la misma presentación; si no, "1 kg + 250 g" */
+export function comboSizeText(
+  combo: ShowcaseCombo,
+  sizeName: (s: SizeId) => string,
+  each: string,
+) {
+  const sizes = combo.items.map(comboItemSize);
+  return new Set(sizes).size === 1
+    ? `${sizeName(sizes[0])} ${each}`
+    : sizes.map(sizeName).join(" + ");
+}
 
 export function findCombo(comboId: string) {
   return COMBOS.find((c) => c.id === comboId);
@@ -218,15 +300,22 @@ export function findCombo(comboId: string) {
 
 /** Cafés del combo (con su color de tarjeta), precio normal y precio con descuento */
 export function comboDetails(combo: ShowcaseCombo) {
-  const products = combo.items.flatMap(({ categoryId, productId }) => {
-    const category = CATEGORIES.find((c) => c.id === categoryId);
-    const product = category?.products.find((p) => p.id === productId);
+  const products = combo.items.flatMap((i) => {
+    const category = CATEGORIES.find((c) => c.id === (productCategory(i.productId) ?? i.categoryId));
+    const product = category?.products.find((p) => p.id === i.productId);
     return category && product
-      ? [{ categoryId, product, bg: product.cardBg ?? category.color }]
+      ? [
+          {
+            categoryId: category.id,
+            product,
+            size: comboItemSize(i),
+            bg: product.cardBg ?? category.color,
+          },
+        ]
       : [];
   });
   const regular = products.reduce(
-    (sum, p) => sum + p.product.prices[COMBO_SIZE],
+    (sum, p) => sum + (p.product.prices[p.size] ?? 0),
     0,
   );
   const price = Math.round(regular * (100 - combo.discount)) / 100;

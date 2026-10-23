@@ -12,6 +12,8 @@ import { Link } from "@/src/i18n/navigation";
 import {
   COMBO_CATEGORY,
   comboDetails,
+  comboSizeText,
+  optionsLabel,
   findCombo,
 } from "@/src/components/product-showcase/data";
 
@@ -158,9 +160,12 @@ export default function CartDrawer() {
                               </p>
                             )}
                             <p className="text-xs font-medium text-gray-600">
-                              {tShop(`sizes.${item.size}`)}
-                              {combo && ` ${tShop("each")}`} ·{" "}
+                              {combo
+                                ? comboSizeText(combo, (s) => tShop(`sizes.${s}`), tShop("each"))
+                                : tShop(`sizes.${item.size}`)}{" "}
+                              ·{" "}
                               {tShop(`grinds.${item.grind}`)}
+                              {optionsLabel(item, (k, id) => (tShop.has(`${k}.${id}`) ? tShop(`${k}.${id}`) : id))}
                             </p>
                             <p className="text-sm text-gray-500">
                               <data value={item.price}>

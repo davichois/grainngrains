@@ -36,16 +36,48 @@ export const BRAND = {
   ],
 } as const;
 
-/** Datos de contacto: se usan en el pie, la página de contacto y WhatsApp */
+/** Datos de contacto: se usan en el pie, la página de contacto y WhatsApp.
+ *  Se pueden cambiar desde el panel (ver setContact) */
 export const CONTACT = {
   phone: "+51 927 645 665",
   /** Para enlaces tel: (llamar con un toque) */
   phoneHref: "tel:+51927645665",
   /** Número para wa.me (sin + ni espacios) */
   whatsapp: "51927645665",
-  email: BRAND.email,
+  email: BRAND.email as string,
   city: "Lima, Perú",
-} as const;
+};
+
+export interface ContactSettings {
+  phone: string;
+  whatsapp: string;
+  email: string;
+}
+
+export const DEFAULT_CONTACT: ContactSettings = {
+  phone: CONTACT.phone,
+  whatsapp: CONTACT.whatsapp,
+  email: CONTACT.email,
+};
+
+/** Aplica el contacto del panel (o vuelve al del código) */
+export function setContact(c: ContactSettings = DEFAULT_CONTACT) {
+  CONTACT.phone = c.phone;
+  CONTACT.phoneHref = `tel:+${c.phone.replace(/\D/g, "")}`;
+  CONTACT.whatsapp = c.whatsapp.replace(/\D/g, "");
+  CONTACT.email = c.email;
+}
+
+/** Modal de promoción (cupón que muestra y si sale o no) */
+export interface PromoSettings {
+  code: string;
+  enabled: boolean;
+}
+export const DEFAULT_PROMO: PromoSettings = { code: "GRAIN10", enabled: true };
+export const PROMO: PromoSettings = { ...DEFAULT_PROMO };
+export function setPromo(p: PromoSettings = DEFAULT_PROMO) {
+  Object.assign(PROMO, p);
+}
 
 /** Enlace de WhatsApp con un mensaje ya escrito */
 export const whatsappUrl = (text: string) =>

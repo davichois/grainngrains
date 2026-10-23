@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ensureSiteData } from "@/src/lib/site-data/load";
 import { getTranslations } from "next-intl/server";
 import { Mail, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -28,6 +29,8 @@ export default async function ContactPage({
   params: Promise<{ locale: string }>;
   searchParams: Promise<{ tipo?: string }>;
 }) {
+  /* Catálogo y contacto con los datos del panel */
+  await ensureSiteData();
   const { locale } = await params;
   const { tipo } = await searchParams;
   const t = await getTranslations({ locale, namespace: "contact" });

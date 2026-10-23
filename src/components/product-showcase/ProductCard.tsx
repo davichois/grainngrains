@@ -5,9 +5,9 @@ import { useTranslations } from "next-intl";
 import { useId } from "react";
 import { ShoppingBag } from "lucide-react";
 import { ShowcaseProduct } from "./types";
-import { CERTIFICATIONS } from "./data";
+import { CERTIFICATIONS, inStock } from "./data";
 import { formatPrice, useCart } from "@/src/components/cart/CartContext";
-import { DEFAULT_SIZE } from "@/src/lib/shop";
+import { DEFAULT_SIZE, sizesOf } from "@/src/lib/shop";
 
 interface ProductCardProps {
   product: ShowcaseProduct;
@@ -36,6 +36,8 @@ export default function ProductCard({
   const fromPrice = tShop("from", {
     price: formatPrice(product.prices[DEFAULT_SIZE]),
   });
+  /* Sin stock en ninguna presentación */
+  const soldOut = sizesOf(product.prices).every((s) => !inStock(product, s));
 
   return (
     <article
@@ -94,6 +96,12 @@ export default function ProductCard({
           WebkitMaskImage: "linear-gradient(to top, black 15%, transparent)",
         }}
       />
+
+      {soldOut && (
+        <span className="absolute left-3 top-3 z-30 rounded-full bg-gray-900 px-3 py-1 font-ui text-xs font-bold uppercase tracking-wide text-white">
+          {tShop("soldOut")}
+        </span>
+      )}
 
       {/* Nombre sobre la imagen + barra "Agregar al carrito" pegada al borde inferior */}
       <div className="pointer-events-none absolute inset-0 z-20 flex flex-col justify-end">

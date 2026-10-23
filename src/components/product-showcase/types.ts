@@ -1,4 +1,4 @@
-import type { SizeId } from "@/src/lib/shop";
+import type { ProductOption, SizeId } from "@/src/lib/shop";
 
 /* Tipos del módulo Product Showcase (slider + grilla de productos)
    Los textos (nombre, subtítulo, bigTop/bigBot, nombre de producto) viven en
@@ -37,6 +37,13 @@ export interface ShowcaseProduct {
   image?: string;
   /** Imagen de hover opcional */
   hoverImage?: string;
+  /** Unidades disponibles por presentación (desde el panel). Sin dato o
+   *  null = sin límite */
+  stock?: Partial<Record<SizeId, number | null>>;
+  /** Varietales que el cliente puede elegir (con su recargo) */
+  varietals?: ProductOption[];
+  /** Procesos que el cliente puede elegir (con su recargo) */
+  processes?: ProductOption[];
 }
 
 export interface ShowcaseCategory {
@@ -66,6 +73,7 @@ export interface ShowcaseCombo {
   id: string;
   /** Descuento en % sobre la suma de los precios de sus cafés */
   discount: number;
-  /** Cafés incluidos (una unidad de cada uno) */
-  items: { categoryId: string; productId: string }[];
+  /** Cafés incluidos (una unidad de cada uno), cada uno en su presentación
+   *  (sin `size` = 250 g, ver COMBO_SIZE) */
+  items: { categoryId: string; productId: string; size?: SizeId }[];
 }

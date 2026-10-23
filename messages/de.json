@@ -215,7 +215,11 @@
     "freeShippingRemaining": "Noch <b>{amount}</b> bis zum kostenlosen Versand",
     "freeShippingReached": "Deine Bestellung wird <b>kostenlos</b> versendet!",
     "freeShippingProgress": "Fortschritt bis zum kostenlosen Versand",
-    "addShort": "Hinzufügen"
+    "addShort": "Hinzufügen",
+    "soldOut": "Ausverkauft",
+    "lowStock": "Nur noch {count}",
+    "varietal": "Varietät",
+    "process": "Aufbereitung"
   },
   "supply-chain-excellence": {
     "hero": {
@@ -586,7 +590,8 @@
       "coupon_unavailable": "Dein Gutschein ist derzeit nicht verfügbar. Entferne ihn, um fortzufahren.",
       "coupon_expired": "Dein Gutschein ist abgelaufen. Entferne ihn, um fortzufahren.",
       "coupon_used_up_today": "Dein Gutschein hat sein heutiges Limit erreicht. Entferne ihn, um fortzufahren.",
-      "coupon_loyalty": "Dieser Gutschein ist für Stammkunden. Entferne ihn, um fortzufahren."
+      "coupon_loyalty": "Dieser Gutschein ist für Stammkunden. Entferne ihn, um fortzufahren.",
+      "out_of_stock": "Einer der Kaffees in deinem Warenkorb ist gerade ausverkauft. Bitte prüfe deinen Warenkorb und versuche es erneut."
     },
     "poweredBy": "Zahlungen sicher verarbeitet von Mercado Pago",
     "chargingHint": "Bitte schließe oder lade diese Seite nicht neu.",
@@ -897,5 +902,16 @@
     "iosStep2": "Wähle „Zum Home-Bildschirm“",
     "close": "Schließen",
     "done": "Fertig! Du hast jetzt die Grain & Grains App"
+  },
+  "orderShipped": {
+    "subject": "Deine Bestellung {number} ist unterwegs",
+    "preheader": "Dein Kaffee von Grain & Grains wurde verschickt",
+    "kicker": "Bestellung verschickt",
+    "title": "Dein Kaffee ist unterwegs!",
+    "text": "Wir haben deine Bestellung {number} gepackt und sie ist auf dem Weg zu dir. Danke, dass du mit deinem Einkauf Kaffeebauern unterstützt.",
+    "shipping": "Versand",
+    "carrier": "Versanddienst: {carrier}",
+    "tracking": "Sendungsnummer: {code}",
+    "address": "Adresse"
   }
 }

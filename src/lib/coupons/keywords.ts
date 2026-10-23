@@ -308,12 +308,14 @@ export const nota = (texto: string) => opcion({ note: texto });
 
 /* ══════════════ ARMAR EL CUPÓN ══════════════ */
 
-/* Productos y combos que existen (para detectar errores de escritura) */
-const allProducts = new Set([
-  ...CATEGORIES.flatMap((c) => c.products.map((p) => p.id)),
-  ...COMBOS.map((c) => c.id),
-]);
-const allEditions = new Set(CATEGORIES.map((c) => c.id));
+/* Productos y combos que existen (para detectar errores de escritura).
+   Se leen al validar: el catálogo cambia con lo creado en el panel */
+const allProducts = () =>
+  new Set([
+    ...CATEGORIES.flatMap((c) => c.products.map((p) => p.id)),
+    ...COMBOS.map((c) => c.id),
+  ]);
+const allEditions = () => new Set(CATEGORIES.map((c) => c.id));
 const HORA = /^([01]\d|2[0-3]):[0-5]\d$/;
 const FECHA = /^\d{4}-\d{2}-\d{2}( ([01]\d|2[0-3]):[0-5]\d)?$/;
 
@@ -323,15 +325,17 @@ function problemas(c: Coupon, rewards: number) {
   if (rewards !== 1)
     out.push(`necesita exactamente un premio (tiene ${rewards})`);
   const r = c.rules ?? {};
+  const editions = allEditions();
+  const products = allProducts();
   for (const e of [...(r.editions ?? []), ...(r.excludeEditions ?? [])])
-    if (!allEditions.has(e)) out.push(`edición desconocida "${e}"`);
+    if (!editions.has(e)) out.push(`edición desconocida "${e}"`);
   for (const p of [
     ...(r.products ?? []),
     ...(r.excludeProducts ?? []),
     ...(r.requireProducts ?? []),
     ...Object.keys(r.requireQty ?? {}),
   ])
-    if (!allProducts.has(p)) out.push(`producto desconocido "${p}"`);
+    if (!products.has(p)) out.push(`producto desconocido "${p}"`);
   if (r.daysOfWeek?.includes(-1)) out.push("día de la semana mal escrito");
   if (r.hours && !(HORA.test(r.hours.from) && HORA.test(r.hours.to)))
     out.push('horario con formato distinto a "HH:MM"');
@@ -356,6 +360,9 @@ function problemas(c: Coupon, rewards: number) {
   }
   return out;
 }
+
+/** Errores de un cupón ya armado (lo usa el panel antes de guardar) */
+export const couponProblems = (c: Coupon) => problemas(c, 1);
 
 const mergeList = (a: CustomerList = {}, b: CustomerList): CustomerList => ({
   emails: [...(a.emails ?? []), ...(b.emails ?? [])],

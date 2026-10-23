@@ -215,7 +215,11 @@
     "freeShippingRemaining": "あと <b>{amount}</b> で送料無料",
     "freeShippingReached": "ご注文は<b>送料無料</b>です！",
     "freeShippingProgress": "送料無料までの進捗",
-    "addShort": "追加"
+    "addShort": "追加",
+    "soldOut": "売り切れ",
+    "lowStock": "残り {count} 点",
+    "varietal": "品種",
+    "process": "精製方法"
   },
   "supply-chain-excellence": {
     "hero": {
@@ -586,7 +590,8 @@
       "coupon_unavailable": "クーポンは現在ご利用いただけません。削除して続けてください。",
       "coupon_expired": "クーポンの有効期限が切れました。削除して続けてください。",
       "coupon_used_up_today": "クーポンは本日の上限に達しました。削除して続けてください。",
-      "coupon_loyalty": "このクーポンはリピーター様向けです。削除して続けてください。"
+      "coupon_loyalty": "このクーポンはリピーター様向けです。削除して続けてください。",
+      "out_of_stock": "カート内のコーヒーが売り切れになりました。カートを確認して、もう一度お試しください。"
     },
     "poweredBy": "お支払いは Mercado Pago により安全に処理されます",
     "chargingHint": "このページを閉じたり再読み込みしたりしないでください。",
@@ -897,5 +902,16 @@
     "iosStep2": "「ホーム画面に追加」を選択",
     "close": "閉じる",
     "done": "完了！Grain & Grains アプリを追加しました"
+  },
+  "orderShipped": {
+    "subject": "ご注文 {number} を発送しました",
+    "preheader": "Grain & Grains のコーヒーを発送しました",
+    "kicker": "発送済み",
+    "title": "コーヒーをお届け中です！",
+    "text": "ご注文 {number} を梱包し、ご住所へ発送しました。ご購入でコーヒー生産者を応援していただき、ありがとうございます。",
+    "shipping": "配送",
+    "carrier": "配送会社：{carrier}",
+    "tracking": "追跡番号：{code}",
+    "address": "住所"
   }
 }

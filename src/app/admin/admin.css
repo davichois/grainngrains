@@ -1,0 +1,269 @@
+@import "tailwindcss";
+
+/* ───────────────────────────────────────────────────────────────
+   Estilos SOLO del panel (/admin). La web pública usa globals.css.
+   Tablet y iPad se ven como el celular: las medidas de escritorio
+   (sm, md, lg) empiezan recién en 1200 px de ancho.
+─────────────────────────────────────────────────────────────── */
+@theme {
+  --breakpoint-sm: 75rem;
+  --breakpoint-md: 75rem;
+  --breakpoint-lg: 75rem;
+  --breakpoint-xl: 80rem;
+}
+
+/* Entradas suaves (formularios y paneles) */
+@keyframes softIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes softFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.soft-in {
+  animation: softIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.soft-fade {
+  animation: softFade 0.45s ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .soft-in,
+  .soft-fade {
+    animation: none;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────
+   Panel administrativo: colores por tema (claro / oscuro estilo
+   Fairtrade). Solo los usa /admin (clase .admin-theme en <html>).
+   El tema sale del sistema, salvo que se elija en el menú
+   (data-theme="light" | "dark").
+─────────────────────────────────────────────────────────────── */
+@theme inline {
+  --color-adm-bg: var(--adm-bg);
+  --color-adm-surface: var(--adm-surface);
+  --color-adm-ink: var(--adm-ink);
+  --color-adm-solid: var(--adm-solid);
+  --color-adm-strong: var(--adm-strong);
+  --color-adm-sub: var(--adm-sub);
+  --color-adm-muted: var(--adm-muted);
+  --color-adm-soft: var(--adm-soft);
+  --color-adm-faint: var(--adm-faint);
+  --color-adm-line: var(--adm-line);
+  --color-adm-line2: var(--adm-line2);
+  --color-adm-line3: var(--adm-line3);
+  --color-adm-fill: var(--adm-fill);
+  --color-adm-panel: var(--adm-panel);
+  --color-adm-subtle: var(--adm-subtle);
+  --color-adm-cyan-tint: var(--adm-cyan-tint);
+  --color-adm-cyan-line: var(--adm-cyan-line);
+  --color-adm-cyan-ink: var(--adm-cyan-ink);
+  --color-adm-lime-tint: var(--adm-lime-tint);
+  --color-adm-lime-ink: var(--adm-lime-ink);
+  --color-adm-red-tint: var(--adm-red-tint);
+  --color-adm-red: var(--adm-red);
+  --color-adm-red-line: var(--adm-red-line);
+  --color-adm-violet: var(--adm-violet);
+  --color-adm-teal: var(--adm-teal);
+  --color-adm-orange: var(--adm-orange);
+}
+
+.admin-theme {
+  color-scheme: light;
+  --adm-bg: #ffffff;
+  --adm-surface: #ffffff;
+  --adm-ink: #1e1e1e;
+  --adm-solid: #1e1e1e;
+  --adm-strong: #1e1e1e;
+  --adm-sub: #52525b;
+  --adm-muted: #71717a;
+  --adm-soft: #8a8a8f;
+  --adm-faint: #a1a1aa;
+  --adm-line: #ededef;
+  --adm-line2: #e4e4e7;
+  --adm-line3: #d4d4d8;
+  --adm-fill: #efeff1;
+  --adm-panel: #f4f4f5;
+  --adm-subtle: #fafafa;
+  --adm-cyan-tint: #e5f8ff;
+  --adm-cyan-line: #a8e6fd;
+  --adm-cyan-ink: #0a86b0;
+  --adm-lime-tint: #f5ffd9;
+  --adm-lime-ink: #4d6600;
+  --adm-red-tint: #fdecec;
+  --adm-red: #b42323;
+  --adm-red-line: #e8b4b4;
+  --adm-violet: #7b3fa0;
+  --adm-teal: #0d5960;
+  --adm-orange: #b4441e;
+}
+
+/* Oscuro estilo Fairtrade: casi negro, azul eléctrico y lima de acento.
+   Se repite abajo para cuando el sistema está en oscuro y no se eligió tema */
+.admin-theme[data-theme="dark"] {
+  color-scheme: dark;
+  --adm-bg: #0e0e0e;
+  --adm-surface: #171717;
+  --adm-ink: #f4f4f5;
+  --adm-solid: #000000;
+  --adm-strong: #e4e4e7;
+  --adm-sub: #c4c4cc;
+  --adm-muted: #a1a1aa;
+  --adm-soft: #8a8a93;
+  --adm-faint: #6b6b73;
+  --adm-line: #262626;
+  --adm-line2: #2e2e2e;
+  --adm-line3: #3a3a3a;
+  --adm-fill: #242424;
+  --adm-panel: #1f1f1f;
+  --adm-subtle: #1c1c1c;
+  --adm-cyan-tint: #06303d;
+  --adm-cyan-line: #0f5a73;
+  --adm-cyan-ink: #5fd4ff;
+  --adm-lime-tint: #232c08;
+  --adm-lime-ink: #d4ff47;
+  --adm-red-tint: #3a1414;
+  --adm-red: #ff7a7a;
+  --adm-red-line: #6b2a2a;
+  --adm-violet: #c9a2f0;
+  --adm-teal: #6fd0d8;
+  --adm-orange: #ff9a6b;
+}
+@media (prefers-color-scheme: dark) {
+  .admin-theme:not([data-theme="light"]) {
+    color-scheme: dark;
+    --adm-bg: #0e0e0e;
+    --adm-surface: #171717;
+    --adm-ink: #f4f4f5;
+    --adm-solid: #000000;
+    --adm-strong: #e4e4e7;
+    --adm-sub: #c4c4cc;
+    --adm-muted: #a1a1aa;
+    --adm-soft: #8a8a93;
+    --adm-faint: #6b6b73;
+    --adm-line: #262626;
+    --adm-line2: #2e2e2e;
+    --adm-line3: #3a3a3a;
+    --adm-fill: #242424;
+    --adm-panel: #1f1f1f;
+    --adm-subtle: #1c1c1c;
+    --adm-cyan-tint: #06303d;
+    --adm-cyan-line: #0f5a73;
+    --adm-cyan-ink: #5fd4ff;
+    --adm-lime-tint: #232c08;
+    --adm-lime-ink: #d4ff47;
+    --adm-red-tint: #3a1414;
+    --adm-red: #ff7a7a;
+    --adm-red-line: #6b2a2a;
+    --adm-violet: #c9a2f0;
+    --adm-teal: #6fd0d8;
+    --adm-orange: #ff9a6b;
+  }
+}
+
+/* Tamaño de letra del panel (Ajustes → Apariencia). Todo el panel usa rem,
+   así que escala con la letra de la raíz */
+.admin-theme[data-text="sm"] {
+  font-size: 93.75%;
+}
+.admin-theme[data-text="lg"] {
+  font-size: 112.5%;
+}
+
+/* ───────── Transiciones del panel ───────── */
+
+/* Cada página entra con un fundido y un leve ascenso */
+@keyframes admPageIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.adm-page {
+  animation: admPageIn 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Esqueleto mientras carga: aparece tras un instante (si la página llega
+   rápido ni se ve) y brilla suave */
+@keyframes admSkeletonIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes admShimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+.adm-skeleton {
+  animation: admSkeletonIn 0.25s ease-out 0.12s both;
+}
+.adm-bone {
+  background: linear-gradient(90deg, var(--adm-panel) 25%, var(--adm-line) 50%, var(--adm-panel) 75%);
+  background-size: 200% 100%;
+  animation: admShimmer 1.4s ease-in-out infinite;
+}
+
+/* Contenido que cambia en el lugar (pestañas, mensajes) */
+@keyframes admFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.adm-fade {
+  animation: admFade 0.22s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adm-page,
+  .adm-skeleton,
+  .adm-bone,
+  .adm-fade {
+    animation: none;
+  }
+}
+
+/* Barra de carga de navegación (indeterminada) */
+@keyframes admProgress {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(300%);
+  }
+}
+.adm-progress {
+  animation: admProgress 0.9s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .adm-progress {
+    animation: none;
+    width: 100%;
+  }
+}

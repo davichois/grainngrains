@@ -213,7 +213,11 @@
     "freeShippingRemaining": "You're <b>{amount}</b> away from free shipping",
     "freeShippingReached": "Your order ships <b>free</b>!",
     "freeShippingProgress": "Progress to free shipping",
-    "addShort": "Add"
+    "addShort": "Add",
+    "soldOut": "Sold out",
+    "lowStock": "Only {count} left",
+    "varietal": "Variety",
+    "process": "Process"
   },
   "supply-chain-excellence": {
     "hero": {
@@ -584,7 +588,8 @@
       "coupon_unavailable": "Your coupon isn't available right now. Remove it to continue.",
       "coupon_expired": "Your coupon has expired. Remove it to continue.",
       "coupon_used_up_today": "Your coupon reached today's limit. Remove it to continue.",
-      "coupon_loyalty": "This coupon is for returning customers. Remove it to continue."
+      "coupon_loyalty": "This coupon is for returning customers. Remove it to continue.",
+      "out_of_stock": "One of the coffees in your cart just sold out. Please check your cart and try again."
     },
     "poweredBy": "Payments securely processed by Mercado Pago",
     "chargingHint": "Please don't close or reload this page.",
@@ -895,5 +900,16 @@
     "iosStep2": "Choose “Add to Home Screen”",
     "close": "Close",
     "done": "Done! You now have the Grain & Grains app"
+  },
+  "orderShipped": {
+    "subject": "Your order {number} is on its way",
+    "preheader": "Your Grain & Grains coffee has shipped",
+    "kicker": "Order shipped",
+    "title": "Your coffee is on its way!",
+    "text": "We've packed your order {number} and it's headed to your address. Thank you for supporting coffee farmers with your purchase.",
+    "shipping": "Shipping",
+    "carrier": "Carrier: {carrier}",
+    "tracking": "Tracking code: {code}",
+    "address": "Address"
   }
 }

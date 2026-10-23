@@ -11,6 +11,8 @@ import {
   CATEGORIES,
   COMBO_CATEGORY,
   comboDetails,
+  comboSizeText,
+  optionsLabel,
   findCombo,
   findProduct,
 } from "@/src/components/product-showcase/data";
@@ -248,9 +250,12 @@ export default function OrderSummary({
                   {name}
                 </h3>
                 <p className="text-[11px] text-gray-500">
-                  {tShop(`sizes.${item.size}`)}
-                  {combo && ` ${tShop("each")}`} ·{" "}
+                  {combo
+                    ? comboSizeText(combo, (s) => tShop(`sizes.${s}`), tShop("each"))
+                    : tShop(`sizes.${item.size}`)}{" "}
+                  ·{" "}
                   {tShop(`grinds.${item.grind}`)}
+                  {optionsLabel(item, (k, id) => (tShop.has(`${k}.${id}`) ? tShop(`${k}.${id}`) : id))}
                 </p>
                 <p className="sr-only">{t("quantity", { count: item.qty })}</p>
               </div>

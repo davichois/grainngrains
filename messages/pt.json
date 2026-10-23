@@ -215,7 +215,11 @@
     "freeShippingRemaining": "Faltam <b>{amount}</b> para o frete grátis",
     "freeShippingReached": "Seu pedido tem <b>frete grátis</b>!",
     "freeShippingProgress": "Progresso até o frete grátis",
-    "addShort": "Adicionar"
+    "addShort": "Adicionar",
+    "soldOut": "Esgotado",
+    "lowStock": "Restam {count}",
+    "varietal": "Variedade",
+    "process": "Processo"
   },
   "supply-chain-excellence": {
     "hero": {
@@ -586,7 +590,8 @@
       "coupon_unavailable": "Seu cupom não está disponível no momento. Remova-o para continuar.",
       "coupon_expired": "Seu cupom expirou. Remova-o para continuar.",
       "coupon_used_up_today": "Seu cupom atingiu o limite de hoje. Remova-o para continuar.",
-      "coupon_loyalty": "Este cupom é para clientes frequentes. Remova-o para continuar."
+      "coupon_loyalty": "Este cupom é para clientes frequentes. Remova-o para continuar.",
+      "out_of_stock": "Um dos cafés do seu carrinho acabou de esgotar. Revise seu carrinho e tente novamente."
     },
     "poweredBy": "Pagamentos processados com segurança pelo Mercado Pago",
     "chargingHint": "Não feche nem recarregue esta página.",
@@ -897,5 +902,16 @@
     "iosStep2": "Escolha «Adicionar à Tela de Início»",
     "close": "Fechar",
     "done": "Pronto! Você já tem o app Grain & Grains"
+  },
+  "orderShipped": {
+    "subject": "Seu pedido {number} está a caminho",
+    "preheader": "Seu café Grain & Grains foi enviado",
+    "kicker": "Pedido enviado",
+    "title": "Seu café está a caminho!",
+    "text": "Preparamos seu pedido {number} e ele já está a caminho do seu endereço. Obrigado por apoiar os cafeicultores com a sua compra.",
+    "shipping": "Envio",
+    "carrier": "Transportadora: {carrier}",
+    "tracking": "Código de rastreio: {code}",
+    "address": "Endereço"
   }
 }
